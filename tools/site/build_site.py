@@ -1,8 +1,8 @@
 """Assemble the GitHub Pages site from the built pages.
 
 The pages are written for claude.ai artifacts, which wrap each file in a document skeleton (doctype, charset,
-viewport and a small reset). For Pages they get that skeleton here, and the Build guide's link to the planner
-points at the planner beside it instead of the artifact.
+viewport and a small reset). For Pages they get that skeleton here, and their links to each other (written as
+the artifacts' claude.ai links) point at the pages beside them instead.
 
 Run (after building the pages): python tools/site/build_site.py <out dir>
   index.html          the planner (tools/embervale-blueprints.html)
@@ -13,7 +13,10 @@ import os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = os.path.dirname(HERE)
-PLANNER_ARTIFACT = 'https://claude.ai/artifact/QbEiF3vGnAfXo3K2GeAiLS'
+# each tool's claude.ai artifact, and where it sits on the site (only href="…" links are changed, so the Build
+# Tester's share-link fallback keeps its artifact address)
+LINKS = {'https://claude.ai/artifact/QbEiF3vGnAfXo3K2GeAiLS': './', 'https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW': 'build-tester.html',
+         'https://claude.ai/artifact/8jei2C8pV8hJiZm5aKsxxR': 'build-guide.html'}
 PAGES = [('embervale-blueprints.html', 'index.html'), ('flameborn-build-tester.html', 'build-tester.html'), ('build-guide.html', 'build-guide.html')]
 # what the artifact skeleton gives every page
 HEAD = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
@@ -27,8 +30,8 @@ def main(out):
     os.makedirs(out, exist_ok=True)
     for src, dst in PAGES:
         page = open(os.path.join(TOOLS, src), encoding='utf-8').read()
-        if dst == 'build-guide.html':
-            page = page.replace(PLANNER_ARTIFACT, './')
+        for url, rel in LINKS.items():
+            page = page.replace(f'href="{url}"', f'href="{rel}"')
         if not page.lstrip().lower().startswith('<!doctype'):
             page = HEAD + page + '\n</body>\n</html>\n'
         open(os.path.join(out, dst), 'w', encoding='utf-8').write(page)

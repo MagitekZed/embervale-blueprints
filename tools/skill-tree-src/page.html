@@ -58,6 +58,8 @@ button { cursor: pointer; }
 .app { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 10px; padding-block: 12px; }
 .top { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
 .top h1 { font: 700 24px/1.1 var(--font-display); letter-spacing: .02em; margin: 0; text-wrap: balance; }
+.top .back { flex-basis: 100%; font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; }
+.top .back:hover { color: var(--accent); }
 .top .sub { color: var(--muted); font-size: 14px; min-width: 0; }
 .main { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 12px; }
 
@@ -251,6 +253,8 @@ details.gearfor[open] summary { margin-bottom: 6px; }
 
 <div class="app">
   <header class="top">
+    <!-- back to the planner: its claude.ai artifact here; the GitHub Pages build makes it a plain link (tools/site/build_site.py) -->
+    <a class="back" href="https://claude.ai/artifact/QbEiF3vGnAfXo3K2GeAiLS" title="Back to the Embervale Blueprints planner">← Embervale Blueprints</a>
     <h1>Flameborn Build Tester</h1>
     <span class="sub">Enshrouded 1.0 skill tree, all 243 nodes. Click to spend, right-click to refund.</span>
   </header>

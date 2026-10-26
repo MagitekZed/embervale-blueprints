@@ -68,6 +68,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .brand { display: flex; align-items: center; gap: 8px; }
 .brand-mark { width: 22px; height: 22px; fill: var(--accent); flex: none; }
 .brand-name { font-family: var(--font-display); font-size: 21px; letter-spacing: .02em; line-height: 1; white-space: nowrap; }
+.suite { display: flex; gap: 2px; align-items: center; }
+.suite a { font-size: 12.5px; font-weight: 600; color: var(--muted); text-decoration: none; padding: 5px 8px; border-radius: 6px; white-space: nowrap; }
+.suite a:hover { color: var(--ink); background: var(--raised); }
+.suite a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .planbar { display: flex; gap: 6px; align-items: center; min-width: 0; }
 .planbar select { width: auto; max-width: 230px; font-weight: 600; }
 .planbar select.projsel { max-width: 170px; font-weight: 500; color: var(--muted); }
@@ -608,6 +612,11 @@ kbd { display: inline-block; min-width: 18px; padding: 1px 6px; border: 1px soli
       <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.8c.9 3.4 5.6 5.7 5.6 10.7a5.6 5.6 0 0 1-11.2 0c0-2.5 1.2-4.3 2.5-5.6.1 2 1 3.3 2.4 3.8-.3-3 .2-6 .7-8.9Z"/><rect x="4" y="20.2" width="16" height="1.8" rx=".9"/></svg>
       <span class="brand-name">Embervale Blueprints</span>
     </div>
+    <!-- the other tools: claude.ai artifact links here; the GitHub Pages build makes them plain links (tools/site/build_site.py) -->
+    <nav class="suite" aria-label="Other tools">
+      <a href="https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW" title="Flameborn Build Tester: plan a skill build on the full 1.0 skill tree">Build Tester</a>
+      <a href="https://claude.ai/artifact/8jei2C8pV8hJiZm5aKsxxR" title="Build guide: how the build tracking works, from counting what you have to marking blocks built">Build guide</a>
+    </nav>
     <div class="planbar">
       <select id="projectSelect" class="projsel" aria-label="Project" title="Switch project: plans are grouped into projects"></select>
       <select id="planSelect" aria-label="Open a plan" title="Switch to another plan in this project"></select>
