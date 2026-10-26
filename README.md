@@ -14,6 +14,10 @@ Plans, the inventory and saved builds are kept in your browser (local storage). 
 - The block catalogue and its colours (sampled from the block icons), and the older recipes, come from the [Enshrouded Wiki](https://enshrouded.wiki.gg). Its content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) (the wiki's copyright page also names CC BY-NC-SA 3.0). This project is non-commercial.
 - Enshrouded and its names and data belong to [Keen Games](https://www.keengames.com). This project isn't affiliated with or endorsed by them.
 
+## Licence
+
+Source-available under the [PolyForm Strict License 1.0.0](LICENSE.md). You may use the tools for personal and other noncommercial purposes, but not change them, build new works from them, or redistribute them. The licence covers only the original work here: the game, its data and the wiki material belong to others and keep their own terms (see [NOTICE.md](NOTICE.md)).
+
 ## Building from source
 
 The pages are assembled from parts. You need a POSIX shell and Python 3.

@@ -4,6 +4,8 @@
 !/.gitignore
 !/.github/
 !/README.md
+!/LICENSE.md
+!/NOTICE.md
 !/tools/
 
 __pycache__/
