@@ -1,0 +1,6045 @@
+{
+  "fetched": "2026-10-15",
+  "notes": "41 Eternal spell items in 22 spell lines (tiers I-IV; Entangle, Protective Barrier, Shock Totem, Shroud Beam and Shroud Meteor have one untiered item; Ball Lightning and Pillar Of Flames only a tier I), plus 11 Eternal arrows (category 'Eternal arrows', included because they share the system). Source: enshrouded.tools item pages, which are read from the 1.0 game files (site footer: 'Game data: Steam build 25936191', 'Out now - version 1.0'). The 22 level-45 spell items are the '22 tier-7' Eternal spells from the 1.0 notes. Eternal Light Burst I matches the user's 1.0 screenshot exactly, so it is confirmed-1.0; every other item is likely-1.0 (same datamined source, not checked in game). No second post-1.0 source with recipes exists yet: enshrouded.wiki.gg Spells (last edited 2026-06-16) and the guide sites are pre-1.0 (old names like 'Eternal Light Burst' lvl 22). 'school' is the game's 'Damage type' field. 'station' is the station the crafter needs nearby (null = crafter alone). 'Sheltered Bed' is confirmed only for the Alchemist (screenshot); for Collector/Hunter/Fisher it is inferred. Resource 'source' is enshrouded.tools' 'Where to get it' line, which matches the game's source line in the screenshot (Smelter, Charcoal Kiln, Kindlewastes, Springlands); where that line is missing, source is null (or the recipe's crafter, flagged sourceInferred). Resource recipes use the recipe matching that source line; alternatives are in otherRecipes. Craft times and quantities come from the site's recipe tables, which agree with its 1.0 recipe diff (e.g. Charcoal 17 wood -> 12, makes 15 -> 10); the site's prose 'About' blurbs still quote Early Access numbers, so ignore them. Water appears as an input with waterCharges: true (recipe-header 'N water charges', drawn from base water storage). renamedFrom and changes1_0 come from the enshrouded.tools 1.0 changelog (a diff against Early Access game data).",
+  "items": [
+    {
+      "name": "Eternal Acid Bite I",
+      "category": "Eternal spells",
+      "school": "Poison",
+      "class": "Mage",
+      "level": 20,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Glass",
+          "qty": 20
+        },
+        {
+          "item": "Charcoal",
+          "qty": 10
+        },
+        {
+          "item": "Sulfur",
+          "qty": 30
+        },
+        {
+          "item": "Ammonia Gland",
+          "qty": 20
+        },
+        {
+          "item": "Poison Sack",
+          "qty": 20
+        }
+      ],
+      "manaCost": "105",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Acid Bite",
+      "changes1_0": [
+        "Level 22 → 20",
+        "Damage x0.9 → x0.85",
+        "Attack speed x3.373 → x2.25",
+        "New: Duration 5000",
+        "New: Debuff Duration 10000",
+        "New: Charge Time 1000",
+        "Mana Cost 120 → 105",
+        "No longer has Cast Time",
+        "Bonuses: + Charge Time, + Mana Cost, + Charge Time, + Charge Time, + Mana Cost"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-acid-bite-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Acid Bite II",
+      "category": "Eternal spells",
+      "school": "Poison",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Archaic Shards",
+          "qty": 20
+        },
+        {
+          "item": "Fish Poison Gland",
+          "qty": 5
+        },
+        {
+          "item": "Sulfur",
+          "qty": 30
+        },
+        {
+          "item": "Venom Stinger",
+          "qty": 5
+        },
+        {
+          "item": "Toxic Sack",
+          "qty": 20
+        }
+      ],
+      "manaCost": "204",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-acid-bite-ii"
+      ]
+    },
+    {
+      "name": "Eternal Arc Lightning I",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 36,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Sludge",
+          "qty": 25
+        },
+        {
+          "item": "Iron Dust",
+          "qty": 10
+        },
+        {
+          "item": "Gold Bars",
+          "qty": 5
+        },
+        {
+          "item": "Green Vitriol Dust",
+          "qty": 10
+        }
+      ],
+      "manaCost": "49",
+      "chargeTime": "0.3s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Lightning Channel",
+      "changes1_0": [
+        "Level 43 → 36",
+        "Damage x0.8 → x0.56",
+        "Attack speed x0.46 → x0.8",
+        "Mana Cost 27 → 49",
+        "No longer has Cast Time",
+        "New: Charge Time 300",
+        "Bonuses: + Mana Cost, + Magical Critical Strike Chance, + Mana Cost, + All Magic Shock Damage, + Charge Time"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-arc-lightning-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Arc Lightning II",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Magma Gel",
+          "qty": 25
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 10
+        },
+        {
+          "item": "Archaic Infusion",
+          "qty": 3
+        },
+        {
+          "item": "Moonstone Dust",
+          "qty": 10
+        }
+      ],
+      "manaCost": "53",
+      "chargeTime": "0.3s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-arc-lightning-ii"
+      ]
+    },
+    {
+      "name": "Eternal Ball Lightning I",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sparkling Dust",
+          "qty": 25
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 10
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 20
+        }
+      ],
+      "manaCost": "264",
+      "chargeTime": "3s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+6%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ball-lightning-i"
+      ]
+    },
+    {
+      "name": "Eternal Blizzard I",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 28,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ice",
+          "qty": 20
+        },
+        {
+          "item": "Snow",
+          "qty": 20
+        },
+        {
+          "item": "Enshrouded Ice",
+          "qty": 15
+        },
+        {
+          "item": "Obsidian Dust",
+          "qty": 5
+        }
+      ],
+      "manaCost": "214",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-blizzard-i"
+      ]
+    },
+    {
+      "name": "Eternal Blizzard II",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sparkling Dust",
+          "qty": 20
+        },
+        {
+          "item": "Ice",
+          "qty": 30
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        },
+        {
+          "item": "Archaic Infusion",
+          "qty": 3
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "287",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-blizzard-ii"
+      ]
+    },
+    {
+      "name": "Eternal Bonestorm I",
+      "category": "Eternal spells",
+      "school": "Blunt",
+      "class": "Mage",
+      "level": 36,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ectoplasm Cluster",
+          "qty": 20
+        },
+        {
+          "item": "Icy Giant Bones",
+          "qty": 1
+        },
+        {
+          "item": "Bonestorm V",
+          "qty": 200
+        }
+      ],
+      "manaCost": "61",
+      "chargeTime": "0.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "All Blunt Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-bonestorm-i"
+      ]
+    },
+    {
+      "name": "Eternal Bonestorm II",
+      "category": "Eternal spells",
+      "school": "Blunt",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ectoplasm Aggregate",
+          "qty": 100
+        },
+        {
+          "item": "Icy Giant Bones",
+          "qty": 3
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 1
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 2
+        }
+      ],
+      "manaCost": "61",
+      "chargeTime": "0.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "All Blunt Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-bonestorm-ii"
+      ]
+    },
+    {
+      "name": "Eternal Chain Heal I",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 15,
+      "rarity": "Epic",
+      "station": "Alchemy Station",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Antiseptic",
+          "qty": 10
+        },
+        {
+          "item": "Tin Bars",
+          "qty": 10
+        },
+        {
+          "item": "Fossilized Bone",
+          "qty": 10
+        },
+        {
+          "item": "Monstrous Ribs",
+          "qty": 1
+        }
+      ],
+      "manaCost": "43",
+      "chargeTime": "1.2s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+1"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Chain Heal",
+      "changes1_0": [
+        "Level 17 → 15",
+        "No longer has Cast Time",
+        "New: Charge Time 1200",
+        "Bonuses: + Charge Time, + Mana Cost, + Charge Time, + Healer, + Mana Cost"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-chain-heal-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Chain Heal II",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Mortar",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fossilized Bone Dust",
+          "qty": 4
+        },
+        {
+          "item": "Thyme",
+          "qty": 10
+        },
+        {
+          "item": "Basalt Dust",
+          "qty": 5
+        }
+      ],
+      "manaCost": "58",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+2"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "Recipe looks unusually cheap for a level-45 Legendary (Mortar, 3 cheap inputs). Data is from the game files, but worth checking in game."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-chain-heal-ii"
+      ]
+    },
+    {
+      "name": "Eternal Chain Lightning I",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 10,
+      "rarity": "Rare",
+      "station": "Mortar",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Glow Dust",
+          "qty": 8
+        },
+        {
+          "item": "Chain Lightning I",
+          "qty": 40
+        }
+      ],
+      "manaCost": "70",
+      "chargeTime": "1.2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-chain-lightning-i"
+      ]
+    },
+    {
+      "name": "Eternal Chain Lightning II",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 28,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Steel Bars",
+          "qty": 10
+        },
+        {
+          "item": "Silver Dust",
+          "qty": 3
+        }
+      ],
+      "manaCost": "167",
+      "chargeTime": "1.2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Chain Lightning",
+      "changes1_0": [
+        "Level 32 → 28",
+        "Damage x1.1 → x1.22",
+        "Attack speed x2.02 → x2.05",
+        "Mana Cost 98 → 167",
+        "No longer has Cast Time",
+        "New: Charge Time 1200",
+        "Bonuses: + Mana Cost, + Charge Time, + Magical Critical Strike Chance, + All Magic Shock Damage, + Charge Time"
+      ],
+      "recipeChanged1_0": [
+        "Silver Dust 43 → 3",
+        "Steel Bars 25 → 10"
+      ],
+      "confidence": "likely-1.0",
+      "flags": [
+        "Pre-1.0 'Eternal Chain Lightning' (lvl 32) was Steel Bars x25 + Silver Dust x43 at the Mortar (wiki); 1.0 data: Steel Bars x10 + Silver Dust x3, needs Laboratory."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-chain-lightning-ii",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Chain Lightning III",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Chain Lightning II",
+          "qty": 20
+        },
+        {
+          "item": "Moonstone Dust",
+          "qty": 15
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 20
+        }
+      ],
+      "manaCost": "220",
+      "chargeTime": "1.2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-chain-lightning-iii"
+      ]
+    },
+    {
+      "name": "Eternal Entangle",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Rare",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fish Scales",
+          "qty": 5
+        },
+        {
+          "item": "Basalt Dust",
+          "qty": 10
+        },
+        {
+          "item": "Ember Carapace",
+          "qty": 30
+        },
+        {
+          "item": "Cinder Rock",
+          "qty": 20
+        }
+      ],
+      "manaCost": "58",
+      "chargeTime": "0.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-entangle"
+      ]
+    },
+    {
+      "name": "Eternal Fire Totem I",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 28,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Obsidian",
+          "qty": 15
+        },
+        {
+          "item": "Coal",
+          "qty": 15
+        },
+        {
+          "item": "Raw Wool",
+          "qty": 10
+        },
+        {
+          "item": "Amethyst",
+          "qty": 20
+        }
+      ],
+      "manaCost": "74",
+      "chargeTime": "0.7s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-fire-totem-i"
+      ]
+    },
+    {
+      "name": "Eternal Fire Totem II",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 25
+        },
+        {
+          "item": "Diamond",
+          "qty": 20
+        },
+        {
+          "item": "Fish Scales",
+          "qty": 4
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 25
+        }
+      ],
+      "manaCost": "99",
+      "chargeTime": "0.7s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-fire-totem-ii"
+      ]
+    },
+    {
+      "name": "Eternal Fireball I",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 15,
+      "rarity": "Rare",
+      "station": "Alchemy Station",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 25
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 3
+        },
+        {
+          "item": "Amber",
+          "qty": 25
+        },
+        {
+          "item": "Petrified Shroud Stalker Shell",
+          "qty": 5
+        }
+      ],
+      "manaCost": "95",
+      "chargeTime": "2.5s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Rarity Epic → Rare",
+        "Level 17 → 15",
+        "Damage x0.8 → x1.08",
+        "Attack speed x2.747 → x3.5",
+        "New: Radius 380",
+        "Mana Cost 71 → 95",
+        "No longer has Cast Time",
+        "New: Charge Time 2500",
+        "Bonuses: + Charge Time, + Mana Cost, + Magical Critical Strike Chance, + Mana Cost, + Mana Cost"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-fireball-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Fireball II",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 36,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 25
+        },
+        {
+          "item": "Gold Bars",
+          "qty": 3
+        },
+        {
+          "item": "Green Vitriol Dust",
+          "qty": 10
+        },
+        {
+          "item": "Corrupted Boar Tusk",
+          "qty": 15
+        }
+      ],
+      "manaCost": "209",
+      "chargeTime": "2.5s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Level 38 → 36",
+        "Damage x0.8 → x1.08",
+        "Attack speed x2.06 → x3.5",
+        "New: Radius 500",
+        "Mana Cost 100 → 209",
+        "No longer has Cast Time",
+        "New: Charge Time 2500",
+        "Bonuses: + Charge Time, + Mana Cost, + Magical Critical Strike Chance, + All Magic Fire Damage, + Mana Cost"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-fireball-ii",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Fireball III",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 25
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 3
+        },
+        {
+          "item": "Fish Scales",
+          "qty": 4
+        },
+        {
+          "item": "Fireball IV",
+          "qty": 20
+        }
+      ],
+      "manaCost": "231",
+      "chargeTime": "2.5s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-fireball-iii"
+      ]
+    },
+    {
+      "name": "Eternal Heal Beam I",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 36,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Green Vitriol Dust",
+          "qty": 15
+        },
+        {
+          "item": "Shroud Slime",
+          "qty": 50
+        },
+        {
+          "item": "Bursting Fell Heart",
+          "qty": 5
+        },
+        {
+          "item": "Pearl",
+          "qty": 1
+        }
+      ],
+      "manaCost": "54",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+1"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Heal Beam Channel",
+      "changes1_0": [
+        "Level 38 → 36",
+        "No longer has Cast Time",
+        "New: Charge Time 2000",
+        "Bonuses: + Charge Time, + Mana Cost, + Mana Cost, + Healer, + Mana Cost"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-heal-beam-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Heal Beam II",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Diamond Dust",
+          "qty": 15
+        },
+        {
+          "item": "Basalt Dust",
+          "qty": 10
+        },
+        {
+          "item": "Shroud Relic",
+          "qty": 5
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 1
+        }
+      ],
+      "manaCost": "54",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+2"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-heal-beam-ii"
+      ]
+    },
+    {
+      "name": "Eternal Heal Cascade I",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 20,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Lapislazuli",
+          "qty": 50
+        },
+        {
+          "item": "Aloe",
+          "qty": 10
+        },
+        {
+          "item": "Chamomile Tea",
+          "qty": 10
+        },
+        {
+          "item": "Mist of a Fell Sicklescythe",
+          "qty": 3
+        }
+      ],
+      "manaCost": "14",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+1"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Heal Channel",
+      "changes1_0": [
+        "Level 22 → 20",
+        "No longer has Cast Time",
+        "New: Charge Time 1000",
+        "Bonuses: + Mana Cost, + Charge Time, + Mana Cost, + Healer, + Healer"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-heal-cascade-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Heal Cascade II",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Moonstone",
+          "qty": 50
+        },
+        {
+          "item": "Sulfur",
+          "qty": 10
+        },
+        {
+          "item": "Heal Cascade II",
+          "qty": 40
+        },
+        {
+          "item": "Bursting Fell Heart",
+          "qty": 3
+        }
+      ],
+      "manaCost": "14",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Healer",
+          "value": "+2"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-heal-cascade-ii"
+      ]
+    },
+    {
+      "name": "Eternal Hollow Wretch I",
+      "category": "Eternal spells",
+      "school": "Cutting 50% / Ice 50%",
+      "class": "Mage",
+      "level": 28,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ectoplasm Crystal",
+          "qty": 60
+        },
+        {
+          "item": "Giant Bones",
+          "qty": 4
+        }
+      ],
+      "manaCost": "203",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-hollow-wretch-i"
+      ]
+    },
+    {
+      "name": "Eternal Hollow Wretch II",
+      "category": "Eternal spells",
+      "school": "Cutting 50% / Ice 50%",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ectoplasm Aggregate",
+          "qty": 100
+        },
+        {
+          "item": "Icy Giant Bones",
+          "qty": 3
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 2
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 2
+        }
+      ],
+      "manaCost": "272",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-hollow-wretch-ii"
+      ]
+    },
+    {
+      "name": "Eternal Ice Bolt I",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 5,
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Wood",
+          "qty": 5
+        },
+        {
+          "item": "Salt",
+          "qty": 10
+        },
+        {
+          "item": "Water",
+          "qty": 2,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "52",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Rarity Epic → Rare",
+        "Level 6 → 5",
+        "Damage x1.25 → x0.82",
+        "Attack speed x1.492 → x2.25",
+        "New: Debuff Duration 10000",
+        "New: Charge Time 1000",
+        "New: Radius 100",
+        "Mana Cost 44 → 52",
+        "No longer has Cast Time",
+        "New: Slow 50",
+        "Bonuses: + Magical Critical Strike Chance, + Mana Cost, + Charge Time, + Charge Time, + Charge Time"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-bolt-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Ice Bolt II",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 15,
+      "rarity": "Epic",
+      "station": "Alchemy Station",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fossilized Bone Dust",
+          "qty": 30
+        },
+        {
+          "item": "Ammonia Gland",
+          "qty": 20
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "84",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Level 17 → 15",
+        "Damage x1.2 → x0.82",
+        "Attack speed x1.907 → x2.25",
+        "New: Debuff Duration 10000",
+        "New: Charge Time 1000",
+        "New: Radius 160",
+        "Mana Cost 82 → 84",
+        "No longer has Cast Time",
+        "New: Slow 50",
+        "Bonuses: + Magical Critical Strike Chance, + Mana Cost, + Charge Time, + All Magic Ice Damage, + Charge Time"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-bolt-ii",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Ice Bolt III",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 36,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Chitin Powder",
+          "qty": 30
+        },
+        {
+          "item": "Cursed Shroud Sack",
+          "qty": 20
+        },
+        {
+          "item": "Toxic Sack",
+          "qty": 20
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "188",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Rarity Epic → Legendary",
+        "Level 43 → 36",
+        "Damage x1.2 → x0.82",
+        "Attack speed x1.43 → x2.25",
+        "New: Debuff Duration 12000",
+        "New: Charge Time 1000",
+        "New: Radius 220",
+        "Mana Cost 138 → 188",
+        "No longer has Cast Time",
+        "New: Slow 65",
+        "Bonuses: + Magical Critical Strike Chance, + Mana Cost, + Charge Time, + Mana Cost, + All Magic Ice Damage"
+      ],
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-bolt-iii",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Ice Bolt IV",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sparkling Dust",
+          "qty": 30
+        },
+        {
+          "item": "Ice Bolt IV",
+          "qty": 20
+        },
+        {
+          "item": "Ember Carapace",
+          "qty": 10
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "204",
+      "chargeTime": "1s",
+      "perks": [
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-bolt-iv"
+      ]
+    },
+    {
+      "name": "Eternal Ice Totem I",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 20,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Iron Bars",
+          "qty": 5
+        },
+        {
+          "item": "Enshrouded Oil",
+          "qty": 5
+        },
+        {
+          "item": "Lapislazuli",
+          "qty": 15
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "36",
+      "chargeTime": "0.7s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-totem-i"
+      ]
+    },
+    {
+      "name": "Eternal Ice Totem II",
+      "category": "Eternal spells",
+      "school": "Ice",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Diamond Dust",
+          "qty": 30
+        },
+        {
+          "item": "Ice",
+          "qty": 30
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        },
+        {
+          "item": "Water",
+          "qty": 10,
+          "waterCharges": true
+        }
+      ],
+      "manaCost": "70",
+      "chargeTime": "0.7s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+4%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-totem-ii"
+      ]
+    },
+    {
+      "name": "Eternal Light Burst I",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 20,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Iron Bars",
+          "qty": 5
+        },
+        {
+          "item": "Charcoal",
+          "qty": 10
+        },
+        {
+          "item": "Sulfur",
+          "qty": 30
+        },
+        {
+          "item": "Flintstone",
+          "qty": 20
+        }
+      ],
+      "manaCost": "18",
+      "chargeTime": "0.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-4%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-4%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": "Eternal Light Burst",
+      "changes1_0": [
+        "Level 22 → 20",
+        "Damage x0.2 → x0.12",
+        "Attack speed x0.79 → x1.5",
+        "Mana Cost 20 → 18",
+        "No longer has Cast Time",
+        "New: Charge Time 500",
+        "Bonuses: + Mana Cost, + Charge Time, + Mana Cost, + Charge Time, + Mana Cost"
+      ],
+      "confidence": "confirmed-1.0",
+      "flags": [
+        "Matches the user's in-game 1.0 screenshot exactly (level 20, Epic, Laboratory/Alchemist, same 4 inputs)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-light-burst-i",
+        "https://www.enshrouded.tools/1-0",
+        "https://enshrouded.wiki.gg/wiki/Spells"
+      ]
+    },
+    {
+      "name": "Eternal Light Burst II",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Celestium Bars",
+          "qty": 5
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 10
+        },
+        {
+          "item": "Sulfur",
+          "qty": 30
+        },
+        {
+          "item": "Cinder Rock",
+          "qty": 20
+        }
+      ],
+      "manaCost": "35",
+      "chargeTime": "0.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-4%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-4%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-6%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-light-burst-ii"
+      ]
+    },
+    {
+      "name": "Eternal Pillar Of Flames I",
+      "category": "Eternal spells",
+      "school": "Fire",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 25
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 15
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 2
+        },
+        {
+          "item": "Archaic Infusion",
+          "qty": 3
+        }
+      ],
+      "manaCost": "186",
+      "chargeTime": "1.25s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-pillar-of-flames-i"
+      ]
+    },
+    {
+      "name": "Eternal Protective Barrier",
+      "category": "Eternal spells",
+      "school": "Healing",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Rare",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Archaic Infusion",
+          "qty": 2
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 2
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 10
+        }
+      ],
+      "manaCost": "300",
+      "chargeTime": "4s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-protective-barrier"
+      ]
+    },
+    {
+      "name": "Eternal Shock Totem",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sparkling Dust",
+          "qty": 25
+        },
+        {
+          "item": "Moonstone Dust",
+          "qty": 10
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 20
+        }
+      ],
+      "manaCost": "50",
+      "chargeTime": "0.7s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+6%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-shock-totem"
+      ]
+    },
+    {
+      "name": "Eternal Shock Wisp I",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 20,
+      "rarity": "Epic",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Mist of a Fell Sicklescythe",
+          "qty": 2
+        },
+        {
+          "item": "Sulfur",
+          "qty": 30
+        },
+        {
+          "item": "Glass",
+          "qty": 6
+        },
+        {
+          "item": "Spice",
+          "qty": 3
+        }
+      ],
+      "manaCost": "100",
+      "chargeTime": "2.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-shock-wisp-i"
+      ]
+    },
+    {
+      "name": "Eternal Shock Wisp II",
+      "category": "Eternal spells",
+      "school": "Shock",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Relic",
+          "qty": 4
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 25
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 10
+        },
+        {
+          "item": "Electric Nerve",
+          "qty": 1
+        }
+      ],
+      "manaCost": "173",
+      "chargeTime": "2.5s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+6%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-shock-wisp-ii"
+      ]
+    },
+    {
+      "name": "Eternal Shroud Beam",
+      "category": "Eternal spells",
+      "school": "Shroud",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Active Mycelium",
+          "qty": 25
+        },
+        {
+          "item": "Bursting Fell Heart",
+          "qty": 5
+        },
+        {
+          "item": "Shroud Relic",
+          "qty": 5
+        },
+        {
+          "item": "Diamond Dust",
+          "qty": 5
+        }
+      ],
+      "manaCost": "62",
+      "chargeTime": "2s",
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        },
+        {
+          "stat": "All Magic Shroud Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-shroud-beam"
+      ]
+    },
+    {
+      "name": "Eternal Shroud Meteor",
+      "category": "Eternal spells",
+      "school": "Shroud",
+      "class": "Mage",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": "Laboratory",
+      "crafter": "Alchemist",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bursting Fell Heart",
+          "qty": 4
+        },
+        {
+          "item": "Sulfur",
+          "qty": 20
+        },
+        {
+          "item": "Coal Powder",
+          "qty": 20
+        },
+        {
+          "item": "Cinder Rock",
+          "qty": 20
+        },
+        {
+          "item": "Shroud Relic",
+          "qty": 4
+        }
+      ],
+      "manaCost": "389",
+      "chargeTime": "4s",
+      "perks": [
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-10%"
+        },
+        {
+          "stat": "Charge Time",
+          "value": "-10%"
+        },
+        {
+          "stat": "All Magic Shroud Damage",
+          "value": "+10%"
+        },
+        {
+          "stat": "Magical Critical Strike Chance",
+          "value": "+5%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-shroud-meteor"
+      ]
+    },
+    {
+      "name": "Eternal Ember Arrow I",
+      "category": "Eternal arrows",
+      "school": "Fire",
+      "class": "Ranger",
+      "level": 15,
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Alchemical Base",
+          "qty": 20
+        },
+        {
+          "item": "Glow Dust",
+          "qty": 20
+        },
+        {
+          "item": "Fossilized Bone Dust",
+          "qty": 15
+        }
+      ],
+      "manaCost": "19",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ember-arrow-i"
+      ]
+    },
+    {
+      "name": "Eternal Ember Arrow II",
+      "category": "Eternal arrows",
+      "school": "Fire",
+      "class": "Ranger",
+      "level": 28,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Flammable Goo",
+          "qty": 25
+        },
+        {
+          "item": "Silver Dust",
+          "qty": 15
+        },
+        {
+          "item": "Mauveine",
+          "qty": 15
+        }
+      ],
+      "manaCost": "28",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ember-arrow-ii"
+      ]
+    },
+    {
+      "name": "Eternal Ember Arrow III",
+      "category": "Eternal arrows",
+      "school": "Fire",
+      "class": "Ranger",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Archaic Infusion",
+          "qty": 2
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 15
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 25
+        }
+      ],
+      "manaCost": "38",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Fire Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ember-arrow-iii"
+      ]
+    },
+    {
+      "name": "Eternal Frost Arrow I",
+      "category": "Eternal arrows",
+      "school": "Ice",
+      "class": "Ranger",
+      "level": 10,
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Brittle Shroud Petals",
+          "qty": 20
+        },
+        {
+          "item": "Goo",
+          "qty": 15
+        },
+        {
+          "item": "Bug Dust",
+          "qty": 15
+        }
+      ],
+      "manaCost": "14",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Rarity Epic → Rare",
+        "Level 9 → 10",
+        "Bonuses: + Mana Cost, + Mana Cost, + Ranged Critical Strike Chance, + All Magic Ice Damage, + Ranged Critical Strike Chance"
+      ],
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-frost-arrow-i",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Frost Arrow II",
+      "category": "Eternal arrows",
+      "school": "Ice",
+      "class": "Ranger",
+      "level": 28,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ice",
+          "qty": 25
+        },
+        {
+          "item": "Steel Bars",
+          "qty": 15
+        },
+        {
+          "item": "Enshrouded Cyclops Eye",
+          "qty": 1
+        }
+      ],
+      "manaCost": "28",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        }
+      ],
+      "newIn1_0": false,
+      "renamedFrom": null,
+      "changes1_0": [
+        "Level 29 → 28",
+        "Mana Cost 24 → 28",
+        "Bonuses: + Mana Cost, + Mana Cost, + Ranged Critical Strike Chance, + All Magic Ice Damage, + Ranged Critical Strike Chance"
+      ],
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-frost-arrow-ii",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Eternal Frost Arrow III",
+      "category": "Eternal arrows",
+      "school": "Ice",
+      "class": "Ranger",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ice",
+          "qty": 25
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 2
+        }
+      ],
+      "manaCost": "38",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Ice Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-frost-arrow-iii"
+      ]
+    },
+    {
+      "name": "Eternal Giant Bone Arrow I",
+      "category": "Eternal arrows",
+      "school": "Blunt",
+      "class": "Ranger",
+      "level": 36,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Giant Bone Arrow IV",
+          "qty": 100
+        },
+        {
+          "item": "Ectoplasm Cluster",
+          "qty": 10
+        },
+        {
+          "item": "Icy Giant Bones",
+          "qty": 1
+        }
+      ],
+      "manaCost": "35",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Blunt Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-giant-bone-arrow-i"
+      ]
+    },
+    {
+      "name": "Eternal Giant Bone Arrow II",
+      "category": "Eternal arrows",
+      "school": "Blunt",
+      "class": "Ranger",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Collector",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ectoplasm Aggregate",
+          "qty": 100
+        },
+        {
+          "item": "Icy Giant Bones",
+          "qty": 3
+        },
+        {
+          "item": "Archaic Core",
+          "qty": 2
+        }
+      ],
+      "manaCost": "38",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Blunt Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Collector line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-giant-bone-arrow-ii"
+      ]
+    },
+    {
+      "name": "Eternal Voltaic Arrow I",
+      "category": "Eternal arrows",
+      "school": "Shock",
+      "class": "Ranger",
+      "level": 20,
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Glass",
+          "qty": 20
+        },
+        {
+          "item": "Sulfur",
+          "qty": 25
+        },
+        {
+          "item": "Spice",
+          "qty": 15
+        }
+      ],
+      "manaCost": "23",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-voltaic-arrow-i"
+      ]
+    },
+    {
+      "name": "Eternal Voltaic Arrow II",
+      "category": "Eternal arrows",
+      "school": "Shock",
+      "class": "Ranger",
+      "level": 36,
+      "rarity": "Epic",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Aquamarine Dust",
+          "qty": 15
+        },
+        {
+          "item": "Gleam Root Dust",
+          "qty": 15
+        },
+        {
+          "item": "Iron Dust",
+          "qty": 10
+        }
+      ],
+      "manaCost": "35",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+5%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-voltaic-arrow-ii"
+      ]
+    },
+    {
+      "name": "Eternal Voltaic Arrow III",
+      "category": "Eternal arrows",
+      "school": "Shock",
+      "class": "Ranger",
+      "level": 45,
+      "rarity": "Legendary",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [
+        "Sheltered Bed"
+      ],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Archaic Infusion",
+          "qty": 2
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 15
+        },
+        {
+          "item": "Celestium Bars",
+          "qty": 15
+        }
+      ],
+      "manaCost": "38",
+      "chargeTime": null,
+      "perks": [
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Mana Cost",
+          "value": "-6%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+2%"
+        },
+        {
+          "stat": "Ranged Critical Strike Chance",
+          "value": "+3%"
+        },
+        {
+          "stat": "All Magic Shock Damage",
+          "value": "+10%"
+        }
+      ],
+      "newIn1_0": true,
+      "renamedFrom": null,
+      "changes1_0": null,
+      "confidence": "likely-1.0",
+      "flags": [
+        "'Sheltered Bed' on the Hunter line is inferred (all survivor crafters need a sheltered bed); only the Alchemist's is confirmed from the screenshot."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-voltaic-arrow-iii"
+      ]
+    }
+  ],
+  "resources": {
+    "Acidic Mycelium": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/acidic-mycelium"
+      ]
+    },
+    "Active Mycelium": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/active-mycelium"
+      ]
+    },
+    "Alchemical Base": {
+      "kind": "crafted",
+      "source": "Alchemy Station",
+      "recipe": {
+        "station": "Alchemy Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "75s",
+        "inputs": [
+          {
+            "item": "Shroud Mushroom",
+            "qty": 2
+          },
+          {
+            "item": "Acidic Mycelium",
+            "qty": 2
+          },
+          {
+            "item": "Shroud Particles",
+            "qty": 1
+          },
+          {
+            "item": "Corrosive Blood",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Acidic Mycelium 5 → 2",
+          "Corrosive Blood 5 → 1",
+          "Shroud Mushroom 5 → 2"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/alchemical-base"
+      ]
+    },
+    "Aloe": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/aloe"
+      ]
+    },
+    "Amber": {
+      "kind": "gathered",
+      "source": "Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/amber"
+      ]
+    },
+    "Amethyst": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/amethyst"
+      ]
+    },
+    "Ammonia Gland": {
+      "kind": "gathered",
+      "source": "Fell Mushroom Crabs, Nomad Highlands Shroud and Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ammonia-gland"
+      ]
+    },
+    "Antiseptic": {
+      "kind": "crafted",
+      "source": "Alchemy Station",
+      "recipe": {
+        "station": "Alchemy Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          },
+          {
+            "item": "Sage Leaves",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/antiseptic"
+      ]
+    },
+    "Any dirt": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Springlands Dirt",
+        "Revelwood Dirt",
+        "Blackmire Dirt",
+        "Nomad Highlands Dirt",
+        "Albaneve Summits Dirt",
+        "Veilwater Basin Dirt",
+        "Cinder's Cradle Dirt"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any sand": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Sand",
+        "Fine Sand",
+        "Veilwater Basin Sand",
+        "Cinder's Cradle Sand"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any wood": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Wood Logs",
+        "Hardwood",
+        "Palm Wood Logs",
+        "Conifer Logs",
+        "Bamboo Logs",
+        "Tropical Wood"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Aquamarine": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/aquamarine"
+      ]
+    },
+    "Aquamarine Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Aquamarine",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/aquamarine-dust"
+      ]
+    },
+    "Archaic Core": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle, Elite Ancient Constructs",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-core"
+      ]
+    },
+    "Archaic Essence VII": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle Shroud Lairs",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-essence-vii"
+      ]
+    },
+    "Archaic Infusion": {
+      "kind": "crafted",
+      "source": "Infusion Altar",
+      "recipe": {
+        "station": "Infusion Altar",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Magma Gel",
+            "qty": 10
+          },
+          {
+            "item": "Sparkling Dust",
+            "qty": 4
+          },
+          {
+            "item": "Archaic Essence VII",
+            "qty": 6
+          },
+          {
+            "item": "Archaic Core",
+            "qty": 1
+          },
+          {
+            "item": "Archaic Shards",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-infusion"
+      ]
+    },
+    "Archaic Shards": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle, Ancient Constructs",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-shards"
+      ]
+    },
+    "Basalt": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/basalt"
+      ]
+    },
+    "Basalt Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Basalt",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/basalt-dust"
+      ]
+    },
+    "Bonemeal": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Bones",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bonemeal"
+      ]
+    },
+    "Bones": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Bones are a common drop from wildlife and Hollow across Embervale, and bone piles, including those in and around the Hollow Halls, can be mined for more. They feed 46 recipes, among them the Flute at the Bard, Scout Pants at the Hunter, the Reaper's Wand at the Alchemist, and crypt furniture and the",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bones"
+      ]
+    },
+    "Bonestorm V": {
+      "kind": "crafted",
+      "source": "Collector",
+      "recipe": {
+        "station": null,
+        "crafter": "Collector",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 100,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Ectoplasm Cluster",
+            "qty": 20
+          },
+          {
+            "item": "Icy Giant Bones",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/bonestorm-v"
+      ]
+    },
+    "Brittle Shroud Flakes": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/brittle-shroud-flakes"
+      ]
+    },
+    "Brittle Shroud Petals": {
+      "kind": "gathered",
+      "source": "Revelwood Fell Enemies",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/brittle-shroud-petals"
+      ]
+    },
+    "Bronze Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Copper Bars",
+            "qty": 7
+          },
+          {
+            "item": "Tin Bars",
+            "qty": 3
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Time 300s → 240s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Blast Furnace",
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Copper Bars",
+              "qty": 10
+            },
+            {
+              "item": "Tin Bars",
+              "qty": 4
+            },
+            {
+              "item": "Coal",
+              "qty": 10
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bronze-bars"
+      ]
+    },
+    "Bug Dust": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Critter Parts",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bug-dust"
+      ]
+    },
+    "Bursting Fell Heart": {
+      "kind": "gathered",
+      "source": "Fell Sporeseeker, First: Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bursting-fell-heart"
+      ]
+    },
+    "Celestium Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "12 min",
+        "inputs": [
+          {
+            "item": "Celestium Ore",
+            "qty": 20
+          },
+          {
+            "item": "Coal",
+            "qty": 40
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/celestium-bars"
+      ]
+    },
+    "Celestium Ore": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/celestium-ore"
+      ]
+    },
+    "Chain Lightning I": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Bonemeal",
+            "qty": 4
+          },
+          {
+            "item": "Copper Bars",
+            "qty": 1
+          },
+          {
+            "item": "Flintstone",
+            "qty": 20
+          },
+          {
+            "item": "Resin",
+            "qty": 4
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/chain-lightning-i"
+      ]
+    },
+    "Chain Lightning II": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Moonstone Dust",
+            "qty": 2
+          },
+          {
+            "item": "Sparkling Dust",
+            "qty": 2
+          },
+          {
+            "item": "Diamond",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/chain-lightning-ii"
+      ]
+    },
+    "Chamomile": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/chamomile"
+      ]
+    },
+    "Chamomile Tea": {
+      "kind": "crafted",
+      "source": "Kitchen",
+      "recipe": {
+        "station": "Kitchen",
+        "crafter": null,
+        "requires": [
+          "Cooking Station"
+        ],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Chamomile",
+            "qty": 5
+          },
+          {
+            "item": "Water",
+            "qty": 5,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/chamomile-tea"
+      ]
+    },
+    "Charcoal": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 12,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 17 → 12",
+          "Makes 15 → 10",
+          "Time 300s → 120s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/charcoal"
+      ]
+    },
+    "Chitin Powder": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Critter Parts or Critter Carapace",
+            "qty": 3,
+            "anyOf": [
+              "Critter Parts",
+              "Critter Carapace"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "+ 3 Critter Parts or Critter Carapace",
+          "- 3 Critter Carapace"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/chitin-powder"
+      ]
+    },
+    "Cinder Rock": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinder-rock"
+      ]
+    },
+    "Cinderscale": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinderscale"
+      ]
+    },
+    "Coal": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/coal"
+      ]
+    },
+    "Coal Powder": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 3
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/coal-powder"
+      ]
+    },
+    "Copper Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Copper Ore",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Charcoal 20 → 10",
+          "Time 300s → 210s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Blast Furnace",
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 20
+            },
+            {
+              "item": "Copper Ore",
+              "qty": 20
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-bars"
+      ]
+    },
+    "Copper Ore": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-ore"
+      ]
+    },
+    "Corrosive Blood": {
+      "kind": "gathered",
+      "source": "Fell Enemies, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/corrosive-blood"
+      ]
+    },
+    "Corrupted Boar Tusk": {
+      "kind": "gathered",
+      "source": "Fell Boars, Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/corrupted-boar-tusk"
+      ]
+    },
+    "Critter Parts": {
+      "kind": "gathered",
+      "source": "Fell Enemies, Springlands Shroud and Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/critter-parts"
+      ]
+    },
+    "Critter Parts or Critter Carapace": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Critter Parts",
+        "Critter Carapace"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Cursed Shroud Sack": {
+      "kind": "gathered",
+      "source": "Fell Vicious Vine, Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cursed-shroud-sack"
+      ]
+    },
+    "Diamond": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/diamond"
+      ]
+    },
+    "Diamond Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Diamond",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/diamond-dust"
+      ]
+    },
+    "Ectoplasm Aggregate": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ectoplasm-aggregate"
+      ]
+    },
+    "Ectoplasm Cluster": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ectoplasm-cluster"
+      ]
+    },
+    "Ectoplasm Crystal": {
+      "kind": "gathered",
+      "source": "Kindlewastes Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ectoplasm-crystal"
+      ]
+    },
+    "Electric Nerve": {
+      "kind": "crafted",
+      "source": "Fisher",
+      "recipe": {
+        "station": null,
+        "crafter": "Fisher",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Shockfin",
+            "qty": 1
+          },
+          {
+            "item": "Gold Coins",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/electric-nerve"
+      ]
+    },
+    "Ember Carapace": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle Enemies",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ember-carapace"
+      ]
+    },
+    "Enshrouded Cyclops Eye": {
+      "kind": "gathered",
+      "source": "Fell Cyclops, Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/enshrouded-cyclops-eye"
+      ]
+    },
+    "Enshrouded Ice": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/enshrouded-ice"
+      ]
+    },
+    "Enshrouded Oil": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Shroud Particles",
+            "qty": 5
+          },
+          {
+            "item": "Coal Powder",
+            "qty": 5
+          },
+          {
+            "item": "Brittle Shroud Flakes",
+            "qty": 5
+          },
+          {
+            "item": "Sulfur",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/enshrouded-oil"
+      ]
+    },
+    "Fire Fly": {
+      "kind": "gathered",
+      "source": "Springlands, At Night",
+      "recipe": null,
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/fire-fly"
+      ]
+    },
+    "Fireball IV": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Moonstone",
+            "qty": 2
+          },
+          {
+            "item": "Magma Gel",
+            "qty": 10
+          },
+          {
+            "item": "Diamond Dust",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/fireball-iv"
+      ]
+    },
+    "Fish Poison Gland": {
+      "kind": "crafted",
+      "source": "Fisher",
+      "recipe": {
+        "station": null,
+        "crafter": "Fisher",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Cinderscale",
+            "qty": 1
+          },
+          {
+            "item": "Gold Coins",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fish-poison-gland"
+      ]
+    },
+    "Fish Scales": {
+      "kind": "crafted",
+      "source": "Fisher",
+      "recipe": {
+        "station": null,
+        "crafter": "Fisher",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Specklefin",
+            "qty": 1
+          },
+          {
+            "item": "Gold Coins",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fish-scales"
+      ]
+    },
+    "Flammable Goo": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Tar",
+            "qty": 5
+          },
+          {
+            "item": "Shroud Vapor",
+            "qty": 1
+          },
+          {
+            "item": "Coal",
+            "qty": 1
+          },
+          {
+            "item": "Goo",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flammable-goo"
+      ]
+    },
+    "Flintstone": {
+      "kind": "gathered",
+      "source": "Springlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flintstone"
+      ]
+    },
+    "Fossilized Bone": {
+      "kind": "gathered",
+      "source": "Giant Fossils",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fossilized-bone"
+      ]
+    },
+    "Fossilized Bone Dust": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Fossilized Bone",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Mill",
+          "requires": [],
+          "makes": 5,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Fossilized Bone",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fossilized-bone-dust"
+      ]
+    },
+    "Giant Bone Arrow IV": {
+      "kind": "crafted",
+      "source": "Collector",
+      "recipe": {
+        "station": null,
+        "crafter": "Collector",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 50,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Ectoplasm Cluster",
+            "qty": 10
+          },
+          {
+            "item": "Icy Giant Bones",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/giant-bone-arrow-iv"
+      ]
+    },
+    "Giant Bones": {
+      "kind": "gathered",
+      "source": "Hollow Cyclops, First: Revelwood Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/giant-bones"
+      ]
+    },
+    "Glass": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Any sand",
+            "qty": 30,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Blast Furnace",
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Any sand",
+              "qty": 40,
+              "anyOf": [
+                "Sand",
+                "Fine Sand",
+                "Veilwater Basin Sand",
+                "Cinder's Cradle Sand"
+              ]
+            }
+          ]
+        },
+        {
+          "crafter": "Carpenter",
+          "station": "Kiln",
+          "requires": [
+            "Sheltered Bed"
+          ],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Glass Shards",
+              "qty": 5
+            },
+            {
+              "item": "Charcoal",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/glass"
+      ]
+    },
+    "Gleam Root": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gleam-root"
+      ]
+    },
+    "Gleam Root Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Gleam Root",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gleam-root-dust"
+      ]
+    },
+    "Glow Dust": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fire Fly",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/glow-dust"
+      ]
+    },
+    "Gold Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "11 min",
+        "inputs": [
+          {
+            "item": "Coal",
+            "qty": 40
+          },
+          {
+            "item": "Gold Ore or Archaic Shards",
+            "qty": 20,
+            "anyOf": [
+              "Gold Ore",
+              "Archaic Shards"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "+ 20 Gold Ore or Archaic Shards",
+          "- 20 Gold Ore",
+          "Time 960s → 660s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-bars"
+      ]
+    },
+    "Gold Coins": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Gold Coins are picked up in the Veilwater Basin and stack to 1,000. Many of their 17 uses are Fisher recipes: fishing rods and bait, Swimfins, and fish parts such as Fish Bones and Electric Nerve. Coffee drinks like Latte and Sweet Mokka need them too.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-coins"
+      ]
+    },
+    "Gold Ore or Archaic Shards": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Gold Ore",
+        "Archaic Shards"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Goo": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Springlands Dirt",
+            "qty": 1
+          },
+          {
+            "item": "Shroud Mushroom",
+            "qty": 2
+          },
+          {
+            "item": "Bug Dust",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/goo"
+      ]
+    },
+    "Green Vitriol Dust": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Iron Dust",
+            "qty": 2
+          },
+          {
+            "item": "Sulfur",
+            "qty": 3
+          },
+          {
+            "item": "Water",
+            "qty": 5,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/green-vitriol-dust"
+      ]
+    },
+    "Heal Cascade II": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Moonstone Dust",
+            "qty": 2
+          },
+          {
+            "item": "Basalt Dust",
+            "qty": 3
+          },
+          {
+            "item": "Thyme Tea",
+            "qty": 1
+          },
+          {
+            "item": "Bursting Fell Heart",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/heal-cascade-ii"
+      ]
+    },
+    "Honey": {
+      "kind": "crafted",
+      "source": "Beehive",
+      "recipe": {
+        "station": "Beehive",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Sugar",
+            "qty": 1
+          },
+          {
+            "item": "Water",
+            "qty": 2,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "Honey is harvested from beehives on trees around the world, including a few near Longkeep, and wild hives respawn. A Beehive also produces it, 5 Honey per Sugar every 150 seconds. Raw it gives 30 Stamina Regeneration for 60 seconds. Its 13 uses range from Honey Baked Banana and Popcorn to the Ultima",
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/honey"
+      ]
+    },
+    "Ice": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ice"
+      ]
+    },
+    "Ice Bolt IV": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Sparkling Dust",
+            "qty": 1
+          },
+          {
+            "item": "Ice",
+            "qty": 10
+          },
+          {
+            "item": "Ember Carapace",
+            "qty": 2
+          },
+          {
+            "item": "Water",
+            "qty": 10,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Arrows and spells",
+      "sources": [
+        "https://www.enshrouded.tools/items/ice-bolt-iv"
+      ]
+    },
+    "Icy Giant Bones": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Hollow Halls Enemies",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/icy-giant-bones"
+      ]
+    },
+    "Iron Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Iron Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 20
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Blast Furnace",
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Iron Ore",
+              "qty": 20
+            },
+            {
+              "item": "Coal",
+              "qty": 40
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-bars"
+      ]
+    },
+    "Iron Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Iron Bars",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-dust"
+      ]
+    },
+    "Iron Ore": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-ore"
+      ]
+    },
+    "Kindlewastes Flower": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Kindlewastes Flower is harvested from the flowers of the same name in the Kindlewastes, and they can be grown from a Kindlewastes Flower Seedling, which is also made from this flower. Its other use is Spice at the Laboratory.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/kindlewastes-flower"
+      ]
+    },
+    "Lapislazuli": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/lapislazuli"
+      ]
+    },
+    "Magma Gel": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/magma-gel"
+      ]
+    },
+    "Mauveine": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Tar",
+            "qty": 5
+          },
+          {
+            "item": "Shroud Vapor",
+            "qty": 1
+          },
+          {
+            "item": "Nitrate",
+            "qty": 1
+          },
+          {
+            "item": "Sulfur",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mauveine"
+      ]
+    },
+    "Mist of a Fell Sicklescythe": {
+      "kind": "gathered",
+      "source": "Fell Sicklescythe, First: Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mist-of-a-fell-sicklescythe"
+      ]
+    },
+    "Monstrous Ribs": {
+      "kind": "gathered",
+      "source": "Fell Monstrosity, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/monstrous-ribs"
+      ]
+    },
+    "Moonstone": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/moonstone"
+      ]
+    },
+    "Moonstone Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Moonstone",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/moonstone-dust"
+      ]
+    },
+    "Mother-Of-Pearl": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Mill",
+          "requires": [],
+          "makes": 5,
+          "time": "60s",
+          "inputs": [
+            {
+              "item": "Pearl",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mother-of-pearl"
+      ]
+    },
+    "Nitrate": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Shroud Sand",
+            "qty": 5
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          },
+          {
+            "item": "Salt",
+            "qty": 1
+          },
+          {
+            "item": "Any sand",
+            "qty": 5,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/nitrate"
+      ]
+    },
+    "Obsidian": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/obsidian"
+      ]
+    },
+    "Obsidian Dust": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "8 min",
+        "inputs": [
+          {
+            "item": "Obsidian",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Mill",
+          "requires": [],
+          "makes": 1,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Obsidian",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/obsidian-dust"
+      ]
+    },
+    "Pearl": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/pearl"
+      ]
+    },
+    "Petrified Shroud Stalker Shell": {
+      "kind": "gathered",
+      "source": "Shroud Stalker, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/petrified-shroud-stalker-shell"
+      ]
+    },
+    "Pink Mushroom Meat": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/pink-mushroom-meat"
+      ]
+    },
+    "Poison Sack": {
+      "kind": "gathered",
+      "source": "First: Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/poison-sack"
+      ]
+    },
+    "Raw Wool": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/raw-wool"
+      ]
+    },
+    "Resin": {
+      "kind": "gathered",
+      "source": "Trees, mainly stumps and red-leaved trees",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/resin"
+      ]
+    },
+    "Rooibos": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/rooibos"
+      ]
+    },
+    "Saffron": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/saffron"
+      ]
+    },
+    "Sage Leaves": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/sage-leaves"
+      ]
+    },
+    "Salt": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/salt"
+      ]
+    },
+    "Shockfin": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Shockfin is an Epic fish caught with epic baits. Besides being grilled into Grilled Shockfin, it is processed at the Fisher into Electric Nerve.",
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/shockfin"
+      ]
+    },
+    "Shroud Gelatin": {
+      "kind": "gathered",
+      "source": "Shroud Depthdweller, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-gelatin"
+      ]
+    },
+    "Shroud Mushroom": {
+      "kind": "gathered",
+      "source": "Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-mushroom"
+      ]
+    },
+    "Shroud Particles": {
+      "kind": "gathered",
+      "source": "Fell Enemies, Nomad Highlands Shroud, Kindlewastes Shroud and Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-particles"
+      ]
+    },
+    "Shroud Relic": {
+      "kind": "gathered",
+      "source": "Fell Enemies, First: Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-relic"
+      ]
+    },
+    "Shroud Sand": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Laboratory",
+          "requires": [],
+          "makes": 100,
+          "time": "3 min",
+          "inputs": [
+            {
+              "item": "Sandstone",
+              "qty": 10
+            },
+            {
+              "item": "Acidic Mycelium",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-sand"
+      ]
+    },
+    "Shroud Slime": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-slime"
+      ]
+    },
+    "Shroud Sludge": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [
+          "Sheltered Bed"
+        ],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Shroud Slime",
+            "qty": 5
+          },
+          {
+            "item": "Shroud Gelatin",
+            "qty": 5
+          },
+          {
+            "item": "Pink Mushroom Meat",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-sludge"
+      ]
+    },
+    "Shroud Vapor": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Enshrouded Ice",
+            "qty": 10
+          },
+          {
+            "item": "Active Mycelium",
+            "qty": 15
+          },
+          {
+            "item": "Salt",
+            "qty": 20
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-vapor"
+      ]
+    },
+    "Shroud Wood": {
+      "kind": "gathered",
+      "source": "Shroud, Dead Trees",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-wood"
+      ]
+    },
+    "Silver Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Silver Ore",
+            "qty": 20
+          },
+          {
+            "item": "Coal",
+            "qty": 40
+          }
+        ],
+        "changed1_0": [
+          "Time 720s → 600s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-bars"
+      ]
+    },
+    "Silver Dust": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "8 min",
+        "inputs": [
+          {
+            "item": "Silver Bars",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Mill",
+          "requires": [],
+          "makes": 1,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Silver Bars",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-dust"
+      ]
+    },
+    "Silver Ore": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-ore"
+      ]
+    },
+    "Snow": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/snow"
+      ]
+    },
+    "Sparkling Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Diamond",
+            "qty": 1
+          },
+          {
+            "item": "Moonstone",
+            "qty": 1
+          },
+          {
+            "item": "Celestium Ore",
+            "qty": 1
+          },
+          {
+            "item": "Mother-Of-Pearl",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkling-dust"
+      ]
+    },
+    "Specklefin": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/specklefin"
+      ]
+    },
+    "Spice": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "6 min",
+        "inputs": [
+          {
+            "item": "Saffron",
+            "qty": 1
+          },
+          {
+            "item": "Shroud Sand",
+            "qty": 15
+          },
+          {
+            "item": "Chamomile",
+            "qty": 1
+          },
+          {
+            "item": "Rooibos",
+            "qty": 1
+          },
+          {
+            "item": "Kindlewastes Flower",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Kindlewastes Flower 2 → 1"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/spice"
+      ]
+    },
+    "Springlands Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Springlands Dirt is a terrain material found in the Springlands. Its 18 uses include Farm Soil at the Farmer, Workbench blocks such as the Dirt Road Block, Field Stones and Limestone Block, Springlands Rubble, Goo and White Glowing Substance at the Alchemist, the Climbing Rose and the Crucible.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/springlands-dirt"
+      ]
+    },
+    "Steel Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Iron Ore",
+            "qty": 20
+          },
+          {
+            "item": "Coal",
+            "qty": 40
+          }
+        ],
+        "changed1_0": [
+          "Time 840s → 600s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/steel-bars"
+      ]
+    },
+    "Sugar": {
+      "kind": "crafted",
+      "source": "Cooking Station",
+      "recipe": {
+        "station": "Cooking Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Sugar Cane",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Time 360s → 90s"
+        ]
+      },
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/sugar"
+      ]
+    },
+    "Sugar Cane": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/sugar-cane"
+      ]
+    },
+    "Sulfur": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sulfur"
+      ]
+    },
+    "Tar": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 24,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 6,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 30 → 24",
+          "Time 360s → 300s"
+        ]
+      },
+      "otherRecipes": "31 other recipes (e.g. Campfire: Grilled Fatty Meat)",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tar"
+      ]
+    },
+    "Thyme": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/thyme"
+      ]
+    },
+    "Thyme Tea": {
+      "kind": "crafted",
+      "source": "Kitchen",
+      "recipe": {
+        "station": "Kitchen",
+        "crafter": null,
+        "requires": [
+          "Almanac of Plants and Seedlings"
+        ],
+        "makes": 5,
+        "time": "6 min",
+        "inputs": [
+          {
+            "item": "Thyme",
+            "qty": 5
+          },
+          {
+            "item": "Honey",
+            "qty": 3
+          },
+          {
+            "item": "Water",
+            "qty": 5,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/thyme-tea"
+      ]
+    },
+    "Tin Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Tin Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "crafter": null,
+          "station": "Blast Furnace",
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Tin Ore",
+              "qty": 15
+            },
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Wood Acid",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-bars"
+      ]
+    },
+    "Tin Ore": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-ore"
+      ]
+    },
+    "Toxic Sack": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Enemies",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/toxic-sack"
+      ]
+    },
+    "Venom Stinger": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Enemies and Cinder's Cradle Crops",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/venom-stinger"
+      ]
+    },
+    "Water": {
+      "source": null,
+      "kind": "water",
+      "recipe": null,
+      "note": "Water charges, not an inventory item: drawn from base water storage near the crafter. enshrouded.tools shows them as 'N water charges' in the recipe header; the wiki lists them as 'Water xN'.",
+      "sources": [
+        "https://www.enshrouded.tools/items/eternal-ice-bolt-ii"
+      ]
+    },
+    "Wood Acid": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 15,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Time 420s → 300s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-acid"
+      ]
+    }
+  }
+}

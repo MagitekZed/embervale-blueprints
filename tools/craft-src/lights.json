@@ -1,0 +1,7397 @@
+{
+ "fetched": "2026-10-20",
+ "notes": "119 lights in 1.0 (17 lamps, 23 braziers and fire bowls, 9 pumpkins, 19 coloured lights, 8 fireplaces and campfires, 7 candles, 8 chandeliers, 13 torches, 12 lanterns, 3 beacons). Source: enshrouded.tools item pages, read from the game files (build 25988036); every recipe is likely-1.0 (datamined, not checked in game). `region` is the first region where you could make it: the latest region its recipe tree reaches (raw resources where first found, crafters where rescued, every station on the way). `comfort` is the comfort it gives (type and value), `resist` any resistance it adds, and `unlock` the site's text for what unlocks the recipe. Sizes in blocks aren't published anywhere: `size` (blocks, h and w) is on the ones measured in game. Items that stand for planner library types in base-objects.json get these details merged in by make_craft_js.py.",
+ "byRegion": {
+  "Springlands": 33,
+  "Revelwood": 3,
+  "Nomad Highlands": 9,
+  "Kindlewastes": 11,
+  "Albaneve Summits": 27,
+  "Veilwater Basin": 23,
+  "Cinder's Cradle": 13
+ },
+ "notCrafted": [],
+ "duplicates": [],
+ "items": [
+  {
+   "name": "Large Ancient Prayer Beacon",
+   "category": "Beacons",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Masonry Tools"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Basalt",
+     "qty": 4
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Basalt",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/large-ancient-prayer-beacon"
+   ]
+  },
+  {
+   "name": "Medium Ancient Prayer Beacon",
+   "category": "Beacons",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Masonry Tools"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Basalt",
+     "qty": 3
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Basalt",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-ancient-prayer-beacon"
+   ]
+  },
+  {
+   "name": "Small Ancient Prayer Beacon",
+   "category": "Beacons",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Masonry Tools"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Basalt",
+     "qty": 2
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Basalt",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-ancient-prayer-beacon"
+   ]
+  },
+  {
+   "name": "Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 7
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 1
+   },
+   "resist": {
+    "frost": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/brazier"
+   ]
+  },
+  {
+   "name": "Crypt Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 10
+    },
+    {
+     "item": "Charcoal",
+     "qty": 5
+    },
+    {
+     "item": "Ectoplasm Gem",
+     "qty": 2
+    },
+    {
+     "item": "Bones",
+     "qty": 6
+    },
+    {
+     "item": "Resin",
+     "qty": 10
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 2
+   },
+   "unlock": "read the note about 2990 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-brazier"
+   ]
+  },
+  {
+   "name": "Polished Scrap Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 7
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 2
+   },
+   "resist": {
+    "frost": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/polished-scrap-brazier"
+   ]
+  },
+  {
+   "name": "Fire Bowl",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Forge"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 2
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Bronze Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fire-bowl"
+   ]
+  },
+  {
+   "name": "Medium Stone Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Limestone",
+     "qty": 6
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Limestone",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 3
+   },
+   "resist": {
+    "frost": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Masonry Tools or rescue Cade Hawthorn the Carpenter and start the quest Finding Masonry Tools",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-stone-brazier"
+   ]
+  },
+  {
+   "name": "Small Stone Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Limestone",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Limestone",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 3
+   },
+   "resist": {
+    "frost": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Masonry Tools or rescue Cade Hawthorn the Carpenter and start the quest Finding Masonry Tools",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-stone-brazier"
+   ]
+  },
+  {
+   "name": "Tall Stone Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Limestone",
+     "qty": 9
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Limestone",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 3
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Masonry Tools or rescue Cade Hawthorn the Carpenter and start the quest Finding Masonry Tools",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/tall-stone-brazier"
+   ]
+  },
+  {
+   "name": "Iron Crypt Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 10
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 5
+    },
+    {
+     "item": "Resin",
+     "qty": 20
+    },
+    {
+     "item": "Any Ectoplasm",
+     "qty": 5,
+     "anyOf": [
+      "Ectoplasm Fragment",
+      "Ectoplasm Shard",
+      "Ectoplasm Crystal",
+      "Ectoplasm Cluster",
+      "Ectoplasm Aggregate"
+     ]
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 4
+   },
+   "unlock": "read the note about 2590 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-crypt-brazier"
+   ]
+  },
+  {
+   "name": "Large Iron Crypt Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 30
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 30
+    },
+    {
+     "item": "Resin",
+     "qty": 100
+    },
+    {
+     "item": "Any Ectoplasm",
+     "qty": 10,
+     "anyOf": [
+      "Ectoplasm Fragment",
+      "Ectoplasm Shard",
+      "Ectoplasm Crystal",
+      "Ectoplasm Cluster",
+      "Ectoplasm Aggregate"
+     ]
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 4
+   },
+   "unlock": "read the note about 2590 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/large-iron-crypt-brazier"
+   ]
+  },
+  {
+   "name": "Sandstone Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Sandstone",
+     "qty": 9
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Sandstone",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 4
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sandstone",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/sandstone-brazier"
+   ]
+  },
+  {
+   "name": "Balefire Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 15
+    },
+    {
+     "item": "Coal",
+     "qty": 15
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 5
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/balefire-brazier"
+   ]
+  },
+  {
+   "name": "Large Albaneve Summits Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 7
+    },
+    {
+     "item": "Granite",
+     "qty": 10
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 6
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 3
+    },
+    {
+     "item": "Coal",
+     "qty": 3
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Granite",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Granite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/large-albaneve-summits-brazier"
+   ]
+  },
+  {
+   "name": "Large Silver Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 3
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Silver Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/large-silver-brazier"
+   ]
+  },
+  {
+   "name": "Medium Albaneve Summits Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 3
+    },
+    {
+     "item": "Granite",
+     "qty": 4
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 2
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 3
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Granite",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Granite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-albaneve-summits-brazier"
+   ]
+  },
+  {
+   "name": "Small Silver Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 3
+    },
+    {
+     "item": "Coal",
+     "qty": 3
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Silver Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-silver-brazier"
+   ]
+  },
+  {
+   "name": "Small Steel Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    },
+    {
+     "item": "Flammable Goo",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-steel-brazier"
+   ]
+  },
+  {
+   "name": "Small Wall Mounted Steel Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    },
+    {
+     "item": "Flammable Goo",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Oswald Anders the Blacksmith and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-wall-mounted-steel-brazier"
+   ]
+  },
+  {
+   "name": "Large Throne Room Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 4
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 15
+    },
+    {
+     "item": "Coal",
+     "qty": 15
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Dust (Mill (Shell Limestone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 6
+   },
+   "resist": {
+    "frost": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Gold Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/large-throne-room-brazier"
+   ]
+  },
+  {
+   "name": "Small Throne Room Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 10
+    },
+    {
+     "item": "Coal",
+     "qty": 10
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Dust (Mill (Shell Limestone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Gold Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-throne-room-brazier"
+   ]
+  },
+  {
+   "name": "Throne Room Wall Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 10
+    },
+    {
+     "item": "Coal",
+     "qty": 10
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Dust (Mill (Shell Limestone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Gold Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/throne-room-wall-brazier"
+   ]
+  },
+  {
+   "name": "Ancient Temple Floor Brazier I",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 2
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    },
+    {
+     "item": "Resin",
+     "qty": 2
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-temple-floor-brazier-i"
+   ]
+  },
+  {
+   "name": "Ancient Temple Floor Brazier II",
+   "category": "Braziers and fire bowls",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 2
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    },
+    {
+     "item": "Resin",
+     "qty": 2
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Hearth",
+    "value": 7
+   },
+   "resist": {
+    "frost": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-temple-floor-brazier-ii"
+   ]
+  },
+  {
+   "name": "Ancient Temple Wall Brazier",
+   "category": "Braziers and fire bowls",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Dust",
+     "qty": 2
+    },
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    },
+    {
+     "item": "Resin",
+     "qty": 2
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "resist": {
+    "frost": 2
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Celestium Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-temple-wall-brazier"
+   ]
+  },
+  {
+   "name": "Candle",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 1
+    },
+    {
+     "item": "Wax",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "reach level 5 or reach the spot about 200 m south of Longkeep or pick up a Rough Wood Block and pick up a Construction Hammer",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/candle"
+   ]
+  },
+  {
+   "name": "Crypt Candle",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Candle",
+     "qty": 1
+    },
+    {
+     "item": "Bones",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "read the note about 2990 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-candle"
+   ]
+  },
+  {
+   "name": "Skull Candle",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bones",
+     "qty": 1
+    },
+    {
+     "item": "Candle",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "reach level 5 or reach the spot about 200 m south of Longkeep or pick up a Rough Wood Block and pick up a Construction Hammer",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-candle"
+   ]
+  },
+  {
+   "name": "Wall Mounted Candleholder",
+   "category": "Candles",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 3,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    },
+    {
+     "item": "Candle",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-mounted-candleholder"
+   ]
+  },
+  {
+   "name": "Bronze Candleholder",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 3,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Candle",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Bronze Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-candleholder"
+   ]
+  },
+  {
+   "name": "Bronze Floor Candleholder",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 5
+    },
+    {
+     "item": "Candle",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Bronze Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-floor-candleholder"
+   ]
+  },
+  {
+   "name": "Silver Candleholder",
+   "category": "Candles",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 3,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Candle",
+     "qty": 3
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Silver Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-candleholder"
+   ]
+  },
+  {
+   "name": "Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 6
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 4
+    },
+    {
+     "item": "Candle",
+     "qty": 4
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/chandelier"
+   ]
+  },
+  {
+   "name": "Crypt Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    },
+    {
+     "item": "Bones",
+     "qty": 6
+    },
+    {
+     "item": "Ectoplasm Gem",
+     "qty": 2
+    },
+    {
+     "item": "Resin",
+     "qty": 6
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "read the note about 2990 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-chandelier"
+   ]
+  },
+  {
+   "name": "Firefly Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Fire Fly",
+     "qty": 5
+    },
+    {
+     "item": "Plant Fiber or Paper Reed",
+     "qty": 5,
+     "anyOf": [
+      "Plant Fiber",
+      "Paper Reed"
+     ]
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Fire Fly",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/firefly-chandelier"
+   ]
+  },
+  {
+   "name": "Bronze Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 4
+    },
+    {
+     "item": "Charcoal",
+     "qty": 4
+    },
+    {
+     "item": "Candle",
+     "qty": 4
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Bronze Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-chandelier"
+   ]
+  },
+  {
+   "name": "Iron Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 2
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    },
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 4
+    },
+    {
+     "item": "Goo",
+     "qty": 4
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Glass",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-chandelier"
+   ]
+  },
+  {
+   "name": "Iron Crypt Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 20
+    },
+    {
+     "item": "Charcoal",
+     "qty": 30
+    },
+    {
+     "item": "Resin",
+     "qty": 50
+    },
+    {
+     "item": "Any Ectoplasm",
+     "qty": 5,
+     "anyOf": [
+      "Ectoplasm Fragment",
+      "Ectoplasm Shard",
+      "Ectoplasm Crystal",
+      "Ectoplasm Cluster",
+      "Ectoplasm Aggregate"
+     ]
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "read the note about 2590 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-crypt-chandelier"
+   ]
+  },
+  {
+   "name": "Hanging Silver Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 2
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Silver Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hanging-silver-chandelier"
+   ]
+  },
+  {
+   "name": "Steel Chandelier",
+   "category": "Chandeliers",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    },
+    {
+     "item": "Candle",
+     "qty": 4
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-chandelier"
+   ]
+  },
+  {
+   "name": "Light",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Sparkworks Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any Archaic Essence",
+     "qty": 1,
+     "anyOf": [
+      "Archaic Essence I",
+      "Archaic Essence II",
+      "Archaic Essence III",
+      "Archaic Essence IV",
+      "Archaic Essence V",
+      "Archaic Essence VI",
+      "Archaic Essence VII"
+     ]
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Sparkworks Workbench (Copper Bars (Smelter (Fired Bricks (Kiln (Revelwood Stone)))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/light"
+   ]
+  },
+  {
+   "name": "Blue Floor Light I",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-floor-light-i"
+   ]
+  },
+  {
+   "name": "Blue Floor Light II",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-floor-light-ii"
+   ]
+  },
+  {
+   "name": "Blue Pendant Light I",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 4
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-pendant-light-i"
+   ]
+  },
+  {
+   "name": "Blue Pendant Light II",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 3
+    },
+    {
+     "item": "String",
+     "qty": 3
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-pendant-light-ii"
+   ]
+  },
+  {
+   "name": "Blue Wall Light I",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-wall-light-i"
+   ]
+  },
+  {
+   "name": "Blue Wall Light II",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 5
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Underwater Luminous Growth",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-wall-light-ii"
+   ]
+  },
+  {
+   "name": "Orange Floor Light I",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-floor-light-i"
+   ]
+  },
+  {
+   "name": "Orange Floor Light II",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-floor-light-ii"
+   ]
+  },
+  {
+   "name": "Orange Pendant Light I",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 4
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-pendant-light-i"
+   ]
+  },
+  {
+   "name": "Orange Pendant Light II",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 3
+    },
+    {
+     "item": "String",
+     "qty": 3
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-pendant-light-ii"
+   ]
+  },
+  {
+   "name": "Orange Wall Light I",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-wall-light-i"
+   ]
+  },
+  {
+   "name": "Orange Wall Light II",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orange-wall-light-ii"
+   ]
+  },
+  {
+   "name": "Purple Floor Light I",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-floor-light-i"
+   ]
+  },
+  {
+   "name": "Purple Floor Light II",
+   "category": "Coloured lights",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-floor-light-ii"
+   ]
+  },
+  {
+   "name": "Purple Pendant Light I",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 4
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-pendant-light-i"
+   ]
+  },
+  {
+   "name": "Purple Pendant Light II",
+   "category": "Coloured lights",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 3
+    },
+    {
+     "item": "String",
+     "qty": 3
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 1
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-pendant-light-ii"
+   ]
+  },
+  {
+   "name": "Purple Wall Light I",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-wall-light-i"
+   ]
+  },
+  {
+   "name": "Purple Wall Light II",
+   "category": "Coloured lights",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Underwater Luminous Growth",
+     "qty": 1
+    },
+    {
+     "item": "Bamboo Logs",
+     "qty": 2
+    },
+    {
+     "item": "Passionflower",
+     "qty": 1
+    },
+    {
+     "item": "Drak Teeth",
+     "qty": 3
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Underwater Luminous Growth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and read Note Of A Drak Hatchling Supervisor about 330 m north of Hidden Tomb",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/purple-wall-light-ii"
+   ]
+  },
+  {
+   "name": "Campfire",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 2,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Any wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 2
+   },
+   "unlock": "pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/campfire"
+   ]
+  },
+  {
+   "name": "Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 6
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 3
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 1
+   },
+   "unlock": "reach level 5 or reach the spot about 200 m south of Longkeep or pick up a Rough Wood Block and pick up a Construction Hammer",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fireplace"
+   ]
+  },
+  {
+   "name": "Scavenger Bonfire",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 20
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 10
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 2
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "discover Rookmore or discover Ancient Vault (Alchemist)",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-bonfire"
+   ]
+  },
+  {
+   "name": "Stone Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 10
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 4
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 3
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/stone-fireplace"
+   ]
+  },
+  {
+   "name": "Clay Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Lump of Clay",
+     "qty": 4
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 4
+    },
+    {
+     "item": "Fired Bricks",
+     "qty": 10
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Lump of Clay",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 3
+   },
+   "resist": {
+    "frost": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/clay-fireplace"
+   ]
+  },
+  {
+   "name": "Brick Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 5
+    },
+    {
+     "item": "Fired Bricks",
+     "qty": 20
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 4
+   },
+   "resist": {
+    "frost": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/brick-fireplace"
+   ]
+  },
+  {
+   "name": "Iron Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 8
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 8
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Hearth",
+    "value": 5
+   },
+   "resist": {
+    "frost": 4
+   },
+   "unlock": "rescue Oswald Anders the Blacksmith and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fireplace"
+   ]
+  },
+  {
+   "name": "Granite Fireplace",
+   "category": "Fireplaces and campfires",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Masonry Tools",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Coal",
+     "qty": 2
+    },
+    {
+     "item": "Granite",
+     "qty": 20
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Coal",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "resist": {
+    "frost": 4
+   },
+   "comfort": {
+    "type": "Hearth",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Granite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/granite-fireplace"
+   ]
+  },
+  {
+   "name": "Firefly Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Fire Fly",
+     "qty": 5
+    },
+    {
+     "item": "Plant Fiber or Paper Reed",
+     "qty": 3,
+     "anyOf": [
+      "Plant Fiber",
+      "Paper Reed"
+     ]
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "pick up Fire Fly",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/firefly-lamp"
+   ]
+  },
+  {
+   "name": "Firefly Wall Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 5
+    },
+    {
+     "item": "Plant Fiber or Paper Reed",
+     "qty": 3,
+     "anyOf": [
+      "Plant Fiber",
+      "Paper Reed"
+     ]
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Fire Fly",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/firefly-wall-lamp"
+   ]
+  },
+  {
+   "name": "Firefly Standing Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Fire Fly",
+     "qty": 5
+    },
+    {
+     "item": "Twigs",
+     "qty": 1
+    },
+    {
+     "item": "Plant Fiber or Paper Reed",
+     "qty": 3,
+     "anyOf": [
+      "Plant Fiber",
+      "Paper Reed"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Twigs (Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Fire Fly",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/firefly-standing-lamp"
+   ]
+  },
+  {
+   "name": "Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Kiln",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Sand",
+     "qty": 1
+    },
+    {
+     "item": "Lump of Clay",
+     "qty": 2
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Sand",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sand",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/lamp"
+   ]
+  },
+  {
+   "name": "Small Wall Mounted Silver Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 1
+    },
+    {
+     "item": "Coal",
+     "qty": 1
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Silver Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-wall-mounted-silver-lamp"
+   ]
+  },
+  {
+   "name": "Steel Hanging Lamp",
+   "category": "Lamps",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    },
+    {
+     "item": "Glass",
+     "qty": 5
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 4
+    },
+    {
+     "item": "Goo",
+     "qty": 4
+    },
+    {
+     "item": "Amethyst",
+     "qty": 4
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-hanging-lamp"
+   ]
+  },
+  {
+   "name": "Steel Standing Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    },
+    {
+     "item": "Glass",
+     "qty": 5
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 4
+    },
+    {
+     "item": "Goo",
+     "qty": 4
+    },
+    {
+     "item": "Amethyst",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-standing-lamp"
+   ]
+  },
+  {
+   "name": "Steel Wall Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Forge",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 5
+    },
+    {
+     "item": "Goo",
+     "qty": 2
+    },
+    {
+     "item": "Glass",
+     "qty": 3
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Oswald Anders the Blacksmith and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-wall-lamp"
+   ]
+  },
+  {
+   "name": "Throne Room Floor Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 4
+    },
+    {
+     "item": "Gold Dust",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Dust (Mill (Shell Limestone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Gold Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/throne-room-floor-lamp"
+   ]
+  },
+  {
+   "name": "Throne Room Wall Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 4
+    },
+    {
+     "item": "Gold Dust",
+     "qty": 5
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Dust (Mill (Shell Limestone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Gold Ore",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/throne-room-wall-lamp"
+   ]
+  },
+  {
+   "name": "Ancient Ceiling Lamp",
+   "category": "Lamps",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sparkling Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-ceiling-lamp"
+   ]
+  },
+  {
+   "name": "Ancient Wall Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sparkling Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-wall-lamp"
+   ]
+  },
+  {
+   "name": "Astronomy Ceiling Lamp",
+   "category": "Lamps",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/astronomy-ceiling-lamp"
+   ]
+  },
+  {
+   "name": "Astronomy Standing Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/astronomy-standing-lamp"
+   ]
+  },
+  {
+   "name": "Astronomy Wall Lamp",
+   "category": "Lamps",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/astronomy-wall-lamp"
+   ]
+  },
+  {
+   "name": "Small Ancient Ground Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 4
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sparkling Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-ancient-ground-lamp"
+   ]
+  },
+  {
+   "name": "Tall Ancient Ground Lamp",
+   "category": "Lamps",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 1
+    },
+    {
+     "item": "Sparkling Dust",
+     "qty": 5
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 5
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Sparkling Dust (Diamond)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 7
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Sparkling Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/tall-ancient-ground-lamp"
+   ]
+  },
+  {
+   "name": "Ceiling Lantern",
+   "category": "Lanterns",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ceiling-lantern"
+   ]
+  },
+  {
+   "name": "Ground Lantern I",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ground-lantern-i"
+   ]
+  },
+  {
+   "name": "Ground Lantern II",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ground-lantern-ii"
+   ]
+  },
+  {
+   "name": "Hanging Lantern",
+   "category": "Lanterns",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 4
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hanging-lantern"
+   ]
+  },
+  {
+   "name": "Paper Lantern I",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Lunar New Year Trader",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    },
+    {
+     "item": "Plant Fiber",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 1
+    },
+    {
+     "item": "Candle",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Lunar New Year Trader",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "open the chest at Morwenna",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/paper-lantern-i"
+   ]
+  },
+  {
+   "name": "Paper Lantern II",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Lunar New Year Trader",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    },
+    {
+     "item": "Plant Fiber",
+     "qty": 3
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 1
+    },
+    {
+     "item": "Candle",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Lunar New Year Trader",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "open the chest at Morwenna",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/paper-lantern-ii"
+   ]
+  },
+  {
+   "name": "Pendant Ceiling Lantern",
+   "category": "Lanterns",
+   "mount": "ceiling",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pendant-ceiling-lantern"
+   ]
+  },
+  {
+   "name": "Standing Lantern",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/standing-lantern"
+   ]
+  },
+  {
+   "name": "Wall Lantern (wall)",
+   "category": "Lanterns",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 3
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-lantern-wall"
+   ]
+  },
+  {
+   "name": "Lantern",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Masonry Tools",
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 4
+    },
+    {
+     "item": "Charcoal",
+     "qty": 4
+    },
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "Sandstone",
+     "qty": 2
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Glass",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/lantern"
+   ]
+  },
+  {
+   "name": "Wall Lantern",
+   "category": "Lanterns",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Glass",
+     "qty": 2
+    },
+    {
+     "item": "Goo",
+     "qty": 2
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Glass",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-lantern"
+   ]
+  },
+  {
+   "name": "Snow Lantern",
+   "category": "Lanterns",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Snowball",
+     "qty": 10
+    },
+    {
+     "item": "Candle",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Snowball (Snow)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 6
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Snow",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/snow-lantern"
+   ]
+  },
+  {
+   "name": "Big Hollow's Eve Pumpkin I",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 3
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Big Hollow's Eve Pumpkin II or pick up a Big Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-hollows-eve-pumpkin-i"
+   ]
+  },
+  {
+   "name": "Big Hollow's Eve Pumpkin II",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 3
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Big Hollow's Eve Pumpkin I or pick up a Big Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-hollows-eve-pumpkin-ii"
+   ]
+  },
+  {
+   "name": "Big Hollow's Eve Pumpkin III",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 3
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Big Hollow's Eve Pumpkin I or pick up a Big Hollow's Eve Pumpkin II",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-hollows-eve-pumpkin-iii"
+   ]
+  },
+  {
+   "name": "Medium Hollow's Eve Pumpkin I",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 2
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Medium Hollow's Eve Pumpkin II or pick up a Medium Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-hollows-eve-pumpkin-i"
+   ]
+  },
+  {
+   "name": "Medium Hollow's Eve Pumpkin II",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 2
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Medium Hollow's Eve Pumpkin I or pick up a Medium Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-hollows-eve-pumpkin-ii"
+   ]
+  },
+  {
+   "name": "Medium Hollow's Eve Pumpkin III",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 2
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Medium Hollow's Eve Pumpkin I or pick up a Medium Hollow's Eve Pumpkin II",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-hollows-eve-pumpkin-iii"
+   ]
+  },
+  {
+   "name": "Small Hollow's Eve Pumpkin I",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 1
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Small Hollow's Eve Pumpkin II or pick up a Small Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-hollows-eve-pumpkin-i"
+   ]
+  },
+  {
+   "name": "Small Hollow's Eve Pumpkin II",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 1
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Small Hollow's Eve Pumpkin I or pick up a Small Hollow's Eve Pumpkin III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-hollows-eve-pumpkin-ii"
+   ]
+  },
+  {
+   "name": "Small Hollow's Eve Pumpkin III",
+   "category": "Pumpkins",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Pumpkin",
+     "qty": 1
+    },
+    {
+     "item": "Fire Fly",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Pumpkin",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "claim its Twitch Drop or pick up a Small Hollow's Eve Pumpkin I or pick up a Small Hollow's Eve Pumpkin II",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-hollows-eve-pumpkin-iii"
+   ]
+  },
+  {
+   "name": "Crypt Skull Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Resin",
+     "qty": 3
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Alden Crowley the Collector and pick up Ectoplasm Gem",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-skull-torch"
+   ]
+  },
+  {
+   "name": "Crypt Standing Skull Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Ectoplasm Gem",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 4
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    },
+    {
+     "item": "Bones",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "read the note about 2990 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-standing-skull-torch"
+   ]
+  },
+  {
+   "name": "Crypt Standing Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Ectoplasm Gem",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 5
+    },
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Alden Crowley the Collector and pick up Ectoplasm Gem",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-standing-torch"
+   ]
+  },
+  {
+   "name": "Crypt Wall Skull Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Ectoplasm Gem",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    },
+    {
+     "item": "Bones",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "read the note about 2990 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-wall-skull-torch"
+   ]
+  },
+  {
+   "name": "Crypt Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 2
+    },
+    {
+     "item": "Resin",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Collector",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Alden Crowley the Collector and pick up Ectoplasm Gem",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/crypt-wall-torch"
+   ]
+  },
+  {
+   "name": "Scrap Standing Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 4
+    },
+    {
+     "item": "Resin",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 2
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Metal Scraps",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scrap-standing-torch"
+   ]
+  },
+  {
+   "name": "Standing Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 4
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "reach level 5 or reach the spot about 200 m south of Longkeep or pick up a Rough Wood Block and pick up a Construction Hammer",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/standing-torch"
+   ]
+  },
+  {
+   "name": "Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Resin",
+     "qty": 4
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 2
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Workbench (String (Plant Fiber or Paper Reed))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 1
+   },
+   "unlock": "reach level 5 or reach the spot about 200 m south of Longkeep or pick up a Rough Wood Block and pick up a Construction Hammer",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-torch"
+   ]
+  },
+  {
+   "name": "Bronze Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 3
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    },
+    {
+     "item": "Resin",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Bronze Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-wall-torch"
+   ]
+  },
+  {
+   "name": "Iron Crypt Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 10
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 3
+    },
+    {
+     "item": "Resin",
+     "qty": 10
+    },
+    {
+     "item": "Any Ectoplasm",
+     "qty": 5,
+     "anyOf": [
+      "Ectoplasm Fragment",
+      "Ectoplasm Shard",
+      "Ectoplasm Crystal",
+      "Ectoplasm Cluster",
+      "Ectoplasm Aggregate"
+     ]
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "read the note about 2590 m north-west of Engine Chambers",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-crypt-wall-torch"
+   ]
+  },
+  {
+   "name": "Iron Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Resin",
+     "qty": 5
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 4
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-wall-torch"
+   ]
+  },
+  {
+   "name": "Steel Floor Torch",
+   "category": "Torches",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-floor-torch"
+   ]
+  },
+  {
+   "name": "Steel Wall Torch",
+   "category": "Torches",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Illumination",
+    "value": 5
+   },
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-wall-torch"
+   ]
+  }
+ ],
+ "resources": {
+  "Glass": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Any sand",
+      "qty": 30,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/glass"
+   ]
+  },
+  "Sparkling Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Diamond",
+      "qty": 1
+     },
+     {
+      "item": "Moonstone",
+      "qty": 1
+     },
+     {
+      "item": "Celestium Ore",
+      "qty": 1
+     },
+     {
+      "item": "Mother-Of-Pearl",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/sparkling-dust"
+   ]
+  },
+  "Gold Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "11 min",
+    "inputs": [
+     {
+      "item": "Coal",
+      "qty": 40
+     },
+     {
+      "item": "Gold Ore or Archaic Shards",
+      "qty": 20,
+      "anyOf": [
+       "Gold Ore",
+       "Archaic Shards"
+      ]
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-bars"
+   ]
+  },
+  "Gold Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Gold Bars",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-dust"
+   ]
+  },
+  "Celestium Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "12 min",
+    "inputs": [
+     {
+      "item": "Celestium Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/celestium-bars"
+   ]
+  },
+  "Resin": {
+   "kind": "gathered",
+   "source": "Trees, mainly stumps and red-leaved trees",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/resin"
+   ]
+  },
+  "Wood Logs": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Wood Logs come from chopping down trees, with bigger trees giving more, and from breaking wooden objects. Twigs and Resin drop with them. Their 166 uses include stations such as the Forge, Loom, Kitchen, Seedbed and Table Saw, crude and carved wooden furniture, doors, fences and palisades, weapon racks and wall mounts, and weapons like the Club, Spiked Club and Wooden Shield.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-logs"
+   ]
+  },
+  "Steel Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "10 min",
+    "inputs": [
+     {
+      "item": "Iron Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-bars"
+   ]
+  },
+  "Coal": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/coal"
+   ]
+  },
+  "Pumpkin": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/pumpkin"
+   ]
+  },
+  "Fire Fly": {
+   "kind": "gathered",
+   "source": "Springlands, At Night",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fire-fly"
+   ]
+  },
+  "Purified Slime": {
+   "kind": "crafted",
+   "source": "Ectoplasm Press",
+   "recipe": {
+    "station": "Ectoplasm Press",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "10s",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 3
+     },
+     {
+      "item": "Salt",
+      "qty": 10
+     },
+     {
+      "item": "Toxic Slime",
+      "qty": 3
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/purified-slime"
+   ]
+  },
+  "String": {
+   "kind": "crafted",
+   "source": "Manual Crafting",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Plant Fiber or Paper Reed",
+      "qty": 3,
+      "anyOf": [
+       "Plant Fiber",
+       "Paper Reed"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/string"
+   ]
+  },
+  "Underwater Luminous Growth": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, Underwater",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/underwater-luminous-growth"
+   ]
+  },
+  "Bamboo Logs": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/bamboo-logs"
+   ]
+  },
+  "Aquamarine Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Aquamarine",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/aquamarine-dust"
+   ]
+  },
+  "Drak Teeth": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Enemies",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/drak-teeth"
+   ]
+  },
+  "Metal Scraps": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Metal Scraps are a common drop from Scavengers, and they can also be salvaged from destroyed metal objects or picked up loose in the world. They go into Nails and Metal Sheets and 112 other recipes. Those include stations such as the Forge, Kiln and Cooking Station, the Scrappy tools, the Explorer armor set, scrap pots, vats and pans, crypt torches and the Grappling Hook.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-scraps"
+   ]
+  },
+  "Bronze Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Copper Bars",
+      "qty": 7
+     },
+     {
+      "item": "Tin Bars",
+      "qty": 3
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-bars"
+   ]
+  },
+  "Fired Bricks": {
+   "kind": "crafted",
+   "source": "Kiln",
+   "recipe": {
+    "station": "Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "30s",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 1
+     },
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/fired-bricks"
+   ]
+  },
+  "Charcoal": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 12,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal"
+   ]
+  },
+  "Candle": {
+   "kind": "crafted",
+   "source": "Workbench",
+   "recipe": {
+    "station": "Workbench",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 1
+     },
+     {
+      "item": "Wax",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/candle"
+   ]
+  },
+  "Wax": {
+   "kind": "crafted",
+   "source": "Beehive",
+   "recipe": {
+    "station": "Beehive",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Plant Fiber or Paper Reed",
+      "qty": 3,
+      "anyOf": [
+       "Plant Fiber",
+       "Paper Reed"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wax"
+   ]
+  },
+  "Lump of Clay": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/lump-of-clay"
+   ]
+  },
+  "Ectoplasm Gem": {
+   "kind": "crafted",
+   "source": "Collector",
+   "recipe": {
+    "station": null,
+    "crafter": "Collector",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Bonemeal",
+      "qty": 1
+     },
+     {
+      "item": "Any Ectoplasm",
+      "qty": 2,
+      "anyOf": [
+       "Ectoplasm Fragment",
+       "Ectoplasm Shard",
+       "Ectoplasm Crystal",
+       "Ectoplasm Cluster",
+       "Ectoplasm Aggregate"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-gem"
+   ]
+  },
+  "Bones": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Bones are a common drop from wildlife and Hollow across Embervale, and bone piles, including those in and around the Hollow Halls, can be mined for more. They feed 46 recipes, among them the Flute at the Bard, Scout Pants at the Hunter, the Reaper's Wand at the Alchemist, and crypt furniture and the Bone Arrow at the Collector.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bones"
+   ]
+  },
+  "Twigs": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/twigs"
+   ]
+  },
+  "Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Stone is picked up as small stones lying on the ground all over Embervale, Shroud included. Larger stones and rock formations in the Springlands and Revelwood can be mined with a pickaxe. Its 97 uses start with the Axe, made by hand, and the Pickaxe, and run through stations such as the Forge, Kiln, Mill, Charcoal Kiln and Grinding Stones to stone furniture, coffins, statues and building blocks.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/stone"
+   ]
+  },
+  "Granite": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/granite"
+   ]
+  },
+  "Silver Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "10 min",
+    "inputs": [
+     {
+      "item": "Silver Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-bars"
+   ]
+  },
+  "Iron Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Iron Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-bars"
+   ]
+  },
+  "Luminous Growth": {
+   "kind": "gathered",
+   "source": "Caves",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/luminous-growth"
+   ]
+  },
+  "Goo": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Mortar",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Springlands Dirt",
+      "qty": 1
+     },
+     {
+      "item": "Shroud Mushroom",
+      "qty": 2
+     },
+     {
+      "item": "Bug Dust",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/goo"
+   ]
+  },
+  "Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sand"
+   ]
+  },
+  "Sandstone": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sandstone"
+   ]
+  },
+  "Conifer Logs": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/conifer-logs"
+   ]
+  },
+  "Basalt": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/basalt"
+   ]
+  },
+  "Limestone": {
+   "kind": "gathered",
+   "source": "Nomad Highlands",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/limestone"
+   ]
+  },
+  "Daylily": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/daylily"
+   ]
+  },
+  "Plant Fiber": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Plant Fiber is gathered from bushes all over Embervale and also lies around as a loose pickup; bushes can be grown from Shrub Seedlings. Its 38 uses include the Big Straw Mat and Marksman Hood at the Hunter, the Wooden Bed and Ornate Wooden Bed at the Carpenter, Goat Food, the Cat Pillow and Sword Garden Gnome at the Farmer, and the Explosive Barrel.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/plant-fiber"
+   ]
+  },
+  "Torn Cloth": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Torn Cloth comes from drops rather than crafting, and it goes into 90 recipes. These include the Bandage, the Ragged, Fur, Mage, Magician and Alchemist Apprentice armor, and the Tiny Backpack made by hand. At the Ectoplasm Press it goes into Ectoplasm, Greater Ectoplasm and Excellent Ectoplasm, and it is also used for supply sacks, war banners, showcases and stone furniture.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/torn-cloth"
+   ]
+  },
+  "Passionflower": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, At Night",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/passionflower"
+   ]
+  },
+  "Nails": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 2,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Metal Scraps",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nails"
+   ]
+  },
+  "Flammable Goo": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Tar",
+      "qty": 5
+     },
+     {
+      "item": "Shroud Vapor",
+      "qty": 1
+     },
+     {
+      "item": "Coal",
+      "qty": 1
+     },
+     {
+      "item": "Goo",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/flammable-goo"
+   ]
+  },
+  "Snowball": {
+   "kind": "crafted",
+   "source": "Workbench",
+   "recipe": {
+    "station": "Workbench",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Snow",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/snowball"
+   ]
+  },
+  "Amethyst": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/amethyst"
+   ]
+  },
+  "Workbench": {
+   "kind": "crafted",
+   "source": "By hand",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 3
+     },
+     {
+      "item": "Any wood",
+      "qty": 8,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/workbench"
+   ]
+  },
+  "Decoration Workbench": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Nails",
+      "qty": 2
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/decoration-workbench"
+   ]
+  },
+  "Forge": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 30
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 12
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/forge"
+   ]
+  },
+  "Masonry Tools": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 6
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 6
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/masonry-tools"
+   ]
+  },
+  "Kiln": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Revelwood Stone",
+      "qty": 50
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Twigs",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/kiln"
+   ]
+  },
+  "Sparkworks Workbench": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Nails",
+      "qty": 2
+     },
+     {
+      "item": "Metal Sheets",
+      "qty": 4
+     },
+     {
+      "item": "Any Archaic Essence",
+      "qty": 2,
+      "anyOf": [
+       "Archaic Essence I",
+       "Archaic Essence II",
+       "Archaic Essence III",
+       "Archaic Essence IV",
+       "Archaic Essence V",
+       "Archaic Essence VI",
+       "Archaic Essence VII"
+      ]
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/sparkworks-workbench"
+   ]
+  },
+  "Smelter": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 50
+     },
+     {
+      "item": "Crucible",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/smelter"
+   ]
+  },
+  "Diamond": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle Shroud",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/diamond"
+   ]
+  },
+  "Moonstone": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/moonstone"
+   ]
+  },
+  "Celestium Ore": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/celestium-ore"
+   ]
+  },
+  "Mother-Of-Pearl": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, Underwater",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/mother-of-pearl"
+   ]
+  },
+  "Mill": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 30
+     },
+     {
+      "item": "Shell Limestone",
+      "qty": 20
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Improved Millstone",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/mill"
+   ]
+  },
+  "Blast Furnace": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Bellows",
+      "qty": 1
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Any sand",
+      "qty": 30,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/blast-furnace"
+   ]
+  },
+  "Iron Ore": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-ore"
+   ]
+  },
+  "Salt": {
+   "kind": "gathered",
+   "source": "Springlands Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/salt"
+   ]
+  },
+  "Toxic Slime": {
+   "kind": "gathered",
+   "source": "Hollow Halls",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/toxic-slime"
+   ]
+  },
+  "Wood Acid": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 15,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-acid"
+   ]
+  },
+  "Ectoplasm Press": {
+   "kind": "crafted",
+   "source": "Collector",
+   "recipe": {
+    "station": null,
+    "crafter": "Collector",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Hollow Cyclops Head",
+      "qty": 1
+     },
+     {
+      "item": "Ectoplasm Fragment",
+      "qty": 120
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 5
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Stone",
+      "qty": 4
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 4
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-press"
+   ]
+  },
+  "Aquamarine": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/aquamarine"
+   ]
+  },
+  "Copper Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Copper Ore",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-bars"
+   ]
+  },
+  "Tin Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Tin Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-bars"
+   ]
+  },
+  "Charcoal Kiln": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal-kiln"
+   ]
+  },
+  "Hardwood": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/hardwood"
+   ]
+  },
+  "Palm Wood Logs": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/palm-wood-logs"
+   ]
+  },
+  "Tropical Wood": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/tropical-wood"
+   ]
+  },
+  "null": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "sources": [
+    "https://www.enshrouded.tools/items/beehive"
+   ]
+  },
+  "Bonemeal": {
+   "kind": "crafted",
+   "source": "Grinding Stones",
+   "recipe": {
+    "station": "Grinding Stones",
+    "crafter": null,
+    "requires": [],
+    "makes": 3,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Bones",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bonemeal"
+   ]
+  },
+  "Paper Reed": {
+   "kind": "gathered",
+   "source": "Near Lakes",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/paper-reed"
+   ]
+  },
+  "Table Saw": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 8
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Circular Sawblades",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/table-saw"
+   ]
+  },
+  "Silver Ore": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-ore"
+   ]
+  },
+  "Springlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Springlands Dirt is a terrain material found in the Springlands. Its 18 uses include Farm Soil at the Farmer, Workbench blocks such as the Dirt Road Block, Field Stones and Limestone Block, Springlands Rubble, Goo and White Glowing Substance at the Alchemist, the Climbing Rose and the Crucible.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/springlands-dirt"
+   ]
+  },
+  "Shroud Mushroom": {
+   "kind": "gathered",
+   "source": "Revelwood Shroud",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/shroud-mushroom"
+   ]
+  },
+  "Bug Dust": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Mortar",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Critter Parts",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/bug-dust"
+   ]
+  },
+  "Mortar": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Sulfur",
+      "qty": 3
+     },
+     {
+      "item": "Nitrate",
+      "qty": 2
+     },
+     {
+      "item": "Charcoal",
+      "qty": 5
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/mortar"
+   ]
+  },
+  "Ectoplasm Fragment": {
+   "kind": "gathered",
+   "source": "Hollow Halls",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-fragment"
+   ]
+  },
+  "Ectoplasm Shard": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Hollow Halls",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-shard"
+   ]
+  },
+  "Ectoplasm Crystal": {
+   "kind": "gathered",
+   "source": "Kindlewastes Hollow Halls",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-crystal"
+   ]
+  },
+  "Ectoplasm Cluster": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Hollow Halls",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-cluster"
+   ]
+  },
+  "Ectoplasm Aggregate": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Hollow Halls",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-aggregate"
+   ]
+  },
+  "Archaic Essence I": {
+   "kind": "gathered",
+   "source": "Springlands Shroud Lairs",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-i"
+   ]
+  },
+  "Archaic Essence II": {
+   "kind": "gathered",
+   "source": "Revelwood Shroud Lairs",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-ii"
+   ]
+  },
+  "Archaic Essence III": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Shroud Lairs",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-iii"
+   ]
+  },
+  "Archaic Essence IV": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud Lairs",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-iv"
+   ]
+  },
+  "Archaic Essence V": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud Lairs",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-v"
+   ]
+  },
+  "Archaic Essence VI": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Shroud Lairs",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-vi"
+   ]
+  },
+  "Archaic Essence VII": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle Shroud Lairs",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-essence-vii"
+   ]
+  },
+  "Tar": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 24,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 6,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tar"
+   ]
+  },
+  "Shroud Vapor": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Enshrouded Ice",
+      "qty": 10
+     },
+     {
+      "item": "Active Mycelium",
+      "qty": 15
+     },
+     {
+      "item": "Salt",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/shroud-vapor"
+   ]
+  },
+  "Laboratory": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Scientific Instruments",
+      "qty": 1
+     },
+     {
+      "item": "Athanor",
+      "qty": 1
+     },
+     {
+      "item": "Fired Bricks",
+      "qty": 40
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 10
+     },
+     {
+      "item": "Glass",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/laboratory"
+   ]
+  },
+  "Snow": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/snow"
+   ]
+  },
+  "Wood Planks": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 2,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-planks"
+   ]
+  },
+  "Revelwood Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Stone is a terrain material that stacks to 1,000, with 1,867 placed in the world. It goes into nine recipes, including the Kiln, the Cooking Station and Revelwood Rubble at the Grinding Stones.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-stone"
+   ]
+  },
+  "Metal Sheets": {
+   "kind": "crafted",
+   "source": "Forge",
+   "recipe": {
+    "station": "Forge",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "90s",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 2
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-sheets"
+   ]
+  },
+  "Fine Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/fine-sand"
+   ]
+  },
+  "Veilwater Basin Sand": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-sand"
+   ]
+  },
+  "Cinder's Cradle Sand": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-sand"
+   ]
+  },
+  "Crucible": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 3
+     },
+     {
+      "item": "Springlands Dirt",
+      "qty": 3
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/crucible"
+   ]
+  },
+  "Shell Limestone": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/shell-limestone"
+   ]
+  },
+  "Improved Millstone": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Shell Limestone",
+      "qty": 30
+     },
+     {
+      "item": "Flintstone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/improved-millstone"
+   ]
+  },
+  "Gold Ore": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, Underwater",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-ore"
+   ]
+  },
+  "Archaic Shards": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle, Ancient Constructs",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-shards"
+   ]
+  },
+  "Bellows": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Conifer Logs",
+      "qty": 10
+     },
+     {
+      "item": "Leather",
+      "qty": 10
+     },
+     {
+      "item": "Linen",
+      "qty": 5
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/bellows"
+   ]
+  },
+  "Hollow Cyclops Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Hollow Titan Head goes into the four Hollow Cyclops trophies at the Hunter, from the base Hollow Cyclops Trophy to the Gold one. It is also needed for the Ectoplasm Press, which the Collector builds.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-cyclops-head"
+   ]
+  },
+  "Copper Ore": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-ore"
+   ]
+  },
+  "Tin Ore": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-ore"
+   ]
+  },
+  "Revelwood Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Dirt is a terrain material found in the Revelwood. The Workbench uses it for Fertile Revelwood Dirt and Revelwood Stone, the Grinding Stones for Revelwood Rubble, and it also goes into the Antique and Flint colors.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-dirt"
+   ]
+  },
+  "Blackmire Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Blackmire Dirt is a terrain material that stacks to 1,000. Its one crafting use is Fertile Blackmire Dirt, made at the Workbench.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/blackmire-dirt"
+   ]
+  },
+  "Nomad Highlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Nomad Highlands Dirt is a terrain material found in the Nomad Highlands. It has five uses: Fertile Nomad Highlands Dirt and the Castle Wall Stone Block at the Workbench, Nomad Highlands Rubble at the Grinding Stones, and the Deceit and Forgotten Library colors.",
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nomad-highlands-dirt"
+   ]
+  },
+  "Albaneve Summits Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Albaneve Summits Dirt is the Common terrain material dug up in the Albaneve Summits, stacking to 1,000.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/albaneve-summits-dirt"
+   ]
+  },
+  "Veilwater Basin Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Veilwater Basin Dirt is a terrain material found in the Veilwater Basin. It has four uses: Fertile Veilwater Basin Dirt at the Workbench, Veilwater Basin Rubble at the Grinding Stones, Wisteria at the Farmer and the Algae Seedling at the Seedbed.",
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-dirt"
+   ]
+  },
+  "Cinder's Cradle Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Cinder's Cradle Dirt is a terrain material that stacks to 1,000. It is an ingredient of Cinder's Cradle Rubble at the Grinding Stones and of Fertile Cinder's Cradle Dirt and Fertile Altered Dirt at the Workbench.",
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-dirt"
+   ]
+  },
+  "Grinding Stones": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Flintstone",
+      "qty": 10
+     },
+     {
+      "item": "Stone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/grinding-stones"
+   ]
+  },
+  "Circular Sawblades": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 2
+     },
+     {
+      "item": "Charcoal",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/circular-sawblades"
+   ]
+  },
+  "Critter Parts": {
+   "kind": "gathered",
+   "source": "Fell Enemies, Springlands Shroud and Revelwood Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/critter-parts"
+   ]
+  },
+  "Sulfur": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sulfur"
+   ]
+  },
+  "Nitrate": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Shroud Sand",
+      "qty": 5
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 1
+     },
+     {
+      "item": "Salt",
+      "qty": 1
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/nitrate"
+   ]
+  },
+  "Enshrouded Ice": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/enshrouded-ice"
+   ]
+  },
+  "Active Mycelium": {
+   "kind": "gathered",
+   "source": "Springlands Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/active-mycelium"
+   ]
+  },
+  "Scientific Instruments": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Glass",
+      "qty": 10
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 5
+     },
+     {
+      "item": "Charcoal",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/scientific-instruments"
+   ]
+  },
+  "Athanor": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Glass",
+      "qty": 10
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 10
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/athanor"
+   ]
+  },
+  "Flintstone": {
+   "kind": "gathered",
+   "source": "Springlands",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/flintstone"
+   ]
+  },
+  "Alchemy Station": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 6
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 5
+     },
+     {
+      "item": "Cauldron",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/alchemy-station"
+   ]
+  },
+  "Leather": {
+   "kind": "crafted",
+   "source": "Tanning Station",
+   "recipe": {
+    "station": "Tanning Station",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "15 min",
+    "inputs": [
+     {
+      "item": "Dried Fur",
+      "qty": 10
+     },
+     {
+      "item": "Salt",
+      "qty": 20
+     },
+     {
+      "item": "Ammonia Gland",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/leather"
+   ]
+  },
+  "Linen": {
+   "kind": "crafted",
+   "source": "Hand Spindle",
+   "recipe": {
+    "station": "Hand Spindle",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "10s",
+    "inputs": [
+     {
+      "item": "Flax",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/linen"
+   ]
+  },
+  "Shroud Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/shroud-sand"
+   ]
+  },
+  "Cauldron": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 2
+     },
+     {
+      "item": "Bonemeal",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/cauldron"
+   ]
+  },
+  "Dried Fur": {
+   "kind": "crafted",
+   "source": "Drying Rack",
+   "recipe": {
+    "station": "Drying Rack",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Animal Fur",
+      "qty": 1
+     },
+     {
+      "item": "Salt",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/dried-fur"
+   ]
+  },
+  "Ammonia Gland": {
+   "kind": "gathered",
+   "source": "Fell Mushroom Crabs, Nomad Highlands Shroud and Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ammonia-gland"
+   ]
+  },
+  "Tanning Station": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 10
+     },
+     {
+      "item": "Nails",
+      "qty": 4
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Tar",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/tanning-station"
+   ]
+  },
+  "Flax": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/flax"
+   ]
+  },
+  "Hand Spindle": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fossilized Bone",
+      "qty": 3
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 4
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/hand-spindle"
+   ]
+  },
+  "Animal Fur": {
+   "kind": "crafted",
+   "source": "Hunter",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 1
+     },
+     {
+      "item": "Wet Boot or Fur Patch",
+      "qty": 3,
+      "anyOf": [
+       "Wet Boot",
+       "Fur Patch"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/animal-fur"
+   ]
+  },
+  "Drying Rack": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "String",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/drying-rack"
+   ]
+  },
+  "Fossilized Bone": {
+   "kind": "gathered",
+   "source": "Giant Fossils",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossilized-bone"
+   ]
+  },
+  "Wet Boot": {
+   "kind": "gathered",
+   "source": "Fishing",
+   "recipe": null,
+   "sources": [
+    "https://www.enshrouded.tools/items/wet-boot"
+   ]
+  },
+  "Fur Patch": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fur Patch is a common drop from small wildlife such as rats and bats, found all over Embervale.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fur-patch"
+   ]
+  }
+ }
+}

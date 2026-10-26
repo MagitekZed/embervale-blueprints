@@ -1,0 +1,4426 @@
+{
+ "source": "https://www.enshrouded.tools/skills/*",
+ "fetched": "2026-10-21",
+ "skills": {
+  "Well Rested": [
+   {
+    "item": "Hawk Chest",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Miner Helmet",
+    "plus": 1
+   }
+  ],
+  "Mason": [
+   {
+    "item": "Bronze Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Celestium Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Copper Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Gilded Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Iron Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Miner Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Scrappy Pickaxe",
+    "plus": 1
+   },
+   {
+    "item": "Steel Pickaxe",
+    "plus": 1
+   }
+  ],
+  "Lumberjack": [
+   {
+    "item": "Bronze Axe",
+    "plus": 1
+   },
+   {
+    "item": "Celestium Axe",
+    "plus": 1
+   },
+   {
+    "item": "Copper Axe",
+    "plus": 1
+   },
+   {
+    "item": "Gilded Axe",
+    "plus": 1
+   },
+   {
+    "item": "Iron Axe",
+    "plus": 1
+   },
+   {
+    "item": "Mother's Eye",
+    "plus": 1
+   },
+   {
+    "item": "Scrappy Axe",
+    "plus": 1
+   },
+   {
+    "item": "Steel Axe",
+    "plus": 1
+   }
+  ],
+  "Healing Revive": [
+   {
+    "item": "Healer Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Healer Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sage Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Pants drop",
+    "plus": 1
+   }
+  ],
+  "Mage Apprentice": [
+   {
+    "item": "Alchemist Apprentice Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Hat",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mage Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Magician Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Hat",
+    "plus": 1
+   },
+   {
+    "item": "Omen Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Rivulets",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ancients",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Mother Flame",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Headpiece crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Headpiece drop",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Hat",
+    "plus": 1
+   }
+  ],
+  "Arsonist": [
+   {
+    "item": "Alchemist Apprentice Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Flaming Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Mage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Omen Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Ring Of The Burning Light",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Mother Flame",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Dark Arts": [
+   {
+    "item": "Alchemist Apprentice Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Chest",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Omen Chest",
+    "plus": 1
+   },
+   {
+    "item": "Omen Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Heir",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Tunic drop",
+    "plus": 1
+   }
+  ],
+  "Iceman": [
+   {
+    "item": "Alchemist Apprentice Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Boots",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Frozen Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Boots",
+    "plus": 1
+   },
+   {
+    "item": "Mage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Frost",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Shoes drop",
+    "plus": 1
+   }
+  ],
+  "Frost": [
+   {
+    "item": "Hailcaster Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Boots",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Boots",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Boots",
+    "plus": 1
+   }
+  ],
+  "Quick Charge": [
+   {
+    "item": "Alchemist Apprentice Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Healer Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Magician Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Rapacity",
+    "plus": 1
+   },
+   {
+    "item": "Sage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Counterstrike": [
+   {
+    "item": "Gloom Monarch Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Hat",
+    "plus": 2
+   },
+   {
+    "item": "Spellbreaker Pants",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Crown",
+    "plus": 2
+   }
+  ],
+  "Wizard": [
+   {
+    "item": "Alchemist Apprentice Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ancient Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Chest",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Mage Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mage Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Magician Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Chest",
+    "plus": 1
+   },
+   {
+    "item": "Omen Chest",
+    "plus": 1
+   },
+   {
+    "item": "Ring Of The Burning Light",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Frost",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Thundersnow",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Heir",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Tunic crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Shirt drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Chest",
+    "plus": 1
+   }
+  ],
+  "Necromancer": [
+   {
+    "item": "Alchemist Apprentice Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Boots",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Magician Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Omen Boots",
+    "plus": 1
+   },
+   {
+    "item": "Staff Of Reeds",
+    "plus": 1
+   },
+   {
+    "item": "Staff Of The Moor",
+    "plus": 2
+   },
+   {
+    "item": "Thaumaturge Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Shoes crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Shoes drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Crown",
+    "plus": 2
+   }
+  ],
+  "Terror": [
+   {
+    "item": "Alchemist Apprentice Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Circlet Of Lightning",
+    "plus": 1
+   },
+   {
+    "item": "Elder Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Crown",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Pants",
+    "plus": 1
+   }
+  ],
+  "Airborne": [
+   {
+    "item": "Wayfarer Pants",
+    "plus": 1
+   }
+  ],
+  "Marksman": [
+   {
+    "item": "Alpine Antler Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Alpine Antler Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Rivulets",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ancients",
+    "plus": 1
+   },
+   {
+    "item": "Scout Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Chest",
+    "plus": 2
+   }
+  ],
+  "Snake Eater": [
+   {
+    "item": "Ring of Endless Life",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward drop",
+    "plus": 1
+   }
+  ],
+  "Runner": [
+   {
+    "item": "Alpine Antler Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Alpine Antler Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Boots",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Boots",
+    "plus": 2
+   },
+   {
+    "item": "Hawk Boots",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Boots",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Shoes crafted",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Shoes drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Boots",
+    "plus": 2
+   },
+   {
+    "item": "Wanderer's Boots",
+    "plus": 1
+   },
+   {
+    "item": "Wayfarer Pants",
+    "plus": 1
+   }
+  ],
+  "Counter Battery": [
+   {
+    "item": "Deadeye Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Trousers drop",
+    "plus": 1
+   }
+  ],
+  "Ranger": [
+   {
+    "item": "Alpine Antler Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Vest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Chest",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Vest",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Chest",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Vest",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Chest",
+    "plus": 2
+   }
+  ],
+  "Sniper": [
+   {
+    "item": "Ancient Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Hood",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Hood",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Hood",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Stamina",
+    "plus": 1
+   }
+  ],
+  "Blessed Arrows": [
+   {
+    "item": "Alpine Antler Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Alpine Antler Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Pants drop",
+    "plus": 1
+   }
+  ],
+  "Warrior's Path": [
+   {
+    "item": "Adventurer Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Boots",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Boots",
+    "plus": 1
+   },
+   {
+    "item": "Knight Boots",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Boots",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Rivulets",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ancients",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Boots",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shoes crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shoes drop",
+    "plus": 1
+   },
+   {
+    "item": "Warrior Boots",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Boots drop",
+    "plus": 1
+   }
+  ],
+  "Shiny Plates": [
+   {
+    "item": "Brazen Bull Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Pants",
+    "plus": 2
+   },
+   {
+    "item": "Gloom Monarch Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tank Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Pants",
+    "plus": 2
+   },
+   {
+    "item": "Warden Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warden Trousers drop",
+    "plus": 1
+   }
+  ],
+  "Heavy Plates": [
+   {
+    "item": "Brazen Bull Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Commander's Ring",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Chestplate",
+    "plus": 2
+   },
+   {
+    "item": "Gloom Monarch Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Chest",
+    "plus": 1
+   },
+   {
+    "item": "Stormshield drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tank Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Chestplate",
+    "plus": 2
+   },
+   {
+    "item": "Warden Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warden Chestplate drop",
+    "plus": 1
+   }
+  ],
+  "Slasher": [
+   {
+    "item": "Adventurer Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Knight Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Pants",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Boots",
+    "plus": 2
+   },
+   {
+    "item": "Warrior Arms",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Brute": [
+   {
+    "item": "Adventurer Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Helmet drop",
+    "plus": 1
+   }
+  ],
+  "Thrust": [
+   {
+    "item": "Assassin Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Shoes crafted",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Shoes drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Gemini Ring",
+    "plus": 1
+   },
+   {
+    "item": "Knight Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Knight Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ether",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Gloves",
+    "plus": 2
+   },
+   {
+    "item": "Warrior Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Warrior Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Trousers drop",
+    "plus": 1
+   }
+  ],
+  "Heavy Handed": [
+   {
+    "item": "Adventurer Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Riptide",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Spearfisher's Shield",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Veteran": [
+   {
+    "item": "Adventurer Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ancient Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Chest",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Chest",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Health",
+    "plus": 1
+   }
+  ],
+  "Backstab Mastery": [
+   {
+    "item": "Assassin Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Gemini Ring",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Gloves",
+    "plus": 2
+   }
+  ],
+  "Absorb": [
+   {
+    "item": "Brazen Bull Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Gloom Monarch Boots",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Trousers drop",
+    "plus": 1
+   }
+  ],
+  "Blood Rage": [
+   {
+    "item": "Adventurer Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warden Helmet drop",
+    "plus": 1
+   }
+  ],
+  "Bloodletting": [
+   {
+    "item": "Alchemist Apprentice Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Elder Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Mage Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mage Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Magician Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Thundersnow",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Pants drop",
+    "plus": 1
+   }
+  ],
+  "Soul Leech": [
+   {
+    "item": "Brazen Bull Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tank Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warden Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Battle Heal": [
+   {
+    "item": "Ancient Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Gloom Monarch Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Health",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Health",
+    "plus": 1
+   }
+  ],
+  "Power Parry": [
+   {
+    "item": "Astrodome Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Fell Black Knight Shield",
+    "plus": 2
+   },
+   {
+    "item": "Fell Crusader Shield",
+    "plus": 1
+   },
+   {
+    "item": "Fell Defender Shield",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Hero's Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hero's Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Riptide",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Scrap Shield",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Arisztar drop",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Light crafted",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Light drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Spearfisher's Shield",
+    "plus": 1
+   },
+   {
+    "item": "Spellbreaker Hat",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Valiant Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Valiant Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Shield drop",
+    "plus": 1
+   }
+  ],
+  "Inner Fires": [
+   {
+    "item": "Hawk Boots",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Flame",
+    "plus": 1
+   }
+  ],
+  "Purification": [
+   {
+    "item": "Brazen Bull Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Pikemead's Bulwark",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Flame",
+    "plus": 1
+   },
+   {
+    "item": "Tank Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tank Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Tank Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warden Boots drop",
+    "plus": 1
+   }
+  ],
+  "Shroud Mitigation": [
+   {
+    "item": "Healer Headwrap crafted",
+    "plus": 1
+   },
+   {
+    "item": "Healer Headwrap drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Headwrap crafted",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Headwrap drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Omen Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Pikemead's Bulwark",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Flame",
+    "plus": 1
+   },
+   {
+    "item": "Sage Headwrap crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sage Headwrap drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Helmet drop",
+    "plus": 1
+   }
+  ],
+  "Healer": [
+   {
+    "item": "Beastmaster Shaman Staff",
+    "plus": 1
+   },
+   {
+    "item": "Beastmaster Shaman Staff",
+    "plus": 2
+   },
+   {
+    "item": "Clearwater Staff",
+    "plus": 1
+   },
+   {
+    "item": "Crystalwater Staff",
+    "plus": 2
+   },
+   {
+    "item": "Eternal Chain Heal I",
+    "plus": 1
+   },
+   {
+    "item": "Eternal Chain Heal II",
+    "plus": 2
+   },
+   {
+    "item": "Eternal Heal Beam I",
+    "plus": 1
+   },
+   {
+    "item": "Eternal Heal Beam II",
+    "plus": 2
+   },
+   {
+    "item": "Eternal Heal Cascade I",
+    "plus": 1
+   },
+   {
+    "item": "Eternal Heal Cascade II",
+    "plus": 2
+   },
+   {
+    "item": "Healer Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Healer Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Healer Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Healer Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sage Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Vitality Surge": [
+   {
+    "item": "Alpine Antler Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Alpine Antler Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Chest",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Vest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Chest",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Vest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Chest drop",
+    "plus": 1
+   }
+  ],
+  "Arcane Deflection": [
+   {
+    "item": "Astrodome Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Ethereal Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ethereal Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Fell Crusader Shield",
+    "plus": 1
+   },
+   {
+    "item": "Flaming Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Frozen Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Arisztar drop",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Shield drop",
+    "plus": 1
+   }
+  ],
+  "Vigorous Deflection": [
+   {
+    "item": "Astrodome Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Astrodome Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Fell Crusader Shield",
+    "plus": 1
+   },
+   {
+    "item": "Greatsword Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Knight Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Scrap Shield",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Arisztar crafted",
+    "plus": 1
+   },
+   {
+    "item": "Shield of Arisztar drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Boots",
+    "plus": 2
+   },
+   {
+    "item": "Warrior Arms",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Shield drop",
+    "plus": 1
+   }
+  ],
+  "Eagle's Bane": [
+   {
+    "item": "Deadeye Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Boots",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Boots",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Boots",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Boots",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Shoes crafted",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Shoes drop",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Boots drop",
+    "plus": 1
+   }
+  ],
+  "Silent Stride": [
+   {
+    "item": "Hawk Boots",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Boots drop",
+    "plus": 1
+   }
+  ],
+  "Skill Shot": [
+   {
+    "item": "Deadeye Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Gloves drop",
+    "plus": 1
+   }
+  ],
+  "Swiftshot Sustenance": [
+   {
+    "item": "Alpine Antler Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Pants drop",
+    "plus": 1
+   }
+  ],
+  "Thunder": [
+   {
+    "item": "Alchemist Apprentice Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Archmage Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Circlet Of Lightning",
+    "plus": 1
+   },
+   {
+    "item": "Flame Arcanist Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Mage Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Magician Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Thundersnow",
+    "plus": 1
+   },
+   {
+    "item": "Thaumaturge Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Tidecaller Headpiece drop",
+    "plus": 1
+   }
+  ],
+  "Water Aura": [
+   {
+    "item": "Healer Tunic crafted",
+    "plus": 1
+   },
+   {
+    "item": "Healer Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Tunic crafted",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Tunic crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sage Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Tunic crafted",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Tunic drop",
+    "plus": 1
+   }
+  ],
+  "Radiant Aura": [
+   {
+    "item": "Elder Hat",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Hat crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Hat drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Hat",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Mother Flame",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Hat",
+    "plus": 1
+   }
+  ],
+  "Nemesis": [
+   {
+    "item": "Brazen Bull Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Tank Helmet drop",
+    "plus": 1
+   }
+  ],
+  "Bash": [
+   {
+    "item": "Commander's Ring",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Hero's Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Riptide",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Spearfisher's Shield",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shield drop",
+    "plus": 1
+   }
+  ],
+  "Unity": [
+   {
+    "item": "Ethereal Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Pants",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Pants",
+    "plus": 2
+   },
+   {
+    "item": "Warlock Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Pants",
+    "plus": 1
+   }
+  ],
+  "Earth Aura": [
+   {
+    "item": "Blackguard Boots",
+    "plus": 1
+   },
+   {
+    "item": "Brazen Bull Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Crestflame boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Golden Bulwark Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Guardian Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Boots",
+    "plus": 1
+   },
+   {
+    "item": "Tank Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Warden Boots drop",
+    "plus": 1
+   }
+  ],
+  "Opportunity": [
+   {
+    "item": "Emberguard Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Hero's Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hero's Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Shield drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shield crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Shield drop",
+    "plus": 1
+   }
+  ],
+  "Dagger Mastery": [
+   {
+    "item": "Assassin Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Gemini Ring",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ether",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Gloves",
+    "plus": 2
+   }
+  ],
+  "Eternal Spark": [
+   {
+    "item": "Ethereal Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ethereal Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Pants",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Pants",
+    "plus": 1
+   }
+  ],
+  "Finesse": [
+   {
+    "item": "Knight Boots",
+    "plus": 1
+   },
+   {
+    "item": "Knight Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Warrior Boots",
+    "plus": 1
+   },
+   {
+    "item": "Warrior Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Boots crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Hood drop",
+    "plus": 1
+   }
+  ],
+  "Life Essences": [
+   {
+    "item": "Hailcaster Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Chest",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Pants",
+    "plus": 2
+   },
+   {
+    "item": "Warlock Shirt crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Shirt drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Chest",
+    "plus": 1
+   }
+  ],
+  "Titan Edge": [
+   {
+    "item": "Greatsword Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Boots",
+    "plus": 2
+   }
+  ],
+  "Shroud Resistance": [
+   {
+    "item": "Incredible Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Omen Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Heir",
+    "plus": 1
+   }
+  ],
+  "Fire Resistance": [
+   {
+    "item": "Ghostly Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring Of The Burning Light",
+    "plus": 1
+   }
+  ],
+  "Ice Resistance": [
+   {
+    "item": "Ethereal Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ethereal Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Boots",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Frost",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Boots",
+    "plus": 1
+   }
+  ],
+  "Shock Resistance": [
+   {
+    "item": "Transcendental Ward crafted",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward drop",
+    "plus": 1
+   }
+  ],
+  "Righteous Fire": [
+   {
+    "item": "Healer Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Boots drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Boots drop",
+    "plus": 1
+   }
+  ],
+  "Shared Misery": [
+   {
+    "item": "Healer Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Herbalist Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Lifelock Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Pearlfrost Mentor Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Sage Tunic drop",
+    "plus": 1
+   },
+   {
+    "item": "Waveborne Ritualist Tunic drop",
+    "plus": 1
+   }
+  ],
+  "Fisherman's Resolve": [
+   {
+    "item": "Diving Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Swimfins",
+    "plus": 1
+   }
+  ],
+  "Cutthroat": [
+   {
+    "item": "Assassin Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Pants drop",
+    "plus": 1
+   }
+  ],
+  "Rebound": [
+   {
+    "item": "Assassin Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Chest",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Wayfarer Pants",
+    "plus": 1
+   }
+  ],
+  "Bone to Ash": [
+   {
+    "item": "Elite Hollow Boots",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Elite Hollow Pants",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Boots",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Venerable Hollow Gloves",
+    "plus": 2
+   },
+   {
+    "item": "Venerable Hollow Helmet",
+    "plus": 2
+   },
+   {
+    "item": "Venerable Hollow Pants",
+    "plus": 1
+   }
+  ],
+  "Sleight of Hand": [
+   {
+    "item": "Gloom Monarch Gloves",
+    "plus": 1
+   }
+  ],
+  "Mana Currents": [
+   {
+    "item": "Beastmaster Shaman Staff",
+    "plus": 2
+   },
+   {
+    "item": "Clearwater Staff",
+    "plus": 3
+   },
+   {
+    "item": "Crystalwater Staff",
+    "plus": 3
+   },
+   {
+    "item": "Dark Staff",
+    "plus": 2
+   },
+   {
+    "item": "Darya's Staff",
+    "plus": 3
+   },
+   {
+    "item": "Deceiving Staff",
+    "plus": 2
+   },
+   {
+    "item": "Elder's Staff",
+    "plus": 1
+   },
+   {
+    "item": "Helix",
+    "plus": 1
+   },
+   {
+    "item": "Infernal Wand",
+    "plus": 1
+   },
+   {
+    "item": "Lightning Shaman Staff",
+    "plus": 2
+   },
+   {
+    "item": "Luminary Staff",
+    "plus": 3
+   },
+   {
+    "item": "Ring of Rapacity",
+    "plus": 1
+   },
+   {
+    "item": "Root Staff",
+    "plus": 1
+   },
+   {
+    "item": "Shepherd's Staff",
+    "plus": 1
+   },
+   {
+    "item": "Shroud Weaver",
+    "plus": 2
+   },
+   {
+    "item": "Staff Of The Serpent",
+    "plus": 1
+   },
+   {
+    "item": "Staff of the Ram",
+    "plus": 3
+   },
+   {
+    "item": "Stormbound Staff",
+    "plus": 3
+   },
+   {
+    "item": "Twisting Wand",
+    "plus": 1
+   }
+  ],
+  "Fatal Precision": [
+   {
+    "item": "Alpine Antler Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Ancient Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Deadeye Vest drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Gemini Ring",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Marksman Vest",
+    "plus": 1
+   },
+   {
+    "item": "Plaguebringer Hood",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ether",
+    "plus": 3
+   },
+   {
+    "item": "Scout Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Sharpshooter Vest",
+    "plus": 1
+   },
+   {
+    "item": "Skull Stalker Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Stamina",
+    "plus": 1
+   },
+   {
+    "item": "Trailblazer Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Stamina",
+    "plus": 1
+   }
+  ],
+  "Spellslinger": [
+   {
+    "item": "Ancient Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Circlet Of Lightning",
+    "plus": 1
+   },
+   {
+    "item": "Exceptional Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Greater Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Pants",
+    "plus": 1
+   },
+   {
+    "item": "Lesser Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Superior Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Ultimate Ring of Mana",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Crown",
+    "plus": 2
+   }
+  ],
+  "Wand Mastery": [
+   {
+    "item": "Ethereal Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Flaming Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Frozen Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Ghostly Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hailcaster Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Incredible Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Invisible Barrier Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Mystic Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Omen Gloves",
+    "plus": 1
+   },
+   {
+    "item": "Prismatic Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Spectral Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Transcendental Ward drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Pants",
+    "plus": 2
+   },
+   {
+    "item": "Warlock Gloves crafted",
+    "plus": 1
+   },
+   {
+    "item": "Warlock Gloves drop",
+    "plus": 1
+   },
+   {
+    "item": "Wizard Gloves",
+    "plus": 1
+   }
+  ],
+  "Athlete": [
+   {
+    "item": "Adventurer Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Chest",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Greatsword Gauntlets",
+    "plus": 1
+   },
+   {
+    "item": "Knight Chestplate",
+    "plus": 1
+   },
+   {
+    "item": "Knight Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Chestplate crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Chestplate drop",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Rogue Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Pants crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Boots",
+    "plus": 2
+   },
+   {
+    "item": "Warrior Chest",
+    "plus": 1
+   },
+   {
+    "item": "Warrior Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Trousers crafted",
+    "plus": 1
+   },
+   {
+    "item": "Wolf's Fang Trousers drop",
+    "plus": 1
+   }
+  ],
+  "Barbarian's Path": [
+   {
+    "item": "Adventurer Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Adventurer Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Blackguard Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Emberguard Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Pants",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Mercenary Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Mountain's Shadow Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Radiant Paladin Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Rising Fighter Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Soldier Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Sunpiercer Pants drop",
+    "plus": 1
+   }
+  ],
+  "Veiled Vigor": [
+   {
+    "item": "Assassin Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Assassin Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Bloodfeather Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Cutthroat Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Fowler Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Frostbite Slasher Trousers drop",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Chest",
+    "plus": 1
+   },
+   {
+    "item": "Hawk Trousers",
+    "plus": 1
+   },
+   {
+    "item": "Ring of the Ether",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Chest crafted",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Chest drop",
+    "plus": 1
+   },
+   {
+    "item": "Sky Specter Pants drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Chest",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Gloves",
+    "plus": 1
+   }
+  ],
+  "Prospector": [
+   {
+    "item": "Miner Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Mining Sieve",
+    "plus": 1
+   }
+  ],
+  "Puncture": [
+   {
+    "item": "Alpine Antler Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Alpine Antler Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ashwind Strider Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Deerstalker Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Eagle Eye Helmet",
+    "plus": 1
+   },
+   {
+    "item": "Guard of the North Pants",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Hunter Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Helmet crafted",
+    "plus": 1
+   },
+   {
+    "item": "Quetzal Hunter Helmet drop",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Hood crafted",
+    "plus": 1
+   },
+   {
+    "item": "Ranger Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Scout Hood drop",
+    "plus": 1
+   },
+   {
+    "item": "Vorgoth's Soulbound Chest",
+    "plus": 2
+   }
+  ],
+  "Survival Instinct": [
+   {
+    "item": "Pikemead's Bulwark",
+    "plus": 1
+   }
+  ]
+ }
+}

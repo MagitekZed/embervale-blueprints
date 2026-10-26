@@ -1,0 +1,399 @@
+<title>Embervale Build Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, a field guide to the planner's build loop; a sticky row of step numbers to jump
+   around while playing; planner-style snippets show what the screen says. Tokens are the planner's own. */
+:root {
+  --bg: #e3e8e6;
+  --panel: #f3f5f3;
+  --raised: #ffffff;
+  --ink: #1a272e;
+  --muted: #56666c;
+  --faint: #8a979c;
+  --line: #c6cfcd;
+  --accent: #c4501a;
+  --accent-soft: rgba(196, 80, 26, 0.12);
+  --snip: #141c20;
+  --snip-raised: #1a242a;
+  --snip-ink: #e0e7e4;
+  --snip-muted: #97a6ab;
+  --snip-line: #27353c;
+  --ready: #3fae5a;
+  --craft: #2fa7b8;
+  --close: #d9a23a;
+  --short: #d45050;
+  --craft-ink: #1d7b88;
+  --short-ink: #b3261e;
+  --snip-craft: #4cc3d3;
+  --snip-short: #f2776c;
+  --font-ui: "Instrument Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: "IM Fell English SC", "Iowan Old Style", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1417; --panel: #141c20; --raised: #1a242a; --ink: #e0e7e4; --muted: #97a6ab; --faint: #6b7a80;
+    --line: #27353c; --accent: #ee7a3b; --accent-soft: rgba(238, 122, 59, 0.16);
+    --snip: #0a0f12; --snip-raised: #141c20; --snip-ink: #e0e7e4; --snip-muted: #97a6ab; --snip-line: #27353c;
+    --craft-ink: #4cc3d3; --short-ink: #f2776c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1417; --panel: #141c20; --raised: #1a242a; --ink: #e0e7e4; --muted: #97a6ab; --faint: #6b7a80;
+  --line: #27353c; --accent: #ee7a3b; --accent-soft: rgba(238, 122, 59, 0.16);
+  --snip: #0a0f12; --snip-raised: #141c20; --snip-ink: #e0e7e4; --snip-muted: #97a6ab; --snip-line: #27353c;
+  --craft-ink: #4cc3d3; --short-ink: #f2776c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 16px/1.6 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 46rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: .02em; line-height: 1.15; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+strong { font-weight: 600; }
+code, kbd, .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+kbd {
+  display: inline-block; min-width: 1.6em; padding: 0 .4em; text-align: center;
+  font-size: .8em; line-height: 1.6; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 5px; background: var(--raised); color: var(--ink); white-space: nowrap;
+}
+.ui { font-weight: 600; white-space: nowrap; }
+
+/* header */
+header.top { padding-block: 40px 28px; display: grid; gap: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font-family: var(--font-display); font-size: 17px; letter-spacing: .03em; }
+.brand svg { flex: none; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.1rem); }
+.lede { color: var(--muted); max-width: 38rem; font-size: 1.05rem; }
+.open {
+  justify-self: start; display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px; background: var(--accent); color: #fff;
+  font-weight: 600; font-size: .95rem; text-decoration: none;
+}
+:root[data-theme="dark"] .open { color: #1a0d05; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .open { color: #1a0d05; } }
+
+/* the loop */
+.loop { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr)); gap: 8px; counter-reset: s; }
+.loop a {
+  display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: baseline; height: 100%;
+  padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+  color: var(--ink); text-decoration: none; font-size: .92rem; line-height: 1.3;
+}
+.loop a:hover { border-color: var(--accent); }
+.loop .n { font-family: var(--font-mono); color: var(--accent); font-size: .85rem; }
+.loop-note { color: var(--faint); font-size: .85rem; margin-top: 8px; }
+
+/* sticky jump row */
+nav.jump {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line); margin-top: 28px;
+}
+nav.jump .wrap { position: relative; display: flex; gap: 6px; overflow-x: auto; padding-block: 10px; scrollbar-width: none; }
+nav.jump .wrap::-webkit-scrollbar { display: none; }
+nav.jump a {
+  flex: none; padding: 4px 11px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--panel); color: var(--muted); text-decoration: none; font-size: .85rem; white-space: nowrap;
+}
+nav.jump a .mono { color: var(--accent); margin-right: 4px; }
+nav.jump a.on { border-color: var(--accent); color: var(--ink); background: var(--accent-soft); }
+
+/* sections */
+main { padding-block: 8px 48px; display: grid; gap: 0; }
+section { padding-block: 36px 8px; display: grid; gap: 16px; border-bottom: 1px solid var(--line); padding-bottom: 36px; }
+section:last-of-type { border-bottom: 0; }
+.sh { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: baseline; }
+.sh .n { font-family: var(--font-mono); color: var(--accent); font-size: 1rem; }
+.sh h2 { font-size: clamp(1.55rem, 4.6vw, 1.9rem); }
+.sh .where { grid-column: 2; color: var(--muted); font-size: .92rem; }
+h3 { font-size: 1.25rem; margin-top: 8px; }
+ul.pts { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+ul.pts li::marker { color: var(--faint); }
+.aside { color: var(--muted); font-size: .94rem; }
+
+/* planner snippets */
+.snip {
+  background: var(--snip); color: var(--snip-ink); border-radius: 12px; border: 1px solid var(--snip-line);
+  padding: 12px 14px 14px; display: grid; gap: 10px; font-size: 13px; line-height: 1.4; min-width: 0;
+}
+.snip-eyebrow { display: flex; justify-content: space-between; gap: 8px; color: var(--snip-muted); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.bmat { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto 84px; gap: 4px 10px; align-items: start; }
+.bmat .sw { width: 16px; height: 16px; border-radius: 3px; margin-top: 2px; border: 1px solid rgba(255,255,255,.12); }
+.bmat .nm { font-weight: 600; }
+.bmat .sub { display: block; font-weight: 400; color: var(--snip-muted); font-size: 12px; margin-top: 2px; }
+.bmat .sub .cr { color: var(--snip-craft); }
+.bmat .sub .sh2 { color: var(--snip-short); }
+.bmat .left { font-family: var(--font-mono); text-align: right; padding-top: 1px; }
+.fake-in {
+  font-family: var(--font-mono); font-size: 12.5px; background: var(--snip-raised); border: 1px solid var(--snip-line);
+  border-radius: 6px; padding: 3px 8px; text-align: right;
+}
+.hdr { color: var(--snip-muted); font-size: 11px; }
+.hdr span:nth-child(3), .hdr span:nth-child(4) { text-align: right; }
+.ings { display: grid; gap: 6px; padding-left: 26px; border-left: 2px solid var(--snip-line); margin-left: 7px; }
+.ing { display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 2px 10px; align-items: start; }
+.ing .sub { color: var(--snip-muted); font-size: 12px; display: block; }
+.ing .sub .sh2 { color: var(--snip-short); }
+.ing.d1 { padding-left: 14px; }
+.callout { border-left: 3px solid var(--craft); padding: 4px 0 4px 12px; color: var(--muted); font-size: .94rem; }
+
+/* row anatomy */
+.anat { display: grid; gap: 10px; margin: 0; }
+.anat div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 4px 14px; }
+.anat dt { font-family: var(--font-mono); font-size: .85rem; padding-top: 2px; }
+.anat dt .cr { color: var(--craft-ink); }
+.anat dt .sh2 { color: var(--short-ink); }
+.anat dd { margin: 0; }
+@media (max-width: 520px) { .anat div { grid-template-columns: 1fr; } }
+
+/* legend */
+.legend { display: grid; gap: 8px; margin: 0; }
+.legend div { display: grid; grid-template-columns: 22px 7.5rem minmax(0, 1fr); gap: 4px 12px; align-items: start; padding: 10px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.legend .sw { width: 22px; height: 22px; border-radius: 5px; }
+.legend dt { font-weight: 600; }
+.legend dd { margin: 0; color: var(--muted); font-size: .94rem; }
+@media (max-width: 520px) { .legend div { grid-template-columns: 22px minmax(0, 1fr); } .legend dd { grid-column: 2; } }
+
+/* tables */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th, td { text-align: left; padding: 9px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+td:first-child { white-space: nowrap; }
+
+footer { padding-block: 24px 40px; color: var(--faint); font-size: .85rem; border-top: 1px solid var(--line); }
+footer .wrap { display: grid; gap: 6px; }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg width="18" height="22" viewBox="0 0 18 22" aria-hidden="true"><path d="M9 1c1 4 6 6.5 6 12a6 6 0 0 1-12 0c0-3 1.6-4.6 3-6 .3 2 1.2 3 2.2 3C7.4 7 7.6 4 9 1z" fill="var(--accent)"/></svg>
+      Embervale Blueprints
+    </div>
+    <h1>Build guide</h1>
+    <p class="lede">How the planner helps you build a plan in game: what you have, what you can craft, what's left to gather, where each block goes, and what's done.</p>
+    <a class="open" href="https://claude.ai/artifact/QbEiF3vGnAfXo3K2GeAiLS" target="_blank" rel="noopener">Open the planner
+      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4 3h5v5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></a>
+  </header>
+
+  <ol class="loop" aria-label="The build loop">
+    <li><a href="#have"><span class="n">1</span>Count what you have</a></li>
+    <li><a href="#gather"><span class="n">2</span>Gather what's short</a></li>
+    <li><a href="#afford"><span class="n">3</span>See what you can build</a></li>
+    <li><a href="#steps"><span class="n">4</span>Follow the steps</a></li>
+    <li><a href="#find"><span class="n">5</span>Find where it goes</a></li>
+    <li><a href="#mark"><span class="n">6</span>Mark it built</a></li>
+    <li><a href="#repeat"><span class="n">7</span>Restock and repeat</a></li>
+  </ol>
+  <p class="loop-note">A building session runs 1 to 7, then loops back to 1 for the next trip. Step 4 is optional.</p>
+</div>
+
+<nav class="jump" aria-label="Jump to">
+  <div class="wrap">
+    <a href="#have"><span class="mono">1</span>Have</a>
+    <a href="#gather"><span class="mono">2</span>Gather</a>
+    <a href="#afford"><span class="mono">3</span>Afford</a>
+    <a href="#steps"><span class="mono">4</span>Steps</a>
+    <a href="#find"><span class="mono">5</span>Find</a>
+    <a href="#mark"><span class="mono">6</span>Mark</a>
+    <a href="#repeat"><span class="mono">7</span>Repeat</a>
+    <a href="#keys"><span class="mono">⌨</span>Keys</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="have">
+    <div class="sh"><span class="n">1</span><h2>Count what you have</h2><p class="where">Inventory tab, right-hand panel</p></div>
+    <p>The Inventory holds a count for everything there's a recipe for: gathered resources by region, crafted parts by station, blocks, and every item you can make. It's the one place counts change. Type what you're holding into each box; <kbd>Enter</kbd> moves to the next.</p>
+    <ul class="pts">
+      <li><strong>This plan</strong> and <strong>Crafting list</strong> narrow it to what those still need, all the way down the recipes, each marked with what's needed and whether to gather or craft it.</li>
+      <li>The Build tab and the Crafting list show these counts. Click one there to jump to it in the Inventory.</li>
+      <li>Counts are shared by all your plans. Each plan compares them only with its own needs.</li>
+    </ul>
+    <p>In the Build tab, every block the plan uses has a row, and chests, stations and furniture are under <span class="ui">Items still to place</span>. The arrow at a row's end opens its ingredients, with the count for each.</p>
+
+    <h3>Reading a row</h3>
+    <p>Each row is a smart count: what's in your inventory, what you could craft right now, and what's still to gather.</p>
+
+    <div class="snip" aria-label="Example Build tab rows">
+      <div class="snip-eyebrow"><span>Example rows</span><span>Build tab</span></div>
+      <div class="bmat hdr"><span></span><span>Block</span><span>Left</span><span>Have</span></div>
+      <div class="bmat">
+        <span class="sw" style="background:#7d776a"></span>
+        <span class="nm">Rough Stone Block<span class="sub">70 / 160 in inventory · <span class="cr">craft the rest: 1 craft (makes 100)</span></span></span>
+        <span class="left">160</span>
+        <span class="fake-in">70</span>
+      </div>
+      <div class="bmat">
+        <span class="sw" style="background:#c4c8cf"></span>
+        <span class="nm">Moonstone Block<span class="sub">30 / 110 in inventory · nothing craftable yet · <span class="sh2">gather 4 Diamond, 4 Celestium Ore, 4 Mother-Of-Pearl</span></span></span>
+        <span class="left">110</span>
+        <span class="fake-in">30</span>
+      </div>
+      <div class="ings" aria-label="Moonstone Block's ingredients, opened">
+        <div class="ing"><span>Moonstone<span class="sub">10 a craft</span></span><span class="fake-in">25</span></div>
+        <div class="ing"><span>Sparkling Dust<span class="sub">4 a craft · made from the ones below · make 4 crafts</span></span><span class="fake-in">0</span></div>
+        <div class="ing d1"><span>Diamond<span class="sub">4 a craft · <span class="sh2">short 4</span></span></span><span class="fake-in">0</span></div>
+        <div class="ing d1"><span>Celestium Ore<span class="sub">4 a craft · <span class="sh2">short 4</span></span></span><span class="fake-in">0</span></div>
+        <div class="ing d1"><span>Mother-Of-Pearl<span class="sub">4 a craft · <span class="sh2">short 4</span></span></span><span class="fake-in">0</span></div>
+        <div class="ing"><span>Basalt<span class="sub">3 a craft</span></span><span class="fake-in">3</span></div>
+      </div>
+    </div>
+
+    <dl class="anat">
+      <div><dt>70 / 160 in inventory</dt><dd>Finished blocks you have, against what the plan still needs.</dd></div>
+      <div><dt><span class="cr">craft the rest: 1 craft</span></dt><dd>You can craft enough right now to finish. One craft makes a batch (100 for most blocks), so here one batch covers the last 90.</dd></div>
+      <div><dt><span class="cr">25 craftable</span></dt><dd>Shown instead when you can only craft part of it: how many you could make now, in whole crafts.</dd></div>
+      <div><dt><span class="sh2">gather …</span></dt><dd>The raw materials still missing to finish the lot.</dd></div>
+    </dl>
+
+    <p>The count follows the whole chain. Moonstone Block needs Sparkling Dust, which the Mill makes from Diamond, Moonstone, Celestium Ore and Mother-of-Pearl, so your raw Moonstone counts twice over. Parts you already hold are used before any are made.</p>
+    <p class="callout">Set Diamond, Celestium Ore and Mother-of-Pearl to 4 in the Inventory, and the example's Moonstone row changes to “craft the rest: 1 craft (makes 100)”.</p>
+
+    <ul class="pts">
+      <li><strong>Raw and finished together:</strong> Moonstone Blocks and raw Moonstone each have their own count. The row uses the blocks first, then what the raw can make.</li>
+      <li><strong>Shared materials:</strong> each row counts against everything you have, on its own. If two blocks both use your Stone, both show what they could make. Craft one, update the counts, and the other rebalances.</li>
+      <li><strong>Items</strong> work the same way, through their parts down to raw materials. Anything not in the 1.0 recipe data says so.</li>
+    </ul>
+  </section>
+
+  <section id="gather">
+    <div class="sh"><span class="n">2</span><h2>Gather what's short</h2><p class="where">Crafting list, top bar</p></div>
+    <p>Press <span class="ui">What I'm short</span>. It adds every block and unplaced item the plan needs beyond what you have, as crafts, and breaks them down to raw resources.</p>
+    <ul class="pts">
+      <li>Resources are grouped by where to go: by region from the Springlands to Cinder's Cradle, plus Anywhere. Crafted parts are grouped by the station that makes them.</li>
+      <li><strong>To craft</strong> is a table: crafts on the list, how many that makes, how many you have, and how many are still to make. Click an item for what the rest of it takes.</li>
+      <li>What you already have isn't made again, so the resources count only what's still to make.</li>
+      <li>Tick rows off as you collect. <span class="ui">Copy as text</span> gives you the list, ticks included, for your phone.</li>
+      <li>Have counts come from the Inventory. <span class="ui">Update counts in the Inventory</span> closes the list and opens it on everything the list needs; the shortfalls shrink as you fill them in.</li>
+      <li>Blocks with no recipe, like the isle's granite rock, are named in a message instead, since you gather them as they are.</li>
+    </ul>
+    <p class="aside">The list's other buttons: <span class="ui">Add from this plan</span> takes everything, <span class="ui">Materials only</span> just the blocks, <span class="ui">Everything else</span> the chests, stations, furniture, doors and windows.</p>
+  </section>
+
+  <section id="afford">
+    <div class="sh"><span class="n">3</span><h2>See what you can build now</h2><p class="where">Build tab, or the Mark built tool's bar: <span class="ui">What I can afford</span></p></div>
+    <p>Each chunk in the view takes a colour. Finished blocks go to the largest chunks first, whole chunks only; then what you could craft goes to the chunks still waiting.</p>
+    <dl class="legend">
+      <div><span class="sw" style="background:var(--ready)"></span><dt>Ready</dt><dd>You hold enough finished blocks to build it.</dd></div>
+      <div><span class="sw" style="background:var(--craft)"></span><dt>Craft first</dt><dd>Not enough blocks yet, but you can craft them now from what you have.</dd></div>
+      <div><span class="sw" style="background:var(--close)"></span><dt>Close</dt><dd>What's left covers three-quarters or more of it.</dd></div>
+      <div><span class="sw" style="background:var(--short)"></span><dt>Short</dt><dd>Gather more first.</dd></div>
+    </dl>
+    <p>A chunk is every connected block of one material that the view shows. In 3D a whole building's outside can be one chunk. In Layers mode it's that layer's runs, which is finer.</p>
+  </section>
+
+  <section id="steps">
+    <div class="sh"><span class="n">4</span><h2>Follow the steps</h2><p class="where">Build tab, Steps: <span class="ui">Start</span> or <span class="ui">Next unbuilt</span> <kbd>N</kbd></p></div>
+    <ul class="pts">
+      <li>The order: each level group (lowest first), each labelled area in it, then one course at a time from the bottom.</li>
+      <li>The step card names the area and course, the blocks to lay, and where it is from the altar.</li>
+      <li>The views follow the step: Layers mode at that course, its blocks highlighted and the rest faded.</li>
+      <li><kbd>,</kbd> and <kbd>.</kbd> step back and forward. The outline jumps to any area and shows its progress.</li>
+    </ul>
+  </section>
+
+  <section id="find">
+    <div class="sh"><span class="n">5</span><h2>Find where it goes</h2><p class="where">Altar card, inspector and View menu</p></div>
+    <ul class="pts">
+      <li><strong>Altar card:</strong> hover a square in 2D or a block in 3D. A card at the top left of the map shows its distance from the altar's edges, in metres with blocks in brackets, and its height from the altar's base and from 0 m. A block right beside the altar reads 0. The card fades when your pointer comes near it.</li>
+      <li><strong>Build card:</strong> drag over squares in 2D, or click a block in 3D (it takes the whole connected chunk). The inspector shows its size in blocks, the blocks per material and how many are built, where it starts from the altar, and its levels. <span class="ui">Copy</span> sends it to your phone.</li>
+      <li><strong>Crowded builds:</strong> <span class="ui">Show only the selection</span> clips the 3D view to it, <span class="ui">Frame the selection</span> zooms to it, and the North, East, South and West presets give straight-on elevations.</li>
+    </ul>
+  </section>
+
+  <section id="mark">
+    <div class="sh"><span class="n">6</span><h2>Mark it built</h2><p class="where">Mark built tool <kbd>J</kbd>, in 2D or 3D</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Do this</th><th>To mark</th></tr></thead>
+        <tbody>
+          <tr><td>Click</td><td>A whole chunk. Click a fully built chunk again to unmark it.</td></tr>
+          <tr><td><kbd>Shift</kbd> click</td><td>One block</td></tr>
+          <tr><td><kbd>Alt</kbd> click</td><td>Everything connected, shown or not</td></tr>
+          <tr><td>Drag</td><td>The squares you pass over, in the material you started on</td></tr>
+          <tr><td>Right-click</td><td>Unmarks instead</td></tr>
+          <tr><td><kbd>Ctrl</kbd> <kbd>Z</kbd></td><td>Takes back the last mark</td></tr>
+          <tr><td>Click an item</td><td>That chest, station, door or window as placed</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="pts">
+      <li>Marking a chunk also marks the hidden stone cores touching it. In the steps, <span class="ui">Mark this step built</span> marks the whole course.</li>
+      <li>Built blocks show faded with a tick in 2D and grey in 3D. <span class="ui">Show progress</span> keeps that visible while you use other tools.</li>
+      <li>Progress is saved per block in the planner's database, so it survives a regenerated plan. A block whose material changed shows as not built.</li>
+    </ul>
+  </section>
+
+  <section id="repeat">
+    <div class="sh"><span class="n">7</span><h2>Restock and repeat</h2><p class="where">Back to the Inventory</p></div>
+    <p>Lower a count in the Inventory as you place blocks, and raise it as you gather and craft. The Build tab's rows, the colours and the Crafting list update straight away. Press <span class="ui">What I'm short</span> again for the next gathering trip.</p>
+  </section>
+
+  <section id="keys">
+    <div class="sh"><span class="n">⌨</span><h2>Getting around</h2><p class="where"><kbd>?</kbd> in the planner lists every shortcut</p></div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Key</th><th>Does</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>/</kbd> or <kbd>Ctrl</kbd> <kbd>K</kbd></td><td>Find or do anything: commands, levels and areas by name, materials, items</td></tr>
+          <tr><td><kbd>J</kbd></td><td>Mark built tool</td></tr>
+          <tr><td><kbd>N</kbd></td><td>Next unbuilt step</td></tr>
+          <tr><td><kbd>,</kbd> <kbd>.</kbd></td><td>Previous and next step</td></tr>
+          <tr><td><kbd>`</kbd></td><td>Cycle 2D, Split and 3D</td></tr>
+          <tr><td><kbd>K</kbd></td><td>Levels or block layers</td></tr>
+          <tr><td><kbd>?</kbd></td><td>Every shortcut</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="pts">
+      <li>Hover a material in the Build or Materials tab to light it up in both views.</li>
+      <li>The height strip and the grouped Levels tab get you around tall plans.</li>
+      <li><span class="ui">History</span>, beside Undo, jumps back to any of the last 20 plan edits. Marking built has its own undo: <kbd>Ctrl</kbd> <kbd>Z</kbd> while using the tool.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Planner version 53, 20 October 2026. The example rows use the planner's 1.0 recipes.</p>
+    <p>Recipes come from enshrouded.tools, which reads the game files (Steam build 25936191). Most aren't checked in game yet. One crafted block per 0.5 m block placed comes from 2024 player tests; it isn't documented.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const links = [...document.querySelectorAll('nav.jump a')];
+  const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+  const io = new IntersectionObserver(es => {
+    for (const e of es) if (e.isIntersecting) {
+      links.forEach(a => a.classList.remove('on'));
+      const a = byId.get(e.target.id);
+      if (a) { a.classList.add('on'); const row = a.parentElement; if (a.offsetLeft < row.scrollLeft || a.offsetLeft + a.offsetWidth > row.scrollLeft + row.clientWidth) row.scrollLeft = a.offsetLeft - 16; }
+    }
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('main section').forEach(s => io.observe(s));
+})();
+</script>

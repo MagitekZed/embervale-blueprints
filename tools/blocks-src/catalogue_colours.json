@@ -1,0 +1,3542 @@
+[
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Castle Block",
+  "cells": [
+   "Veilwater Basin",
+   "Obtaining Shell Limestone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Castle_Block.png/100px-Castle_Block.png",
+  "top": "#5a5c5f",
+  "tone": "#616467",
+  "avg": "#4b4d50",
+  "dominant": "#4d4e51",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#4d4e51"
+   ],
+   [
+    0.33,
+    "#2f3030"
+   ],
+   [
+    0.26,
+    "#6b6f74"
+   ]
+  ],
+  "color": "#7c8084"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Castle Wall Stone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found in Mining Rift"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Castle_Wall_Stone_Block.png/100px-Castle_Wall_Stone_Block.png",
+  "top": "#3d3b39",
+  "tone": "#555350",
+  "avg": "#3b3a38",
+  "dominant": "#191917",
+  "dom_share": 0.34,
+  "clusters": [
+   [
+    0.34,
+    "#191917"
+   ],
+   [
+    0.34,
+    "#5a5957"
+   ],
+   [
+    0.33,
+    "#3a3937"
+   ]
+  ],
+  "color": "#75726e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Citywall Block",
+  "cells": [
+   "Revelwood",
+   "Found in Fawnsong Frontier"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Citywall_Block.png/100px-Citywall_Block.png",
+  "top": "#43423e",
+  "tone": "#4e4e4a",
+  "avg": "#3e3d38",
+  "dominant": "#41403b",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#41403b"
+   ],
+   [
+    0.39,
+    "#2b2923"
+   ],
+   [
+    0.2,
+    "#585a58"
+   ]
+  ],
+  "color": "#6f6f69"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Desert City Wall",
+  "cells": [
+   "Kindlewastes",
+   "Found in \"Far Away Fray\" Tavern"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Desert_City_Wall.png/100px-Desert_City_Wall.png",
+  "top": "#594e41",
+  "tone": "#62584d",
+  "avg": "#4f463b",
+  "dominant": "#53493d",
+  "dom_share": 0.49,
+  "clusters": [
+   [
+    0.49,
+    "#53493d"
+   ],
+   [
+    0.32,
+    "#342c22"
+   ],
+   [
+    0.2,
+    "#6f665b"
+   ]
+  ],
+  "color": "#857666"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Desert Temple Block",
+  "cells": [
+   "Kindlewastes",
+   "Found in South-west Sun Temple"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Desert_Temple_Block.png/100px-Desert_Temple_Block.png",
+  "top": "#5f492f",
+  "tone": "#71593b",
+  "avg": "#5b452d",
+  "dominant": "#5c4832",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#5c4832"
+   ],
+   [
+    0.37,
+    "#402e1b"
+   ],
+   [
+    0.22,
+    "#806642"
+   ]
+  ],
+  "color": "#9c794d"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Drak Temple Block",
+  "cells": [
+   "Veilwater Basin",
+   "Found in Drak'Dal Temple"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Drak_Temple_Block.png/100px-Drak_Temple_Block.png",
+  "top": "#3d4233",
+  "tone": "#4e5546",
+  "avg": "#393e31",
+  "dominant": "#212418",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#212418"
+   ],
+   [
+    0.36,
+    "#3c4233"
+   ],
+   [
+    0.26,
+    "#565e51"
+   ]
+  ],
+  "color": "#6e7962"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Fancy Stone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found in Raven's Keep"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fancy_Stone_Block.png/100px-Fancy_Stone_Block.png",
+  "top": "#6c6a68",
+  "tone": "#797773",
+  "avg": "#656361",
+  "dominant": "#646363",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#646363"
+   ],
+   [
+    0.33,
+    "#4e4c4a"
+   ],
+   [
+    0.24,
+    "#87837f"
+   ]
+  ],
+  "color": "#92908c"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Fired Bricks Block",
+  "cells": [
+   "Revelwood",
+   "Obtaining Fired Brick"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fired_Bricks_Block.png/100px-Fired_Bricks_Block.png",
+  "top": "#79543e",
+  "tone": "#835d46",
+  "avg": "#74503b",
+  "dominant": "#75513c",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#75513c"
+   ],
+   [
+    0.37,
+    "#62402d"
+   ],
+   [
+    0.24,
+    "#8b644c"
+   ]
+  ],
+  "color": "#aa7657"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Granite Block",
+  "cells": [
+   "Albaneve Summits",
+   "Obtaining Granite"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Granite_Block.png/99px-Granite_Block.png",
+  "top": "#3c3d3e",
+  "tone": "#484a4d",
+  "avg": "#393a3b",
+  "dominant": "#3b3b3c",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#3b3b3c"
+   ],
+   [
+    0.37,
+    "#272626"
+   ],
+   [
+    0.24,
+    "#50545a"
+   ]
+  ],
+  "color": "#676a6f"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Highly Polished Stone Block",
+  "cells": [
+   "Kindlewastes",
+   "Looted from Scavenger Matron in Ocean's Heart"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Highly_Polished_Stone_Block.png/100px-Highly_Polished_Stone_Block.png",
+  "top": "#979187",
+  "tone": "#a29e96",
+  "avg": "#938e85",
+  "dominant": "#938e84",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#938e84"
+   ],
+   [
+    0.33,
+    "#807a6f"
+   ],
+   [
+    0.27,
+    "#a8a59f"
+   ]
+  ],
+  "color": "#b3b0a9"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Hollow Halls Block",
+  "cells": [
+   "Springlands",
+   "Found in Springlands Hollow Halls"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Hollow_Halls_Block.png/100px-Hollow_Halls_Block.png",
+  "top": "#1c1a1d",
+  "tone": "#252629",
+  "avg": "#1e1e20",
+  "dominant": "#181617",
+  "dom_share": 0.51,
+  "clusters": [
+   [
+    0.51,
+    "#181617"
+   ],
+   [
+    0.36,
+    "#212123"
+   ],
+   [
+    0.13,
+    "#323439"
+   ]
+  ],
+  "color": "#4a4c52"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Limestone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found in Surat's Rest"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Limestone_Block.png/100px-Limestone_Block.png",
+  "top": "#837564",
+  "tone": "#92846f",
+  "avg": "#7b6e5d",
+  "dominant": "#7c6d59",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#7c6d59"
+   ],
+   [
+    0.28,
+    "#998c7a"
+   ],
+   [
+    0.27,
+    "#594f44"
+   ]
+  ],
+  "color": "#a79a88"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Mixed Sandstone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found in Scavenger Outpost"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Mixed_Sandstone_Block.png/100px-Mixed_Sandstone_Block.png",
+  "top": "#7c6e5d",
+  "tone": "#806f59",
+  "avg": "#625649",
+  "dominant": "#403a35",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#403a35"
+   ],
+   [
+    0.33,
+    "#64574a"
+   ],
+   [
+    0.28,
+    "#8c7a62"
+   ]
+  ],
+  "color": "#9e8a70"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Mycelium Overgrown Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Mycelium"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Mycelium_Overgrown_Block.png/100px-Mycelium_Overgrown_Block.png",
+  "top": "#3b3529",
+  "tone": "#484133",
+  "avg": "#383227",
+  "dominant": "#27231a",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#27231a"
+   ],
+   [
+    0.37,
+    "#3d372b"
+   ],
+   [
+    0.16,
+    "#585141"
+   ]
+  ],
+  "color": "#72664f"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Polished Granite Block",
+  "cells": [
+   "Albaneve Summits",
+   "Found in Gateway Outpost \"Bora\""
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Polished_Granite_Block.png/100px-Polished_Granite_Block.png",
+  "top": "#3d4045",
+  "tone": "#464d56",
+  "avg": "#34373c",
+  "dominant": "#232424",
+  "dom_share": 0.52,
+  "clusters": [
+   [
+    0.52,
+    "#232424"
+   ],
+   [
+    0.3,
+    "#3a3f47"
+   ],
+   [
+    0.18,
+    "#58626f"
+   ]
+  ],
+  "color": "#626c7a"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Refined Sandstone Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Sandstone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Refined_Sandstone_Block.png/100px-Refined_Sandstone_Block.png",
+  "top": "#958779",
+  "tone": "#9a8d82",
+  "avg": "#8d7f72",
+  "dominant": "#8b7e71",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#8b7e71"
+   ],
+   [
+    0.32,
+    "#7d6d5c"
+   ],
+   [
+    0.29,
+    "#9e938a"
+   ]
+  ],
+  "color": "#ada198"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Refined Stone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Obtaining Masonry Tools"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Refined_Stone_Block.png/100px-Refined_Stone_Block.png",
+  "top": "#64615a",
+  "tone": "#686763",
+  "avg": "#5b5954",
+  "dominant": "#5e5b56",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#5e5b56"
+   ],
+   [
+    0.38,
+    "#4d4942"
+   ],
+   [
+    0.2,
+    "#707170"
+   ]
+  ],
+  "color": "#84837e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Regular Sandstone Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Sandstone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Regular_Sandstone_Block.png/100px-Regular_Sandstone_Block.png",
+  "top": "#86796c",
+  "tone": "#8a7d71",
+  "avg": "#7e7165",
+  "dominant": "#7e7269",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#7e7269"
+   ],
+   [
+    0.38,
+    "#706255"
+   ],
+   [
+    0.18,
+    "#97897a"
+   ]
+  ],
+  "color": "#a09489"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Regular Stone Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found at Ruined Bridge"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Regular_Stone_Block.png/100px-Regular_Stone_Block.png",
+  "top": "#5b5955",
+  "tone": "#666564",
+  "avg": "#575652",
+  "dominant": "#575651",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#575651"
+   ],
+   [
+    0.28,
+    "#6a6b6c"
+   ],
+   [
+    0.27,
+    "#403d37"
+   ]
+  ],
+  "color": "#82817f"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Rough Flintstone Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Flintstone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rough_Flintstone_Block.png/100px-Rough_Flintstone_Block.png",
+  "top": "#2f2b25",
+  "tone": "#3d3933",
+  "avg": "#2d2924",
+  "dominant": "#1c1914",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#1c1914"
+   ],
+   [
+    0.35,
+    "#332e27"
+   ],
+   [
+    0.18,
+    "#494844"
+   ]
+  ],
+  "color": "#655e53"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Rough Sandstone Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Sandstone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rough_Sandstone_Block.png/100px-Rough_Sandstone_Block.png",
+  "top": "#574234",
+  "tone": "#624c3e",
+  "avg": "#533f31",
+  "dominant": "#412f22",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#412f22"
+   ],
+   [
+    0.37,
+    "#554133"
+   ],
+   [
+    0.22,
+    "#6d5646"
+   ]
+  ],
+  "color": "#8b6954"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Rough Stone Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Stone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rough_Stone_Block.png/100px-Rough_Stone_Block.png",
+  "top": "#504c44",
+  "tone": "#5b574e",
+  "avg": "#4c4840",
+  "dominant": "#3c3931",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#3c3931"
+   ],
+   [
+    0.33,
+    "#4f4c44"
+   ],
+   [
+    0.22,
+    "#646157"
+   ]
+  ],
+  "color": "#7d776a"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Roughly Cut Stone Block",
+  "cells": [
+   "Springlands",
+   "Found in Netherton"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Roughly_Cut_Stone_Block.png/100px-Roughly_Cut_Stone_Block.png",
+  "top": "#32312e",
+  "tone": "#3e3d3b",
+  "avg": "#2e2d2b",
+  "dominant": "#1e1d1a",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#1e1d1a"
+   ],
+   [
+    0.36,
+    "#32312e"
+   ],
+   [
+    0.2,
+    "#494947"
+   ]
+  ],
+  "color": "#62605d"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Shell Limestone Block",
+  "cells": [
+   "Veilwater Basin",
+   "Obtaining Shell Limestone"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shell_Limestone_Block.png/100px-Shell_Limestone_Block.png",
+  "top": "#564a37",
+  "tone": "#655842",
+  "avg": "#4e4432",
+  "dominant": "#4e4535",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#4e4535"
+   ],
+   [
+    0.32,
+    "#2e271a"
+   ],
+   [
+    0.25,
+    "#71624a"
+   ]
+  ],
+  "color": "#8c7958"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Temple Stones",
+  "cells": [
+   "Revelwood",
+   "Found in Vukah Treetop Settlement"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Temple_Stones.png/100px-Temple_Stones.png",
+  "top": "#625e49",
+  "tone": "#5f5b44",
+  "avg": "#4a4838",
+  "dominant": "#494636",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#494636"
+   ],
+   [
+    0.31,
+    "#2f2f29"
+   ],
+   [
+    0.31,
+    "#676249"
+   ]
+  ],
+  "color": "#857f5d"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Weathered Stone Block",
+  "cells": [
+   "Revelwood",
+   "Found in Bramblespine Boneyard"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Weathered_Stone_Block.png/100px-Weathered_Stone_Block.png",
+  "top": "#393935",
+  "tone": "#494a47",
+  "avg": "#373733",
+  "dominant": "#22211d",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#22211d"
+   ],
+   [
+    0.38,
+    "#3a3934"
+   ],
+   [
+    0.22,
+    "#555757"
+   ]
+  ],
+  "color": "#6a6c67"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Stone Blocks",
+  "name": "Well Block",
+  "cells": [
+   "Kindlewastes",
+   "Found in Kindlewastes Elixir Well"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Well_Block.png/100px-Well_Block.png",
+  "top": "#2c312b",
+  "tone": "#363c35",
+  "avg": "#272c26",
+  "dominant": "#191b17",
+  "dom_share": 0.46,
+  "clusters": [
+   [
+    0.46,
+    "#191b17"
+   ],
+   [
+    0.38,
+    "#2c312b"
+   ],
+   [
+    0.17,
+    "#454c45"
+   ]
+  ],
+  "color": "#586256"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Bamboo Wood Block",
+  "cells": [
+   "Veilwater Basin",
+   "Obtaining Bamboo Logs"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Bamboo_Wood_Block.png/100px-Bamboo_Wood_Block.png",
+  "top": "#3a3021",
+  "tone": "#4d422f",
+  "avg": "#393021",
+  "dominant": "#231c12",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#231c12"
+   ],
+   [
+    0.34,
+    "#3f3423"
+   ],
+   [
+    0.21,
+    "#584e3d"
+   ]
+  ],
+  "color": "#7a6747"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Brick-Timbered Block",
+  "cells": [
+   "Revelwood",
+   "Found in Fort Kelvin"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Brick-Timbered_Block.png/100px-Brick-Timbered_Block.png",
+  "top": "#70615c",
+  "tone": "#76655d",
+  "avg": "#574b47",
+  "dominant": "#352f2f",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#352f2f"
+   ],
+   [
+    0.33,
+    "#5d4f49"
+   ],
+   [
+    0.25,
+    "#857269"
+   ]
+  ],
+  "color": "#947f75"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Conifer Wood Block",
+  "cells": [
+   "Albaneve Summits",
+   "Obtaining Conifer Logs"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Conifer_Wood_Block.png/100px-Conifer_Wood_Block.png",
+  "top": "#39302c",
+  "tone": "#453934",
+  "avg": "#362c29",
+  "dominant": "#362d2c",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#362d2c"
+   ],
+   [
+    0.32,
+    "#221b18"
+   ],
+   [
+    0.26,
+    "#4c3e37"
+   ]
+  ],
+  "color": "#6e5a51"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Half-Timbered Block",
+  "cells": [
+   "Revelwood",
+   "Found in Diadwyn"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Half-Timbered_Block.png/100px-Half-Timbered_Block.png",
+  "top": "#3a3533",
+  "tone": "#4c4540",
+  "avg": "#36312e",
+  "dominant": "#1d1a19",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#1d1a19"
+   ],
+   [
+    0.37,
+    "#363231"
+   ],
+   [
+    0.25,
+    "#58504b"
+   ]
+  ],
+  "color": "#71665e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Half-timbered Shell Limestone Block",
+  "cells": [
+   "Veilwater Basin",
+   "TBA"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Half-timbered_Shell_Limestone_Block.png/100px-Half-timbered_Shell_Limestone_Block.png",
+  "top": "#332b1f",
+  "tone": "#3d3427",
+  "avg": "#2a251c",
+  "dominant": "#17140e",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#17140e"
+   ],
+   [
+    0.32,
+    "#2c2821"
+   ],
+   [
+    0.25,
+    "#473b29"
+   ]
+  ],
+  "color": "#6c5b42"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Palm Wood Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Palm Wood Logs"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Palm_Wood_Block.png/100px-Palm_Wood_Block.png",
+  "top": "#735f55",
+  "tone": "#7b6c68",
+  "avg": "#69554b",
+  "dominant": "#563e2f",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#563e2f"
+   ],
+   [
+    0.33,
+    "#705b50"
+   ],
+   [
+    0.2,
+    "#857d7e"
+   ]
+  ],
+  "color": "#958580"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Plaited Block",
+  "cells": [
+   "Revelwood",
+   "Found in Abandoned Vukah Village in the Blackmire[1]"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Plaited_Block.png/100px-Plaited_Block.png",
+  "top": "#473c2f",
+  "tone": "#615648",
+  "avg": "#443b30",
+  "dominant": "#4a3f33",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#4a3f33"
+   ],
+   [
+    0.39,
+    "#231c15"
+   ],
+   [
+    0.22,
+    "#72695b"
+   ]
+  ],
+  "color": "#867561"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Refined Wood Block",
+  "cells": [
+   "Revelwood",
+   "Obtaining Wood Planks"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Refined_Wood_Block.png/100px-Refined_Wood_Block.png",
+  "top": "#4c413a",
+  "tone": "#504742",
+  "avg": "#463c35",
+  "dominant": "#3c3129",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#3c3129"
+   ],
+   [
+    0.33,
+    "#493e36"
+   ],
+   [
+    0.2,
+    "#57504e"
+   ]
+  ],
+  "color": "#75675f"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Rough Wood Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Wood Logs"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rough_Wood_Block.png/100px-Rough_Wood_Block.png",
+  "top": "#453b2f",
+  "tone": "#514539",
+  "avg": "#40372b",
+  "dominant": "#41372c",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#41372c"
+   ],
+   [
+    0.35,
+    "#2c251b"
+   ],
+   [
+    0.27,
+    "#594c3e"
+   ]
+  ],
+  "color": "#7a6653"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Shroud Wood Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Shroud Wood"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shroud_Wood_Block.png/100px-Shroud_Wood_Block.png",
+  "top": "#353635",
+  "tone": "#3b3b3a",
+  "avg": "#303030",
+  "dominant": "#303131",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#303131"
+   ],
+   [
+    0.35,
+    "#232323"
+   ],
+   [
+    0.24,
+    "#414241"
+   ]
+  ],
+  "color": "#5f5f5d"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Wood Blocks",
+  "name": "Tarred Wood Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Tar"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Tarred_Wood_Block.png/100px-Tarred_Wood_Block.png",
+  "top": "#2c2928",
+  "tone": "#363230",
+  "avg": "#272422",
+  "dominant": "#171513",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#171513"
+   ],
+   [
+    0.35,
+    "#2b2725"
+   ],
+   [
+    0.21,
+    "#3f3c3b"
+   ]
+  ],
+  "color": "#5d5652"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Luminescent Blocks",
+  "name": "Blue Luminescent Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Luminous Growth"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blue_Luminescent_Block.png/100px-Blue_Luminescent_Block.png",
+  "top": "#477faf",
+  "tone": "#5087b2",
+  "avg": "#4176a6",
+  "dominant": "#316599",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#316599"
+   ],
+   [
+    0.41,
+    "#467ba9"
+   ],
+   [
+    0.12,
+    "#6ca1ca"
+   ]
+  ],
+  "color": "#6c9dc3"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Luminescent Blocks",
+  "name": "Green Luminescent Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Purified Slime"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Green_Luminescent_Block.png/99px-Green_Luminescent_Block.png",
+  "top": "#215e3c",
+  "tone": "#2e6742",
+  "avg": "#235b39",
+  "dominant": "#1a4e2f",
+  "dom_share": 0.48,
+  "clusters": [
+   [
+    0.48,
+    "#1a4e2f"
+   ],
+   [
+    0.27,
+    "#1f673e"
+   ],
+   [
+    0.25,
+    "#3b6445"
+   ]
+  ],
+  "color": "#3f975e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Luminescent Blocks",
+  "name": "White Luminescent Block",
+  "cells": [
+   "Springlands",
+   "Obtaining White Glowing Substance"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/White_Luminescent_Block.png/100px-White_Luminescent_Block.png",
+  "top": "#c4bbb5",
+  "tone": "#c6bfba",
+  "avg": "#c2b8b2",
+  "dominant": "#c2b8b2",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#c2b8b2"
+   ],
+   [
+    0.31,
+    "#c8c1bd"
+   ],
+   [
+    0.3,
+    "#bcafa6"
+   ]
+  ],
+  "color": "#d1cac6"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Luminescent Blocks",
+  "name": "Yellow Luminescent Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Saffron"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Yellow_Luminescent_Block.png/100px-Yellow_Luminescent_Block.png",
+  "top": "#8f6f49",
+  "tone": "#a38148",
+  "avg": "#8e6c3d",
+  "dominant": "#7b5833",
+  "dom_share": 0.53,
+  "clusters": [
+   [
+    0.53,
+    "#7b5833"
+   ],
+   [
+    0.28,
+    "#ac812e"
+   ],
+   [
+    0.19,
+    "#96806e"
+   ]
+  ],
+  "color": "#bd9a5f"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Bone Block",
+  "cells": [
+   "Springlands",
+   "Found in Hidden Tomb"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Bone_Block.png/100px-Bone_Block.png",
+  "top": "#3e3228",
+  "tone": "#594a3c",
+  "avg": "#3b3027",
+  "dominant": "#1e1712",
+  "dom_share": 0.46,
+  "clusters": [
+   [
+    0.46,
+    "#1e1712"
+   ],
+   [
+    0.33,
+    "#43372c"
+   ],
+   [
+    0.21,
+    "#6c5c4c"
+   ]
+  ],
+  "color": "#816a55"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Bronze Block",
+  "cells": [
+   "Nomad Highlands",
+   "Obtaining Bronze Bars"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Bronze_Block.png/100px-Bronze_Block.png",
+  "top": "#594c35",
+  "tone": "#62553c",
+  "avg": "#534730",
+  "dominant": "#574930",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#574930"
+   ],
+   [
+    0.39,
+    "#413622"
+   ],
+   [
+    0.19,
+    "#6d624b"
+   ]
+  ],
+  "color": "#8b7852"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Copper Block",
+  "cells": [
+   "Revelwood",
+   "Obtaining Copper Bar"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Copper_Block.png/100px-Copper_Block.png",
+  "top": "#4e3b2c",
+  "tone": "#614a36",
+  "avg": "#473427",
+  "dominant": "#493628",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#493628"
+   ],
+   [
+    0.36,
+    "#271b14"
+   ],
+   [
+    0.28,
+    "#6e533d"
+   ]
+  ],
+  "color": "#8d694b"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Ectoplasm Block",
+  "cells": [
+   "Nomad Highlands",
+   "Found in Nomad Highlands Hollow Halls"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Ectoplasm_Block.png/100px-Ectoplasm_Block.png",
+  "top": "#283e38",
+  "tone": "#2d5048",
+  "avg": "#283e39",
+  "dominant": "#222b29",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#222b29"
+   ],
+   [
+    0.36,
+    "#2a403a"
+   ],
+   [
+    0.21,
+    "#2e5e56"
+   ]
+  ],
+  "color": "#447f71"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Iron Block",
+  "cells": [
+   "Kindlewastes",
+   "Obtaining Iron Bars"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Iron_Block.png/100px-Iron_Block.png",
+  "top": "#555554",
+  "tone": "#696968",
+  "avg": "#4b4b49",
+  "dominant": "#2b2a26",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#2b2a26"
+   ],
+   [
+    0.38,
+    "#4d4d4c"
+   ],
+   [
+    0.24,
+    "#7b7b7b"
+   ]
+  ],
+  "color": "#848483"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Metal Block",
+  "cells": [
+   "Springlands",
+   "Obtaining Metal Sheets"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Metal_Block.png/100px-Metal_Block.png",
+  "top": "#474d53",
+  "tone": "#585d63",
+  "avg": "#41454a",
+  "dominant": "#3f4447",
+  "dom_share": 0.34,
+  "clusters": [
+   [
+    0.34,
+    "#3f4447"
+   ],
+   [
+    0.33,
+    "#5e636a"
+   ],
+   [
+    0.33,
+    "#24282a"
+   ]
+  ],
+  "color": "#737a82"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Midnight Tomb Block",
+  "cells": [
+   "Albaneve Summits",
+   "Found at the end of a little crypt dungeon on a hill due east of Balefire Lance Point"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Midnight_Tomb_Block.png/100px-Midnight_Tomb_Block.png",
+  "top": "#353b3b",
+  "tone": "#434a4b",
+  "avg": "#2e3432",
+  "dominant": "#1c201c",
+  "dom_share": 0.61,
+  "clusters": [
+   [
+    0.61,
+    "#1c201c"
+   ],
+   [
+    0.27,
+    "#3b4142"
+   ],
+   [
+    0.12,
+    "#6a7681"
+   ]
+  ],
+  "color": "#626d6e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Obsidian Block",
+  "cells": [
+   "Albaneve Summits",
+   "Found on top of Forge Of Obsidia"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Obsidian_Block.png/100px-Obsidian_Block.png",
+  "top": "#2a3236",
+  "tone": "#4a545b",
+  "avg": "#343c41",
+  "dominant": "#1f2629",
+  "dom_share": 0.65,
+  "clusters": [
+   [
+    0.65,
+    "#1f2629"
+   ],
+   [
+    0.27,
+    "#3e474d"
+   ],
+   [
+    0.08,
+    "#becdda"
+   ]
+  ],
+  "color": "#65747e"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Red Carpet Block",
+  "cells": [
+   "Veilwater Basin",
+   "Found in Stillwater Bay"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Red_Carpet_Block.png/100px-Red_Carpet_Block.png",
+  "top": "#66252b",
+  "tone": "#6b2930",
+  "avg": "#5f2127",
+  "dominant": "#712326",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#712326"
+   ],
+   [
+    0.4,
+    "#52181b"
+   ],
+   [
+    0.17,
+    "#4a3244"
+   ]
+  ],
+  "color": "#9e3742"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Red Marble Block",
+  "cells": [
+   "Revelwood",
+   "Found in Revelwood Hollow Halls"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Red_Marble_Block.png/100px-Red_Marble_Block.png",
+  "top": "#2b1919",
+  "tone": "#342224",
+  "avg": "#291a1b",
+  "dominant": "#201212",
+  "dom_share": 0.57,
+  "clusters": [
+   [
+    0.57,
+    "#201212"
+   ],
+   [
+    0.33,
+    "#331e1e"
+   ],
+   [
+    0.1,
+    "#3e3841"
+   ]
+  ],
+  "color": "#643f43"
+ },
+ {
+  "page": "Building_Materials",
+  "group": "Other Blocks",
+  "name": "Starlight Block",
+  "cells": [
+   "Albaneve Summits",
+   "Found in Night Sanctum"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Starlight_Block.png/100px-Starlight_Block.png",
+  "top": "#30313b",
+  "tone": "#393a43",
+  "avg": "#2b2b34",
+  "dominant": "#221f1c",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#221f1c"
+   ],
+   [
+    0.4,
+    "#272b42"
+   ],
+   [
+    0.14,
+    "#504f55"
+   ]
+  ],
+  "color": "#585a69"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Castle Roof Block",
+  "cells": [
+   "Unlocked by completing Lord Vorgoth’s Throneroom",
+   "Ingredients: Shell Limestone x10 Workstation: Workbench Craft Time: Instant Product: Castle Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Castle_Roof_Block.png/100px-Castle_Roof_Block.png",
+  "top": "#677564",
+  "tone": "#73816f",
+  "avg": "#586555",
+  "dominant": "#546351",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#546351"
+   ],
+   [
+    0.34,
+    "#7c8979"
+   ],
+   [
+    0.24,
+    "#2e382f"
+   ]
+  ],
+  "color": "#8b9987"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Desert Shingle Roof Block",
+  "cells": [
+   "Found in Sapphire Strand",
+   "Ingredients: Lump of Clay x10, Bronze Bars x1, Lapislazuli x1 Workstation: Workbench Craft Time: Instant Product: Desert Shingle Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Desert_Shingle_Roof_Block.png/100px-Desert_Shingle_Roof_Block.png",
+  "top": "#303a38",
+  "tone": "#3d4642",
+  "avg": "#2b3331",
+  "dominant": "#181e1e",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#181e1e"
+   ],
+   [
+    0.32,
+    "#2e3635"
+   ],
+   [
+    0.25,
+    "#48524d"
+   ]
+  ],
+  "color": "#5c6b64"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Drak Temple Roof Block",
+  "cells": [
+   "Unlocked by completing Finding Gold Coins",
+   "Ingredients: Shell Limestone x10 Workstation: Workbench Craft Time: Instant Product: Drak Temple Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Drak_Temple_Roof_Block.png/100px-Drak_Temple_Roof_Block.png",
+  "top": "#59593d",
+  "tone": "#636343",
+  "avg": "#535339",
+  "dominant": "#545439",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#545439"
+   ],
+   [
+    0.32,
+    "#686849"
+   ],
+   [
+    0.29,
+    "#3e3d2a"
+   ]
+  ],
+  "color": "#8a8a5a"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Granite Ornamented Roof Block",
+  "cells": [
+   "Unlocked by crafting or picking up Silver Bars",
+   "Ingredients: Granite x10, Silver Bars x1 Workstation: Workbench Craft Time: Instant Product: Granite Ornamented Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Granite_Ornamented_Roof_Block.png/100px-Granite_Ornamented_Roof_Block.png",
+  "top": "#383631",
+  "tone": "#4c4b46",
+  "avg": "#3d3b37",
+  "dominant": "#3e3c36",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#3e3c36"
+   ],
+   [
+    0.32,
+    "#292725"
+   ],
+   [
+    0.26,
+    "#51514e"
+   ]
+  ],
+  "color": "#6e6d65"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Granite Shingle Roof Block",
+  "cells": [
+   "Unlocked by obtaining Granite",
+   "Ingredients: Granite x10 Workstation: Workbench Craft Time: Instant Product: Granite Shingle Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Granite_Shingle_Roof_Block.png/100px-Granite_Shingle_Roof_Block.png",
+  "top": "#2c2c23",
+  "tone": "#3c3d34",
+  "avg": "#2f3029",
+  "dominant": "#33332a",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#33332a"
+   ],
+   [
+    0.39,
+    "#20201d"
+   ],
+   [
+    0.2,
+    "#414542"
+   ]
+  ],
+  "color": "#626454"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Palm Leaf Roof Block",
+  "cells": [
+   "Unlocked by obtaining Palm Leaves",
+   "Ingredients: Palm Leaves x5 Workstation: Workbench Craft Time: Instant Product: Palm Leaf Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Palm_Leaf_Roof_Block.png/100px-Palm_Leaf_Roof_Block.png",
+  "top": "#5f5e51",
+  "tone": "#696857",
+  "avg": "#555448",
+  "dominant": "#565548",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#565548"
+   ],
+   [
+    0.3,
+    "#72705f"
+   ],
+   [
+    0.27,
+    "#363730"
+   ]
+  ],
+  "color": "#898870"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Plant Fiber Roof Block",
+  "cells": [
+   "Unlocked by obtaining Plant Fiber",
+   "Ingredients: Plant Fiber x5 Workstation: Workbench Craft Time: Instant Product: Plant Fiber Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Plant_Fiber_Roof_Block.png/100px-Plant_Fiber_Roof_Block.png",
+  "top": "#463b32",
+  "tone": "#483c33",
+  "avg": "#382f28",
+  "dominant": "#251f1a",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#251f1a"
+   ],
+   [
+    0.37,
+    "#3b3129"
+   ],
+   [
+    0.25,
+    "#52453c"
+   ]
+  ],
+  "color": "#725e4f"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Roof Tiles Block",
+  "cells": [
+   "Unlocked by obtaining Lump of Clay",
+   "Ingredients: Fired Brick x4, Lump of Clay x1, Plant Fiber x1 Workstation: Workbench Craft Time: Instant Product: Roof Tiles Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Roof_Tiles_Block.png/100px-Roof_Tiles_Block.png",
+  "top": "#765547",
+  "tone": "#836254",
+  "avg": "#6e4e41",
+  "dominant": "#523629",
+  "dom_share": 0.35,
+  "clusters": [
+   [
+    0.35,
+    "#523629"
+   ],
+   [
+    0.34,
+    "#704f43"
+   ],
+   [
+    0.31,
+    "#8b6a5c"
+   ]
+  ],
+  "color": "#a37b69"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Shell Limestone Shingles",
+  "cells": [
+   "Found in an attic at Dewdrop Farm",
+   "Ingredients: Lump of Clay x5, Shell Limestone x5 Workstation: Workbench Craft Time: Instant Product: Shell Limestone Shingles x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shell_Limestone_Shingles.png/100px-Shell_Limestone_Shingles.png",
+  "top": "#665e42",
+  "tone": "#807553",
+  "avg": "#5a5239",
+  "dominant": "#2c2718",
+  "dom_share": 0.36,
+  "clusters": [
+   [
+    0.36,
+    "#2c2718"
+   ],
+   [
+    0.35,
+    "#5d563b"
+   ],
+   [
+    0.29,
+    "#928560"
+   ]
+  ],
+  "color": "#a19368"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Stone Shingle Roof Block",
+  "cells": [
+   "Unlocked by obtainingFlintstone",
+   "Ingredients: Stone x5, Flintstone x5 Workstation: Workbench Craft Time: Instant Product: Stone Shingle Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Stone_Shingle_Roof_Block.png/100px-Stone_Shingle_Roof_Block.png",
+  "top": "#5f5d5b",
+  "tone": "#5c5b59",
+  "avg": "#494847",
+  "dominant": "#484847",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#484847"
+   ],
+   [
+    0.34,
+    "#302f2f"
+   ],
+   [
+    0.28,
+    "#646361"
+   ]
+  ],
+  "color": "#7a7976"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Straw Roof Block",
+  "cells": [
+   "Unlocked by obtaining Straw",
+   "Ingredients: Straw x5 Workstation: Workbench Craft Time: Instant Product: Straw Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Straw_Roof_Block.png/100px-Straw_Roof_Block.png",
+  "top": "#73522d",
+  "tone": "#77552f",
+  "avg": "#5d4123",
+  "dominant": "#5f4223",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#5f4223"
+   ],
+   [
+    0.31,
+    "#382513"
+   ],
+   [
+    0.29,
+    "#7f5d34"
+   ]
+  ],
+  "color": "#a7753d"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Tarred Shingle Roof Block",
+  "cells": [
+   "Unlocked by crafting or picking up Tar",
+   "Ingredients: Wood Logs x5, Tar x5 Workstation: Workbench Craft Time: Instant Product: Tarred Shingle Roof Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Tarred_Shingle_Roof_Block.png/100px-Tarred_Shingle_Roof_Block.png",
+  "top": "#403e39",
+  "tone": "#494946",
+  "avg": "#3c3b37",
+  "dominant": "#2d2c27",
+  "dom_share": 0.46,
+  "clusters": [
+   [
+    0.46,
+    "#2d2c27"
+   ],
+   [
+    0.34,
+    "#3f3e3a"
+   ],
+   [
+    0.2,
+    "#545450"
+   ]
+  ],
+  "color": "#6b6b66"
+ },
+ {
+  "page": "Roof_Materials",
+  "group": "Roof Materials",
+  "name": "Tarred Straw Block",
+  "cells": [
+   "Unlocked by obtaining Straw",
+   "Ingredients: Straw x4, Tar x1 Workstation: Workbench Craft Time: Instant Product: Tarred Straw Block x50"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Tarred_Straw_Block.png/100px-Tarred_Straw_Block.png",
+  "top": "#1a1e25",
+  "tone": "#1b1f27",
+  "avg": "#13161c",
+  "dominant": "#0a0c10",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#0a0c10"
+   ],
+   [
+    0.33,
+    "#14181e"
+   ],
+   [
+    0.24,
+    "#20252d"
+   ]
+  ],
+  "color": "#3b4457"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Dirt Road Block",
+  "cells": [
+   "Unlocked by obtaining Stone",
+   "Ingredients: Springlands Dirt x10 Workstation: Workbench Craft Time: Instant Product: Dirt Road Block x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Dirt_Road_Block.png/100px-Dirt_Road_Block.png",
+  "top": "#655540",
+  "tone": "#64543f",
+  "avg": "#4d4031",
+  "dominant": "#312920",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#312920"
+   ],
+   [
+    0.36,
+    "#504332"
+   ],
+   [
+    0.25,
+    "#6f5e49"
+   ]
+  ],
+  "color": "#8c7455"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Granite Rubble Road Block",
+  "cells": [
+   "Unlocked by mining Granite Rubble Road Block",
+   "Ingredients: Granite x10 Workstation: Workbench Craft Time: Instant Product: Granite Rubble Road Block x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Granite_Rubble_Road_Block.png/100px-Granite_Rubble_Road_Block.png",
+  "top": "#544c47",
+  "tone": "#514a46",
+  "avg": "#3e3835",
+  "dominant": "#2a2623",
+  "dom_share": 0.5,
+  "clusters": [
+   [
+    0.5,
+    "#2a2623"
+   ],
+   [
+    0.34,
+    "#453e3a"
+   ],
+   [
+    0.16,
+    "#68615e"
+   ]
+  ],
+  "color": "#746963"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Limestone Road Block",
+  "cells": [
+   "Unlocked by obtaining Limestone",
+   "Ingredients: Limestone x5 Workstation: Workbench Craft Time: Instant Product: Limestone Road Block x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Limestone_Road_Block.png/100px-Limestone_Road_Block.png",
+  "top": "#8d725f",
+  "tone": "#897261",
+  "avg": "#705b4f",
+  "dominant": "#524139",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#524139"
+   ],
+   [
+    0.37,
+    "#715c4f"
+   ],
+   [
+    0.25,
+    "#967e6c"
+   ]
+  ],
+  "color": "#a38b79"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Rocky Stone Road Block",
+  "cells": [
+   "Unlocked by obtaining Stone",
+   "Ingredients: Stone x10 Workstation: Workbench Craft Time: Instant Product: Rocky Stone Road Block x1"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rocky_Stone_Road_Block.png/100px-Rocky_Stone_Road_Block.png",
+  "top": "#635648",
+  "tone": "#5f5246",
+  "avg": "#4a3f36",
+  "dominant": "#362d26",
+  "dom_share": 0.52,
+  "clusters": [
+   [
+    0.52,
+    "#362d26"
+   ],
+   [
+    0.32,
+    "#53463a"
+   ],
+   [
+    0.16,
+    "#766a5e"
+   ]
+  ],
+  "color": "#84715f"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Shell Limestone Road Block",
+  "cells": [
+   "Unlocked by obtaining Shell Limestone",
+   "Ingredients: Shell Limestone x7, Veilwater Basin Rubble x3 Workstation: Workbench Craft Time: Instant Product: Shell Limestone Road Block x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shell_Limestone_Road_Block.png/100px-Shell_Limestone_Road_Block.png",
+  "top": "#8d725f",
+  "tone": "#8a7262",
+  "avg": "#705c4f",
+  "dominant": "#705c50",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#705c50"
+   ],
+   [
+    0.37,
+    "#534139"
+   ],
+   [
+    0.25,
+    "#977f6d"
+   ]
+  ],
+  "color": "#a38b7a"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Smooth Stone Road Block",
+  "cells": [
+   "Unlocked by obtaining Stone",
+   "Ingredients: Stone x5, Springlands Dirt x5 Workstation: Workbench Craft Time: Instant Product: Smooth Stone Road Block x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Smooth_Stone_Road_Block.png/100px-Smooth_Stone_Road_Block.png",
+  "top": "#4a3f32",
+  "tone": "#4b4237",
+  "avg": "#3d352c",
+  "dominant": "#2d2620",
+  "dom_share": 0.44,
+  "clusters": [
+   [
+    0.44,
+    "#2d2620"
+   ],
+   [
+    0.42,
+    "#43392e"
+   ],
+   [
+    0.14,
+    "#58534e"
+   ]
+  ],
+  "color": "#746553"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Road Blocks",
+  "name": "Field Stones",
+  "cells": [
+   "Unlocked by obtaining Field Stones in Morwenna.",
+   "Ingredients: Stone x6, Springlands Dirt x4 Workstation: Workbench Craft Time: Instant Product: Field Stones x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Field_Stones.png/100px-Field_Stones.png",
+  "top": "#696358",
+  "tone": "#6a6357",
+  "avg": "#514c41",
+  "dominant": "#37322a",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#37322a"
+   ],
+   [
+    0.34,
+    "#554f43"
+   ],
+   [
+    0.22,
+    "#7a7466"
+   ]
+  ],
+  "color": "#8a8170"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Blackmire Stone",
+  "cells": [
+   "Found in Blackmire",
+   "Data not available"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blackmire_Stone.png/100px-Blackmire_Stone.png",
+  "top": "#848d5b",
+  "tone": "#879468",
+  "avg": "#717f57",
+  "dominant": "#87966e",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#87966e"
+   ],
+   [
+    0.36,
+    "#747f52"
+   ],
+   [
+    0.26,
+    "#4c5c39"
+   ]
+  ],
+  "color": "#9da981"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Revelwood Stone",
+  "cells": [
+   "Found in Revelwood",
+   "Ingredients: Revelwood Dirt x1, Stone x9 Workstation: Workbench Craft Time: Instant Product: Revelwood Stone x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Revelwood_Stone.png/100px-Revelwood_Stone.png",
+  "top": "#7a7d45",
+  "tone": "#828350",
+  "avg": "#606543",
+  "dominant": "#364234",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#364234"
+   ],
+   [
+    0.32,
+    "#676a40"
+   ],
+   [
+    0.3,
+    "#8b8b57"
+   ]
+  ],
+  "color": "#a3a464"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Blackmire Dirt",
+  "cells": [
+   "Found in Blackmire",
+   "Ingredients: Farm Soil x1, Blackmire Dirt x9 Workstation: Workbench Craft Time: Instant Product: Fertile Blackmire Dirt x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Blackmire_Dirt.png/100px-Fertile_Blackmire_Dirt.png",
+  "top": "#5a6156",
+  "tone": "#617333",
+  "avg": "#52632d",
+  "dominant": "#627335",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#627335"
+   ],
+   [
+    0.34,
+    "#4d5f2b"
+   ],
+   [
+    0.21,
+    "#364721"
+   ]
+  ],
+  "color": "#87a143"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Nomad Highlands Dirt",
+  "cells": [
+   "Found in Nomad Highlands",
+   "Ingredients: Farm Soil x1, Nomad Highlands Dirt x9 Workstation: Workbench Craft Time: Instant Product: Fertile Nomad Highlands Dirt x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Nomad_Highlands_Dirt.png/100px-Fertile_Nomad_Highlands_Dirt.png",
+  "top": "#aca68d",
+  "tone": "#b0a462",
+  "avg": "#9e9250",
+  "dominant": "#a4964a",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#a4964a"
+   ],
+   [
+    0.27,
+    "#b0a777"
+   ],
+   [
+    0.26,
+    "#807434"
+   ]
+  ],
+  "color": "#c1b67c"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Revelwood Dirt",
+  "cells": [
+   "Found in Revelwood",
+   "Ingredients: Farm Soil x1, Revelwood Dirt x9 Workstation: Workbench Craft Time: Instant Product: Fertile Revelwood Dirt x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Revelwood_Dirt.png/100px-Fertile_Revelwood_Dirt.png",
+  "top": "#8b9e7f",
+  "tone": "#61854b",
+  "avg": "#4d6f3a",
+  "dominant": "#50743a",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#50743a"
+   ],
+   [
+    0.36,
+    "#355325"
+   ],
+   [
+    0.25,
+    "#6e8f5a"
+   ]
+  ],
+  "color": "#7aa85e"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Springlands Dirt",
+  "cells": [
+   "Found in Springlands",
+   "Ingredients: Farm Soil x1, Springlands Dirt x9 Workstation: Workbench Craft Time: Instant Product: Fertile Springlands Dirt x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Springlands_Dirt.png/100px-Fertile_Springlands_Dirt.png",
+  "top": "#96a27a",
+  "tone": "#7a934c",
+  "avg": "#647c38",
+  "dominant": "#4e6423",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#4e6423"
+   ],
+   [
+    0.36,
+    "#68833a"
+   ],
+   [
+    0.22,
+    "#8ba061"
+   ]
+  ],
+  "color": "#95b261"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Kindlewastes Sand",
+  "cells": [
+   "Found in Kindlewastes",
+   "Ingredients: Fertilised Farm Soil x1, Sand x9 Workstation: Workbench Craft Time: Instant Product: Fertile Kindlewastes Sand x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Kindlewastes_Sand.png/100px-Fertile_Kindlewastes_Sand.png",
+  "top": "#a59d5f",
+  "tone": "#be995b",
+  "avg": "#a58346",
+  "dominant": "#a48241",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#a48241"
+   ],
+   [
+    0.32,
+    "#c59f65"
+   ],
+   [
+    0.23,
+    "#7d5f25"
+   ]
+  ],
+  "color": "#cdac75"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Terrain Materials",
+  "name": "Fertile Veilwater Basin Dirt",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Ingredients: Shell Limestone x1, Veilwater Basin Sand x1, Veilwater Basin Dirt x8 Workstation: Workbench Craft Time: Instant Product: Fertile Veilwater Basin Dirt x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertile_Veilwater_Basin_Dirt.png/100px-Fertile_Veilwater_Basin_Dirt.png",
+  "top": "#527134",
+  "tone": "#567332",
+  "avg": "#425d27",
+  "dominant": "#445f26",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#445f26"
+   ],
+   [
+    0.31,
+    "#283e18"
+   ],
+   [
+    0.27,
+    "#5d7c39"
+   ]
+  ],
+  "color": "#77a241"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Rubble",
+  "cells": [
+   "Found in",
+   "Data not available"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Rubble.png/100px-Rubble.png",
+  "top": "#544e44",
+  "tone": "#696051",
+  "avg": "#4e493f",
+  "dominant": "#4f493e",
+  "dom_share": 0.35,
+  "clusters": [
+   [
+    0.35,
+    "#4f493e"
+   ],
+   [
+    0.33,
+    "#2d2c29"
+   ],
+   [
+    0.32,
+    "#716757"
+   ]
+  ],
+  "color": "#8b7e69"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Kindlewastes Rubble",
+  "cells": [
+   "Found in Kindlewastes",
+   "Ingredients: Rubble x1, Sand x4, Sandstone x5 Workstation: Grinding Stones Craft Time: 1:10 Product: Kindlewastes Rubble x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Kindlewastes_Rubble.png/100px-Kindlewastes_Rubble.png",
+  "top": "#a88573",
+  "tone": "#b28e7a",
+  "avg": "#8d7061",
+  "dominant": "#b6917c",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#b6917c"
+   ],
+   [
+    0.35,
+    "#8a6c5f"
+   ],
+   [
+    0.26,
+    "#56413a"
+   ]
+  ],
+  "color": "#c2a290"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Nomad Highlands Rubble",
+  "cells": [
+   "Found in Nomad Highlands",
+   "Ingredients: Rubble x1, Nomad Highlands Dirt x4, Limestone x5 Workstation: Grinding Stones Craft Time: 1:15 Product: Nomad Highlands Rubble x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Nomad_Highlands_Rubble.png/100px-Nomad_Highlands_Rubble.png",
+  "top": "#968a55",
+  "tone": "#9f9362",
+  "avg": "#877b55",
+  "dominant": "#9b9174",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#9b9174"
+   ],
+   [
+    0.34,
+    "#908143"
+   ],
+   [
+    0.28,
+    "#5f553e"
+   ]
+  ],
+  "color": "#b2a87c"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Blackmire Rubble",
+  "cells": [
+   "Found in Blackmire",
+   "Data not available"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blackmire_Rubble.png/100px-Blackmire_Rubble.png",
+  "top": "#7a8267",
+  "tone": "#838b70",
+  "avg": "#6b735c",
+  "dominant": "#6b725b",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#6b725b"
+   ],
+   [
+    0.31,
+    "#8a937a"
+   ],
+   [
+    0.27,
+    "#4a503e"
+   ]
+  ],
+  "color": "#9aa188"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Revelwood Rubble",
+  "cells": [
+   "Found in Revelwood",
+   "Ingredients: Rubble x1, Revelwood Dirt x4, Stone x5 Workstation: Grinding Stones Craft Time: 1:20 Product: Revelwood Rubble x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Revelwood_Rubble.png/100px-Revelwood_Rubble.png",
+  "top": "#65653a",
+  "tone": "#777253",
+  "avg": "#615d43",
+  "dominant": "#635f3c",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#635f3c"
+   ],
+   [
+    0.32,
+    "#7b7662"
+   ],
+   [
+    0.29,
+    "#413f2c"
+   ]
+  ],
+  "color": "#999268"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Springlands Rubble",
+  "cells": [
+   "Found in Springlands",
+   "Ingredients: Rubble x1, Springlands Dirt x4, Stone x5 Workstation: Grinding Stones Craft Time: 1:20 Product: Springlands Rubble x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Springlands_Rubble.png/100px-Springlands_Rubble.png",
+  "top": "#8a8a79",
+  "tone": "#919075",
+  "avg": "#757560",
+  "dominant": "#777958",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#777958"
+   ],
+   [
+    0.32,
+    "#959285"
+   ],
+   [
+    0.29,
+    "#4d4e40"
+   ]
+  ],
+  "color": "#a6a58d"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Rubble",
+  "name": "Veilwater Basin Rubble",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Ingredients: Rubble x1, Veilwater Basin Dirt x4, Shell Limestone x5 Workstation: Grinding Stones Craft Time: 1:20 Product: Veilwater Basin Rubble x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Veilwater_Basin_Rubble.png/100px-Veilwater_Basin_Rubble.png",
+  "top": "#c7beac",
+  "tone": "#d0c8ba",
+  "avg": "#aaa289",
+  "dominant": "#cfc7b9",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#cfc7b9"
+   ],
+   [
+    0.28,
+    "#a1957b"
+   ],
+   [
+    0.25,
+    "#6d693b"
+   ]
+  ],
+  "color": "#d9d2c6"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Albaneve Summits Dirt",
+  "cells": [
+   "Found in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Albaneve_Summits_Dirt.png/100px-Albaneve_Summits_Dirt.png",
+  "top": "#6f4632",
+  "tone": "#775038",
+  "avg": "#63402c",
+  "dominant": "#683c28",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#683c28"
+   ],
+   [
+    0.31,
+    "#7c573d"
+   ],
+   [
+    0.3,
+    "#442e21"
+   ]
+  ],
+  "color": "#a36b48"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Blackmire Dirt",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blackmire_Dirt.png/100px-Blackmire_Dirt.png",
+  "top": "#444b22",
+  "tone": "#4d5427",
+  "avg": "#404621",
+  "dominant": "#4f5728",
+  "dom_share": 0.39,
+  "clusters": [
+   [
+    0.39,
+    "#4f5728"
+   ],
+   [
+    0.36,
+    "#3e4420"
+   ],
+   [
+    0.25,
+    "#2b3017"
+   ]
+  ],
+  "color": "#7b863a"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Farm Soil",
+  "cells": [
+   "Various locations in the world, particularly Farms",
+   "Ingredients: Springlands Dirt x7, Bonemeal x3 Workstation: Farmer Craft Time: Instant Product: Farm Soil x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Farm_Soil.png/100px-Farm_Soil.png",
+  "top": "#4a250a",
+  "tone": "#462309",
+  "avg": "#311705",
+  "dominant": "#2f1403",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#2f1403"
+   ],
+   [
+    0.32,
+    "#4c270c"
+   ],
+   [
+    0.26,
+    "#130601"
+   ]
+  ],
+  "color": "#90450d"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Fertilised Farm Soil",
+  "cells": [
+   "-",
+   "Ingredients: Fossilized Bone Dust x2, Nitrate x3, Any Sand x10 Workstation: Farmer Craft Time: Instant Product: Fertilised Farm Soil x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fertilised_Farm_Soil.png/100px-Fertilised_Farm_Soil.png",
+  "top": "#2b1e1a",
+  "tone": "#3e2a25",
+  "avg": "#2d1f1b",
+  "dominant": "#2c1e1b",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#2c1e1b"
+   ],
+   [
+    0.34,
+    "#442d28"
+   ],
+   [
+    0.29,
+    "#140f0e"
+   ]
+  ],
+  "color": "#6e483f"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Flower Soil",
+  "cells": [
+   "Found at Woodgard",
+   "Ingredients: Farm Soil x7, Honey x3 Workstation: Farmer Craft Time: Instant Product: Flower Soil x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Flower_Soil.png/100px-Flower_Soil.png",
+  "top": "#aa8533",
+  "tone": "#86654f",
+  "avg": "#523a27",
+  "dominant": "#1b1004",
+  "dom_share": 0.43,
+  "clusters": [
+   [
+    0.43,
+    "#1b1004"
+   ],
+   [
+    0.3,
+    "#533a1b"
+   ],
+   [
+    0.27,
+    "#a8806f"
+   ]
+  ],
+  "color": "#a77e63"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Nomad Highlands Dirt",
+  "cells": [
+   "Found in Nomad Highlands",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Nomad_Highlands_Dirt.png/100px-Nomad_Highlands_Dirt.png",
+  "top": "#ae946a",
+  "tone": "#bfa877",
+  "avg": "#9f895f",
+  "dominant": "#c0a979",
+  "dom_share": 0.46,
+  "clusters": [
+   [
+    0.46,
+    "#c0a979"
+   ],
+   [
+    0.31,
+    "#9a8157"
+   ],
+   [
+    0.23,
+    "#615436"
+   ]
+  ],
+  "color": "#cdb98d"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Revelwood Dirt",
+  "cells": [
+   "Found in Revelwood",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Revelwood_Dirt.png/100px-Revelwood_Dirt.png",
+  "top": "#6f5036",
+  "tone": "#735538",
+  "avg": "#57412c",
+  "dominant": "#58402c",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#58402c"
+   ],
+   [
+    0.31,
+    "#7c5c3e"
+   ],
+   [
+    0.31,
+    "#30251c"
+   ]
+  ],
+  "color": "#9f7349"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Sand",
+  "cells": [
+   "Found in Kindlewastes",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Sand.png/100px-Sand.png",
+  "top": "#debea3",
+  "tone": "#efd8bf",
+  "avg": "#d5b69a",
+  "dominant": "#efd8c0",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#efd8c0"
+   ],
+   [
+    0.33,
+    "#d4ac8c"
+   ],
+   [
+    0.2,
+    "#99735b"
+   ]
+  ],
+  "color": "#f3dfc9"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Shroud Infused Farm Soil",
+  "cells": [
+   "-",
+   "Ingredients: Chitin Powder x5, Shroud Sand x10 Workstation: Farmer Craft Time: Instant Product: Shroud Infused Farm Soil x10"
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shroud_Infused_Farm_Soil.png/100px-Shroud_Infused_Farm_Soil.png",
+  "top": "#866a50",
+  "tone": "#a08268",
+  "avg": "#7a5f49",
+  "dominant": "#7f6147",
+  "dom_share": 0.35,
+  "clusters": [
+   [
+    0.35,
+    "#7f6147"
+   ],
+   [
+    0.33,
+    "#473223"
+   ],
+   [
+    0.32,
+    "#ab8e74"
+   ]
+  ],
+  "color": "#b39881"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Springlands Dirt",
+  "cells": [
+   "Found in Springlands",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Springlands_Dirt.png/100px-Springlands_Dirt.png",
+  "top": "#8f714d",
+  "tone": "#9d7e59",
+  "avg": "#7e6344",
+  "dominant": "#9d7f59",
+  "dom_share": 0.47,
+  "clusters": [
+   [
+    0.47,
+    "#9d7f59"
+   ],
+   [
+    0.3,
+    "#775b3b"
+   ],
+   [
+    0.23,
+    "#483827"
+   ]
+  ],
+  "color": "#b39672"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Veilwater Basin Dirt",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Veilwater_Basin_Dirt.png/100px-Veilwater_Basin_Dirt.png",
+  "top": "#627439",
+  "tone": "#89874d",
+  "avg": "#6d6f3a",
+  "dominant": "#908950",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#908950"
+   ],
+   [
+    0.38,
+    "#646c34"
+   ],
+   [
+    0.23,
+    "#3e4622"
+   ]
+  ],
+  "color": "#aaa861"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Soil and Dirt",
+  "name": "Veilwater Basin Sand",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Veilwater_Basin_Sand.png/100px-Veilwater_Basin_Sand.png",
+  "top": "#dac8b3",
+  "tone": "#ece2d4",
+  "avg": "#dbcab7",
+  "dominant": "#ebdfd0",
+  "dom_share": 0.65,
+  "clusters": [
+   [
+    0.65,
+    "#ebdfd0"
+   ],
+   [
+    0.22,
+    "#b09172"
+   ],
+   [
+    0.14,
+    "#d4c1ab"
+   ]
+  ],
+  "color": "#f0e7db"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Blackmire Bark",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blackmire_Bark.png/100px-Blackmire_Bark.png",
+  "top": "#7d6b4b",
+  "tone": "#857551",
+  "avg": "#786647",
+  "dominant": "#867554",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#867554"
+   ],
+   [
+    0.39,
+    "#756343"
+   ],
+   [
+    0.2,
+    "#5f4d35"
+   ]
+  ],
+  "color": "#a59266"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Blackmire Heartwood",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Blackmire_Heartwood.png/100px-Blackmire_Heartwood.png",
+  "top": "#c9ad8d",
+  "tone": "#caa37c",
+  "avg": "#a27451",
+  "dominant": "#b67343",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#b67343"
+   ],
+   [
+    0.31,
+    "#cbb495"
+   ],
+   [
+    0.29,
+    "#5a3420"
+   ]
+  ],
+  "color": "#d6b491"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Fine Sand",
+  "cells": [
+   "Found in Kindlewastes",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Fine_Sand.png/100px-Fine_Sand.png",
+  "top": "#e3c5ab",
+  "tone": "#eed8c2",
+  "avg": "#e4c8af",
+  "dominant": "#edd5bf",
+  "dom_share": 0.67,
+  "clusters": [
+   [
+    0.67,
+    "#edd5bf"
+   ],
+   [
+    0.17,
+    "#caa181"
+   ],
+   [
+    0.16,
+    "#ddba9d"
+   ]
+  ],
+  "color": "#f3dfcc"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Foliage",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Foliage.png/100px-Foliage.png",
+  "top": "#354916",
+  "tone": "#3d541a",
+  "avg": "#2e4214",
+  "dominant": "#2d4113",
+  "dom_share": 0.4,
+  "clusters": [
+   [
+    0.4,
+    "#2d4113"
+   ],
+   [
+    0.3,
+    "#19290c"
+   ],
+   [
+    0.3,
+    "#42591d"
+   ]
+  ],
+  "color": "#668f27"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Gold Coins",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Gold_Coins.png/100px-Gold_Coins.png",
+  "top": "#9e8044",
+  "tone": "#d8b56b",
+  "avg": "#b29252",
+  "dominant": "#d6b36a",
+  "dom_share": 0.52,
+  "clusters": [
+   [
+    0.52,
+    "#d6b36a"
+   ],
+   [
+    0.25,
+    "#ac8745"
+   ],
+   [
+    0.24,
+    "#6c582d"
+   ]
+  ],
+  "color": "#e3c482"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Granite",
+  "cells": [
+   "Found in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Granite.png/100px-Granite.png",
+  "top": "#35322e",
+  "tone": "#3d3b37",
+  "avg": "#2d2e2c",
+  "dominant": "#292521",
+  "dom_share": 0.55,
+  "clusters": [
+   [
+    0.55,
+    "#292521"
+   ],
+   [
+    0.27,
+    "#4a4640"
+   ],
+   [
+    0.18,
+    "#132732"
+   ]
+  ],
+  "color": "#635f58"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Ice",
+  "cells": [
+   "Found in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Ice.png/100px-Ice.png",
+  "top": "#8caeb7",
+  "tone": "#99b8c1",
+  "avg": "#7597a2",
+  "dominant": "#9dbbc4",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#9dbbc4"
+   ],
+   [
+    0.34,
+    "#7096a1"
+   ],
+   [
+    0.25,
+    "#3b5b69"
+   ]
+  ],
+  "color": "#aac6cd"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Limestone",
+  "cells": [
+   "Found in Nomad Highlands",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Limestone.png/100px-Limestone.png",
+  "top": "#cab9a6",
+  "tone": "#d2c3b1",
+  "avg": "#aea393",
+  "dominant": "#cfc0ae",
+  "dom_share": 0.52,
+  "clusters": [
+   [
+    0.52,
+    "#cfc0ae"
+   ],
+   [
+    0.26,
+    "#ac9881"
+   ],
+   [
+    0.22,
+    "#5e6564"
+   ]
+  ],
+  "color": "#dbcebe"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Luminous Growth",
+  "cells": [
+   "Found in the Shroud.",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Luminous_Growth.png/100px-Luminous_Growth.png",
+  "top": "#97d8e2",
+  "tone": "#b1e6ed",
+  "avg": "#92d8e2",
+  "dominant": "#90d8e2",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#90d8e2"
+   ],
+   [
+    0.35,
+    "#b8e9ef"
+   ],
+   [
+    0.28,
+    "#64c1d2"
+   ]
+  ],
+  "color": "#bdecf2"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Moss",
+  "cells": [
+   "Found in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Moss.png/100px-Moss.png",
+  "top": "#586917",
+  "tone": "#62741b",
+  "avg": "#4f6114",
+  "dominant": "#506313",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#506313"
+   ],
+   [
+    0.34,
+    "#38490b"
+   ],
+   [
+    0.29,
+    "#6a7c1f"
+   ]
+  ],
+  "color": "#92af22"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Mushroom Flesh",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Mushroom_Flesh.png/100px-Mushroom_Flesh.png",
+  "top": "#aa9161",
+  "tone": "#b1996a",
+  "avg": "#968157",
+  "dominant": "#ae9768",
+  "dom_share": 0.57,
+  "clusters": [
+   [
+    0.57,
+    "#ae9768"
+   ],
+   [
+    0.29,
+    "#8c7449"
+   ],
+   [
+    0.14,
+    "#4c4530"
+   ]
+  ],
+  "color": "#c1ac82"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Sandstone",
+  "cells": [
+   "Found in Kindlewastes",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Sandstone.png/100px-Sandstone.png",
+  "top": "#ae815e",
+  "tone": "#b58461",
+  "avg": "#7a5942",
+  "dominant": "#b88864",
+  "dom_share": 0.42,
+  "clusters": [
+   [
+    0.42,
+    "#b88864"
+   ],
+   [
+    0.41,
+    "#392b22"
+   ],
+   [
+    0.17,
+    "#7f573d"
+   ]
+  ],
+  "color": "#c59a7b"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Shell Limestone",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Shell_Limestone.png/100px-Shell_Limestone.png",
+  "top": "#9f9667",
+  "tone": "#b3a37a",
+  "avg": "#887c5a",
+  "dominant": "#b5a57c",
+  "dom_share": 0.41,
+  "clusters": [
+   [
+    0.41,
+    "#b5a57c"
+   ],
+   [
+    0.31,
+    "#897d52"
+   ],
+   [
+    0.28,
+    "#403c2f"
+   ]
+  ],
+  "color": "#c3b490"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Snow",
+  "cells": [
+   "Found in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Snow.png/100px-Snow.png",
+  "top": "#cecec8",
+  "tone": "#d4d4ce",
+  "avg": "#c1c0ba",
+  "dominant": "#d1d1cb",
+  "dom_share": 0.65,
+  "clusters": [
+   [
+    0.65,
+    "#d1d1cb"
+   ],
+   [
+    0.26,
+    "#b5b4ab"
+   ],
+   [
+    0.09,
+    "#6f716c"
+   ]
+  ],
+  "color": "#dcdcd7"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Stone",
+  "cells": [
+   "Found commonly everywhere in Embervale Rarely in Albaneve Summits",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Stone.png/100px-Stone.png",
+  "top": "#676057",
+  "tone": "#8e8375",
+  "avg": "#61594e",
+  "dominant": "#322c26",
+  "dom_share": 0.45,
+  "clusters": [
+   [
+    0.45,
+    "#322c26"
+   ],
+   [
+    0.29,
+    "#9b9082"
+   ],
+   [
+    0.26,
+    "#716759"
+   ]
+  ],
+  "color": "#a3998d"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Underwater Luminous Growth",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Underwater_Luminous_Growth.png/100px-Underwater_Luminous_Growth.png",
+  "top": "#475e4e",
+  "tone": "#4b5d4f",
+  "avg": "#38463c",
+  "dominant": "#3a473d",
+  "dom_share": 0.36,
+  "clusters": [
+   [
+    0.36,
+    "#3a473d"
+   ],
+   [
+    0.33,
+    "#1e2823"
+   ],
+   [
+    0.31,
+    "#526657"
+   ]
+  ],
+  "color": "#65806b"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Underwater Mud",
+  "cells": [
+   "Found in Veilwater Basin",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Underwater_Mud.png/100px-Underwater_Mud.png",
+  "top": "#576d27",
+  "tone": "#6f712e",
+  "avg": "#4e5522",
+  "dominant": "#293415",
+  "dom_share": 0.38,
+  "clusters": [
+   [
+    0.38,
+    "#293415"
+   ],
+   [
+    0.34,
+    "#535f22"
+   ],
+   [
+    0.28,
+    "#7e7735"
+   ]
+  ],
+  "color": "#9fa23d"
+ },
+ {
+  "page": "Terrain_Materials",
+  "group": "Other blocks",
+  "name": "Vukah Nesting Material",
+  "cells": [
+   "Found in Blackmire",
+   "Not Craftable."
+  ],
+  "icon": "https://enshrouded.wiki.gg/images/thumb/Vukah_Nesting_Material.png/100px-Vukah_Nesting_Material.png",
+  "top": "#614e29",
+  "tone": "#68562f",
+  "avg": "#4c4628",
+  "dominant": "#715b31",
+  "dom_share": 0.37,
+  "clusters": [
+   [
+    0.37,
+    "#715b31"
+   ],
+   [
+    0.32,
+    "#43391e"
+   ],
+   [
+    0.31,
+    "#2b3c2b"
+   ]
+  ],
+  "color": "#987c40"
+ }
+]

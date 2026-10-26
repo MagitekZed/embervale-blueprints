@@ -1,0 +1,6162 @@
+{
+  "fetched": "2026-10-15",
+  "notes": "89 base objects (7 Chests, 7 Magic chests, 25 Crafting stations, 30 Base & furniture, 20 Sparkworks); 86 have a 1.0 recipe. Not crafted: Tiny Chest, Spawner, Sparkworks Trigger Zone (confidence 'unknown', with 'obtained' saying how). Source: enshrouded.tools item pages, read from the 1.0 game files (footer: 'Game data: Steam build 25936191'); every recipe is likely-1.0 (datamined, not checked in game). Every station has a craft recipe in 1.0, including the ones the planner notes only as quest rewards; the quests still exist (see quest). Some also have one placed in the world (foundAt, the site's 'Where to find it' line): Smithing Tools, Mortar, Hand Spindle, Loom, Tanning Station, and the parts Crucible, Kettle, Scientific Instruments and Circular Sawblades. station is the station the recipe is made at or needs nearby (for a survivor's recipe, the 'Needs' station, e.g. Masonry Tools; the Oven's 'Almanac of Plants and Seedlings' is a placeable the Farmer makes from Paper x25 and String x5); crafter is the survivor, null for the player. requires is the 'Needs' line of a player station's recipe (none here) and is otherwise empty. Unlike eternal-spells.json it doesn't add 'Sheltered Bed' to survivor recipes: the site's quest The Blacksmith Needs A Shop says only that 'some recipes only craft while their crafter is sheltered', and no item page says which. quest is the quest that introduces the station or hands out its key part (Cauldron, Crucible, Scientific Instruments, Almanac), from the site's quest pages; its Rewards list doesn't say whether you get the item or just its recipe. otherRecipes on chests and magic chests are the site's extra 'By hand' recipes; they aren't labelled, but they match Keen's 1.0 note that 'storage chests can be upgraded or turned into magic chests without emptying them', so they're probably the in-place upgrade costs (inferred). slots come from the planner's pre-1.0 wiki notes: enshrouded.tools doesn't list chest sizes. Placeholders: each planner placeholder maps to up to four real items (placeholder + libraryType); there is no pen or trough item in the game, so 'Animal pen' maps to the animal beds and the cheapest fence and gate, and 'Trough' to the feeders plus the decorative Water Trough. newIn1_0 comes from the site's 1.0 list of new items (Sparkworks Workbench, Lever, Lever With Indicator, Switch Button, Push Button, Pressure Plate, Light, Shootable Button, Goalpost, Lightning Trap, Spike Trap, Trapdoor Wood 2m, Trapdoor Wood 4m, Trapdoor Stone 2m, Trapdoor Stone 4m, Trapdoor Metal 2m, Trapdoor Metal 4m, Sparkworks Switchbox, Sparkworks Tool, Spawner, Sparkworks Trigger Zone). changes1_0 combines the site's 1.0 changelog (a diff of the last Early Access build against 1.0, also kept raw in resources' recipe.changed1_0) with a comparison against the planner's LIBRARY notes (pre-1.0 wiki); a difference the changelog doesn't show is flagged as a stale wiki note. Wood Planks only come from the Table Saw in 1.0, so every plank recipe (Wooden, Medium, Large, Huge Chest, Enormous Magic Chest, Loom, Masonry Tools, Tanning Station...) needs the Table Saw first. Resources follow each input's primary recipe (the one matching the site's 'Where to get it' line; 'Manual Crafting' is the by-hand recipe and 'Huntress' the Hunter); Twigs and Animal Fur are listed as gathered (the site says they drop) with their recipes under otherRecipes. 'Any X' slots are resources of kind gathered with their options; for 'Any Archaic Essence', Archaic Essence I is also listed. The site's prose 'About' blurbs can still quote Early Access numbers; recipe tables are 1.0.",
+  "items": [
+    {
+      "name": "Tiny Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": null,
+      "craftTime": null,
+      "inputs": [],
+      "libraryType": "chest-tiny",
+      "slots": 16,
+      "obtained": "Unknown. enshrouded.tools has no recipe and no 'Where to get it' line for it in 1.0, and it isn't among the Workbench's 166 recipes.",
+      "confidence": "unknown",
+      "newIn1_0": false,
+      "changes1_0": [
+        "No recipe in the 1.0 data. The planner's pre-1.0 wiki note: Workbench, String ×3, Twigs ×6."
+      ],
+      "flags": [
+        "Check in game whether Tiny Chests can still be built. The site's 1.0 diff counts 35 removed recipes without listing them, so its recipe may have been cut. The Small Chest's cheap by-hand recipe (Any wood x1, String x1) looks like the in-place upgrade from a Tiny Chest."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/tiny-chest"
+      ]
+    },
+    {
+      "name": "Small Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any wood",
+          "qty": 6,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        },
+        {
+          "item": "String",
+          "qty": 3
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Any wood",
+              "qty": 1,
+              "anyOf": [
+                "Wood Logs",
+                "Hardwood",
+                "Palm Wood Logs",
+                "Conifer Logs",
+                "Bamboo Logs",
+                "Tropical Wood"
+              ]
+            },
+            {
+              "item": "String",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably the 1.0 in-place upgrade of a placed Tiny Chest."
+        }
+      ],
+      "libraryType": "chest-small",
+      "slots": 24,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: + 3 String; - 6 Nails.",
+        "Recipe differs from the planner's pre-1.0 wiki note: Nails ×6, Wood Logs ×6 → Any wood ×6, String ×3.",
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/small-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Wooden Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 5
+        },
+        {
+          "item": "Metal Sheets",
+          "qty": 3
+        },
+        {
+          "item": "Charcoal",
+          "qty": 3
+        }
+      ],
+      "libraryType": "chest-wooden",
+      "slots": 24,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/wooden-chest"
+      ]
+    },
+    {
+      "name": "Medium Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 8
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 10
+        },
+        {
+          "item": "Metal Sheets",
+          "qty": 2
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 2
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 2
+            },
+            {
+              "item": "Metal Sheets",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably the 1.0 in-place upgrade of a placed Small Chest."
+        }
+      ],
+      "libraryType": "chest-medium",
+      "slots": 32,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/medium-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Large Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 12
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 8
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 3
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 5
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 3
+            },
+            {
+              "item": "Bronze Bars",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably the 1.0 in-place upgrade of a placed Medium Chest."
+        }
+      ],
+      "libraryType": "chest-large",
+      "slots": 40,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Wood Planks 16 → 8.",
+        "Recipe differs from the planner's pre-1.0 wiki note: Nails ×12, Wood Planks ×16, Bronze Bars ×3 → Nails ×12, Wood Planks ×8, Bronze Bars ×3.",
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/large-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Silver Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Silver Bars",
+          "qty": 3
+        },
+        {
+          "item": "Charcoal",
+          "qty": 6
+        }
+      ],
+      "libraryType": "chest-silver",
+      "slots": 40,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-chest"
+      ]
+    },
+    {
+      "name": "Huge Chest",
+      "category": "Chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 16
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 20
+        },
+        {
+          "item": "Iron Bars",
+          "qty": 2
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 5
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 15
+            },
+            {
+              "item": "Iron Bars",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably the 1.0 in-place upgrade of a placed Large Chest."
+        }
+      ],
+      "libraryType": "chest-huge",
+      "slots": 56,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/huge-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Small Magic Chest",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Small Chest",
+          "qty": 1
+        },
+        {
+          "item": "Shroud Spores",
+          "qty": 6
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Spores",
+              "qty": 6
+            }
+          ],
+          "note": "Not labelled on the site; probably turns a placed Small Chest into this magic chest in place (the magic part of the main recipe only)."
+        }
+      ],
+      "libraryType": "mchest-small",
+      "slots": 24,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: - 15 Active Mycelium; Shroud Spores 15 → 6.",
+        "Recipe differs from the planner's pre-1.0 wiki note: Small Chest ×1, Shroud Spores ×15, Active Mycelium ×15 → Small Chest ×1, Shroud Spores ×6.",
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/small-magic-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Medium Magic Chest",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Medium Chest",
+          "qty": 1
+        },
+        {
+          "item": "Shroud Core",
+          "qty": 1
+        },
+        {
+          "item": "Goo",
+          "qty": 2
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 8
+            },
+            {
+              "item": "Goo",
+              "qty": 2
+            },
+            {
+              "item": "Shroud Core",
+              "qty": 1
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 10
+            },
+            {
+              "item": "Metal Sheets",
+              "qty": 2
+            }
+          ],
+          "note": "Not labelled on the site; the main recipe with the plain chest's own materials instead of the chest, probably the in-place upgrade from the magic chest one size down."
+        },
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Core",
+              "qty": 1
+            },
+            {
+              "item": "Goo",
+              "qty": 2
+            }
+          ],
+          "note": "Not labelled on the site; probably turns a placed Medium Chest into this magic chest in place (the magic part of the main recipe only)."
+        }
+      ],
+      "libraryType": "mchest-medium",
+      "slots": 32,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/medium-magic-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Large Magic Chest",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Large Chest",
+          "qty": 1
+        },
+        {
+          "item": "Shroud Particles",
+          "qty": 10
+        },
+        {
+          "item": "Alchemical Base",
+          "qty": 1
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Particles",
+              "qty": 10
+            },
+            {
+              "item": "Alchemical Base",
+              "qty": 1
+            },
+            {
+              "item": "Nails",
+              "qty": 12
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 8
+            },
+            {
+              "item": "Bronze Bars",
+              "qty": 3
+            }
+          ],
+          "note": "Not labelled on the site; the main recipe with the plain chest's own materials instead of the chest, probably the in-place upgrade from the magic chest one size down."
+        },
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Particles",
+              "qty": 10
+            },
+            {
+              "item": "Alchemical Base",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably turns a placed Large Chest into this magic chest in place (the magic part of the main recipe only)."
+        }
+      ],
+      "libraryType": "mchest-large",
+      "slots": 40,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/large-magic-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Huge Magic Chest",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Huge Chest",
+          "qty": 1
+        },
+        {
+          "item": "Shroud Nexus",
+          "qty": 1
+        },
+        {
+          "item": "Enshrouded Oil",
+          "qty": 3
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Nexus",
+              "qty": 1
+            },
+            {
+              "item": "Enshrouded Oil",
+              "qty": 3
+            },
+            {
+              "item": "Nails",
+              "qty": 16
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 20
+            },
+            {
+              "item": "Iron Bars",
+              "qty": 2
+            }
+          ],
+          "note": "Not labelled on the site; the main recipe with the plain chest's own materials instead of the chest, probably the in-place upgrade from the magic chest one size down."
+        },
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Shroud Nexus",
+              "qty": 1
+            },
+            {
+              "item": "Enshrouded Oil",
+              "qty": 3
+            }
+          ],
+          "note": "Not labelled on the site; probably turns a placed Huge Chest into this magic chest in place (the magic part of the main recipe only)."
+        }
+      ],
+      "libraryType": "mchest-huge",
+      "slots": 56,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/huge-magic-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Enormous Magic Chest",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 24
+        },
+        {
+          "item": "Shroud Radiance",
+          "qty": 1
+        },
+        {
+          "item": "Shroud Slime",
+          "qty": 15
+        },
+        {
+          "item": "Gold Bars",
+          "qty": 2
+        }
+      ],
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "inputs": [
+            {
+              "item": "Wood Planks",
+              "qty": 12
+            },
+            {
+              "item": "Shroud Slime",
+              "qty": 7
+            },
+            {
+              "item": "Gold Bars",
+              "qty": 1
+            },
+            {
+              "item": "Shroud Radiance",
+              "qty": 1
+            }
+          ],
+          "note": "Not labelled on the site; probably the 1.0 in-place upgrade of a placed Huge Magic Chest."
+        }
+      ],
+      "libraryType": "mchest-enormous",
+      "slots": 72,
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: storage chests can be upgraded or turned into magic chests without emptying them, and chests can be named."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/enormous-magic-chest",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Quick Stack Station",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Core",
+          "qty": 1
+        },
+        {
+          "item": "Goo",
+          "qty": 2
+        },
+        {
+          "item": "Revelwood Stone",
+          "qty": 5
+        }
+      ],
+      "libraryType": "quickstack",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note names only a quest ('Forging the Path') and no recipe; 1.0 also has a recipe at the Carpenter (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/quick-stack-station"
+      ]
+    },
+    {
+      "name": "Large Quick Stack Station",
+      "category": "Magic chests",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Core",
+          "qty": 1
+        },
+        {
+          "item": "Goo",
+          "qty": 2
+        },
+        {
+          "item": "Limestone",
+          "qty": 10
+        }
+      ],
+      "note": "Not in the planner library: the bigger Quick Stack Station (24 m reach against 16 m). Not new in 1.0.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/large-quick-stack-station"
+      ]
+    },
+    {
+      "name": "Workbench",
+      "category": "Crafting stations",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "String",
+          "qty": 3
+        },
+        {
+          "item": "Any wood",
+          "qty": 8,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "libraryType": "workbench",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Same recipe as the planner's pre-1.0 note, except Wood Logs → Any wood (any type now counts)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/workbench"
+      ]
+    },
+    {
+      "name": "Forge",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 30
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 10
+        },
+        {
+          "item": "Charcoal",
+          "qty": 10
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 12
+        }
+      ],
+      "libraryType": "forge",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/forge"
+      ]
+    },
+    {
+      "name": "Charcoal Kiln",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 20
+        }
+      ],
+      "libraryType": "charcoal-kiln",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/charcoal-kiln"
+      ]
+    },
+    {
+      "name": "Smelter",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": "Forge",
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 50
+        },
+        {
+          "item": "Crucible",
+          "qty": 1
+        }
+      ],
+      "libraryType": "smelter",
+      "quest": [
+        {
+          "name": "Crucible Needed For A Smelter",
+          "givenBy": "Blacksmith",
+          "summary": "The Blacksmith sends you to a Scavenger mine in the Revelwood for his old Crucible, then has you craft a Smelter. It's worth 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/crucible-needed-for-a-smelter"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Fired Brick renamed Fired Bricks (same item, same 50)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/smelter",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/crucible-needed-for-a-smelter"
+      ]
+    },
+    {
+      "name": "Blast Furnace",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 20
+        },
+        {
+          "item": "Bellows",
+          "qty": 1
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 10
+        },
+        {
+          "item": "Iron Bars",
+          "qty": 10
+        },
+        {
+          "item": "Any sand",
+          "qty": 30,
+          "anyOf": [
+            "Sand",
+            "Fine Sand",
+            "Veilwater Basin Sand",
+            "Cinder's Cradle Sand"
+          ]
+        }
+      ],
+      "libraryType": "blast-furnace",
+      "quest": [
+        {
+          "name": "A Blast Furnace For The Blacksmith",
+          "givenBy": "Blacksmith",
+          "summary": "The Blacksmith sends you to the Forge Of Obsidia in the Albaneve Summits for its Bellows, which go into a Blast Furnace. It's worth 350 XP.",
+          "url": "https://www.enshrouded.tools/quests/a-blast-furnace-for-the-blacksmith"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Fired Brick renamed Fired Bricks (same item, same 20).",
+        "Same recipe as the planner's pre-1.0 note, except Sand → Any sand (any type now counts)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/blast-furnace",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/a-blast-furnace-for-the-blacksmith"
+      ]
+    },
+    {
+      "name": "Smithing Tools",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 5
+        },
+        {
+          "item": "Iron Bars",
+          "qty": 5
+        }
+      ],
+      "libraryType": "smithing-tools",
+      "foundAt": "One in Embervale: At Jasper Isles",
+      "quest": [
+        {
+          "name": "The Blacksmith's Request",
+          "givenBy": "Blacksmith",
+          "summary": "A strange letter to the Blacksmith leads through Trade Outpost \"Blazing Rock\", Conway Camp and Jasper Isles to the Smithing Tools, which unlock better armor. It pays 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/the-blacksmiths-request"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note names only a quest ('Blacksmith quest') and no recipe; 1.0 also has a recipe at the Blacksmith (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/smithing-tools",
+        "https://www.enshrouded.tools/quests/the-blacksmiths-request"
+      ]
+    },
+    {
+      "name": "Alchemy Station",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Alchemist",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 20
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 6
+        },
+        {
+          "item": "Nails",
+          "qty": 10
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 3
+        },
+        {
+          "item": "Copper Bars",
+          "qty": 5
+        },
+        {
+          "item": "Cauldron",
+          "qty": 1
+        }
+      ],
+      "libraryType": "alchemy",
+      "quest": [
+        {
+          "name": "A Black Cauldron For The Alchemist",
+          "givenBy": "Alchemist",
+          "summary": "The Alchemist sends you after the sorcerer Ikora, first in Rattlebleak and then at Cradle of Dusk in the Nomad Highlands, for the Black Cauldron his Alchemy Station needs. It's worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/a-black-cauldron-for-the-alchemist"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Fired Brick renamed Fired Bricks (same item, same 20)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/alchemy-station",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/a-black-cauldron-for-the-alchemist"
+      ]
+    },
+    {
+      "name": "Grinding Stones",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Alchemist",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Flintstone",
+          "qty": 10
+        },
+        {
+          "item": "Stone",
+          "qty": 15
+        }
+      ],
+      "libraryType": "grinding-stones",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Alchemist')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/grinding-stones"
+      ]
+    },
+    {
+      "name": "Mortar",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Alchemist",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Lump of Clay",
+          "qty": 10
+        },
+        {
+          "item": "Sulfur",
+          "qty": 3
+        },
+        {
+          "item": "Nitrate",
+          "qty": 2
+        },
+        {
+          "item": "Charcoal",
+          "qty": 5
+        },
+        {
+          "item": "Any sand",
+          "qty": 5,
+          "anyOf": [
+            "Sand",
+            "Fine Sand",
+            "Veilwater Basin Sand",
+            "Cinder's Cradle Sand"
+          ]
+        }
+      ],
+      "libraryType": "mortar",
+      "foundAt": "One in Embervale: At Alchemist Tower",
+      "quest": [
+        {
+          "name": "The Alchemist's Mortar",
+          "givenBy": "Alchemist",
+          "summary": "The Alchemist sends you to his old tower by Lone Thistle to recover his Mortar, worth 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/the-alchemists-mortar"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note names only a quest ('Quest: The Alchemist's Mortar') and no recipe; 1.0 also has a recipe at the Alchemist (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/mortar",
+        "https://www.enshrouded.tools/quests/the-alchemists-mortar"
+      ]
+    },
+    {
+      "name": "Laboratory",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Alchemist",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Scientific Instruments",
+          "qty": 1
+        },
+        {
+          "item": "Athanor",
+          "qty": 1
+        },
+        {
+          "item": "Fired Bricks",
+          "qty": 40
+        },
+        {
+          "item": "Copper Bars",
+          "qty": 10
+        },
+        {
+          "item": "Glass",
+          "qty": 3
+        }
+      ],
+      "libraryType": "laboratory",
+      "quest": [
+        {
+          "name": "Scientific Instruments For A Laboratory",
+          "givenBy": "Alchemist",
+          "summary": "The Alchemist sends you after Loraine Crim's Scientific Instruments, from the Obelisk Excavation Camp to the Eldermere Dam Excavation Camp, so he can build a Laboratory. It's worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/scientific-instruments-for-a-laboratory"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Fired Brick renamed Fired Bricks (same item, same 40).",
+        "The planner's pre-1.0 note names only a quest ('Quest: Scientific Instruments') and no recipe; 1.0 also has a recipe at the Alchemist (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/laboratory",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/scientific-instruments-for-a-laboratory"
+      ]
+    },
+    {
+      "name": "Kiln",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Revelwood Stone",
+          "qty": 50
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 10
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 10
+        },
+        {
+          "item": "Twigs",
+          "qty": 2
+        }
+      ],
+      "libraryType": "kiln",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: + 50 Revelwood Stone; - 50 Stone.",
+        "The planner had no recipe for it (pre-1.0 note: 'Carpenter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/kiln",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Table Saw",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 8
+        },
+        {
+          "item": "Nails",
+          "qty": 10
+        },
+        {
+          "item": "Circular Sawblades",
+          "qty": 1
+        }
+      ],
+      "libraryType": "table-saw",
+      "quest": [
+        {
+          "name": "Table Saw For The Carpenter",
+          "givenBy": "Carpenter",
+          "summary": "The Carpenter sends you to Thornhold and then to the Fawnsong Frontier Scavenger camp for Circular Sawblades, which go into his Table Saw. The quest pays 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/table-saw-for-the-carpenter"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note listed only Circular Sawblades ×1; the full 1.0 recipe is Wood Logs ×8, Nails ×10, Circular Sawblades ×1.",
+        "The planner's pre-1.0 note puts the Circular Sawblades at Thornhold; in 1.0 the quest goes to Thornhold and then the Fawnsong Frontier Scavenger camp, where the sawblades are, and the Blacksmith can also make them (Iron Bars x2, Charcoal x6, with a Forge)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/table-saw",
+        "https://www.enshrouded.tools/quests/table-saw-for-the-carpenter"
+      ]
+    },
+    {
+      "name": "Masonry Tools",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": "Forge",
+      "crafter": "Blacksmith",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Charcoal",
+          "qty": 6
+        },
+        {
+          "item": "Iron Bars",
+          "qty": 6
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 2
+        }
+      ],
+      "libraryType": "masonry-tools",
+      "quest": [
+        {
+          "name": "Finding Masonry Tools",
+          "givenBy": "Carpenter",
+          "summary": "The Carpenter sends you to the research camps at the Pillars of Creation for his Masonry Tools, worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/finding-masonry-tools"
+        }
+      ],
+      "note": "The Carpenter uses it and his quest Finding Masonry Tools gives the first one, but the recipe for more is the Blacksmith's (with a Forge).",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note names only a quest ('Carpenter quest') and no recipe; 1.0 also has a recipe at the Blacksmith (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/masonry-tools",
+        "https://www.enshrouded.tools/quests/finding-masonry-tools"
+      ]
+    },
+    {
+      "name": "Tanning Station",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 10
+        },
+        {
+          "item": "Nails",
+          "qty": 4
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 10
+        },
+        {
+          "item": "Tar",
+          "qty": 10
+        }
+      ],
+      "libraryType": "tannery",
+      "foundAt": "One in Embervale: At Lupa's Lair",
+      "quest": [
+        {
+          "name": "In Need Of A Tanning Station",
+          "givenBy": "Hunter",
+          "summary": "The Hunter wants a Tanning Station. The Carpenter points you to Raven's Keep, and the trail ends at Lupa's Lair. It's worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/in-need-of-a-tanning-station"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Hunter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/tanning-station",
+        "https://www.enshrouded.tools/quests/in-need-of-a-tanning-station"
+      ]
+    },
+    {
+      "name": "Drying Rack",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 10
+        },
+        {
+          "item": "String",
+          "qty": 6
+        }
+      ],
+      "libraryType": "drying-rack",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Hunter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/drying-rack"
+      ]
+    },
+    {
+      "name": "Hand Spindle",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fossilized Bone",
+          "qty": 3
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 4
+        }
+      ],
+      "libraryType": "hand-spindle",
+      "foundAt": "One in Embervale: About 400 m north-east of \"Blue Goblet\" Tavern",
+      "quest": [
+        {
+          "name": "The Hunter's Hand Spindle",
+          "givenBy": "Hunter",
+          "summary": "The Hunter, Athalan Skree, sends you to Wescott and then along her trail to find her Hand Spindle. It's worth 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/the-hunters-hand-spindle"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner's pre-1.0 note names only a quest ('Quest: The Hunter's Hand Spindle') and no recipe; 1.0 also has a recipe at the Hunter (see quest for how the first one comes)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/hand-spindle",
+        "https://www.enshrouded.tools/quests/the-hunters-hand-spindle"
+      ]
+    },
+    {
+      "name": "Loom",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 5
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 10
+        },
+        {
+          "item": "Fossilized Bone",
+          "qty": 5
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Linen",
+          "qty": 30
+        },
+        {
+          "item": "Nails",
+          "qty": 10
+        }
+      ],
+      "libraryType": "loom",
+      "foundAt": "One in Embervale: At Weaver's Cottage",
+      "quest": [
+        {
+          "name": "Loom For The Hunter",
+          "givenBy": "Hunter",
+          "summary": "The Hunter sends you to the Weaver's Cottage in East Lapis for her Loom, worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/loom-for-the-hunter"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Hunter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/loom",
+        "https://www.enshrouded.tools/quests/loom-for-the-hunter"
+      ]
+    },
+    {
+      "name": "Spinning Wheel",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 2
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 2
+        },
+        {
+          "item": "Fossilized Bone",
+          "qty": 3
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 2
+        },
+        {
+          "item": "Nails",
+          "qty": 5
+        }
+      ],
+      "libraryType": "spinning",
+      "quest": [
+        {
+          "name": "Using The Spinning Wheel",
+          "givenBy": "Hunter",
+          "summary": "The Huntress shows you the Spinning Wheel at level 20. Placing one finishes the quest for 125 XP.",
+          "url": "https://www.enshrouded.tools/quests/using-the-spinning-wheel"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Hunter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/spinning-wheel",
+        "https://www.enshrouded.tools/quests/using-the-spinning-wheel"
+      ]
+    },
+    {
+      "name": "Spinning Machine",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Hunter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Conifer Logs",
+          "qty": 3
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 5
+        },
+        {
+          "item": "Linen",
+          "qty": 1
+        },
+        {
+          "item": "Spinning Wheel",
+          "qty": 1
+        }
+      ],
+      "libraryType": "spinning-machine",
+      "quest": [
+        {
+          "name": "A Spinning Machine For The Hunter",
+          "givenBy": "Hunter",
+          "summary": "The Huntress needs a Spinning Machine to turn raw wool into padding for warmer gear. You keep the machine and get 350 XP.",
+          "url": "https://www.enshrouded.tools/quests/a-spinning-machine-for-the-hunter"
+        }
+      ],
+      "note": "Takes a Spinning Wheel as an input, so building it uses up the wheel.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Hunter')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/spinning-machine",
+        "https://www.enshrouded.tools/quests/a-spinning-machine-for-the-hunter"
+      ]
+    },
+    {
+      "name": "Seedbed",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 10
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        },
+        {
+          "item": "Farm Soil",
+          "qty": 10
+        }
+      ],
+      "libraryType": "seedbed",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Farmer')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/seedbed"
+      ]
+    },
+    {
+      "name": "Cooking Station",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Flintstone",
+          "qty": 4
+        },
+        {
+          "item": "Kettle",
+          "qty": 1
+        },
+        {
+          "item": "Revelwood Stone",
+          "qty": 10
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        }
+      ],
+      "libraryType": "cooking-station",
+      "quest": [
+        {
+          "name": "Cooking Equipment For The Farmer",
+          "givenBy": "Farmer",
+          "summary": "The Farmer, Emily Fray, sends you to Pikemead's Reach for her Kettle, then has you build a Cooking Station and a Kitchen. It's worth 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/cooking-equipment-for-the-farmer"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: + 10 Revelwood Stone; - 10 Stone.",
+        "The planner had no recipe for it (pre-1.0 note: 'Farmer')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/cooking-station",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/cooking-equipment-for-the-farmer"
+      ]
+    },
+    {
+      "name": "Oven",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": "Almanac of Plants and Seedlings",
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 20
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 5
+        },
+        {
+          "item": "Metal Sheets",
+          "qty": 5
+        }
+      ],
+      "libraryType": "oven",
+      "quest": [
+        {
+          "name": "Almanac of Plants and Seedlings For The Farmer",
+          "givenBy": "Farmer",
+          "summary": "The Farmer sends you after her lost Almanac of Plants and Seedlings, from the Southern Caravan Camp to the Scavengers at Surat's Rest in the Nomad Highlands. It's worth 250 XP.",
+          "url": "https://www.enshrouded.tools/quests/almanac-of-plants-and-seedlings-for-the-farmer"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: Fired Brick renamed Fired Bricks (same item, same 20).",
+        "The planner had no recipe for it (pre-1.0 note: 'Farmer')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/oven",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/almanac-of-plants-and-seedlings-for-the-farmer"
+      ]
+    },
+    {
+      "name": "Kitchen",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Copper Bars",
+          "qty": 2
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 10
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        }
+      ],
+      "libraryType": "kitchen",
+      "quest": [
+        {
+          "name": "Cooking Equipment For The Farmer",
+          "givenBy": "Farmer",
+          "summary": "The Farmer, Emily Fray, sends you to Pikemead's Reach for her Kettle, then has you build a Cooking Station and a Kitchen. It's worth 200 XP.",
+          "url": "https://www.enshrouded.tools/quests/cooking-equipment-for-the-farmer"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "The planner had no recipe for it (pre-1.0 note: 'Farmer')."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/kitchen",
+        "https://www.enshrouded.tools/quests/cooking-equipment-for-the-farmer"
+      ]
+    },
+    {
+      "name": "Sparkworks Workbench",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 2
+        },
+        {
+          "item": "Metal Sheets",
+          "qty": 4
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 2,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        },
+        {
+          "item": "Copper Bars",
+          "qty": 2
+        }
+      ],
+      "quest": [
+        {
+          "name": "Contraptions And Mechanisms",
+          "givenBy": "Carpenter",
+          "summary": "The Carpenter's quest that opens Sparkworks: take the logic tool from a trapped Night Sanctum and build the Sparkworks Workbench. It pays 100 XP and the Sparkworks Tool.",
+          "url": "https://www.enshrouded.tools/quests/contraptions-and-mechanisms"
+        }
+      ],
+      "note": "Not in the planner library. Makes the 18 Sparkworks parts and the Sparkworks Tool. Sparkworks opens with the Carpenter's quest Contraptions And Mechanisms (enshrouded.tools/sparkworks).",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkworks-workbench",
+        "https://www.enshrouded.tools/quests/contraptions-and-mechanisms",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Decoration Workbench",
+      "category": "Crafting stations",
+      "rarity": "Rare",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 2
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 10
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        }
+      ],
+      "note": "Not in the planner library. Needed here for the Water Trough; it makes decorations with the Carpenter's help.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/decoration-workbench"
+      ]
+    },
+    {
+      "name": "Flame Altar",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any stone",
+          "qty": 5,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        }
+      ],
+      "libraryType": "altar",
+      "comfort": {
+        "type": "Flame",
+        "value": 1
+      },
+      "quest": [
+        {
+          "name": "Flame Altar And Base Improvements",
+          "givenBy": "The Flame",
+          "summary": "The Flame sends you to a Flame Sanctum beside the Springlands Hollow Halls for a Spark, then has you strengthen your Flame Altar.",
+          "url": "https://www.enshrouded.tools/quests/flame-altar-and-base-improvements"
+        },
+        {
+          "name": "Claim A Spot For Your Base",
+          "givenBy": "The Flame",
+          "summary": "The Flame gives you this first quest at level 1. It points you to open plains just east of Longkeep and unlocks the Flame Altar.",
+          "url": "https://www.enshrouded.tools/quests/claim-a-spot-for-your-base"
+        }
+      ],
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: your first level-up now comes from placing your first Flame Altar."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/flame-altar",
+        "https://www.enshrouded.tools/1-0",
+        "https://www.enshrouded.tools/quests/flame-altar-and-base-improvements",
+        "https://www.enshrouded.tools/quests/claim-a-spot-for-your-base"
+      ]
+    },
+    {
+      "name": "Crude Wooden Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Animal Fur",
+          "qty": 4
+        },
+        {
+          "item": "String",
+          "qty": 4
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 4
+        },
+        {
+          "item": "Crude Mattress",
+          "qty": 1
+        }
+      ],
+      "libraryType": "bed",
+      "placeholder": "Bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 2
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-wooden-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Wooden Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 4
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 6
+        },
+        {
+          "item": "Dried Fur",
+          "qty": 6
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 10
+        },
+        {
+          "item": "Plant Fiber",
+          "qty": 10
+        },
+        {
+          "item": "String",
+          "qty": 4
+        }
+      ],
+      "libraryType": "bed",
+      "placeholder": "Bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 3
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/wooden-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ornate Wooden Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 5
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 4
+        },
+        {
+          "item": "Dried Fur",
+          "qty": 6
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 10
+        },
+        {
+          "item": "Plant Fiber",
+          "qty": 10
+        },
+        {
+          "item": "String",
+          "qty": 2
+        },
+        {
+          "item": "Hardwood",
+          "qty": 2
+        }
+      ],
+      "libraryType": "bed",
+      "placeholder": "Bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 4
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/ornate-wooden-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Boreal Wood Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Table Saw",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 6
+        },
+        {
+          "item": "Conifer Logs",
+          "qty": 6
+        },
+        {
+          "item": "String",
+          "qty": 3
+        },
+        {
+          "item": "Straw",
+          "qty": 10
+        },
+        {
+          "item": "Fabric",
+          "qty": 4
+        },
+        {
+          "item": "Violet Fabric",
+          "qty": 1
+        }
+      ],
+      "libraryType": "bed",
+      "placeholder": "Bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 7
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/boreal-wood-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Kingsize Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Table Saw",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 10
+        },
+        {
+          "item": "Palm Wood Logs",
+          "qty": 10
+        },
+        {
+          "item": "String",
+          "qty": 6
+        },
+        {
+          "item": "Straw",
+          "qty": 20
+        },
+        {
+          "item": "Fabric",
+          "qty": 8
+        },
+        {
+          "item": "Green Fabric",
+          "qty": 2
+        }
+      ],
+      "libraryType": "bed2",
+      "placeholder": "Double bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 6
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "flags": [
+        "Its page calls it 'a decorative object to design and beautify your home', not a bed like the single beds' text, though it gives Bed comfort 6. Check in game that it works as a bed."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/kingsize-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Large Boreal Wood Bed",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Table Saw",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 10
+        },
+        {
+          "item": "Conifer Logs",
+          "qty": 10
+        },
+        {
+          "item": "String",
+          "qty": 6
+        },
+        {
+          "item": "Straw",
+          "qty": 20
+        },
+        {
+          "item": "Animal Fur",
+          "qty": 8
+        },
+        {
+          "item": "Blue Fabric",
+          "qty": 2
+        }
+      ],
+      "libraryType": "bed2",
+      "placeholder": "Double bed",
+      "comfort": {
+        "type": "Bed",
+        "value": 7
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "flags": [
+        "Its page calls it 'a decorative object to design and beautify your home', not a bed like the single beds' text, though it gives Bed comfort 7. Check in game that it works as a bed."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/large-boreal-wood-bed",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Crude Mattress",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "String",
+          "qty": 3
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 4
+        },
+        {
+          "item": "Plant Fiber or Paper Reed",
+          "qty": 4,
+          "anyOf": [
+            "Plant Fiber",
+            "Paper Reed"
+          ]
+        }
+      ],
+      "libraryType": "mattress",
+      "placeholder": "Crude mattress",
+      "comfort": {
+        "type": "Bed",
+        "value": 1
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "Keen's 1.0 notes: you can fast travel from a bed (which beds count isn't stated)."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-mattress",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Campfire",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any wood",
+          "qty": 2,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "libraryType": "campfire",
+      "placeholder": "Campfire",
+      "foundAt": "158 in Embervale",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/campfire"
+      ]
+    },
+    {
+      "name": "Wooden Bathtub",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Nails",
+          "qty": 4
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 4
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 4
+        },
+        {
+          "item": "Resin",
+          "qty": 4
+        }
+      ],
+      "libraryType": "bathtub",
+      "placeholder": "Bathtub",
+      "comfort": {
+        "type": "Bathtub",
+        "value": 2
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/wooden-bathtub"
+      ]
+    },
+    {
+      "name": "Bronze Bathtub",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Masonry Tools",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 6
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 6
+        },
+        {
+          "item": "Charcoal",
+          "qty": 6
+        }
+      ],
+      "libraryType": "bathtub",
+      "placeholder": "Bathtub",
+      "comfort": {
+        "type": "Bathtub",
+        "value": 4
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: + 6 Limestone; - 6 Stone."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/bronze-bathtub",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Granite Stone Bathtub",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Masonry Tools",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 6
+        },
+        {
+          "item": "Silver Bars",
+          "qty": 2
+        },
+        {
+          "item": "Charcoal",
+          "qty": 1
+        }
+      ],
+      "libraryType": "bathtub",
+      "placeholder": "Bathtub",
+      "comfort": {
+        "type": "Bathtub",
+        "value": 6
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/granite-stone-bathtub"
+      ]
+    },
+    {
+      "name": "Maritime Bathtub",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Masonry Tools",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 10
+        },
+        {
+          "item": "Gold Bars",
+          "qty": 1
+        },
+        {
+          "item": "Gold Dust",
+          "qty": 1
+        },
+        {
+          "item": "Mother-Of-Pearl",
+          "qty": 20
+        }
+      ],
+      "libraryType": "bathtub",
+      "placeholder": "Bathtub",
+      "comfort": {
+        "type": "Bathtub",
+        "value": 8
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/maritime-bathtub"
+      ]
+    },
+    {
+      "name": "Farm Animal Pillow",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Twigs",
+          "qty": 3
+        },
+        {
+          "item": "Plant Fiber",
+          "qty": 5
+        }
+      ],
+      "libraryType": "pen",
+      "placeholder": "Animal pen",
+      "quest": [
+        {
+          "name": "Animal Farming",
+          "givenBy": "Farmer",
+          "summary": "A level 5 tutorial from the Farmer: tame a goat, bring it home and give it a feeder and a bed. It's worth 150 XP and you keep the Common Goat.",
+          "url": "https://www.enshrouded.tools/quests/animal-farming"
+        }
+      ],
+      "note": "There is no pen item: a pen is fences and a gate round a bed and a feeder. This is the bed for goats, Fae Deer, Hophares and birds; an animal looks for one within 50 m that counts as sheltered at 20% cover (enshrouded.tools/animal-husbandry).",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/farm-animal-pillow",
+        "https://www.enshrouded.tools/quests/animal-farming",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Big Farm Animal Pillow",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Twigs",
+          "qty": 8
+        },
+        {
+          "item": "Straw",
+          "qty": 5
+        },
+        {
+          "item": "Palm Wood Logs",
+          "qty": 2
+        }
+      ],
+      "libraryType": "pen",
+      "placeholder": "Animal pen",
+      "note": "Bed for Yaks and Dune Armadillos (enshrouded.tools/animal-husbandry).",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/big-farm-animal-pillow",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Crude Wooden Fence I",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 3
+        },
+        {
+          "item": "String",
+          "qty": 2
+        }
+      ],
+      "libraryType": "pen",
+      "placeholder": "Animal pen",
+      "note": "The cheapest Workbench fence, as a stand-in for pen fencing. Fences and gates come in many styles.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-wooden-fence-i",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Crude Wooden Gate I",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 7
+        }
+      ],
+      "libraryType": "pen",
+      "placeholder": "Animal pen",
+      "note": "The cheapest Workbench gate, for a pen.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-wooden-gate-i",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Goat Feeder",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 7
+        },
+        {
+          "item": "Nails",
+          "qty": 2
+        }
+      ],
+      "libraryType": "trough",
+      "placeholder": "Trough",
+      "quest": [
+        {
+          "name": "Animal Farming",
+          "givenBy": "Farmer",
+          "summary": "A level 5 tutorial from the Farmer: tame a goat, bring it home and give it a feeder and a bed. It's worth 150 XP and you keep the Common Goat.",
+          "url": "https://www.enshrouded.tools/quests/animal-farming"
+        }
+      ],
+      "note": "Feeds Common and Frizzy Goats. Each farm animal species has its own food and feeder; both goats share this one and both birds share the Bird Feeder.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/goat-feeder",
+        "https://www.enshrouded.tools/quests/animal-farming",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Yak Feeder",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 7
+        },
+        {
+          "item": "Nails",
+          "qty": 3
+        }
+      ],
+      "libraryType": "trough",
+      "placeholder": "Trough",
+      "note": "Feeds Yaks.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/yak-feeder",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Bird Feeder",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 7
+        },
+        {
+          "item": "Nails",
+          "qty": 1
+        }
+      ],
+      "libraryType": "trough",
+      "placeholder": "Trough",
+      "note": "Feeds Flightless Redtails and Round-Billed Sailers.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/bird-feeder",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Water Trough",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Decoration Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 3
+        }
+      ],
+      "libraryType": "trough",
+      "placeholder": "Trough",
+      "note": "Decoration only ('a decorative object'); animals eat from their feeders.",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/water-trough",
+        "https://www.enshrouded.tools/animal-husbandry"
+      ]
+    },
+    {
+      "name": "Wooden Ladder",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 4
+        },
+        {
+          "item": "Nails",
+          "qty": 4
+        }
+      ],
+      "libraryType": "ladder",
+      "placeholder": "Ladder",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/wooden-ladder"
+      ]
+    },
+    {
+      "name": "Bamboo Ladder",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bamboo Logs",
+          "qty": 4
+        },
+        {
+          "item": "Nails",
+          "qty": 4
+        }
+      ],
+      "libraryType": "ladder",
+      "placeholder": "Ladder",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/bamboo-ladder"
+      ]
+    },
+    {
+      "name": "Standing Torch",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Resin",
+          "qty": 4
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 2
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 2
+        }
+      ],
+      "libraryType": "light",
+      "placeholder": "Light / lantern",
+      "comfort": {
+        "type": "Illumination",
+        "value": 1
+      },
+      "note": "The basic placed light at the Workbench. (The hand-held Torch is a weapon-slot item.)",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/standing-torch"
+      ]
+    },
+    {
+      "name": "Wall Torch",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Resin",
+          "qty": 4
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 1
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 2
+        }
+      ],
+      "libraryType": "light",
+      "placeholder": "Light / lantern",
+      "comfort": {
+        "type": "Illumination",
+        "value": 1
+      },
+      "foundAt": "One in Embervale: About 170 m east of Egerton Salt Mines",
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/wall-torch"
+      ]
+    },
+    {
+      "name": "Standing Lantern",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 3
+        }
+      ],
+      "libraryType": "light",
+      "placeholder": "Light / lantern",
+      "comfort": {
+        "type": "Illumination",
+        "value": 3
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/standing-lantern"
+      ]
+    },
+    {
+      "name": "Crude Wooden Table",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 8
+        }
+      ],
+      "libraryType": "table",
+      "placeholder": "Table",
+      "comfort": {
+        "type": "Table",
+        "value": 1
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-wooden-table"
+      ]
+    },
+    {
+      "name": "Wooden Table",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 4
+        },
+        {
+          "item": "Resin",
+          "qty": 2
+        },
+        {
+          "item": "Nails",
+          "qty": 2
+        }
+      ],
+      "libraryType": "table",
+      "placeholder": "Table",
+      "comfort": {
+        "type": "Table",
+        "value": 2
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/wooden-table"
+      ]
+    },
+    {
+      "name": "Polished Wooden Table",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": null,
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 6
+        },
+        {
+          "item": "Resin",
+          "qty": 1
+        },
+        {
+          "item": "Nails",
+          "qty": 2
+        },
+        {
+          "item": "Hardwood",
+          "qty": 2
+        }
+      ],
+      "libraryType": "table",
+      "placeholder": "Table",
+      "comfort": {
+        "type": "Table",
+        "value": 3
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/polished-wooden-table"
+      ]
+    },
+    {
+      "name": "Stone Table",
+      "category": "Base & furniture",
+      "rarity": "Common",
+      "station": "Masonry Tools",
+      "crafter": "Carpenter",
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 10
+        },
+        {
+          "item": "Torn Cloth",
+          "qty": 4
+        },
+        {
+          "item": "String",
+          "qty": 1
+        },
+        {
+          "item": "Mint Mushroom Meat",
+          "qty": 2
+        },
+        {
+          "item": "Indigo Plant",
+          "qty": 2
+        }
+      ],
+      "libraryType": "table",
+      "placeholder": "Table",
+      "comfort": {
+        "type": "Table",
+        "value": 4
+      },
+      "confidence": "likely-1.0",
+      "newIn1_0": false,
+      "changes1_0": [
+        "1.0 changelog: + 10 Limestone; - 10 Stone."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/stone-table",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Lever",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Metal Scraps",
+          "qty": 1
+        }
+      ],
+      "libraryType": "lever",
+      "placeholder": "Lever / switch",
+      "note": "Holds its state (ON/OFF) until used again.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/lever",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Lever With Indicator",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 1
+        }
+      ],
+      "libraryType": "lever",
+      "placeholder": "Lever / switch",
+      "note": "A lever with a light that shows the ON state.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/lever-with-indicator",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Switch Button",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any stone",
+          "qty": 1,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        }
+      ],
+      "libraryType": "lever",
+      "placeholder": "Lever / switch",
+      "note": "Holds its state until pressed again, with an indicator light.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/switch-button",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Push Button",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any stone",
+          "qty": 1,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        }
+      ],
+      "libraryType": "lever",
+      "placeholder": "Lever / switch",
+      "note": "Sends a short ON signal, then switches off.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/push-button",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Pressure Plate",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Metal Scraps",
+          "qty": 2
+        }
+      ],
+      "libraryType": "plate",
+      "placeholder": "Pressure plate",
+      "note": "Stays on while something stands on it.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/pressure-plate",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Light",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        },
+        {
+          "item": "Metal Scraps",
+          "qty": 1
+        }
+      ],
+      "libraryType": "light",
+      "placeholder": "Light / lantern",
+      "note": "The Sparkworks light. Torches, braziers and the other 96 lights also work in Sparkworks.",
+      "signal": "Takes and sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/light",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Shootable Button",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any stone",
+          "qty": 1,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        }
+      ],
+      "note": "Flips each time an arrow or spell hits it.",
+      "signal": "Sends",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/shootable-button",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Goalpost",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/goalpost",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Lightning Trap",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Copper Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/lightning-trap",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Spike Trap",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Tin Bars",
+          "qty": 1
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/spike-trap",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Wood 2m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 2
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-wood-2m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Wood 4m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 4
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-wood-4m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Stone 2m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any stone",
+          "qty": 2,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-stone-2m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Stone 4m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Any stone",
+          "qty": 4,
+          "anyOf": [
+            "Stone",
+            "Revelwood Stone",
+            "Blackmire Stone",
+            "Limestone",
+            "Sandstone",
+            "Granite",
+            "Shell Limestone",
+            "Cinder Rock"
+          ]
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-stone-4m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Metal 2m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Tin Bars",
+          "qty": 1
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-metal-2m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Trapdoor Metal 4m",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Tin Bars",
+          "qty": 2
+        }
+      ],
+      "signal": "Takes",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/trapdoor-metal-4m",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Sparkworks Switchbox",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Copper Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        }
+      ],
+      "note": "Opens a Sparkworks graph where it stands; removing it keeps the graph.",
+      "signal": "none",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkworks-switchbox",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Sparkworks Tool",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": "Sparkworks Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 1,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Metal Scraps",
+          "qty": 4
+        },
+        {
+          "item": "Any Archaic Essence",
+          "qty": 1,
+          "anyOf": [
+            "Archaic Essence I",
+            "Archaic Essence II",
+            "Archaic Essence III",
+            "Archaic Essence IV",
+            "Archaic Essence V",
+            "Archaic Essence VI",
+            "Archaic Essence VII"
+          ]
+        }
+      ],
+      "quest": [
+        {
+          "name": "Contraptions And Mechanisms",
+          "givenBy": "Carpenter",
+          "summary": "The Carpenter's quest that opens Sparkworks: take the logic tool from a trapped Night Sanctum and build the Sparkworks Workbench. It pays 100 XP and the Sparkworks Tool.",
+          "url": "https://www.enshrouded.tools/quests/contraptions-and-mechanisms"
+        }
+      ],
+      "note": "The wiring tool (Tools and gear). The 1.0 quest Contraptions And Mechanisms sends you to a Night Sanctum for the first one.",
+      "signal": "none",
+      "confidence": "likely-1.0",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkworks-tool",
+        "https://www.enshrouded.tools/quests/contraptions-and-mechanisms",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Spawner",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": null,
+      "craftTime": null,
+      "inputs": [],
+      "obtained": "Not crafted: picked from the Sparkworks Tool's own menu and placed directly, visible only while holding the tool (enshrouded.tools/sparkworks).",
+      "signal": "Takes and sends",
+      "confidence": "unknown",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/spawner",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    {
+      "name": "Sparkworks Trigger Zone",
+      "category": "Sparkworks",
+      "rarity": "Common",
+      "station": null,
+      "crafter": null,
+      "requires": [],
+      "makes": null,
+      "craftTime": null,
+      "inputs": [],
+      "obtained": "Not crafted: picked from the Sparkworks Tool's own menu and placed directly, visible only while holding the tool (enshrouded.tools/sparkworks).",
+      "signal": "Sends",
+      "confidence": "unknown",
+      "newIn1_0": true,
+      "changes1_0": null,
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkworks-trigger-zone",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    }
+  ],
+  "resources": {
+    "Acidic Mycelium": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/acidic-mycelium"
+      ]
+    },
+    "Active Mycelium": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/active-mycelium"
+      ]
+    },
+    "Alchemical Base": {
+      "kind": "crafted",
+      "source": "Alchemy Station",
+      "recipe": {
+        "station": "Alchemy Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "75s",
+        "inputs": [
+          {
+            "item": "Shroud Mushroom",
+            "qty": 2
+          },
+          {
+            "item": "Acidic Mycelium",
+            "qty": 2
+          },
+          {
+            "item": "Shroud Particles",
+            "qty": 1
+          },
+          {
+            "item": "Corrosive Blood",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Acidic Mycelium 5 → 2",
+          "Corrosive Blood 5 → 1",
+          "Shroud Mushroom 5 → 2"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/alchemical-base"
+      ]
+    },
+    "Ammonia Gland": {
+      "kind": "gathered",
+      "source": "Fell Mushroom Crabs, Nomad Highlands Shroud and Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ammonia-gland"
+      ]
+    },
+    "Animal Fur": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": "Hunter",
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "String",
+              "qty": 1
+            },
+            {
+              "item": "Wet Boot or Fur Patch",
+              "qty": 3,
+              "anyOf": [
+                "Wet Boot",
+                "Fur Patch"
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "Animal Fur is a common drop from wildlife and Vukah and can be picked up in the world. The Hunter also crafts it from 1 String and 3 Wet Boot or Fur Patch. Its 21 uses cover Dried Fur, the Glider, the Water Pouch, the Fur, Explorer and Rising Fighter armor, beds and instruments.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/animal-fur"
+      ]
+    },
+    "Any Archaic Essence": {
+      "source": "any of: Archaic Essence I, Archaic Essence II, Archaic Essence III, Archaic Essence IV, Archaic Essence V, Archaic Essence VI, Archaic Essence VII",
+      "kind": "gathered",
+      "options": [
+        "Archaic Essence I",
+        "Archaic Essence II",
+        "Archaic Essence III",
+        "Archaic Essence IV",
+        "Archaic Essence V",
+        "Archaic Essence VI",
+        "Archaic Essence VII"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options. Archaic Essence I is the cheapest (gathered in Springlands Shroud Lairs, dropped by the Shroud Gazer); Sparkworks parts take one each, the Sparkworks Workbench two.",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-essence-i",
+        "https://www.enshrouded.tools/sparkworks"
+      ]
+    },
+    "Any dirt": {
+      "source": "any of: Springlands Dirt, Revelwood Dirt, Blackmire Dirt, Nomad Highlands Dirt, Albaneve Summits Dirt, Veilwater Basin Dirt, Cinder's Cradle Dirt",
+      "kind": "gathered",
+      "options": [
+        "Springlands Dirt",
+        "Revelwood Dirt",
+        "Blackmire Dirt",
+        "Nomad Highlands Dirt",
+        "Albaneve Summits Dirt",
+        "Veilwater Basin Dirt",
+        "Cinder's Cradle Dirt"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any sand": {
+      "source": "any of: Sand, Fine Sand, Veilwater Basin Sand, Cinder's Cradle Sand",
+      "kind": "gathered",
+      "options": [
+        "Sand",
+        "Fine Sand",
+        "Veilwater Basin Sand",
+        "Cinder's Cradle Sand"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any stone": {
+      "source": "any of: Stone, Revelwood Stone, Blackmire Stone, Limestone, Sandstone, Granite, Shell Limestone, Cinder Rock",
+      "kind": "gathered",
+      "options": [
+        "Stone",
+        "Revelwood Stone",
+        "Blackmire Stone",
+        "Limestone",
+        "Sandstone",
+        "Granite",
+        "Shell Limestone",
+        "Cinder Rock"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any wood": {
+      "source": "any of: Wood Logs, Hardwood, Palm Wood Logs, Conifer Logs, Bamboo Logs, Tropical Wood",
+      "kind": "gathered",
+      "options": [
+        "Wood Logs",
+        "Hardwood",
+        "Palm Wood Logs",
+        "Conifer Logs",
+        "Bamboo Logs",
+        "Tropical Wood"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Archaic Essence I": {
+      "kind": "gathered",
+      "source": "Springlands Shroud Lairs",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/archaic-essence-i"
+      ],
+      "note": "The cheapest option for 'Any Archaic Essence' (item level 5)."
+    },
+    "Athanor": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Alchemy Station",
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Glass",
+            "qty": 10
+          },
+          {
+            "item": "Bronze Bars",
+            "qty": 10
+          },
+          {
+            "item": "Lump of Clay",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/athanor"
+      ]
+    },
+    "Bamboo Logs": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bamboo-logs"
+      ]
+    },
+    "Bellows": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": null,
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Conifer Logs",
+            "qty": 10
+          },
+          {
+            "item": "Leather",
+            "qty": 10
+          },
+          {
+            "item": "Linen",
+            "qty": 5
+          },
+          {
+            "item": "Iron Bars",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/bellows"
+      ]
+    },
+    "Blue Fabric": {
+      "kind": "crafted",
+      "source": "Huntress",
+      "recipe": {
+        "station": "Loom",
+        "crafter": "Hunter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fabric",
+            "qty": 1
+          },
+          {
+            "item": "Indigo Plant",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/blue-fabric"
+      ]
+    },
+    "Bonemeal": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Bones",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bonemeal"
+      ]
+    },
+    "Bones": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Bones are a common drop from wildlife and Hollow across Embervale, and bone piles, including those in and around the Hollow Halls, can be mined for more. They feed 46 recipes, among them the Flute at the Bard, Scout Pants at the Hunter, the Reaper's Wand at the Alchemist, and crypt furniture and the",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bones"
+      ]
+    },
+    "Brittle Shroud Flakes": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/brittle-shroud-flakes"
+      ]
+    },
+    "Bronze Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Copper Bars",
+            "qty": 7
+          },
+          {
+            "item": "Tin Bars",
+            "qty": 3
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Time 300s → 240s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Copper Bars",
+              "qty": 10
+            },
+            {
+              "item": "Tin Bars",
+              "qty": 4
+            },
+            {
+              "item": "Coal",
+              "qty": 10
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bronze-bars"
+      ]
+    },
+    "Bug Dust": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Critter Parts",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bug-dust"
+      ]
+    },
+    "Cauldron": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": "Forge",
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Iron Bars",
+            "qty": 3
+          },
+          {
+            "item": "Copper Bars",
+            "qty": 2
+          },
+          {
+            "item": "Bonemeal",
+            "qty": 15
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/cauldron"
+      ]
+    },
+    "Charcoal": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 12,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 17 → 12",
+          "Makes 15 → 10",
+          "Time 300s → 120s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/charcoal"
+      ]
+    },
+    "Circular Sawblades": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": "Forge",
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Iron Bars",
+            "qty": 2
+          },
+          {
+            "item": "Charcoal",
+            "qty": 6
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "Circular Sawblades are made by the Blacksmith with a Forge nearby, from 2 Iron Bars and 6 Charcoal. Their one use is the Table Saw, built at the Carpenter.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/circular-sawblades"
+      ]
+    },
+    "Coal": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/coal"
+      ]
+    },
+    "Coal Powder": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 3
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/coal-powder"
+      ]
+    },
+    "Conifer Logs": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/conifer-logs"
+      ]
+    },
+    "Copper Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Copper Ore",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Charcoal 20 → 10",
+          "Time 300s → 210s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 20
+            },
+            {
+              "item": "Copper Ore",
+              "qty": 20
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-bars"
+      ]
+    },
+    "Copper Ore": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-ore"
+      ]
+    },
+    "Corrosive Blood": {
+      "kind": "gathered",
+      "source": "Fell Enemies, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/corrosive-blood"
+      ]
+    },
+    "Critter Parts": {
+      "kind": "gathered",
+      "source": "Fell Enemies, Springlands Shroud and Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/critter-parts"
+      ]
+    },
+    "Crucible": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": "Forge",
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Lump of Clay",
+            "qty": 3
+          },
+          {
+            "item": "Springlands Dirt",
+            "qty": 3
+          },
+          {
+            "item": "Any sand",
+            "qty": 5,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/crucible"
+      ]
+    },
+    "Crude Mattress": {
+      "kind": "crafted",
+      "source": "Workbench",
+      "recipe": {
+        "station": "Workbench",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "String",
+            "qty": 3
+          },
+          {
+            "item": "Torn Cloth",
+            "qty": 4
+          },
+          {
+            "item": "Plant Fiber or Paper Reed",
+            "qty": 4,
+            "anyOf": [
+              "Plant Fiber",
+              "Paper Reed"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/crude-mattress"
+      ]
+    },
+    "Dried Fur": {
+      "kind": "crafted",
+      "source": "Drying Rack",
+      "recipe": {
+        "station": "Drying Rack",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Animal Fur",
+            "qty": 1
+          },
+          {
+            "item": "Salt",
+            "qty": 3
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/dried-fur"
+      ]
+    },
+    "Enshrouded Ice": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/enshrouded-ice"
+      ]
+    },
+    "Enshrouded Oil": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Shroud Particles",
+            "qty": 5
+          },
+          {
+            "item": "Coal Powder",
+            "qty": 5
+          },
+          {
+            "item": "Brittle Shroud Flakes",
+            "qty": 5
+          },
+          {
+            "item": "Sulfur",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/enshrouded-oil"
+      ]
+    },
+    "Fabric": {
+      "kind": "crafted",
+      "source": "Loom",
+      "recipe": {
+        "station": "Loom",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Linen",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fabric"
+      ]
+    },
+    "Farm Soil": {
+      "kind": "crafted",
+      "source": "Farmer",
+      "recipe": {
+        "station": null,
+        "crafter": "Farmer",
+        "requires": [],
+        "makes": 10,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Springlands Dirt",
+            "qty": 7
+          },
+          {
+            "item": "Bonemeal",
+            "qty": 3
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/farm-soil"
+      ]
+    },
+    "Fired Bricks": {
+      "kind": "crafted",
+      "source": "Kiln",
+      "recipe": {
+        "station": "Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "30s",
+        "inputs": [
+          {
+            "item": "Lump of Clay",
+            "qty": 1
+          },
+          {
+            "item": "Any wood",
+            "qty": 1,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fired-bricks"
+      ]
+    },
+    "Flax": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flax"
+      ]
+    },
+    "Flintstone": {
+      "kind": "gathered",
+      "source": "Springlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flintstone"
+      ]
+    },
+    "Fossilized Bone": {
+      "kind": "gathered",
+      "source": "Giant Fossils",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fossilized-bone"
+      ]
+    },
+    "Glass": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Any sand",
+            "qty": 30,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Any sand",
+              "qty": 40,
+              "anyOf": [
+                "Sand",
+                "Fine Sand",
+                "Veilwater Basin Sand",
+                "Cinder's Cradle Sand"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Kiln",
+          "crafter": "Carpenter",
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Glass Shards",
+              "qty": 5
+            },
+            {
+              "item": "Charcoal",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/glass"
+      ]
+    },
+    "Gold Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "11 min",
+        "inputs": [
+          {
+            "item": "Coal",
+            "qty": 40
+          },
+          {
+            "item": "Gold Ore or Archaic Shards",
+            "qty": 20,
+            "anyOf": [
+              "Gold Ore",
+              "Archaic Shards"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "+ 20 Gold Ore or Archaic Shards",
+          "- 20 Gold Ore",
+          "Time 960s → 660s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-bars"
+      ]
+    },
+    "Gold Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Gold Bars",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-dust"
+      ]
+    },
+    "Gold Ore or Archaic Shards": {
+      "source": "any of: Gold Ore, Archaic Shards",
+      "kind": "gathered",
+      "options": [
+        "Gold Ore",
+        "Archaic Shards"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Goo": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Mortar",
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Springlands Dirt",
+            "qty": 1
+          },
+          {
+            "item": "Shroud Mushroom",
+            "qty": 2
+          },
+          {
+            "item": "Bug Dust",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/goo"
+      ]
+    },
+    "Granite": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/granite"
+      ]
+    },
+    "Green Fabric": {
+      "kind": "crafted",
+      "source": "Huntress",
+      "recipe": {
+        "station": "Loom",
+        "crafter": "Hunter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fabric",
+            "qty": 1
+          },
+          {
+            "item": "Mint Mushroom Meat",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/green-fabric"
+      ]
+    },
+    "Green Vitriol Dust": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Iron Dust",
+            "qty": 2
+          },
+          {
+            "item": "Sulfur",
+            "qty": 3
+          },
+          {
+            "item": "Water",
+            "qty": 5,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/green-vitriol-dust"
+      ]
+    },
+    "Hardwood": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/hardwood"
+      ]
+    },
+    "Huge Chest": {
+      "kind": "crafted",
+      "source": "Carpenter",
+      "recipe": {
+        "station": null,
+        "crafter": "Carpenter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Nails",
+            "qty": 16
+          },
+          {
+            "item": "Wood Planks",
+            "qty": 20
+          },
+          {
+            "item": "Iron Bars",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 5
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 15
+            },
+            {
+              "item": "Iron Bars",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/huge-chest"
+      ]
+    },
+    "Indigo Plant": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "pageName": "Indigo Plant (material)",
+      "sources": [
+        "https://www.enshrouded.tools/items/indigo-plant-material"
+      ]
+    },
+    "Iron Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Iron Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 20
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Iron Ore",
+              "qty": 20
+            },
+            {
+              "item": "Coal",
+              "qty": 40
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-bars"
+      ]
+    },
+    "Iron Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Iron Bars",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-dust"
+      ]
+    },
+    "Iron Ore": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-ore"
+      ]
+    },
+    "Kettle": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": null,
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Metal Sheets",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/kettle"
+      ]
+    },
+    "Large Chest": {
+      "kind": "crafted",
+      "source": "Carpenter",
+      "recipe": {
+        "station": null,
+        "crafter": "Carpenter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Nails",
+            "qty": 12
+          },
+          {
+            "item": "Wood Planks",
+            "qty": 8
+          },
+          {
+            "item": "Bronze Bars",
+            "qty": 3
+          }
+        ],
+        "changed1_0": [
+          "Wood Planks 16 → 8"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 5
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 3
+            },
+            {
+              "item": "Bronze Bars",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/large-chest"
+      ]
+    },
+    "Leather": {
+      "kind": "crafted",
+      "source": "Tanning Station",
+      "recipe": {
+        "station": "Tanning Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "15 min",
+        "inputs": [
+          {
+            "item": "Dried Fur",
+            "qty": 10
+          },
+          {
+            "item": "Salt",
+            "qty": 20
+          },
+          {
+            "item": "Ammonia Gland",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/leather"
+      ]
+    },
+    "Limestone": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/limestone"
+      ]
+    },
+    "Linen": {
+      "kind": "crafted",
+      "source": "Hand Spindle",
+      "recipe": {
+        "station": "Hand Spindle",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "10s",
+        "inputs": [
+          {
+            "item": "Flax",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Spinning Machine",
+          "crafter": null,
+          "requires": [],
+          "makes": 15,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Flax",
+              "qty": 10
+            }
+          ]
+        },
+        {
+          "station": "Spinning Wheel",
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "30s",
+          "inputs": [
+            {
+              "item": "Flax",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/linen"
+      ]
+    },
+    "Lump of Clay": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/lump-of-clay"
+      ]
+    },
+    "Mauveine": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Tar",
+            "qty": 5
+          },
+          {
+            "item": "Shroud Vapor",
+            "qty": 1
+          },
+          {
+            "item": "Nitrate",
+            "qty": 1
+          },
+          {
+            "item": "Sulfur",
+            "qty": 1
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mauveine"
+      ]
+    },
+    "Medium Chest": {
+      "kind": "crafted",
+      "source": "Carpenter",
+      "recipe": {
+        "station": null,
+        "crafter": "Carpenter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Nails",
+            "qty": 8
+          },
+          {
+            "item": "Wood Planks",
+            "qty": 10
+          },
+          {
+            "item": "Metal Sheets",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Nails",
+              "qty": 2
+            },
+            {
+              "item": "Wood Planks",
+              "qty": 2
+            },
+            {
+              "item": "Metal Sheets",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/medium-chest"
+      ]
+    },
+    "Metal Scraps": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Metal Scraps are a common drop from Scavengers, and they can also be salvaged from destroyed metal objects or picked up loose in the world. They go into Nails and Metal Sheets and 112 other recipes. Those include stations such as the Forge, Kiln and Cooking Station, the Scrappy tools, the Explorer a",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/metal-scraps"
+      ]
+    },
+    "Metal Sheets": {
+      "kind": "crafted",
+      "source": "Forge",
+      "recipe": {
+        "station": "Forge",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 2
+          },
+          {
+            "item": "Metal Scraps",
+            "qty": 2
+          }
+        ],
+        "changed1_0": [
+          "Time 120s → 90s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/metal-sheets"
+      ]
+    },
+    "Mint Mushroom Meat": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mint-mushroom-meat"
+      ]
+    },
+    "Mother-Of-Pearl": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "station": "Mill",
+          "crafter": null,
+          "requires": [],
+          "makes": 5,
+          "time": "60s",
+          "inputs": [
+            {
+              "item": "Pearl",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mother-of-pearl"
+      ]
+    },
+    "Nails": {
+      "kind": "crafted",
+      "source": "Blacksmith",
+      "recipe": {
+        "station": null,
+        "crafter": "Blacksmith",
+        "requires": [],
+        "makes": 2,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Metal Scraps",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/nails"
+      ]
+    },
+    "Nitrate": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Shroud Sand",
+            "qty": 5
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          },
+          {
+            "item": "Salt",
+            "qty": 1
+          },
+          {
+            "item": "Any sand",
+            "qty": 5,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/nitrate"
+      ]
+    },
+    "Palm Wood Logs": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/palm-wood-logs"
+      ]
+    },
+    "Pink Mushroom Meat": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/pink-mushroom-meat"
+      ]
+    },
+    "Plant Fiber": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Plant Fiber is gathered from bushes all over Embervale and also lies around as a loose pickup; bushes can be grown from Shrub Seedlings. Its 38 uses include the Big Straw Mat and Marksman Hood at the Hunter, the Wooden Bed and Ornate Wooden Bed at the Carpenter, Goat Food, the Cat Pillow and Sword G",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/plant-fiber"
+      ]
+    },
+    "Plant Fiber or Paper Reed": {
+      "source": "any of: Plant Fiber, Paper Reed",
+      "kind": "gathered",
+      "options": [
+        "Plant Fiber",
+        "Paper Reed"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Resin": {
+      "kind": "gathered",
+      "source": "Trees, mainly stumps and red-leaved trees",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/resin"
+      ]
+    },
+    "Revelwood Stone": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line; the site's map shows 1,867 in Embervale. It's a Revelwood terrain material with no recipe in 1.0 (the site's About blurb, which quotes Early Access, still describes a Workbench recipe from Stone and Revelwood Dirt).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/revelwood-stone"
+      ]
+    },
+    "Salt": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/salt"
+      ]
+    },
+    "Scientific Instruments": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": "Alchemy Station",
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Glass",
+            "qty": 10
+          },
+          {
+            "item": "Bronze Bars",
+            "qty": 10
+          },
+          {
+            "item": "Iron Bars",
+            "qty": 5
+          },
+          {
+            "item": "Charcoal",
+            "qty": 20
+          }
+        ],
+        "changed1_0": null
+      },
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools. Where to find it: One in Embervale: At Eldermere Dam Excavation Camp.",
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/scientific-instruments"
+      ]
+    },
+    "Shell Limestone": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shell-limestone"
+      ]
+    },
+    "Shroud Adhesive": {
+      "kind": "gathered",
+      "source": "Shroud Flayer, First: Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-adhesive"
+      ]
+    },
+    "Shroud Core": {
+      "kind": "crafted",
+      "source": "Alchemist or Fell Bosses",
+      "recipe": {
+        "station": null,
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Shroud Spores",
+            "qty": 10
+          },
+          {
+            "item": "Shroud Liquid",
+            "qty": 10
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-core"
+      ]
+    },
+    "Shroud Liquid": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-liquid"
+      ]
+    },
+    "Shroud Mushroom": {
+      "kind": "gathered",
+      "source": "Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-mushroom"
+      ]
+    },
+    "Shroud Nexus": {
+      "kind": "crafted",
+      "source": "Alchemist or Fell Monstrosity and Fell Sicklescythe",
+      "recipe": {
+        "station": null,
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Shroud Particles",
+            "qty": 8
+          },
+          {
+            "item": "Shroud Adhesive",
+            "qty": 4
+          },
+          {
+            "item": "Mint Mushroom Meat",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Shroud Adhesive 5 → 4",
+          "Shroud Particles 10 → 8"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-nexus"
+      ]
+    },
+    "Shroud Particles": {
+      "kind": "gathered",
+      "source": "Fell Enemies, Nomad Highlands Shroud, Kindlewastes Shroud and Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-particles"
+      ]
+    },
+    "Shroud Radiance": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": null,
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Shroud Relic",
+            "qty": 10
+          },
+          {
+            "item": "Green Vitriol Dust",
+            "qty": 5
+          },
+          {
+            "item": "Pink Mushroom Meat",
+            "qty": 10
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-radiance"
+      ]
+    },
+    "Shroud Relic": {
+      "kind": "gathered",
+      "source": "Fell Enemies, First: Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-relic"
+      ]
+    },
+    "Shroud Sand": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "station": "Laboratory",
+          "crafter": null,
+          "requires": [],
+          "makes": 100,
+          "time": "3 min",
+          "inputs": [
+            {
+              "item": "Sandstone",
+              "qty": 10
+            },
+            {
+              "item": "Acidic Mycelium",
+              "qty": 5
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-sand"
+      ]
+    },
+    "Shroud Slime": {
+      "kind": "gathered",
+      "source": "Veilwater Basin Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-slime"
+      ]
+    },
+    "Shroud Spores": {
+      "kind": "gathered",
+      "source": "Fell Enemies, Springlands Shroud and Revelwood Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-spores"
+      ]
+    },
+    "Shroud Vapor": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Enshrouded Ice",
+            "qty": 10
+          },
+          {
+            "item": "Active Mycelium",
+            "qty": 15
+          },
+          {
+            "item": "Salt",
+            "qty": 20
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-vapor"
+      ]
+    },
+    "Silver Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Silver Ore",
+            "qty": 20
+          },
+          {
+            "item": "Coal",
+            "qty": 40
+          }
+        ],
+        "changed1_0": [
+          "Time 720s → 600s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-bars"
+      ]
+    },
+    "Silver Ore": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-ore"
+      ]
+    },
+    "Small Chest": {
+      "kind": "crafted",
+      "source": "Workbench",
+      "recipe": {
+        "station": "Workbench",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 6,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "String",
+            "qty": 3
+          }
+        ],
+        "changed1_0": [
+          "+ 3 String",
+          "- 6 Nails"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": null,
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Any wood",
+              "qty": 1,
+              "anyOf": [
+                "Wood Logs",
+                "Hardwood",
+                "Palm Wood Logs",
+                "Conifer Logs",
+                "Bamboo Logs",
+                "Tropical Wood"
+              ]
+            },
+            {
+              "item": "String",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "sourceInferred": true,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/small-chest"
+      ]
+    },
+    "Spinning Wheel": {
+      "kind": "crafted",
+      "source": "Huntress",
+      "recipe": {
+        "station": null,
+        "crafter": "Hunter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Wood Logs",
+            "qty": 2
+          },
+          {
+            "item": "Wood Planks",
+            "qty": 2
+          },
+          {
+            "item": "Fossilized Bone",
+            "qty": 3
+          },
+          {
+            "item": "Bronze Bars",
+            "qty": 2
+          },
+          {
+            "item": "Nails",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/spinning-wheel"
+      ]
+    },
+    "Springlands Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Springlands Dirt is a terrain material found in the Springlands. Its 18 uses include Farm Soil at the Farmer, Workbench blocks such as the Dirt Road Block, Field Stones and Limestone Block, Springlands Rubble, Goo and White Glowing Substance at the Alchemist, the Climbing Rose and the Crucible.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/springlands-dirt"
+      ]
+    },
+    "Stone": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Stone is picked up as small stones lying on the ground all over Embervale, Shroud included. Larger stones and rock formations in the Springlands and Revelwood can be mined with a pickaxe. Its 97 uses start with the Axe, made by hand, and the Pickaxe, and run through stations such as the Forge, Kiln,",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/stone"
+      ]
+    },
+    "Straw": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/straw"
+      ]
+    },
+    "String": {
+      "kind": "crafted",
+      "source": "Manual Crafting",
+      "recipe": {
+        "station": null,
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Plant Fiber or Paper Reed",
+            "qty": 3,
+            "anyOf": [
+              "Plant Fiber",
+              "Paper Reed"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Spinning Machine",
+          "crafter": null,
+          "requires": [],
+          "makes": 10,
+          "time": "90s",
+          "inputs": [
+            {
+              "item": "Plant Fiber or Paper Reed",
+              "qty": 10,
+              "anyOf": [
+                "Plant Fiber",
+                "Paper Reed"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Spinning Wheel",
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "20s",
+          "inputs": [
+            {
+              "item": "Plant Fiber or Paper Reed",
+              "qty": 2,
+              "anyOf": [
+                "Plant Fiber",
+                "Paper Reed"
+              ]
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/string"
+      ]
+    },
+    "Sulfur": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sulfur"
+      ]
+    },
+    "Tar": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 24,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 6,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 30 → 24",
+          "Time 360s → 300s"
+        ]
+      },
+      "otherRecipes": "31 other recipes (e.g. Campfire: Grilled Fatty Meat)",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tar"
+      ]
+    },
+    "Tin Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Tin Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Tin Ore",
+              "qty": 15
+            },
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Wood Acid",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-bars"
+      ]
+    },
+    "Tin Ore": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-ore"
+      ]
+    },
+    "Torn Cloth": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Torn Cloth comes from drops rather than crafting, and it goes into 90 recipes. These include the Bandage, the Ragged, Fur, Mage, Magician and Alchemist Apprentice armor, and the Tiny Backpack made by hand. At the Ectoplasm Press it goes into Ectoplasm, Greater Ectoplasm and Excellent Ectoplasm, and ",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/torn-cloth"
+      ]
+    },
+    "Twigs": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "otherRecipes": [
+        {
+          "station": "Table Saw",
+          "crafter": null,
+          "requires": [],
+          "makes": 5,
+          "time": "60s",
+          "inputs": [
+            {
+              "item": "Any wood",
+              "qty": 1,
+              "anyOf": [
+                "Wood Logs",
+                "Hardwood",
+                "Palm Wood Logs",
+                "Conifer Logs",
+                "Bamboo Logs",
+                "Tropical Wood"
+              ]
+            }
+          ]
+        }
+      ],
+      "note": "Twigs drop in every biome, from most shrubs and plants when they are harvested and from trees alongside the logs. The Table Saw can also cut 5 from one piece of any wood in 60 seconds. Their 54 uses include the Axe, Pickaxe and Bow, a long run of arrows from the Wooden Arrow to the Golden Steel Arro",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/twigs"
+      ]
+    },
+    "Violet Fabric": {
+      "kind": "crafted",
+      "source": "Huntress",
+      "recipe": {
+        "station": "Loom",
+        "crafter": "Hunter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fabric",
+            "qty": 1
+          },
+          {
+            "item": "Mauveine",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/violet-fabric"
+      ]
+    },
+    "Water": {
+      "source": null,
+      "kind": "water",
+      "recipe": null,
+      "note": "Water charges, not an inventory item: drawn from base water storage near the crafter. enshrouded.tools shows them as 'N water charges' in the recipe header.",
+      "sources": [
+        "https://www.enshrouded.tools/items/green-vitriol-dust"
+      ]
+    },
+    "Wood Acid": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 15,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Time 420s → 300s"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-acid"
+      ]
+    },
+    "Wood Logs": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Wood Logs come from chopping down trees, with bigger trees giving more, and from breaking wooden objects. Twigs and Resin drop with them. Their 166 uses include stations such as the Forge, Loom, Kitchen, Seedbed and Table Saw, crude and carved wooden furniture, doors, fences and palisades, weapon ra",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-logs"
+      ]
+    },
+    "Wood Planks": {
+      "kind": "crafted",
+      "source": "Table Saw",
+      "recipe": {
+        "station": "Table Saw",
+        "crafter": null,
+        "requires": [],
+        "makes": 2,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 1,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-planks"
+      ]
+    }
+  }
+}

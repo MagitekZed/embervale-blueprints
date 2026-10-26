@@ -1,0 +1,2623 @@
+{
+ "per_voxel": {
+  "rule": "One building-material item fills one 0.5 m voxel. A Construction Hammer shape costs one item for each voxel it newly fills. Shapes act as stamps, so voxels already filled by an overlapping shape are not charged again, and dismantled blocks go back to the backpack. So Cube 1M (2×2×2 voxels) = 8 items; Single Wall/Roof/Terrain Block 0.5M = 1; a 2M wall (2 m wide × 4 m tall × 1 voxel thick, 4×8×1) = 32; a 4M wall = 64 if it is 8×8×1 voxels (inferred, not measured); a 4M foundation (4×4×2 m, 8×8×4) = 256. NOT DOCUMENTED: neither the wiki (Building, Construction Hammer, Building/Roof/Terrain Materials pages) nor any Keen patch note from 0.7.0 to 1.0 states a per-voxel cost. The figure rests on independent player reports from early access (2024) that match 1 item per voxel exactly: a wall '8 high, 4 across' costs 32 blocks, and 'a four-meter foundation requires 256 blocks'. The wiki's own 0.5 m voxel size supports it. Unverified: whether terrain materials and sloped roof shapes also cost exactly 1 item per voxel (assumed yes). For a shopping list, crafts needed = ceil(voxels / makes), and inputs = crafts × qty.",
+  "items_per_voxel": 1,
+  "sources": [
+   "https://steamcommunity.com/app/1203620/discussions/0/4206994256762310525/",
+   "https://www.thegamer.com/enshrouded-how-to-build-structures-guide/",
+   "https://steamcommunity.com/app/1203620/discussions/0/688619659067617888/",
+   "https://steamcommunity.com/app/1203620/discussions/0/4206993639694858824/",
+   "https://enshrouded.wiki.gg/wiki/Building",
+   "https://enshrouded.wiki.gg/wiki/Small_Magic_Chest",
+   "https://enshrouded.wiki.gg/wiki/Pact_Of_The_Flame_Update",
+   "https://enshrouded.wiki.gg/wiki/Wake_Of_Water_Update"
+  ],
+  "confidence": "Medium. Three independent player sources and the voxel arithmetic agree, but nothing official confirms it, and all of it predates 1.0 (Jan to Feb 2024). To verify in game, note a material's count, place one Cube 1M on empty ground and check that it dropped by 8, then repeat with a 4M wall."
+ },
+ "recipes": {
+  "Castle Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 5
+    },
+    {
+     "item": "Granite",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Shell Limestone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Castle_Block"
+  },
+  "Castle Wall Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Nomad Highlands Dirt",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Mining Rift. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Castle_Wall_Stone_Block"
+  },
+  "Citywall Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 8
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Fawnsong Frontier. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. SUSPICIOUS: Citywall Block and Temple Stones have identical wiki recipes (Stone 8, Springlands Dirt 2), which may be a copy-paste error. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Citywall_Block"
+  },
+  "Desert City Wall": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 15
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in \"Far Away Fray\" Tavern. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Desert_City_Wall"
+  },
+  "Desert Temple Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 8
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in South-west Sun Temple. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Desert_Temple_Block"
+  },
+  "Drak Temple Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 9
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Drak'Dal Temple. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Drak_Temple_Block"
+  },
+  "Fancy Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Limestone",
+     "qty": 7
+    },
+    {
+     "item": "Wood Planks",
+     "qty": 3
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Raven's Keep. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fancy_Stone_Block"
+  },
+  "Fired Bricks Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Fired Brick",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Fired Brick. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fired_Bricks_Block"
+  },
+  "Granite Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Granite. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Granite_Block"
+  },
+  "Highly Polished Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 15
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Looted from Scavenger Matron in Ocean's Heart. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Highly_Polished_Stone_Block"
+  },
+  "Hollow Halls Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Tar",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Springlands Hollow Halls. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Hollow_Halls_Block"
+  },
+  "Limestone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Limestone",
+     "qty": 6
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 4
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Surat's Rest. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Limestone_Block"
+  },
+  "Mixed Sandstone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 5
+    },
+    {
+     "item": "Limestone",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Scavenger Outpost. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Mixed_Sandstone_Block"
+  },
+  "Mycelium Overgrown Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 2
+    },
+    {
+     "item": "Mycelium (Material)",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Mycelium. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Mycelium_Overgrown_Block"
+  },
+  "Polished Granite Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 15
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Gateway Outpost \"Bora\". Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Polished_Granite_Block"
+  },
+  "Refined Sandstone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 5
+    },
+    {
+     "item": "Sand",
+     "qty": 2
+    },
+    {
+     "item": "Lump of Clay",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Sandstone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Refined_Sandstone_Block"
+  },
+  "Refined Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Limestone",
+     "qty": 5
+    },
+    {
+     "item": "Flintstone",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Masonry Tools. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Refined_Stone_Block"
+  },
+  "Regular Sandstone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 8
+    },
+    {
+     "item": "Lump of Clay",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Sandstone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Regular_Sandstone_Block"
+  },
+  "Regular Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found at Ruined Bridge. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Regular_Stone_Block"
+  },
+  "Rough Flintstone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Flintstone",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Flintstone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rough_Flintstone_Block"
+  },
+  "Rough Sandstone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Sandstone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rough_Sandstone_Block"
+  },
+  "Rough Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Stone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rough_Stone_Block"
+  },
+  "Roughly Cut Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 8
+    },
+    {
+     "item": "Rubble",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Netherton. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Roughly_Cut_Stone_Block"
+  },
+  "Shell Limestone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Shell Limestone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shell_Limestone_Block"
+  },
+  "Temple Stones": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 8
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Vukah Treetop Settlement. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. SUSPICIOUS: Citywall Block and Temple Stones have identical wiki recipes (Stone 8, Springlands Dirt 2), which may be a copy-paste error. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Temple_Stones"
+  },
+  "Weathered Stone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Bramblespine Boneyard. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Weathered_Stone_Block"
+  },
+  "Well Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Sandstone",
+     "qty": 8
+    },
+    {
+     "item": "Shroud Liquid",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Kindlewastes Elixir Well. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Well_Block"
+  },
+  "Bamboo Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Bamboo Logs",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Bamboo Logs. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Bamboo_Wood_Block"
+  },
+  "Brick-Timbered Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Fired Bricks Block",
+     "qty": 1
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Fort Kelvin. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. SUSPICIOUS: the input is 'Fired Bricks Block' (the 100-per-craft building block), not the 'Fired Brick' item. The wiki changed it from 10 to 5 to 1 across late-2025 edits. It may really be Fired Brick ×1, so verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Brick-Timbered_Block"
+  },
+  "Conifer Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Conifer Logs. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Conifer_Wood_Block"
+  },
+  "Half-Timbered Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Lump of Clay",
+     "qty": 5
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Diadwyn. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Half-Timbered_Block"
+  },
+  "Half-timbered Shell Limestone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 5
+    },
+    {
+     "item": "Shell Limestone",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: TBA. The catalogue's unlock condition is 'TBA' (unknown on the wiki). Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Half-timbered_Shell_Limestone_Block"
+  },
+  "Palm Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 7
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 3
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Palm Wood Logs. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Palm_Wood_Block"
+  },
+  "Plaited Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Twigs",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Abandoned Vukah Village in the Blackmire. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Plaited_Block"
+  },
+  "Refined Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 8
+    },
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Wood Planks. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Refined_Wood_Block"
+  },
+  "Rough Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Wood Logs. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rough_Wood_Block"
+  },
+  "Shroud Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shroud Wood",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Shroud Wood. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shroud_Wood_Block"
+  },
+  "Tarred Wood Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 2
+    },
+    {
+     "item": "Tar",
+     "qty": 2
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Tar. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Tarred_Wood_Block"
+  },
+  "Blue Luminescent Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Luminous Growth",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Luminous Growth. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blue_Luminescent_Block"
+  },
+  "Green Luminescent Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Purified Slime. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Green_Luminescent_Block"
+  },
+  "White Luminescent Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "White Glowing Substance",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining White Glowing Substance. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/White_Luminescent_Block"
+  },
+  "Yellow Luminescent Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Glass",
+     "qty": 3
+    },
+    {
+     "item": "Saffron",
+     "qty": 3
+    },
+    {
+     "item": "Flintstone",
+     "qty": 4
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Saffron. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Yellow_Luminescent_Block"
+  },
+  "Bone Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Bones",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Hidden Tomb. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Bone_Block"
+  },
+  "Bronze Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    },
+    {
+     "item": "Any Wood",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Bronze Bars. 'Any Wood' means any of Wood Logs, Hardwood, Palm Wood Logs, Conifer Logs, Tropical Wood or Bamboo Logs (wiki: Alternative Crafting Ingredients). Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Bronze_Block"
+  },
+  "Copper Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Copper Bars",
+     "qty": 1
+    },
+    {
+     "item": "Any Wood",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Copper Bar. 'Any Wood' means any of Wood Logs, Hardwood, Palm Wood Logs, Conifer Logs, Tropical Wood or Bamboo Logs (wiki: Alternative Crafting Ingredients). The wiki recipe says 'Copper Bar'. That page redirects to 'Copper Bars', so it is normalised here. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Copper_Block"
+  },
+  "Ectoplasm Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Flintstone",
+     "qty": 5
+    },
+    {
+     "item": "Ectoplasm Shard",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Nomad Highlands Hollow Halls. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. 1.0 FLAG: the 1.0 changelog says it is now a tier 2 building material, so its unlock and possibly its recipe changed. Verify in game. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Ectoplasm_Block"
+  },
+  "Iron Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    },
+    {
+     "item": "Any Wood",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Iron Bars. 'Any Wood' means any of Wood Logs, Hardwood, Palm Wood Logs, Conifer Logs, Tropical Wood or Bamboo Logs (wiki: Alternative Crafting Ingredients). Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Iron_Block"
+  },
+  "Metal Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Metal Sheets",
+     "qty": 1
+    },
+    {
+     "item": "Any Wood",
+     "qty": 5
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Obtaining Metal Sheets. 'Any Wood' means any of Wood Logs, Hardwood, Palm Wood Logs, Conifer Logs, Tropical Wood or Bamboo Logs (wiki: Alternative Crafting Ingredients). Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Metal_Block"
+  },
+  "Midnight Tomb Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Red Marble Fragment",
+     "qty": 9
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found at the end of a little crypt dungeon on a hill due east of Balefire Lance Point. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Midnight_Tomb_Block"
+  },
+  "Obsidian Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Obsidian",
+     "qty": 9
+    },
+    {
+     "item": "Silver Bars",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found on top of Forge Of Obsidia. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Obsidian_Block"
+  },
+  "Red Carpet Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Heart's Desire",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 8
+    },
+    {
+     "item": "Paper Reed",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Stillwater Bay. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Red_Carpet_Block"
+  },
+  "Red Marble Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Red Marble Fragment",
+     "qty": 10
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Revelwood Hollow Halls. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Red_Marble_Block"
+  },
+  "Starlight Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 8
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    },
+    {
+     "item": "Lapislazuli",
+     "qty": 1
+    }
+   ],
+   "makes": 100,
+   "notes": "Unlock: Found in Night Sanctum. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Starlight_Block"
+  },
+  "Castle Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 10
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by completing Lord Vorgoth’s Throneroom. SUSPICIOUS: Castle Roof Block and Drak Temple Roof Block have identical wiki recipes (Shell Limestone 10), which may be a copy-paste error. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Castle_Roof_Block"
+  },
+  "Desert Shingle Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Lump of Clay",
+     "qty": 10
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    },
+    {
+     "item": "Lapislazuli",
+     "qty": 1
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlock: Found in Sapphire Strand. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Desert_Shingle_Roof_Block"
+  },
+  "Drak Temple Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 10
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by completing Finding Gold Coins. SUSPICIOUS: Castle Roof Block and Drak Temple Roof Block have identical wiki recipes (Shell Limestone 10), which may be a copy-paste error. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Drak_Temple_Roof_Block"
+  },
+  "Granite Ornamented Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 10
+    },
+    {
+     "item": "Silver Bars",
+     "qty": 1
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by crafting or picking up Silver Bars. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Granite_Ornamented_Roof_Block"
+  },
+  "Granite Shingle Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 10
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Granite. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Granite_Shingle_Roof_Block"
+  },
+  "Palm Leaf Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Palm Leaves",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Palm Leaves. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Palm_Leaf_Roof_Block"
+  },
+  "Plant Fiber Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Plant Fiber",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Plant Fiber. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Plant_Fiber_Roof_Block"
+  },
+  "Roof Tiles Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Fired Brick",
+     "qty": 4
+    },
+    {
+     "item": "Lump of Clay",
+     "qty": 1
+    },
+    {
+     "item": "Plant Fiber",
+     "qty": 1
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Lump of Clay. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Roof_Tiles_Block"
+  },
+  "Shell Limestone Shingles": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Lump of Clay",
+     "qty": 5
+    },
+    {
+     "item": "Shell Limestone",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlock: Found in an attic at Dewdrop Farm. Finding or looting it once unlocks the recipe, and after that it is crafted from resources as listed. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shell_Limestone_Shingles"
+  },
+  "Stone Shingle Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Flintstone",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtainingFlintstone. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Stone_Shingle_Roof_Block"
+  },
+  "Straw Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Straw",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Straw. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Straw_Roof_Block"
+  },
+  "Tarred Shingle Roof Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Tar",
+     "qty": 5
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by crafting or picking up Tar. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Tarred_Shingle_Roof_Block"
+  },
+  "Tarred Straw Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Straw",
+     "qty": 4
+    },
+    {
+     "item": "Tar",
+     "qty": 1
+    }
+   ],
+   "makes": 50,
+   "notes": "Unlocked by obtaining Straw. Stack size 5000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Tarred_Straw_Block"
+  },
+  "Dirt Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Springlands Dirt",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Stone. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Dirt_Road_Block"
+  },
+  "Field Stones": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 6
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 4
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Field Stones in Morwenna. Stack size 500.",
+   "source": "https://enshrouded.wiki.gg/wiki/Field_Stones"
+  },
+  "Granite Rubble Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by mining Granite Rubble Road Block. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Granite_Rubble_Road_Block"
+  },
+  "Limestone Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Limestone",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Limestone. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Limestone_Road_Block"
+  },
+  "Rocky Stone Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Stone. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rocky_Stone_Road_Block"
+  },
+  "Shell Limestone Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 7
+    },
+    {
+     "item": "Veilwater Basin Rubble",
+     "qty": 3
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Shell Limestone. Veilwater Basin Rubble is itself crafted at the Grinding Stones (see that entry). Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shell_Limestone_Road_Block"
+  },
+  "Smooth Stone Road Block": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Stone",
+     "qty": 5
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 5
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlocked by obtaining Stone. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Smooth_Stone_Road_Block"
+  },
+  "Albaneve Summits Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Albaneve_Summits_Dirt"
+  },
+  "Blackmire Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in Blackmire. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blackmire_Dirt"
+  },
+  "Farm Soil": {
+   "craftable": true,
+   "station": null,
+   "crafter": "Farmer (Emily Fray), from her own crafting menu with no station listed",
+   "inputs": [
+    {
+     "item": "Springlands Dirt",
+     "qty": 7
+    },
+    {
+     "item": "Bonemeal",
+     "qty": 3
+    }
+   ],
+   "makes": 10,
+   "notes": "Unlock: Various locations in the world, particularly Farms. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Farm_Soil"
+  },
+  "Fertilised Farm Soil": {
+   "craftable": true,
+   "station": null,
+   "crafter": "Farmer (Emily Fray), from her own crafting menu with no station listed",
+   "inputs": [
+    {
+     "item": "Fossilized Bone Dust",
+     "qty": 2
+    },
+    {
+     "item": "Nitrate",
+     "qty": 3
+    },
+    {
+     "item": "Any Sand",
+     "qty": 10
+    },
+    {
+     "item": "Farm Soil",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "'Any Sand' means Sand, Fine Sand or Veilwater Basin Sand (wiki: Alternative Crafting Ingredients). Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertilised_Farm_Soil"
+  },
+  "Flower Soil": {
+   "craftable": true,
+   "station": null,
+   "crafter": "Farmer (Emily Fray), from her own crafting menu with no station listed",
+   "inputs": [
+    {
+     "item": "Farm Soil",
+     "qty": 10
+    },
+    {
+     "item": "Honey",
+     "qty": 1
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found at Woodgard. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Flower_Soil"
+  },
+  "Nomad Highlands Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in Nomad Highlands. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Nomad_Highlands_Dirt"
+  },
+  "Revelwood Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in Revelwood. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Revelwood_Dirt"
+  },
+  "Sand": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in the Kindlewastes. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Sand"
+  },
+  "Shroud Infused Farm Soil": {
+   "craftable": true,
+   "station": null,
+   "crafter": "Farmer (Emily Fray), from her own crafting menu with no station listed",
+   "inputs": [
+    {
+     "item": "Chitin Powder",
+     "qty": 5
+    },
+    {
+     "item": "Shroud Sand",
+     "qty": 10
+    }
+   ],
+   "makes": 10,
+   "notes": "Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shroud_Infused_Farm_Soil"
+  },
+  "Springlands Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in the Springlands. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Springlands_Dirt"
+  },
+  "Veilwater Basin Dirt": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in Veilwater Basin. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Veilwater_Basin_Dirt"
+  },
+  "Veilwater Basin Sand": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig in Veilwater Basin. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Veilwater_Basin_Sand"
+  },
+  "Blackmire Stone": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine in Blackmire. The Terrain Materials table queries a recipe for it but none exists in the wiki recipe data (unlike Revelwood Stone, which is craftable). Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blackmire_Stone"
+  },
+  "Fertile Blackmire Dirt": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Farm Soil",
+     "qty": 1
+    },
+    {
+     "item": "Blackmire Dirt",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Blackmire. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Blackmire_Dirt"
+  },
+  "Fertile Kindlewastes Sand": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Fertilised Farm Soil",
+     "qty": 1
+    },
+    {
+     "item": "Sand",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Kindlewastes. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Kindlewastes_Sand"
+  },
+  "Fertile Nomad Highlands Dirt": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Farm Soil",
+     "qty": 1
+    },
+    {
+     "item": "Nomad Highlands Dirt",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Nomad Highlands. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Nomad_Highlands_Dirt"
+  },
+  "Fertile Revelwood Dirt": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Farm Soil",
+     "qty": 1
+    },
+    {
+     "item": "Revelwood Dirt",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Revelwood. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Revelwood_Dirt"
+  },
+  "Fertile Springlands Dirt": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Farm Soil",
+     "qty": 1
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Springlands. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Springlands_Dirt"
+  },
+  "Fertile Veilwater Basin Dirt": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 1
+    },
+    {
+     "item": "Veilwater Basin Sand",
+     "qty": 1
+    },
+    {
+     "item": "Veilwater Basin Dirt",
+     "qty": 8
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Veilwater Basin. It also occurs naturally there, so it can presumably be dug instead of crafted. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fertile_Veilwater_Basin_Dirt"
+  },
+  "Revelwood Stone": {
+   "craftable": true,
+   "station": "Workbench",
+   "crafter": "Player (no survivor needed)",
+   "inputs": [
+    {
+     "item": "Revelwood Dirt",
+     "qty": 1
+    },
+    {
+     "item": "Stone",
+     "qty": 9
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Revelwood. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Revelwood_Stone"
+  },
+  "Blackmire Rubble": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine in Blackmire. Its page says it 'cannot be crafted', e.g. along the road south of Queen Jezmina's Camp. Unlike the other biome rubbles, it has no Grinding Stones recipe. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blackmire_Rubble"
+  },
+  "Kindlewastes Rubble": {
+   "craftable": true,
+   "station": "Grinding Stones",
+   "crafter": "None: a timed production station you load yourself (the Grinding Stones station is crafted at the Alchemist)",
+   "inputs": [
+    {
+     "item": "Rubble",
+     "qty": 1
+    },
+    {
+     "item": "Sand",
+     "qty": 4
+    },
+    {
+     "item": "Sandstone",
+     "qty": 5
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Kindlewastes. Craft time 1:10 per batch. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Kindlewastes_Rubble"
+  },
+  "Nomad Highlands Rubble": {
+   "craftable": true,
+   "station": "Grinding Stones",
+   "crafter": "None: a timed production station you load yourself (the Grinding Stones station is crafted at the Alchemist)",
+   "inputs": [
+    {
+     "item": "Rubble",
+     "qty": 1
+    },
+    {
+     "item": "Nomad Highlands Dirt",
+     "qty": 4
+    },
+    {
+     "item": "Limestone",
+     "qty": 5
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Nomad Highlands. Craft time 1:15 per batch. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Nomad_Highlands_Rubble"
+  },
+  "Revelwood Rubble": {
+   "craftable": true,
+   "station": "Grinding Stones",
+   "crafter": "None: a timed production station you load yourself (the Grinding Stones station is crafted at the Alchemist)",
+   "inputs": [
+    {
+     "item": "Rubble",
+     "qty": 1
+    },
+    {
+     "item": "Revelwood Dirt",
+     "qty": 4
+    },
+    {
+     "item": "Stone",
+     "qty": 5
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Revelwood. Craft time 1:20 per batch. 1.0 FLAG: the 1.0 changelog says recipes that need stone were changed to use the stone of the matching biome (previously most used Springlands Stone), so the 'Stone' input here may now be a biome stone variant. Verify in game. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Revelwood_Rubble"
+  },
+  "Rubble": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine ruined buildings with a pickaxe (the wiki's 'Found in' cell is blank). Rubble is also an input to Roughly Cut Stone Block and the biome rubble recipes. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Rubble"
+  },
+  "Springlands Rubble": {
+   "craftable": true,
+   "station": "Grinding Stones",
+   "crafter": "None: a timed production station you load yourself (the Grinding Stones station is crafted at the Alchemist)",
+   "inputs": [
+    {
+     "item": "Rubble",
+     "qty": 1
+    },
+    {
+     "item": "Springlands Dirt",
+     "qty": 4
+    },
+    {
+     "item": "Stone",
+     "qty": 5
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Springlands. Craft time 1:20 per batch. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Springlands_Rubble"
+  },
+  "Veilwater Basin Rubble": {
+   "craftable": true,
+   "station": "Grinding Stones",
+   "crafter": "None: a timed production station you load yourself (the Grinding Stones station is crafted at the Alchemist)",
+   "inputs": [
+    {
+     "item": "Rubble",
+     "qty": 1
+    },
+    {
+     "item": "Shell Limestone",
+     "qty": 5
+    },
+    {
+     "item": "Veilwater Basin Dirt",
+     "qty": 1
+    }
+   ],
+   "makes": 10,
+   "notes": "The wiki's obtaining column says: Found in Veilwater Basin. Craft time 1:20 per batch. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Veilwater_Basin_Rubble"
+  },
+  "Blackmire Bark": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig Blackmire trees with a pickaxe. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blackmire_Bark"
+  },
+  "Blackmire Heartwood": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in Blackmire. The page gives no detail, so presumably dug from Blackmire trees. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Blackmire_Heartwood"
+  },
+  "Fine Sand": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig the ground in the Kindlewastes. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Fine_Sand"
+  },
+  "Foliage": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in Blackmire. The page gives no detail. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Foliage"
+  },
+  "Gold Coins": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. The wiki (pre-1.0) says it is found in Veilwater Basin. 1.0 FLAG: the 1.0 changelog adds gold coins to loot chests all over Embervale as a trade resource and moves it into the Springlands material item set. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Gold_Coins"
+  },
+  "Granite": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine the mountainsides of Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Granite"
+  },
+  "Ice": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine ice in Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Ice"
+  },
+  "Limestone": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine cliffs and rock formations in Nomad Highlands. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Limestone"
+  },
+  "Luminous Growth": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in the Shroud. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Luminous_Growth"
+  },
+  "Moss": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Moss"
+  },
+  "Mushroom Flesh": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in Blackmire. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Mushroom_Flesh"
+  },
+  "Sandstone": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine cliffs and rock formations in the Kindlewastes. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Sandstone"
+  },
+  "Shell Limestone": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found in Veilwater Basin. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Shell_Limestone"
+  },
+  "Snow": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Mine snow in Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Snow"
+  },
+  "Stone": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Pick up small stones anywhere in Embervale (including the Shroud) or mine rocks with a pickaxe. Large formations are in Springlands and Revelwood; it is rare in Albaneve Summits. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Stone"
+  },
+  "Underwater Luminous Growth": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found (underwater) in Veilwater Basin. Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Underwater_Luminous_Growth"
+  },
+  "Underwater Mud": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Found (underwater) in Veilwater Basin. Stack size 1000.",
+   "source": "https://enshrouded.wiki.gg/wiki/Underwater_Mud"
+  },
+  "Vukah Nesting Material": {
+   "craftable": false,
+   "station": null,
+   "crafter": null,
+   "inputs": [],
+   "makes": null,
+   "notes": "Not craftable: the wiki Terrain_Materials table marks it 'Not Craftable' or it has no recipe. Gather it by digging or mining with a pickaxe. Dig Vukah houses with a pickaxe (Blackmire). Stack size 250.",
+   "source": "https://enshrouded.wiki.gg/wiki/Vukah_Nesting_Material"
+  }
+ },
+ "intermediates": {
+  "_about": "Recipes for crafted inputs that the block recipes use, followed recursively down to raw resources, from the wiki Cargo table 'Ingredients'. Every alternative recipe is listed. station is the wiki's Workshop field and crafter its Crafter field, where null means none is listed. Pre-1.0 data: the 1.0 notes say many factory and crafting recipes were rebalanced.",
+  "Bonemeal": {
+   "recipes": [
+    {
+     "station": "Grinding Stones",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Bones",
+       "qty": 2
+      }
+     ],
+     "makes": 3,
+     "time": "1:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Bonemeal"
+  },
+  "Bronze Bars": {
+   "recipes": [
+    {
+     "station": "Smelter",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Copper Bars",
+       "qty": 7
+      },
+      {
+       "item": "Tin Bars",
+       "qty": 3
+      },
+      {
+       "item": "Charcoal",
+       "qty": 10
+      }
+     ],
+     "makes": 10,
+     "time": "5:00"
+    },
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Copper Bars",
+       "qty": 10
+      },
+      {
+       "item": "Tin Bars",
+       "qty": 4
+      },
+      {
+       "item": "Coal",
+       "qty": 10
+      }
+     ],
+     "makes": 20,
+     "time": "4:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Bronze_Bars"
+  },
+  "Charcoal": {
+   "recipes": [
+    {
+     "station": "Charcoal Kiln",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Any Wood",
+       "qty": 17
+      },
+      {
+       "item": "Any Dirt",
+       "qty": 3
+      }
+     ],
+     "makes": 15,
+     "time": "5:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Charcoal"
+  },
+  "Chitin Powder": {
+   "recipes": [
+    {
+     "station": "Grinding Stones",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Critter Carapace",
+       "qty": 3
+      }
+     ],
+     "makes": 3,
+     "time": "2:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Chitin_Powder"
+  },
+  "Copper Bars": {
+   "recipes": [
+    {
+     "station": "Smelter",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Charcoal",
+       "qty": 20
+      },
+      {
+       "item": "Copper Ore",
+       "qty": 20
+      }
+     ],
+     "makes": 10,
+     "time": "5:00"
+    },
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Copper Ore",
+       "qty": 30
+      },
+      {
+       "item": "Coal",
+       "qty": 30
+      }
+     ],
+     "makes": 20,
+     "time": "4:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Copper_Bars"
+  },
+  "Fabric": {
+   "recipes": [
+    {
+     "station": "Loom",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Linen",
+       "qty": 2
+      }
+     ],
+     "makes": 1,
+     "time": "2:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Fabric"
+  },
+  "Fired Brick": {
+   "recipes": [
+    {
+     "station": "Kiln",
+     "crafter": "Carpenter",
+     "inputs": [
+      {
+       "item": "Lump of Clay",
+       "qty": 1
+      },
+      {
+       "item": "Any Wood",
+       "qty": 1
+      }
+     ],
+     "makes": 1,
+     "time": "0:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Fired_Brick"
+  },
+  "Fossilized Bone Dust": {
+   "recipes": [
+    {
+     "station": "Grinding Stones",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Fossilized Bone",
+       "qty": 1
+      }
+     ],
+     "makes": 3,
+     "time": "10:00"
+    },
+    {
+     "station": "Mill",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Fossilized Bone",
+       "qty": 1
+      }
+     ],
+     "makes": 5,
+     "time": "5:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Fossilized_Bone_Dust"
+  },
+  "Glass": {
+   "recipes": [
+    {
+     "station": "Kiln",
+     "crafter": "Carpenter",
+     "inputs": [
+      {
+       "item": "Glass Shards",
+       "qty": 5
+      },
+      {
+       "item": "Charcoal",
+       "qty": 1
+      }
+     ],
+     "makes": 1,
+     "time": "Instant"
+    },
+    {
+     "station": "Smelter",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Sand",
+       "qty": 30
+      },
+      {
+       "item": "Charcoal",
+       "qty": 5
+      }
+     ],
+     "makes": 10,
+     "time": "5:00"
+    },
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Sand",
+       "qty": 40
+      },
+      {
+       "item": "Coal",
+       "qty": 10
+      }
+     ],
+     "makes": 20,
+     "time": "4:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Glass"
+  },
+  "Gold Bars": {
+   "recipes": [
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Gold Ore",
+       "qty": 20
+      },
+      {
+       "item": "Coal",
+       "qty": 40
+      }
+     ],
+     "makes": 20,
+     "time": "16:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Gold_Bars"
+  },
+  "Heart's Desire": {
+   "recipes": [
+    {
+     "station": "Coloring Station",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Shroud Sludge",
+       "qty": 1
+      },
+      {
+       "item": "Red Marble Fragment",
+       "qty": 4
+      },
+      {
+       "item": "Sulfur",
+       "qty": 4
+      }
+     ],
+     "makes": 5,
+     "time": "5:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Heart's_Desire"
+  },
+  "Honey": {
+   "recipes": [
+    {
+     "station": "Beehive",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Water",
+       "qty": 2
+      },
+      {
+       "item": "Sugar",
+       "qty": 1
+      }
+     ],
+     "makes": 5,
+     "time": "2:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Honey"
+  },
+  "Iron Bars": {
+   "recipes": [
+    {
+     "station": "Smelter",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Iron Ore",
+       "qty": 10
+      },
+      {
+       "item": "Charcoal",
+       "qty": 25
+      }
+     ],
+     "makes": 10,
+     "time": "10:00"
+    },
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Iron Ore",
+       "qty": 20
+      },
+      {
+       "item": "Coal",
+       "qty": 40
+      }
+     ],
+     "makes": 20,
+     "time": "9:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Iron_Bars"
+  },
+  "Linen": {
+   "recipes": [
+    {
+     "station": "Hand Spindle",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Flax",
+       "qty": 2
+      }
+     ],
+     "makes": 1,
+     "time": "0:10"
+    },
+    {
+     "station": "Spinning Wheel",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Flax",
+       "qty": 1
+      }
+     ],
+     "makes": 1,
+     "time": "0:30"
+    },
+    {
+     "station": "Spinning Machine",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Flax",
+       "qty": 10
+      }
+     ],
+     "makes": 15,
+     "time": "4:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Linen"
+  },
+  "Metal Sheets": {
+   "recipes": [
+    {
+     "station": "Forge",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Charcoal",
+       "qty": 2
+      },
+      {
+       "item": "Metal Scraps",
+       "qty": 2
+      }
+     ],
+     "makes": 1,
+     "time": "2:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Metal_Sheets"
+  },
+  "Nitrate": {
+   "recipes": [
+    {
+     "station": "Laboratory",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Sand",
+       "qty": 5
+      },
+      {
+       "item": "Shroud Sand",
+       "qty": 5
+      },
+      {
+       "item": "Wood Acid",
+       "qty": 1
+      },
+      {
+       "item": "Salt",
+       "qty": 1
+      }
+     ],
+     "makes": 5,
+     "time": "3:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Nitrate"
+  },
+  "Purified Slime": {
+   "recipes": [
+    {
+     "station": "Ectoplasm Press",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Charcoal",
+       "qty": 3
+      },
+      {
+       "item": "Salt",
+       "qty": 10
+      },
+      {
+       "item": "Toxic Slime",
+       "qty": 3
+      },
+      {
+       "item": "Wood Acid",
+       "qty": 1
+      }
+     ],
+     "makes": 10,
+     "time": "0:10"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Purified_Slime"
+  },
+  "Red Fabric": {
+   "recipes": [
+    {
+     "station": null,
+     "crafter": "Hunter",
+     "inputs": [
+      {
+       "item": "Fabric",
+       "qty": 1
+      },
+      {
+       "item": "Sulfur",
+       "qty": 1
+      }
+     ],
+     "makes": 1,
+     "time": "Instant"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Red_Fabric"
+  },
+  "Shroud Sand": {
+   "recipes": [
+    {
+     "station": "Laboratory",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Sandstone",
+       "qty": 10
+      },
+      {
+       "item": "Acidic Mycelium",
+       "qty": 5
+      }
+     ],
+     "makes": 100,
+     "time": "3:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Shroud_Sand"
+  },
+  "Shroud Sludge": {
+   "recipes": [
+    {
+     "station": "Mortar",
+     "crafter": "Alchemist",
+     "inputs": [
+      {
+       "item": "Shroud Slime",
+       "qty": 5
+      },
+      {
+       "item": "Shroud Gelatin",
+       "qty": 5
+      },
+      {
+       "item": "Pink Mushroom Meat",
+       "qty": 5
+      }
+     ],
+     "makes": 1,
+     "time": null
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Shroud_Sludge"
+  },
+  "Silver Bars": {
+   "recipes": [
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Silver Ore",
+       "qty": 20
+      },
+      {
+       "item": "Coal",
+       "qty": 40
+      }
+     ],
+     "makes": 20,
+     "time": "12:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Silver_Bars"
+  },
+  "Sugar": {
+   "recipes": [
+    {
+     "station": "Cooking Station",
+     "crafter": "Farmer",
+     "inputs": [
+      {
+       "item": "Sugar Cane",
+       "qty": 10
+      }
+     ],
+     "makes": 5,
+     "time": "6:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Sugar"
+  },
+  "Tar": {
+   "recipes": [
+    {
+     "station": "Charcoal Kiln",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Any Wood",
+       "qty": 30
+      },
+      {
+       "item": "Any Dirt",
+       "qty": 6
+      }
+     ],
+     "makes": 20,
+     "time": "6:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Tar"
+  },
+  "Tin Bars": {
+   "recipes": [
+    {
+     "station": "Smelter",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Tin Ore",
+       "qty": 15
+      },
+      {
+       "item": "Charcoal",
+       "qty": 5
+      },
+      {
+       "item": "Wood Acid",
+       "qty": 2
+      }
+     ],
+     "makes": 3,
+     "time": "4:00"
+    },
+    {
+     "station": "Blast Furnace",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Tin Ore",
+       "qty": 20
+      },
+      {
+       "item": "Coal",
+       "qty": 6
+      },
+      {
+       "item": "Wood Acid",
+       "qty": 4
+      }
+     ],
+     "makes": 6,
+     "time": "3:30"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Tin_Bars"
+  },
+  "Twigs": {
+   "recipes": [
+    {
+     "station": "Table Saw",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Any Wood",
+       "qty": 1
+      }
+     ],
+     "makes": 5,
+     "time": "1:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Twigs"
+  },
+  "White Glowing Substance": {
+   "recipes": [
+    {
+     "station": null,
+     "crafter": "Alchemist",
+     "inputs": [
+      {
+       "item": "Springlands Dirt",
+       "qty": 7
+      },
+      {
+       "item": "Mycelium (Material)",
+       "qty": 10
+      },
+      {
+       "item": "Bonemeal",
+       "qty": 20
+      },
+      {
+       "item": "Wood Acid",
+       "qty": 1
+      }
+     ],
+     "makes": 20,
+     "time": "Instant"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/White_Glowing_Substance"
+  },
+  "Wood Acid": {
+   "recipes": [
+    {
+     "station": "Charcoal Kiln",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Any Wood",
+       "qty": 15
+      },
+      {
+       "item": "Any Dirt",
+       "qty": 3
+      }
+     ],
+     "makes": 10,
+     "time": "7:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Wood_Acid"
+  },
+  "Wood Planks": {
+   "recipes": [
+    {
+     "station": "Table Saw",
+     "crafter": null,
+     "inputs": [
+      {
+       "item": "Any Wood",
+       "qty": 1
+      }
+     ],
+     "makes": 2,
+     "time": "1:00"
+    }
+   ],
+   "source": "https://enshrouded.wiki.gg/wiki/Wood_Planks"
+  }
+ },
+ "raw_resources": [
+  "Acidic Mycelium",
+  "Bamboo Logs",
+  "Bones",
+  "Coal",
+  "Conifer Logs",
+  "Copper Ore",
+  "Critter Carapace",
+  "Ectoplasm Shard",
+  "Flax",
+  "Flintstone",
+  "Fossilized Bone",
+  "Glass Shards",
+  "Gold Ore",
+  "Hardwood",
+  "Indigo Plant",
+  "Iron Ore",
+  "Lapislazuli",
+  "Lump of Clay",
+  "Metal Scraps",
+  "Mycelium (Material)",
+  "Obsidian",
+  "Palm Leaves",
+  "Palm Wood Logs",
+  "Paper Reed",
+  "Pink Mushroom Meat",
+  "Plant Fiber",
+  "Red Marble Fragment",
+  "Saffron",
+  "Salt",
+  "Shroud Gelatin",
+  "Shroud Liquid",
+  "Shroud Slime",
+  "Shroud Wood",
+  "Silver Ore",
+  "Straw",
+  "Sugar Cane",
+  "Sulfur",
+  "Tin Ore",
+  "Toxic Slime",
+  "Tropical Wood",
+  "Water",
+  "Wood Logs"
+ ],
+ "caveats": [
+  "All recipe data is pre-1.0. The wiki Building_Materials page says 'Up to date as of game version v.0.9.0.3 (December 16, 2025)', and the block pages' ingredients were last changed on 2025-12-16 ('Ingredients updated in patch', i.e. Patch 12, which lowered many block costs). Soil and road yields of 10 match Forging The Path (0.9.1.0, April 2026). Nothing reflects 1.0 (2026-10-15).",
+  "The 1.0 changelog (Part 1; the wiki and Steam say more parts follow) states: recipes that need stone now use the matching biome's stone; many crafting recipes got a balancing pass to cut grind; factory yields and production times were reworked; the Ectoplasm Block is now tier 2; biome rubbles were added to terrain material item sets; gold coins moved into the Springlands set and now drop from chests; the Revelwood hardwood was upgraded. Treat every recipe as provisional until checked in game. Source: https://enshrouded.wiki.gg/wiki/1.0_Update and https://store.steampowered.com/news/app/1203620/view/687519694976975214",
+  "1.0 adds a new tier (Cinder's Cradle) with 'new furniture, props, building blocks and plants'. Those blocks are not in the 118-entry catalogue.",
+  "Unified yields (Wake Of Water 0.9.0.0): every building block recipe makes 100 and every roof recipe makes 50. Road, soil, fertile-dirt and rubble terrain recipes make 10 (Forging The Path 0.9.1.0). Building blocks stack to 5000 (Patch 2), terrain materials to 1000 or 250.",
+  "Workbench recipes need no survivor: the player crafts them at the Workbench. Farm soils are crafted by the Farmer (Emily Fray). Biome rubbles are timed recipes at the Grinding Stones.",
+  "Wiki page oddities: the Albaneve Summits Dirt page says 'Springlands Dirt can be found in the Albaneve Summits' (copy-paste), and the catalogue's unlock for Half-timbered Shell Limestone Block is 'TBA'."
+ ],
+ "fetched": "2026-10-15",
+ "fetched_from": "https://enshrouded.wiki.gg/api.php (action=cargoquery tables=Ingredients, 5294 rows; plus action=query revisions for the 118 material pages, Building, Construction Hammer, Terrain_Materials, Roof_Materials and all Category:Game/Updates pages)"
+}

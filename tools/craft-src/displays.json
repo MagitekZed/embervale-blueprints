@@ -1,0 +1,7235 @@
+{
+ "fetched": "2026-10-20",
+ "notes": "139 displays and trophies in 1.0 (7 wig heads, 21 showcases, 95 trophies, 7 wall mounts, 3 display stands, 6 mannequins). Source: enshrouded.tools item pages, read from the game files (build 25988036); every recipe is likely-1.0 (datamined, not checked in game). `region` is the first region where you could make it: the latest region its recipe tree reaches (raw resources where first found, crafters where rescued, every station on the way). `comfort` is the comfort it gives (type and value), `resist` any resistance it adds, and `unlock` the site's text for what unlocks the recipe. Sizes in blocks aren't published anywhere: `size` (blocks, h and w) is on the ones measured in game. Items that stand for planner library types in base-objects.json get these details merged in by make_craft_js.py.",
+ "byRegion": {
+  "Springlands": 14,
+  "Revelwood": 24,
+  "Nomad Highlands": 11,
+  "Kindlewastes": 15,
+  "Albaneve Summits": 25,
+  "Veilwater Basin": 30,
+  "Cinder's Cradle": 8,
+  "unknown": 12
+ },
+ "notCrafted": [
+  "Bronze Scavenger Artificer Trophy",
+  "Bronze Scavenger Scattershot Trophy",
+  "Gold Scavenger Artificer Trophy",
+  "Gold Scavenger Scattershot Trophy",
+  "Iron Scavenger Artificer Trophy",
+  "Iron Scavenger Scattershot Trophy",
+  "Pikemead Statue Showcase",
+  "Pikemead Statue Showcase (large)",
+  "Prized Skull Trophy",
+  "Scavenger Artificer Trophy",
+  "Scavenger Scattershot Trophy",
+  "Wig Head"
+ ],
+ "duplicates": [],
+ "items": [
+  {
+   "name": "Instrument Stand",
+   "category": "Display stands",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Oswald Anders the Blacksmith and pick up Silver Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/instrument-stand"
+   ]
+  },
+  {
+   "name": "Fish Trophy Board",
+   "category": "Display stands",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Fisher",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Gold Coins",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Fisher",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Captain Melville Fontane the Fisher",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fish-trophy-board"
+   ]
+  },
+  {
+   "name": "Orrery Display Pillar",
+   "category": "Display stands",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Alchemist",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Basalt",
+     "qty": 5
+    },
+    {
+     "item": "Archaic Shards",
+     "qty": 10
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Basalt",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Balthazar the Alchemist and pick up Inner Orrery Rings or rescue Balthazar the Alchemist and pick up Middle Orrery Rings or rescue Balthazar the Alchemist and pick up Outer Orrery Rings",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/orrery-display-pillar"
+   ]
+  },
+  {
+   "name": "Mannequin \"Back Off\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-back-off"
+   ]
+  },
+  {
+   "name": "Mannequin \"Here I Come\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-here-i-come"
+   ]
+  },
+  {
+   "name": "Mannequin \"Let Me Serve You\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-let-me-serve-you"
+   ]
+  },
+  {
+   "name": "Mannequin \"Look At Me\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-look-at-me"
+   ]
+  },
+  {
+   "name": "Mannequin \"Strike A Pose\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-strike-a-pose"
+   ]
+  },
+  {
+   "name": "Mannequin \"Victory\"",
+   "category": "Mannequins",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 5
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Fur Chest or rescue Cade Hawthorn the Carpenter and pick up an Alchemist Apprentice Chest or rescue Cade Hawthorn the Carpenter and pick up a Scout Chest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/mannequin-victory"
+   ]
+  },
+  {
+   "name": "Embervale Miniature Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 20,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Carpenter",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Springlands Miniature Piece or rescue Athalan Skree the Hunter and pick up a Revelwood Miniature Piece or rescue Athalan Skree the Hunter and pick up a Nomad Highlands Miniature Piece",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/embervale-miniature-showcase"
+   ]
+  },
+  {
+   "name": "Fossil Showcase (2 Medium Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Hardwood",
+     "qty": 10
+    },
+    {
+     "item": "Nails",
+     "qty": 6
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 8
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Sea Urchin Cluster or rescue Cade Hawthorn the Carpenter and pick up a Round Sea Urchin or rescue Cade Hawthorn the Carpenter and pick up an Elevated Sea Urchin",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossil-showcase-2-medium-slots"
+   ]
+  },
+  {
+   "name": "Fossil Showcase (2 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Hardwood",
+     "qty": 6
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Sea Urchin Cluster or rescue Cade Hawthorn the Carpenter and pick up a Round Sea Urchin or rescue Cade Hawthorn the Carpenter and pick up an Elevated Sea Urchin",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossil-showcase-2-small-slots"
+   ]
+  },
+  {
+   "name": "Fossil Showcase (3 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 6
+    },
+    {
+     "item": "Hardwood",
+     "qty": 10
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 8
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Sea Urchin Cluster or rescue Cade Hawthorn the Carpenter and pick up a Round Sea Urchin or rescue Cade Hawthorn the Carpenter and pick up an Elevated Sea Urchin",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossil-showcase-3-small-slots"
+   ]
+  },
+  {
+   "name": "Fossil Showcase (3 Small and 2 Medium Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 10
+    },
+    {
+     "item": "Hardwood",
+     "qty": 16
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 6
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Sea Urchin Cluster or rescue Cade Hawthorn the Carpenter and pick up a Round Sea Urchin or rescue Cade Hawthorn the Carpenter and pick up an Elevated Sea Urchin",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossil-showcase-3-small-and-2-medium-slots"
+   ]
+  },
+  {
+   "name": "Hollow Halls Showcase (1 Large Slot)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Scraps",
+     "qty": 3
+    },
+    {
+     "item": "Hardwood",
+     "qty": 1
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Large Dark Crystal or pick up a Dark Crystal Cluster or pick up a Sparkling Dark Crystal",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-halls-showcase-1-large-slot"
+   ]
+  },
+  {
+   "name": "Hollow Halls Showcase (2 Medium Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Torn Cloth",
+     "qty": 8
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 6
+    },
+    {
+     "item": "Hardwood",
+     "qty": 10
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Large Dark Crystal or pick up a Dark Crystal Cluster or pick up a Sparkling Dark Crystal",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-halls-showcase-2-medium-slots"
+   ]
+  },
+  {
+   "name": "Hollow Halls Showcase (2 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Hardwood",
+     "qty": 6
+    },
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 2
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Hardwood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Large Dark Crystal or pick up a Dark Crystal Cluster or pick up a Sparkling Dark Crystal",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-halls-showcase-2-small-slots"
+   ]
+  },
+  {
+   "name": "Hollow Halls Showcase (3 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 6
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 8
+    },
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    },
+    {
+     "item": "Hardwood",
+     "qty": 10
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Purified Slime (Ectoplasm Press (Hollow Cyclops Head (Hollow Cyclops Head from the Hollow Cyclops, first in the Revelwood)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Large Dark Crystal or pick up a Dark Crystal Cluster or pick up a Sparkling Dark Crystal",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-halls-showcase-3-small-slots"
+   ]
+  },
+  {
+   "name": "Hollow Halls Showcase (3 Small and 2 Medium Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Purified Slime",
+     "qty": 1
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 6
+    },
+    {
+     "item": "Nails",
+     "qty": 10
+    },
+    {
+     "item": "Hardwood",
+     "qty": 16
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Purified Slime (Ectoplasm Press (Hollow Cyclops Head (Hollow Cyclops Head from the Hollow Cyclops, first in the Revelwood)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Large Dark Crystal or pick up a Dark Crystal Cluster or pick up a Sparkling Dark Crystal",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-halls-showcase-3-small-and-2-medium-slots"
+   ]
+  },
+  {
+   "name": "Pikemead Statue Showcase (crafted)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Sheets",
+     "qty": 15
+    },
+    {
+     "item": "Copper Bars",
+     "qty": 15
+    },
+    {
+     "item": "Hardwood",
+     "qty": 30
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Copper Bars (Smelter (Fired Bricks (Kiln (Revelwood Stone))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Queen Pikemead Statue Piece or rescue Cade Hawthorn the Carpenter and pick up a Queen Pikemead Statue Piece or rescue Cade Hawthorn the Carpenter and pick up a Queen Pikemead Statue Piece",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pikemead-statue-showcase-crafted"
+   ]
+  },
+  {
+   "name": "Cyclops Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Metal Sheets",
+     "qty": 15
+    },
+    {
+     "item": "Charcoal",
+     "qty": 15
+    },
+    {
+     "item": "Ectoplasm Block",
+     "qty": 10
+    },
+    {
+     "item": "Bones",
+     "qty": 30
+    },
+    {
+     "item": "Any Ectoplasm",
+     "qty": 5,
+     "anyOf": [
+      "Ectoplasm Fragment",
+      "Ectoplasm Shard",
+      "Ectoplasm Crystal",
+      "Ectoplasm Cluster",
+      "Ectoplasm Aggregate"
+     ]
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Ectoplasm Block (Ectoplasm Shard)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Alden Crowley the Collector and pick up a Left Cyclops Arm or rescue Alden Crowley the Collector and pick up a Right Cyclops Arm or rescue Alden Crowley the Collector and pick up a Cyclops Skull",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/cyclops-showcase"
+   ]
+  },
+  {
+   "name": "Alchemist Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Alchemist",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Balthazar the Alchemist and pick up a Ripped Alchemist's Wall Hanging or rescue Balthazar the Alchemist and pick up a Ripped Alchemist's Wall Hanging",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/alchemist-showcase"
+   ]
+  },
+  {
+   "name": "Flame Mosaic Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Granite",
+     "qty": 20
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Granite",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up a Flame Mosaic Piece I or rescue Cade Hawthorn the Carpenter and pick up a Flame Mosaic Piece II or rescue Cade Hawthorn the Carpenter and pick up a Flame Mosaic Piece III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flame-mosaic-showcase"
+   ]
+  },
+  {
+   "name": "Wall Tapestry Showcase",
+   "category": "Showcases",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up a Wall Tapestry Piece or rescue Valory the Bard and pick up a Wall Tapestry Piece",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-showcase"
+   ]
+  },
+  {
+   "name": "Drak Relief Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Shell Limestone",
+     "qty": 20
+    },
+    {
+     "item": "Gold Ore",
+     "qty": 10
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Shell Limestone",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Drak Relief I or pick up a Drak Relief II or pick up a Drak Relief III",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/drak-relief-showcase"
+   ]
+  },
+  {
+   "name": "Meteorite Showcase (1 Large Slot)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Celestium Bars",
+     "qty": 1
+    },
+    {
+     "item": "Basalt",
+     "qty": 4
+    },
+    {
+     "item": "Gold Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up an Iron Meteorite or rescue Cade Hawthorn the Carpenter and pick up a Pallasite or rescue Cade Hawthorn the Carpenter and pick up a Chondrite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/meteorite-showcase-1-large-slot"
+   ]
+  },
+  {
+   "name": "Meteorite Showcase (3 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Celestium Bars",
+     "qty": 2
+    },
+    {
+     "item": "Basalt",
+     "qty": 5
+    },
+    {
+     "item": "Gold Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up an Iron Meteorite or rescue Cade Hawthorn the Carpenter and pick up a Pallasite or rescue Cade Hawthorn the Carpenter and pick up a Chondrite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/meteorite-showcase-3-small-slots"
+   ]
+  },
+  {
+   "name": "Meteorite Showcase (5 Small Slots)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Carpenter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Celestium Bars",
+     "qty": 2
+    },
+    {
+     "item": "Basalt",
+     "qty": 6
+    },
+    {
+     "item": "Gold Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Celestium Bars (Celestium Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up an Iron Meteorite or rescue Cade Hawthorn the Carpenter and pick up a Pallasite or rescue Cade Hawthorn the Carpenter and pick up a Chondrite",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/meteorite-showcase-5-small-slots"
+   ]
+  },
+  {
+   "name": "Pikemead Statue Showcase",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pikemead-statue-showcase"
+   ]
+  },
+  {
+   "name": "Pikemead Statue Showcase (large)",
+   "category": "Showcases",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pikemead-statue-showcase-large"
+   ]
+  },
+  {
+   "name": "Direwolf Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Direwolf Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Direwolf Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/direwolf-trophy"
+   ]
+  },
+  {
+   "name": "Fell Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Critter Queen Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Critter Queen Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Fell Striker Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Striker Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Striker Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-striker-trophy"
+   ]
+  },
+  {
+   "name": "Fell Thunderbrute Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Thunderbrute Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Thunderbrute Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-thunderbrute-trophy"
+   ]
+  },
+  {
+   "name": "Fell Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Wispwyvern Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Wispwyvern Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Hollow Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Cyclops Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Hollow Cyclops Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Scavenger Matron Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Matron Helmet",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Scavenger Matron Helmet",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-matron-trophy"
+   ]
+  },
+  {
+   "name": "Vukah Brawler Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vukah Brawler Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Vukah Brawler Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vukah-brawler-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Direwolf Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Direwolf Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Direwolf Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-direwolf-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Critter Queen Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Monstrosity Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Monstrosity Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Fell Monstrosity Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Monstrosity Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-monstrosity-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Striker Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Striker Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Striker Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-striker-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Thunderbrute Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Thunderbrute Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Thunderbrute Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-thunderbrute-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Wispwyvern Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Hollow Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Cyclops Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Hollow Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-hollow-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Scavenger Matron Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Matron Helmet",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Scavenger Matron Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-scavenger-matron-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Vukah Brawler Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vukah Brawler Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Bronze Bars (Tin Bars (Tin Ore))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Vukah Brawler Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-vukah-brawler-trophy"
+   ]
+  },
+  {
+   "name": "Fell Monstrosity Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Monstrosity Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Fell Monstrosity Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Monstrosity Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-monstrosity-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Crimson Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Crimson Critter Queen Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Crimson Critter Queen Head (Fell Crimson Critter Queen Head from the Fell Crimson Critter Queen)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Crimson Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-crimson-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Sicklescythe Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Sicklescythe Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Sicklescythe Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Sicklescythe Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-sicklescythe-trophy"
+   ]
+  },
+  {
+   "name": "Fell Crimson Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Crimson Critter Queen Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Crimson Critter Queen Head (Fell Crimson Critter Queen Head from the Fell Crimson Critter Queen)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Crimson Critter Queen Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-crimson-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Fell Sicklescythe Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Sicklescythe Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Sicklescythe Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Sicklescythe Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-sicklescythe-trophy"
+   ]
+  },
+  {
+   "name": "Iron Direwolf Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Direwolf Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Direwolf Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-direwolf-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Crimson Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Crimson Critter Queen Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Crimson Critter Queen Head (Fell Crimson Critter Queen Head from the Fell Crimson Critter Queen)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Crimson Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-crimson-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Critter Queen Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Monstrosity Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Monstrosity Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Monstrosity Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-monstrosity-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Sicklescythe Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Sicklescythe Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Fell Sicklescythe Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Sicklescythe Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-sicklescythe-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Striker Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Striker Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Striker Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-striker-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Thunderbrute Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Thunderbrute Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Thunderbrute Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-thunderbrute-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Wispwyvern Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Iron Hollow Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Cyclops Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Hollow Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-hollow-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Iron Scavenger Matron Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Matron Helmet",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Scavenger Matron Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-scavenger-matron-trophy"
+   ]
+  },
+  {
+   "name": "Iron Vukah Brawler Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vukah Brawler Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Vukah Brawler Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-vukah-brawler-trophy"
+   ]
+  },
+  {
+   "name": "Ancient S.P.D.R. Construct Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Ancient S.P.D.R. Construct Eye",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Ancient S.P.D.R. Construct Eye (Ancient S.P.D.R. Construct Eye from the Ancient S.P.D.R. Construct)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Ancient S.P.D.R. Construct Eye",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-s-p-d-r-construct-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Ancient S.P.D.R. Construct Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Ancient S.P.D.R. Construct Eye",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Ancient S.P.D.R. Construct Eye (Ancient S.P.D.R. Construct Eye from the Ancient S.P.D.R. Construct)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Ancient S.P.D.R. Construct Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-ancient-s-p-d-r-construct-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Cyclops Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Cyclops Head (Cyclops Head from the Cyclops)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Cyclops Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Cyclops Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Fell Dragon Youngling Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Dragon Youngling Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Dragon Youngling Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Fell Dragon Youngling Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-fell-dragon-youngling-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Hollow Titan Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Titan Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Titan Head (Hollow Titan Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Hollow Titan Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-hollow-titan-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Hollow Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Wispwyvern Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Wispwyvern Head (Hollow Wispwyvern Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Hollow Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-hollow-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Scavenger Tyrant Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Tyrant Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Scavenger Tyrant Head (Scavenger Tyrant Head from the Scavenger Tyrant)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Scavenger Tyrant Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-scavenger-tyrant-trophy"
+   ]
+  },
+  {
+   "name": "Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Cyclops Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Cyclops Head (Cyclops Head from the Cyclops)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Cyclops Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Fell Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Cyclops Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Cyclops Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Cyclops Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Fell Dragon Youngling Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Dragon Youngling Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Dragon Youngling Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fell Dragon Youngling Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-dragon-youngling-trophy"
+   ]
+  },
+  {
+   "name": "Hollow Titan Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Titan Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Titan Head (Hollow Titan Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Hollow Titan Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-titan-trophy"
+   ]
+  },
+  {
+   "name": "Hollow Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Wispwyvern Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Wispwyvern Head (Hollow Wispwyvern Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Hollow Wispwyvern Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Iron Ancient S.P.D.R. Construct Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Ancient S.P.D.R. Construct Eye",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Ancient S.P.D.R. Construct Eye (Ancient S.P.D.R. Construct Eye from the Ancient S.P.D.R. Construct)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Ancient S.P.D.R. Construct Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-ancient-s-p-d-r-construct-trophy"
+   ]
+  },
+  {
+   "name": "Iron Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Cyclops Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Cyclops Head (Cyclops Head from the Cyclops)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Cyclops Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Cyclops Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Iron Fell Dragon Youngling Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Dragon Youngling Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Fell Dragon Youngling Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Fell Dragon Youngling Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-fell-dragon-youngling-trophy"
+   ]
+  },
+  {
+   "name": "Iron Hollow Titan Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Titan Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Titan Head (Hollow Titan Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Hollow Titan Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-hollow-titan-trophy"
+   ]
+  },
+  {
+   "name": "Iron Hollow Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Wispwyvern Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Hollow Wispwyvern Head (Hollow Wispwyvern Head from a Hollow Halls boss that drops Icy Giant Bones (Albaneve Summits on))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Hollow Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-hollow-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Iron Scavenger Tyrant Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Tyrant Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Scavenger Tyrant Head (Scavenger Tyrant Head from the Scavenger Tyrant)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Scavenger Tyrant Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-scavenger-tyrant-trophy"
+   ]
+  },
+  {
+   "name": "Scavenger Tyrant Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Tyrant Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Scavenger Tyrant Head (Scavenger Tyrant Head from the Scavenger Tyrant)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Scavenger Tyrant Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-tyrant-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Hydrak'Dal Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hydrak'Dal Head",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Hydrak'Dal Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Hydrak'Dal Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-hydrakdal-trophy"
+   ]
+  },
+  {
+   "name": "Gold Ancient S.P.D.R. Construct Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Ancient S.P.D.R. Construct Eye",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Ancient S.P.D.R. Construct Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-ancient-s-p-d-r-construct-trophy"
+   ]
+  },
+  {
+   "name": "Gold Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Cyclops Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Gold Direwolf Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Direwolf Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Direwolf Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-direwolf-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Crimson Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Crimson Critter Queen Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Crimson Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-crimson-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Critter Queen Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Critter Queen Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Critter Queen Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-critter-queen-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Cyclops Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Dragon Youngling Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Dragon Youngling Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Dragon Youngling Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-dragon-youngling-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Monstrosity Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Monstrosity Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Monstrosity Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-monstrosity-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Sicklescythe Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Sicklescythe Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Sicklescythe Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-sicklescythe-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Striker Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Striker Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Striker Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-striker-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Thunderbrute Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Thunderbrute Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Thunderbrute Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-thunderbrute-trophy"
+   ]
+  },
+  {
+   "name": "Gold Fell Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Fell Wispwyvern Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Fell Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-fell-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Gold Hollow Cyclops Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Cyclops Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Hollow Cyclops Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-hollow-cyclops-trophy"
+   ]
+  },
+  {
+   "name": "Gold Hollow Titan Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Titan Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Hollow Titan Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-hollow-titan-trophy"
+   ]
+  },
+  {
+   "name": "Gold Hollow Wispwyvern Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hollow Wispwyvern Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Hollow Wispwyvern Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-hollow-wispwyvern-trophy"
+   ]
+  },
+  {
+   "name": "Gold Hydrak'Dal Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hydrak'Dal Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Hydrak'Dal Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Hydrak'Dal Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-hydrakdal-trophy"
+   ]
+  },
+  {
+   "name": "Gold Scavenger Matron Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Matron Helmet",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Scavenger Matron Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-scavenger-matron-trophy"
+   ]
+  },
+  {
+   "name": "Gold Scavenger Tyrant Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Scavenger Tyrant Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Scavenger Tyrant Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-scavenger-tyrant-trophy"
+   ]
+  },
+  {
+   "name": "Gold Vukah Brawler Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vukah Brawler Head",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Gold Bars (Gold Ore or Archaic Shards)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Vukah Brawler Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-vukah-brawler-trophy"
+   ]
+  },
+  {
+   "name": "Hydrak'Dal Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hydrak'Dal Head",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Hydrak'Dal Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Hydrak'Dal Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hydrakdal-trophy"
+   ]
+  },
+  {
+   "name": "Iron Hydrak'Dal Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Hydrak'Dal Head",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Hydrak'Dal Head",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Hydrak'Dal Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-hydrakdal-trophy"
+   ]
+  },
+  {
+   "name": "Skull Trophy I",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Aquamarine Dust",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 2
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-i"
+   ]
+  },
+  {
+   "name": "Skull Trophy II",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 2
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-ii"
+   ]
+  },
+  {
+   "name": "Skull Trophy III",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-iii"
+   ]
+  },
+  {
+   "name": "Skull Trophy IV",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 2
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-iv"
+   ]
+  },
+  {
+   "name": "Skull Trophy V",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 2
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-v"
+   ]
+  },
+  {
+   "name": "Skull Trophy VI",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Drak Teeth",
+     "qty": 2
+    },
+    {
+     "item": "Drak Claws",
+     "qty": 2
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 1
+    },
+    {
+     "item": "Feather",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Drak Teeth",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 2
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/skull-trophy-vi"
+   ]
+  },
+  {
+   "name": "Bronze Vorgoth's Eye Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vorgoth's Eye",
+     "qty": 2
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Bronze Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Vorgoth's Eye (Vorgoth's Eye from the Vorgoth)",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Vorgoth's Eye Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-vorgoths-eye-trophy"
+   ]
+  },
+  {
+   "name": "Gold Vorgoth's Eye Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vorgoth's Eye",
+     "qty": 4
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Vorgoth's Eye (Vorgoth's Eye from the Vorgoth)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up an Iron Vorgoth's Eye Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-vorgoths-eye-trophy"
+   ]
+  },
+  {
+   "name": "Iron Vorgoth's Eye Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vorgoth's Eye",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Vorgoth's Eye (Vorgoth's Eye from the Vorgoth)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up a Bronze Vorgoth's Eye Trophy",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-vorgoths-eye-trophy"
+   ]
+  },
+  {
+   "name": "Vorgoth's Eye Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Table Saw",
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 2
+    },
+    {
+     "item": "Vorgoth's Eye",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 2
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Vorgoth's Eye (Vorgoth's Eye from the Vorgoth)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Vorgoth's Eye",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vorgoths-eye-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Scavenger Artificer Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-scavenger-artificer-trophy"
+   ]
+  },
+  {
+   "name": "Bronze Scavenger Scattershot Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-scavenger-scattershot-trophy"
+   ]
+  },
+  {
+   "name": "Gold Scavenger Artificer Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-scavenger-artificer-trophy"
+   ]
+  },
+  {
+   "name": "Gold Scavenger Scattershot Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 10
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-scavenger-scattershot-trophy"
+   ]
+  },
+  {
+   "name": "Iron Scavenger Artificer Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-scavenger-artificer-trophy"
+   ]
+  },
+  {
+   "name": "Iron Scavenger Scattershot Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-scavenger-scattershot-trophy"
+   ]
+  },
+  {
+   "name": "Prized Skull Trophy",
+   "category": "Trophies",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/prized-skull-trophy"
+   ]
+  },
+  {
+   "name": "Scavenger Artificer Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-artificer-trophy"
+   ]
+  },
+  {
+   "name": "Scavenger Scattershot Trophy",
+   "category": "Trophies",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 1
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-scattershot-trophy"
+   ]
+  },
+  {
+   "name": "Bow and Arrow Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/bow-and-arrow-wall-mount"
+   ]
+  },
+  {
+   "name": "Dagger Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/dagger-wall-mount"
+   ]
+  },
+  {
+   "name": "One-Handed Melee Weapon Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/one-handed-melee-weapon-wall-mount"
+   ]
+  },
+  {
+   "name": "Shield Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/shield-wall-mount"
+   ]
+  },
+  {
+   "name": "Staff Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/staff-wall-mount"
+   ]
+  },
+  {
+   "name": "Two-Handed Melee Weapon Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/two-handed-melee-weapon-wall-mount"
+   ]
+  },
+  {
+   "name": "Wand Wall Mount",
+   "category": "Wall mounts",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Nails",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Decoration Workbench (Carpenter)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Wood Logs",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wand-wall-mount"
+   ]
+  },
+  {
+   "name": "\"Afro\" Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "pick up a \"Afro\" Wig Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/afro-wig-head"
+   ]
+  },
+  {
+   "name": "\"Braid\" Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a \"Braid\" Wig Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/braid-wig-head"
+   ]
+  },
+  {
+   "name": "\"Cowlick\" Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a \"Cowlick\" Wig Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/cowlick-wig-head"
+   ]
+  },
+  {
+   "name": "\"Hanfu Ponytail\" Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a \"Hanfu Ponytail\" Wig Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hanfu-ponytail-wig-head"
+   ]
+  },
+  {
+   "name": "\"Slick Fade\" Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a \"Slick Fade\" Wig Head",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/slick-fade-wig-head"
+   ]
+  },
+  {
+   "name": "Barber's Favorite Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Table Saw"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Any wood",
+     "qty": 5,
+     "anyOf": [
+      "Wood Logs",
+      "Hardwood",
+      "Palm Wood Logs",
+      "Conifer Logs",
+      "Bamboo Logs",
+      "Tropical Wood"
+     ]
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest)))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "find the Wig Head at Pikemead's Reach, find the Wig Head at Surat's Rest, find the Wig Head about 120 m south-east of Brittlebush, find the Wig Head at Polaris Falls and find the Wig Head about 80 m south of Manathor's Plaza or pick up a \"Afro\" Wig Head, find the Wig Head at Pikemead's Reach, find the Wig Head at Surat's Rest, find the Wig Head about 120 m south-east of Brittlebush and find the Wig Head at Polaris Falls or pick up a \"Slick Fade\" Wig Head, find the Wig Head at Pikemead's Reach, find the Wig Head at Surat's Rest",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/barbers-favorite-wig-head"
+   ]
+  },
+  {
+   "name": "Wig Head",
+   "category": "Wig heads",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wig-head"
+   ]
+  }
+ ],
+ "resources": {
+  "Conifer Logs": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/conifer-logs"
+   ]
+  },
+  "Wood Planks": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 2,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-planks"
+   ]
+  },
+  "Ancient S.P.D.R. Construct Eye": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Ancient S.P.D.R. Construct Eye is an Epic boss trophy material dropped by the Ancient S.P.D.R. Construct. The Hunter uses it for all four of that boss's trophies: the plain Ancient S.P.D.R. Construct Trophy and the bronze, iron and gold versions.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/ancient-s-p-d-r-construct-eye"
+   ]
+  },
+  "Nails": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 2,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Metal Scraps",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nails"
+   ]
+  },
+  "Wood Logs": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Wood Logs come from chopping down trees, with bigger trees giving more, and from breaking wooden objects. Twigs and Resin drop with them. Their 166 uses include stations such as the Forge, Loom, Kitchen, Seedbed and Table Saw, crude and carved wooden furniture, doors, fences and palisades, weapon racks and wall mounts, and weapons like the Club, Spiked Club and Wooden Shield.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-logs"
+   ]
+  },
+  "Bronze Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Copper Bars",
+      "qty": 7
+     },
+     {
+      "item": "Tin Bars",
+      "qty": 3
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-bars"
+   ]
+  },
+  "Cyclops Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Cyclops Head goes into all four Cyclops trophies made by the Hunter: the plain Cyclops Trophy and the Bronze, Iron and Gold Cyclops Trophy versions. The head is Epic, with a stack size of 50.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/cyclops-head"
+   ]
+  },
+  "Direwolf Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Direwolf Head is an Epic trophy material dropped by the Direwolf boss. The Hunter turns it into the Direwolf Trophy or its bronze, iron and gold versions.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/direwolf-head"
+   ]
+  },
+  "Fell Crimson Critter Queen Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Crimson Critter Queen Head is an Epic trophy material that only the Fell Crimson Critter Queen boss drops. It is used for the Fell Crimson Critter Queen Trophy and its bronze, iron and gold variants at the Hunter.",
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-crimson-critter-queen-head"
+   ]
+  },
+  "Fell Critter Queen Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Critter Queen I Head is an Epic trophy material dropped by the Fell Critter Queen I and Fell Critter Queen II bosses. The Hunter makes four trophies from it, the plain one plus bronze, iron and gold versions.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-critter-queen-head"
+   ]
+  },
+  "Fell Cyclops Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Cyclops Head drops from the Fell Cyclops in the Albaneve Summits. The Hunter uses it for the four Fell Cyclops trophies, the base Fell Cyclops Trophy and its Bronze, Iron and Gold versions.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-cyclops-head"
+   ]
+  },
+  "Fell Dragon Youngling Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Dragon Youngling Head is taken from Fell Dragon Younglings in the Albaneve Summits. It is Epic, stacks to 50, and has four uses, all at the Hunter: the Fell Dragon Youngling trophy in plain, Bronze, Iron and Gold form.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-dragon-youngling-head"
+   ]
+  },
+  "Fell Monstrosity Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Monstrosity Head comes from Fell Monstrosities, which first appear in the Nomad Highlands Shroud. All four Fell Monstrosity trophies at the Hunter call for it, from the plain Fell Monstrosity Trophy through Bronze and Iron to Gold.",
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-monstrosity-head"
+   ]
+  },
+  "Fell Sicklescythe Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Sicklescythe Head drops from Fell Sicklescythes in the Kindlewastes Shroud. The Hunter turns it into the Fell Sicklescythe Trophy or one of its Bronze, Iron and Gold versions.",
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-sicklescythe-head"
+   ]
+  },
+  "Fell Striker Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Striker Head drops from the Fell Striker boss. It is an Epic trophy material, and the Hunter uses it for the Fell Striker Trophy in plain, bronze, iron and gold forms.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-striker-head"
+   ]
+  },
+  "Fell Thunderbrute Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Thunderbrute Head is dropped by Fell Thunderbrutes, which first show up in the Springlands Shroud. It goes into the four Fell Thunderbrute trophies made by the Hunter, up to the Gold Fell Thunderbrute Trophy.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-thunderbrute-head"
+   ]
+  },
+  "Fell Wispwyvern Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fell Wispwyvern Head drops from the Fell Wispwyvern in the Revelwood. Its only uses are the Hunter's four Fell Wispwyvern trophies, from the base Fell Wispwyvern Trophy to the Gold one.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/fell-wispwyvern-head"
+   ]
+  },
+  "Hollow Cyclops Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Hollow Titan Head goes into the four Hollow Cyclops trophies at the Hunter, from the base Hollow Cyclops Trophy to the Gold one. It is also needed for the Ectoplasm Press, which the Collector builds.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-cyclops-head"
+   ]
+  },
+  "Hollow Titan Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Hollow Titan Head is an Epic crafting material that stacks to 50.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-titan-head"
+   ]
+  },
+  "Hollow Wispwyvern Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Hollow Wispwyvern Head is an Epic trophy material from the Hollow Wispwyvern boss. The Hunter makes the Hollow Wispwyvern Trophy from it, along with bronze, iron and gold versions.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollow-wispwyvern-head"
+   ]
+  },
+  "Hydrak'Dal Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "The Hydrak'Dal in the Veilwater Basin drops this head. Its four uses are the Hydrak'Dal Trophy at the Hunter and that trophy's Bronze, Iron and Gold versions.",
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/hydrakdal-head"
+   ]
+  },
+  "Scavenger Matron Helmet": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Scavenger Gorger Matron Helmet goes into the Hunter's four Scavenger Gorger Matron trophies, the plain Scavenger Matron Trophy and its Bronze, Iron and Gold versions. It is Epic and stacks to 50.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-matron-helmet"
+   ]
+  },
+  "Scavenger Tyrant Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Scavenger Tyrant Head drops from the Scavenger Tyrant boss. It is an Epic trophy material for the Scavenger Tyrant Trophy and its bronze, iron and gold versions at the Hunter.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/scavenger-tyrant-head"
+   ]
+  },
+  "Vorgoth's Eye": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Vorgoth's Eye is an Epic trophy material dropped by Vorgoth, used by the Hunter for the Vorgoth's Eye Trophy and its bronze, iron and gold versions.",
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/vorgoths-eye"
+   ]
+  },
+  "Vukah Brawler Head": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Vukah Brawler Head drops from Vukah Brawlers, which appear from the Springlands onward. Besides the four Vukah Brawler trophies at the Hunter, from the plain Vukah Brawler Trophy to Gold, it is needed for the Vukah Shrine and the Scavenger Gong.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/vukah-brawler-head"
+   ]
+  },
+  "Metal Sheets": {
+   "kind": "crafted",
+   "source": "Forge",
+   "recipe": {
+    "station": "Forge",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "90s",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 2
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-sheets"
+   ]
+  },
+  "Charcoal": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 12,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal"
+   ]
+  },
+  "Ectoplasm Block": {
+   "kind": "crafted",
+   "source": "Workbench",
+   "recipe": {
+    "station": "Workbench",
+    "crafter": null,
+    "requires": [],
+    "makes": 100,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Flintstone",
+      "qty": 5
+     },
+     {
+      "item": "Ectoplasm Shard",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-block"
+   ]
+  },
+  "Bones": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Bones are a common drop from wildlife and Hollow across Embervale, and bone piles, including those in and around the Hollow Halls, can be mined for more. They feed 46 recipes, among them the Flute at the Bard, Scout Pants at the Hunter, the Reaper's Wand at the Alchemist, and crypt furniture and the Bone Arrow at the Collector.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bones"
+   ]
+  },
+  "Shell Limestone": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/shell-limestone"
+   ]
+  },
+  "Gold Ore": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, Underwater",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-ore"
+   ]
+  },
+  "Tropical Wood": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/tropical-wood"
+   ]
+  },
+  "Gold Coins": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Gold Coins are picked up in the Veilwater Basin and stack to 1,000. Many of their 17 uses are Fisher recipes: fishing rods and bait, Swimfins, and fish parts such as Fish Bones and Electric Nerve. Coffee drinks like Latte and Sweet Mokka need them too.",
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-coins"
+   ]
+  },
+  "Granite": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/granite"
+   ]
+  },
+  "Hardwood": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/hardwood"
+   ]
+  },
+  "Torn Cloth": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Torn Cloth comes from drops rather than crafting, and it goes into 90 recipes. These include the Bandage, the Ragged, Fur, Mage, Magician and Alchemist Apprentice armor, and the Tiny Backpack made by hand. At the Ectoplasm Press it goes into Ectoplasm, Greater Ectoplasm and Excellent Ectoplasm, and it is also used for supply sacks, war banners, showcases and stone furniture.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/torn-cloth"
+   ]
+  },
+  "Indigo Plant": {
+   "kind": "unknown",
+   "source": null,
+   "recipe": null
+  },
+  "Gold Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "11 min",
+    "inputs": [
+     {
+      "item": "Coal",
+      "qty": 40
+     },
+     {
+      "item": "Gold Ore or Archaic Shards",
+      "qty": 20,
+      "anyOf": [
+       "Gold Ore",
+       "Archaic Shards"
+      ]
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-bars"
+   ]
+  },
+  "Metal Scraps": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Metal Scraps are a common drop from Scavengers, and they can also be salvaged from destroyed metal objects or picked up loose in the world. They go into Nails and Metal Sheets and 112 other recipes. Those include stations such as the Forge, Kiln and Cooking Station, the Scrappy tools, the Explorer armor set, scrap pots, vats and pans, crypt torches and the Grappling Hook.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-scraps"
+   ]
+  },
+  "Purified Slime": {
+   "kind": "crafted",
+   "source": "Ectoplasm Press",
+   "recipe": {
+    "station": "Ectoplasm Press",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "10s",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 3
+     },
+     {
+      "item": "Salt",
+      "qty": 10
+     },
+     {
+      "item": "Toxic Slime",
+      "qty": 3
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/purified-slime"
+   ]
+  },
+  "Silver Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "10 min",
+    "inputs": [
+     {
+      "item": "Silver Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-bars"
+   ]
+  },
+  "Iron Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Iron Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-bars"
+   ]
+  },
+  "Celestium Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "12 min",
+    "inputs": [
+     {
+      "item": "Celestium Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/celestium-bars"
+   ]
+  },
+  "Basalt": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/basalt"
+   ]
+  },
+  "Gold Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Gold Bars",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-dust"
+   ]
+  },
+  "Archaic Shards": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle, Ancient Constructs",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-shards"
+   ]
+  },
+  "Copper Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Copper Ore",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-bars"
+   ]
+  },
+  "Drak Teeth": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Enemies",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/drak-teeth"
+   ]
+  },
+  "Drak Claws": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Enemies",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/drak-claws"
+   ]
+  },
+  "String": {
+   "kind": "crafted",
+   "source": "Manual Crafting",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Plant Fiber or Paper Reed",
+      "qty": 3,
+      "anyOf": [
+       "Plant Fiber",
+       "Paper Reed"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/string"
+   ]
+  },
+  "Aquamarine Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Aquamarine",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/aquamarine-dust"
+   ]
+  },
+  "Feather": {
+   "kind": "gathered",
+   "source": "Nomad Highlands and Kindlewastes",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/feather"
+   ]
+  },
+  "Daylily": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/daylily"
+   ]
+  },
+  "Decoration Workbench": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Nails",
+      "qty": 2
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/decoration-workbench"
+   ]
+  },
+  "Table Saw": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 8
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Circular Sawblades",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/table-saw"
+   ]
+  },
+  "Palm Wood Logs": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/palm-wood-logs"
+   ]
+  },
+  "Bamboo Logs": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/bamboo-logs"
+   ]
+  },
+  "Tin Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Tin Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-bars"
+   ]
+  },
+  "Smelter": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 50
+     },
+     {
+      "item": "Crucible",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/smelter"
+   ]
+  },
+  "Forge": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 30
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 12
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/forge"
+   ]
+  },
+  "Charcoal Kiln": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal-kiln"
+   ]
+  },
+  "Flintstone": {
+   "kind": "gathered",
+   "source": "Springlands",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/flintstone"
+   ]
+  },
+  "Ectoplasm Shard": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Hollow Halls",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-shard"
+   ]
+  },
+  "Workbench": {
+   "kind": "crafted",
+   "source": "By hand",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 3
+     },
+     {
+      "item": "Any wood",
+      "qty": 8,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/workbench"
+   ]
+  },
+  "Ectoplasm Fragment": {
+   "kind": "gathered",
+   "source": "Hollow Halls",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-fragment"
+   ]
+  },
+  "Ectoplasm Crystal": {
+   "kind": "gathered",
+   "source": "Kindlewastes Hollow Halls",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-crystal"
+   ]
+  },
+  "Ectoplasm Cluster": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Hollow Halls",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-cluster"
+   ]
+  },
+  "Ectoplasm Aggregate": {
+   "kind": "gathered",
+   "source": "Veilwater Basin Hollow Halls",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-aggregate"
+   ]
+  },
+  "Coal": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/coal"
+   ]
+  },
+  "Blast Furnace": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Bellows",
+      "qty": 1
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Any sand",
+      "qty": 30,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/blast-furnace"
+   ]
+  },
+  "Salt": {
+   "kind": "gathered",
+   "source": "Springlands Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/salt"
+   ]
+  },
+  "Toxic Slime": {
+   "kind": "gathered",
+   "source": "Hollow Halls",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/toxic-slime"
+   ]
+  },
+  "Wood Acid": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 15,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-acid"
+   ]
+  },
+  "Ectoplasm Press": {
+   "kind": "crafted",
+   "source": "Collector",
+   "recipe": {
+    "station": null,
+    "crafter": "Collector",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Hollow Cyclops Head",
+      "qty": 1
+     },
+     {
+      "item": "Ectoplasm Fragment",
+      "qty": 120
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 5
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Stone",
+      "qty": 4
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 4
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/ectoplasm-press"
+   ]
+  },
+  "Silver Ore": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-ore"
+   ]
+  },
+  "Iron Ore": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-ore"
+   ]
+  },
+  "Celestium Ore": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/celestium-ore"
+   ]
+  },
+  "Mill": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 30
+     },
+     {
+      "item": "Shell Limestone",
+      "qty": 20
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Improved Millstone",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/mill"
+   ]
+  },
+  "Copper Ore": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-ore"
+   ]
+  },
+  "Aquamarine": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/aquamarine"
+   ]
+  },
+  "Circular Sawblades": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 2
+     },
+     {
+      "item": "Charcoal",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/circular-sawblades"
+   ]
+  },
+  "Tin Ore": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-ore"
+   ]
+  },
+  "Fired Bricks": {
+   "kind": "crafted",
+   "source": "Kiln",
+   "recipe": {
+    "station": "Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "30s",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 1
+     },
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/fired-bricks"
+   ]
+  },
+  "Crucible": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 3
+     },
+     {
+      "item": "Springlands Dirt",
+      "qty": 3
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/crucible"
+   ]
+  },
+  "Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Stone is picked up as small stones lying on the ground all over Embervale, Shroud included. Larger stones and rock formations in the Springlands and Revelwood can be mined with a pickaxe. Its 97 uses start with the Axe, made by hand, and the Pickaxe, and run through stations such as the Forge, Kiln, Mill, Charcoal Kiln and Grinding Stones to stone furniture, coffins, statues and building blocks.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/stone"
+   ]
+  },
+  "Springlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Springlands Dirt is a terrain material found in the Springlands. Its 18 uses include Farm Soil at the Farmer, Workbench blocks such as the Dirt Road Block, Field Stones and Limestone Block, Springlands Rubble, Goo and White Glowing Substance at the Alchemist, the Climbing Rose and the Crucible.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/springlands-dirt"
+   ]
+  },
+  "Revelwood Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Dirt is a terrain material found in the Revelwood. The Workbench uses it for Fertile Revelwood Dirt and Revelwood Stone, the Grinding Stones for Revelwood Rubble, and it also goes into the Antique and Flint colors.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-dirt"
+   ]
+  },
+  "Blackmire Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Blackmire Dirt is a terrain material that stacks to 1,000. Its one crafting use is Fertile Blackmire Dirt, made at the Workbench.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/blackmire-dirt"
+   ]
+  },
+  "Nomad Highlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Nomad Highlands Dirt is a terrain material found in the Nomad Highlands. It has five uses: Fertile Nomad Highlands Dirt and the Castle Wall Stone Block at the Workbench, Nomad Highlands Rubble at the Grinding Stones, and the Deceit and Forgotten Library colors.",
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nomad-highlands-dirt"
+   ]
+  },
+  "Albaneve Summits Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Albaneve Summits Dirt is the Common terrain material dug up in the Albaneve Summits, stacking to 1,000.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/albaneve-summits-dirt"
+   ]
+  },
+  "Veilwater Basin Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Veilwater Basin Dirt is a terrain material found in the Veilwater Basin. It has four uses: Fertile Veilwater Basin Dirt at the Workbench, Veilwater Basin Rubble at the Grinding Stones, Wisteria at the Farmer and the Algae Seedling at the Seedbed.",
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-dirt"
+   ]
+  },
+  "Cinder's Cradle Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Cinder's Cradle Dirt is a terrain material that stacks to 1,000. It is an ingredient of Cinder's Cradle Rubble at the Grinding Stones and of Fertile Cinder's Cradle Dirt and Fertile Altered Dirt at the Workbench.",
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-dirt"
+   ]
+  },
+  "Bellows": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Conifer Logs",
+      "qty": 10
+     },
+     {
+      "item": "Leather",
+      "qty": 10
+     },
+     {
+      "item": "Linen",
+      "qty": 5
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/bellows"
+   ]
+  },
+  "Lump of Clay": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/lump-of-clay"
+   ]
+  },
+  "Improved Millstone": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Shell Limestone",
+      "qty": 30
+     },
+     {
+      "item": "Flintstone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/improved-millstone"
+   ]
+  },
+  "Plant Fiber": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Plant Fiber is gathered from bushes all over Embervale and also lies around as a loose pickup; bushes can be grown from Shrub Seedlings. Its 38 uses include the Big Straw Mat and Marksman Hood at the Hunter, the Wooden Bed and Ornate Wooden Bed at the Carpenter, Goat Food, the Cat Pillow and Sword Garden Gnome at the Farmer, and the Explosive Barrel.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/plant-fiber"
+   ]
+  },
+  "Paper Reed": {
+   "kind": "gathered",
+   "source": "Near Lakes",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/paper-reed"
+   ]
+  },
+  "Kiln": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Revelwood Stone",
+      "qty": 50
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Twigs",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/kiln"
+   ]
+  },
+  "Leather": {
+   "kind": "crafted",
+   "source": "Tanning Station",
+   "recipe": {
+    "station": "Tanning Station",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "15 min",
+    "inputs": [
+     {
+      "item": "Dried Fur",
+      "qty": 10
+     },
+     {
+      "item": "Salt",
+      "qty": 20
+     },
+     {
+      "item": "Ammonia Gland",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/leather"
+   ]
+  },
+  "Linen": {
+   "kind": "crafted",
+   "source": "Hand Spindle",
+   "recipe": {
+    "station": "Hand Spindle",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "10s",
+    "inputs": [
+     {
+      "item": "Flax",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/linen"
+   ]
+  },
+  "Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sand"
+   ]
+  },
+  "Fine Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/fine-sand"
+   ]
+  },
+  "Veilwater Basin Sand": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-sand"
+   ]
+  },
+  "Cinder's Cradle Sand": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-sand"
+   ]
+  },
+  "Alchemy Station": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 6
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 5
+     },
+     {
+      "item": "Cauldron",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/alchemy-station"
+   ]
+  },
+  "Revelwood Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Stone is a terrain material that stacks to 1,000, with 1,867 placed in the world. It goes into nine recipes, including the Kiln, the Cooking Station and Revelwood Rubble at the Grinding Stones.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-stone"
+   ]
+  },
+  "Twigs": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/twigs"
+   ]
+  },
+  "Dried Fur": {
+   "kind": "crafted",
+   "source": "Drying Rack",
+   "recipe": {
+    "station": "Drying Rack",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Animal Fur",
+      "qty": 1
+     },
+     {
+      "item": "Salt",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/dried-fur"
+   ]
+  },
+  "Ammonia Gland": {
+   "kind": "gathered",
+   "source": "Fell Mushroom Crabs, Nomad Highlands Shroud and Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ammonia-gland"
+   ]
+  },
+  "Tanning Station": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 10
+     },
+     {
+      "item": "Nails",
+      "qty": 4
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Tar",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/tanning-station"
+   ]
+  },
+  "Flax": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/flax"
+   ]
+  },
+  "Hand Spindle": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fossilized Bone",
+      "qty": 3
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 4
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/hand-spindle"
+   ]
+  },
+  "Cauldron": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 2
+     },
+     {
+      "item": "Bonemeal",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/cauldron"
+   ]
+  },
+  "Animal Fur": {
+   "kind": "crafted",
+   "source": "Hunter",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 1
+     },
+     {
+      "item": "Wet Boot or Fur Patch",
+      "qty": 3,
+      "anyOf": [
+       "Wet Boot",
+       "Fur Patch"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/animal-fur"
+   ]
+  },
+  "Drying Rack": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "String",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/drying-rack"
+   ]
+  },
+  "Tar": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 24,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 6,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tar"
+   ]
+  },
+  "Fossilized Bone": {
+   "kind": "gathered",
+   "source": "Giant Fossils",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossilized-bone"
+   ]
+  },
+  "Bonemeal": {
+   "kind": "crafted",
+   "source": "Grinding Stones",
+   "recipe": {
+    "station": "Grinding Stones",
+    "crafter": null,
+    "requires": [],
+    "makes": 3,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Bones",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bonemeal"
+   ]
+  },
+  "Grinding Stones": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Flintstone",
+      "qty": 10
+     },
+     {
+      "item": "Stone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/grinding-stones"
+   ]
+  },
+  "Wet Boot": {
+   "kind": "gathered",
+   "source": "Fishing",
+   "recipe": null,
+   "sources": [
+    "https://www.enshrouded.tools/items/wet-boot"
+   ]
+  },
+  "Fur Patch": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fur Patch is a common drop from small wildlife such as rats and bats, found all over Embervale.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fur-patch"
+   ]
+  }
+ }
+}

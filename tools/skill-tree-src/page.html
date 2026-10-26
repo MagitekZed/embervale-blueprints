@@ -1,0 +1,1145 @@
+<title>Flameborn Build Tester</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: one screen. The tree map fills the left; a side panel holds the point budget, the picked skill,
+   the build summary, worn gear and saves. Phones stack the panel under the map. */
+:root {
+  --bg: #e9ebf0;
+  --panel: #f7f8fa;
+  --ink: #1e1b27;
+  --muted: #5d5970;
+  --line: #d3d1dc;
+  --map: #e1dee9;
+  --edge: #b2abc4;
+  --accent: #a8600f;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(168, 96, 15, .14);
+  --gear: #7b3fb8;
+  --gear-ink: #ffffff;
+  --warrior: #bf5530;
+  --ranger: #3b8a32;
+  --mage: #2c69bb;
+  --neutral: #8f7027;
+  --node: #f7f8fa;
+  --good: #2b7a4b;
+  --bad: #b3261e;
+  --shadow: 0 6px 24px rgba(30, 27, 39, .16);
+  --font-display: "Alegreya SC", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Alegreya Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #110f17; --panel: #1a1723; --ink: #ece8f4; --muted: #a29cb3; --line: #2d2939; --map: #0d0b13; --edge: #3b3452;
+    --accent: #f0a84a; --accent-ink: #1c1306; --accent-soft: rgba(240, 168, 74, .16); --gear: #c28bf5; --gear-ink: #1b0f29;
+    --warrior: #e6805a; --ranger: #80c970; --mage: #70aaef; --neutral: #d9b569; --node: #1a1723;
+    --good: #72d39b; --bad: #ff7b70; --shadow: 0 8px 28px rgba(0, 0, 0, .5); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #110f17; --panel: #1a1723; --ink: #ece8f4; --muted: #a29cb3; --line: #2d2939; --map: #0d0b13; --edge: #3b3452;
+  --accent: #f0a84a; --accent-ink: #1c1306; --accent-soft: rgba(240, 168, 74, .16); --gear: #c28bf5; --gear-ink: #1b0f29;
+  --warrior: #e6805a; --ranger: #80c970; --mage: #70aaef; --neutral: #d9b569; --node: #1a1723;
+  --good: #72d39b; --bad: #ff7b70; --shadow: 0 8px 28px rgba(0, 0, 0, .5); color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--ink); font: 15px/1.45 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0; box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: border-box; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 10px; padding-block: 12px; }
+.top { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
+.top h1 { font: 700 24px/1.1 var(--font-display); letter-spacing: .02em; margin: 0; text-wrap: balance; }
+.top .sub { color: var(--muted); font-size: 14px; min-width: 0; }
+.main { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 12px; }
+
+/* ---- the map ---- */
+.mapwrap { position: relative; min-height: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--map); touch-action: none; user-select: none; -webkit-user-select: none; }
+.mapwrap:focus-visible { outline-offset: -3px; }
+#map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; }
+#map.panning { cursor: grabbing; }
+#world { transform-origin: 0 0; }
+#world.glide { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+@media (prefers-reduced-motion: reduce) { #world.glide { transition: none; } }
+.ring { fill: none; stroke: var(--accent); stroke-opacity: .28; stroke-width: 10; }
+.zone { font: 700 170px var(--font-display); fill: var(--ink); opacity: .13; text-anchor: middle; letter-spacing: .08em; pointer-events: none; }
+#map.mid .zone { opacity: 0; }
+.edge { stroke: var(--edge); stroke-width: 6; stroke-linecap: round; opacity: .6; }
+.edge.half { opacity: 1; }
+.edge.on { stroke: var(--accent); stroke-width: 9; opacity: .95; }
+.edge.path { stroke: var(--accent); stroke-dasharray: 18 14; opacity: 1; stroke-width: 8; }
+.c-W { --cls: var(--warrior); } .c-G { --cls: var(--ranger); } .c-M { --cls: var(--mage); } .c-N { --cls: var(--neutral); }
+.node { cursor: pointer; }
+.node .shape { fill: var(--node); stroke: var(--cls); stroke-width: 7; }
+.node .inner { fill: none; stroke: var(--cls); stroke-width: 4; }
+.node .halo { fill: none; stroke: transparent; stroke-width: 9; }
+.node text { font-family: var(--font-body); font-weight: 700; text-anchor: middle; dominant-baseline: central; fill: var(--ink); pointer-events: none; }
+.node .lv { font-size: 30px; font-variant-numeric: tabular-nums; }
+.t-S .lv { font-size: 34px; }
+.t-A .lv { font-size: 19px; letter-spacing: .04em; }
+.lbls { pointer-events: none; }
+.lbls .lbl { font-size: 30px; font-weight: 500; fill: var(--ink); stroke: var(--map); stroke-width: 9px; paint-order: stroke; stroke-linejoin: round; opacity: 0; }
+#map.near .lbls .lbl { opacity: 1; }
+#map.near .lbls .locked .lbl { opacity: .55; }
+.badge circle { fill: var(--gear); stroke: var(--map); stroke-width: 5; }
+.badge text { font-size: 25px; fill: var(--gear-ink); font-variant-numeric: tabular-nums; }
+.badge.off circle { fill: var(--map); stroke: var(--gear); stroke-width: 4; stroke-dasharray: 7 5; }
+.badge.off text { fill: var(--gear); }
+.node.locked .shape, .node.locked .inner { stroke-opacity: .45; }
+.node.locked text.lv { opacity: .45; }
+.node.open .shape { stroke-width: 9; }
+.node.taken .shape { fill: var(--cls); }
+.node.taken .inner { stroke: var(--node); }
+.node.taken text.lv { fill: var(--node); }
+.node.partial .shape { fill: color-mix(in srgb, var(--cls) 55%, var(--node)); }
+.node.boosted .shape { stroke: var(--gear); stroke-width: 10; }
+.t-R .shape { fill: var(--accent); stroke: var(--accent); }
+.node.sel .halo { stroke: var(--accent); }
+.node.hover .halo { stroke: var(--ink); stroke-opacity: .5; }
+.node.path .halo { stroke: var(--accent); stroke-dasharray: 16 12; }
+.node.hit .halo { stroke: var(--ink); animation: pulse 1.2s ease-in-out infinite; }
+#map.searching .node:not(.hit) { opacity: .35; }
+@keyframes pulse { 50% { stroke-opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { .node.hit .halo { animation: none; } }
+
+.tools { position: absolute; top: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; pointer-events: none; }
+.tools > * { pointer-events: auto; }
+.search { position: relative; width: min(300px, 100%); display: grid; gap: 6px; min-width: 0; }
+.search input { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow); }
+.results { list-style: none; margin: 0; padding: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); max-height: 280px; overflow: auto; }
+.results button { display: flex; width: 100%; justify-content: space-between; gap: 8px; text-align: left; padding: 5px 8px; border: 0; background: none; border-radius: 6px; }
+.results button:hover, .results button.at { background: var(--accent-soft); }
+.results .m { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.results .note { color: var(--muted); font-size: 13px; padding: 4px 8px; }
+.jumps { display: flex; flex-wrap: wrap; gap: 4px; }
+.btns { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.chip, .ibtn { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 13px; box-shadow: var(--shadow); }
+.chip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--cls); margin-right: 5px; vertical-align: 1px; }
+.ibtn { border-radius: 8px; min-width: 34px; height: 34px; padding: 0 8px; font-size: 16px; line-height: 1; white-space: nowrap; }
+.ibtn:disabled { opacity: .45; cursor: default; }
+.chip:hover, .ibtn:not(:disabled):hover { border-color: var(--accent); }
+
+.mapwrap.picked .legend { display: none; }
+.legend { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; font-size: 12px; color: var(--muted); box-shadow: var(--shadow); max-width: calc(100% - 20px); }
+.legend svg { vertical-align: -3px; margin-right: 3px; }
+.legend .shape { fill: var(--node); stroke: var(--muted); stroke-width: 1.6; }
+.legend .filled { fill: var(--muted); }
+.legend .gearfill { fill: var(--gear); }
+.legend .gearoff { fill: none; stroke: var(--gear); stroke-width: 1.4; stroke-dasharray: 2 1.5; }
+.quick { position: absolute; left: 10px; right: 10px; bottom: 10px; margin-inline: auto; width: fit-content; display: flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 6px 6px 12px; box-shadow: var(--shadow); max-width: calc(100% - 20px); }
+.quick .qn { font-weight: 700; color: var(--cls); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.quick .ql { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.quick .ql b { color: var(--gear); }
+.toast { position: absolute; bottom: 64px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 7px 14px; border-radius: 8px; font-size: 14px; max-width: min(460px, calc(100% - 20px)); box-shadow: var(--shadow); text-align: center; pointer-events: none; }
+.tip { position: absolute; z-index: 5; width: 320px; max-width: calc(100% - 20px); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; box-shadow: var(--shadow); pointer-events: none; font-size: 14px; }
+.tip h4 { margin: 0; font: 700 18px/1.15 var(--font-display); color: var(--cls); }
+.tip .meta { color: var(--muted); font-size: 13px; margin: 2px 0 6px; }
+.tip .desc { margin: 0; }
+.tip .foot { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.tip .foot b { color: var(--accent); }
+.tip .gearline { color: var(--gear); font-weight: 700; }
+
+/* ---- the side panel ---- */
+.side { min-height: 0; overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; }
+.points { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+.pt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.pt-big { font: 700 34px/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.pt-big small { font: 500 15px var(--font-body); color: var(--muted); margin-left: 4px; }
+.pt-big.over { color: var(--bad); }
+.pt-of { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.meter { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; display: flex; }
+.meter i { display: block; height: 100%; }
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+.field { display: grid; gap: 2px; min-width: 0; }
+.field span { font-size: 13px; color: var(--muted); }
+.field input { width: 100%; padding: 5px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); font-variant-numeric: tabular-nums; }
+.field em { font-style: normal; font-size: 12px; color: var(--muted); }
+.row { display: flex; gap: 8px 12px; align-items: center; flex-wrap: wrap; }
+.btn { border: 1px solid var(--line); background: var(--bg); border-radius: 7px; padding: 5px 12px; }
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.btn.danger { color: var(--bad); }
+.btn.small { padding: 2px 9px; font-size: 13px; }
+.chk { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+.confirm { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border: 1px solid color-mix(in srgb, var(--bad) 45%, var(--line)); border-radius: 8px; padding: 6px 8px; font-size: 14px; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); padding: 0 8px; position: sticky; top: 0; background: var(--panel); z-index: 1; }
+.tabs button { border: 0; background: none; padding: 10px 11px 8px; font: 700 15px var(--font-display); letter-spacing: .03em; color: var(--muted); border-bottom: 3px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs .count { font: 700 12px var(--font-body); color: var(--gear); margin-left: 3px; }
+.pane { padding: 14px 16px 18px; display: grid; gap: 12px; align-content: start; }
+.pane h3 { margin: 0; font: 700 22px/1.15 var(--font-display); color: var(--cls, var(--ink)); text-wrap: balance; }
+.pane h4 { margin: 4px 0 0; font: 700 13px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.meta { color: var(--muted); font-size: 14px; }
+.desc { margin: 0; }
+.desc b { font-weight: 700; }
+.box { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--bg); font-size: 14px; }
+.box.warn { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); }
+.box.gearbox { border-color: color-mix(in srgb, var(--gear) 40%, var(--line)); display: grid; gap: 6px; }
+.gearbox .head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.gearbox .head b { color: var(--gear); }
+.stepper { display: inline-flex; align-items: center; gap: 4px; }
+.stepper output { min-width: 34px; text-align: center; font: 700 18px var(--font-display); color: var(--gear); font-variant-numeric: tabular-nums; }
+.stepper button { width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); font-size: 16px; line-height: 1; }
+.stepper button:disabled { opacity: .45; cursor: default; }
+.pips { display: inline-flex; gap: 4px; vertical-align: middle; margin-left: 6px; }
+.pips i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--cls); }
+.pips i.on { background: var(--cls); }
+.pips i.gear { border-color: var(--gear); background: var(--gear); }
+.pips i.gear.off { background: none; border-style: dashed; }
+.hint { color: var(--muted); font-size: 14px; margin: 0; }
+.hint kbd, .tip kbd { font: 600 12px var(--font-body); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--bg); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 4px 6px; text-align: right; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 12px; color: var(--muted); font-weight: 500; }
+td.gives { color: var(--muted); font-size: 13px; }
+.stack { display: flex; height: 10px; border-radius: 99px; overflow: hidden; background: var(--line); }
+.stack i { display: block; height: 100%; background: var(--cls); }
+.keyrow { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--muted); }
+.keyrow span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--cls); margin-right: 5px; vertical-align: 0; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.list button { width: 100%; text-align: left; display: grid; grid-template-columns: 1fr auto; gap: 0 8px; padding: 5px 8px; border: 0; border-radius: 6px; background: none; }
+.list button:hover { background: var(--accent-soft); }
+.list .nm { font-weight: 700; color: var(--cls); }
+.list .lvl { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.list .lvl b { color: var(--gear); }
+.list .fx { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.stat { border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; background: var(--bg); }
+.stat b { display: block; font: 700 20px var(--font-display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--muted); }
+textarea { width: 100%; min-height: 64px; resize: vertical; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); font-size: 13px; word-break: break-all; }
+.text { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); }
+.saves { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.saves li { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; align-items: center; background: var(--bg); }
+.saves .nm { font-weight: 700; overflow-wrap: anywhere; }
+.saves .meta { font-size: 13px; grid-column: 1; }
+.saves .row { grid-row: 1 / span 2; grid-column: 2; }
+.gearlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.gearlist li { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; background: var(--bg); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; align-items: center; }
+.gearlist li.worn { border-color: color-mix(in srgb, var(--gear) 55%, var(--line)); }
+.gearlist .nm { font-weight: 700; overflow-wrap: anywhere; }
+.gearlist .tag { font: 500 12px var(--font-body); color: var(--muted); margin-left: 4px; }
+.gearlist .perks { grid-column: 1; font-size: 13px; color: var(--muted); }
+.gearlist .perks .mine { color: var(--gear); font-weight: 700; }
+.gearlist .acts { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 4px; }
+.slothead { margin: 6px 0 0; font: 700 12px var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+details.gearfor summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.gearfor[open] summary { margin-bottom: 6px; }
+.foot-note { color: var(--muted); font-size: 12.5px; margin: 0; }
+.foot-note a { color: inherit; }
+
+@media (max-width: 860px) {
+  html, body { height: auto; }
+  .app { height: auto; }
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .mapwrap { height: 64vh; min-height: 360px; }
+  .side { overflow: visible; }
+  .legend { display: none; }
+  .tabs { position: static; }
+}
+</style>
+
+<div class="app">
+  <header class="top">
+    <h1>Flameborn Build Tester</h1>
+    <span class="sub">Enshrouded 1.0 skill tree, all 243 nodes. Click to spend, right-click to refund.</span>
+  </header>
+  <div class="main">
+    <section class="mapwrap" id="mapwrap" tabindex="0" aria-label="Skill tree map. Arrow keys pan, plus and minus zoom, 0 fits the tree.">
+      <svg id="map" role="img" aria-label="Skill tree"><g id="world"></g></svg>
+      <div class="tools">
+        <div class="search">
+          <input id="q" type="search" placeholder="Find a skill or effect" aria-label="Find a skill or effect" autocomplete="off">
+          <ul class="results" id="results" hidden></ul>
+          <div class="jumps" id="jumps"></div>
+        </div>
+        <div class="btns">
+          <button class="ibtn" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
+          <button class="ibtn" id="redo" title="Redo (Ctrl+Y)" aria-label="Redo">↷</button>
+          <button class="ibtn" id="zout" title="Zoom out (−)" aria-label="Zoom out">−</button>
+          <button class="ibtn" id="zin" title="Zoom in (+)" aria-label="Zoom in">+</button>
+          <button class="ibtn" id="fit" title="Fit the whole tree (0)" aria-label="Fit the whole tree">⤢</button>
+        </div>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><svg width="14" height="14" viewBox="-8 -8 16 16"><polygon class="filled" points="0,-7 2,-2 7,0 2,2 0,7 -2,2 -7,0 -2,-2"/></svg>Spark (start)</span>
+        <span><svg width="12" height="12" viewBox="-7 -7 14 14"><circle class="shape" r="5"/></svg>Attribute</span>
+        <span><svg width="16" height="16" viewBox="-8 -8 16 16"><circle class="shape" r="6.5"/></svg>Passive</span>
+        <span><svg width="18" height="18" viewBox="-9 -9 18 18"><polygon class="shape" points="0,-8 6.9,-4 6.9,4 0,8 -6.9,4 -6.9,-4"/></svg>Active</span>
+        <span><svg width="16" height="16" viewBox="-8 -8 16 16"><circle class="filled" r="6.5"/></svg>Taken</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14"><circle class="gearfill" r="6"/></svg>Item bonus</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14"><circle class="gearoff" r="5.5"/></svg>Waiting for a point</span>
+      </div>
+      <div class="quick" id="quick" hidden></div>
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+      <div class="tip" id="tip" hidden></div>
+    </section>
+
+    <aside class="side" aria-label="Build">
+      <div class="points">
+        <div class="pt-head">
+          <span class="pt-big" id="ptLeft">0<small>points left</small></span>
+          <span class="pt-of" id="ptOf"></span>
+        </div>
+        <div class="meter" id="meter" aria-hidden="true"></div>
+        <div class="inputs">
+          <label class="field" for="inLevel"><span>Character level</span><input id="inLevel" type="number" min="1" max="50" step="1" inputmode="numeric"><em>2 points a level after 1</em></label>
+          <label class="field" for="inFlame"><span>Flame level</span><input id="inFlame" type="number" min="1" max="11" step="1" inputmode="numeric"><em>+1 to every attribute a level after 1</em></label>
+          <label class="field" for="inWells"><span>Elixir Wells cleared</span><input id="inWells" type="number" min="0" max="19" step="1" inputmode="numeric"><em>3 points each, 19 in all</em></label>
+          <label class="field" for="inRoots"><span>Shroud Roots felled</span><input id="inRoots" type="number" min="0" max="57" step="1" inputmode="numeric"><em>1 point each, 57 in all</em></label>
+        </div>
+        <div class="row" id="pointBtns">
+          <button class="btn" id="btnMax" type="button">Max everything</button>
+          <button class="btn danger" id="btnResetAll" type="button" title="Refund every point and remove every item bonus">Reset all</button>
+          <label class="chk" for="allowOver"><input id="allowOver" type="checkbox"> Plan past my points</label>
+        </div>
+        <div class="confirm" id="resetConfirm" hidden>
+          <span>Refund every point and remove all item bonuses and worn gear? Your level and Flame settings stay.</span>
+          <button class="btn danger" id="btnResetYes" type="button">Reset all</button>
+          <button class="btn" id="btnResetNo" type="button">Cancel</button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Panel">
+        <button role="tab" id="tab-skill" aria-controls="pane-skill" aria-selected="true">Skill</button>
+        <button role="tab" id="tab-build" aria-controls="pane-build" aria-selected="false">Build</button>
+        <button role="tab" id="tab-gear" aria-controls="pane-gear" aria-selected="false">Gear<span class="count" id="gearCount"></span></button>
+        <button role="tab" id="tab-saves" aria-controls="pane-saves" aria-selected="false">Saves</button>
+      </div>
+      <div class="pane" id="pane-skill" role="tabpanel" aria-labelledby="tab-skill"></div>
+      <div class="pane" id="pane-build" role="tabpanel" aria-labelledby="tab-build" hidden></div>
+      <div class="pane" id="pane-gear" role="tabpanel" aria-labelledby="tab-gear" hidden>
+        <p class="hint">Pick the gear you wear. Its skill ranks add to skills you've spent a point in, and can take them past their top level (3/3 becomes 4/3). Ranks on a skill with no point in it wait until you spend one. Only skill ranks are counted here, not armour or other stats.</p>
+        <h4 id="wornHead">Worn</h4>
+        <div id="wornList"></div>
+        <h4>Add gear</h4>
+        <label class="field" for="gearQ"><span>Find an item, a slot or a skill</span><input id="gearQ" class="text" type="search" placeholder="Like gloves, ring or Arsonist" autocomplete="off"></label>
+        <div id="gearFind"></div>
+      </div>
+      <div class="pane" id="pane-saves" role="tabpanel" aria-labelledby="tab-saves" hidden>
+        <label class="field" for="buildName"><span>Build name</span><input id="buildName" class="text" type="text" maxlength="60" placeholder="Untitled build"></label>
+        <div class="row"><button class="btn primary" id="btnSave" type="button">Save in this browser</button></div>
+        <ul class="saves" id="saves"></ul>
+        <h4>Build code</h4>
+        <p class="hint">The code holds the tree, item bonuses, worn gear and the four numbers above. Paste it back here, or send the link.</p>
+        <textarea id="codeOut" readonly aria-label="Build code"></textarea>
+        <div class="row"><button class="btn" id="btnCopyCode" type="button">Copy code</button><button class="btn" id="btnCopyLink" type="button" hidden>Copy link</button></div>
+        <label class="field" for="codeIn"><span>Load a code or link</span><input id="codeIn" class="text" type="text" placeholder="b2-50-19-57-11-…"></label>
+        <div class="row"><button class="btn" id="btnLoadCode" type="button">Load it</button></div>
+        <h4>Example</h4>
+        <div class="row"><button class="btn" id="btnExample" type="button">Load the example build</button></div>
+        <p class="foot-note">Saved builds stay in this browser only. Clearing site data removes them, so keep codes for builds you care about.</p>
+      </div>
+      <div class="pane" style="padding-top:0">
+        <p class="foot-note">Unofficial. Tree, costs, effects and the gear that raises each skill from <a href="https://www.enshrouded.tools/skill-tree" target="_blank" rel="noopener">enshrouded.tools</a>, which reads the 1.0 game files (build 25988036). Skill points from its <a href="https://www.enshrouded.tools/leveling" target="_blank" rel="noopener">levelling page</a>: 2 a level, 3 per Elixir Well, 1 per Shroud Root, 212 in all. The Flame's attribute bonus is from its <a href="https://www.enshrouded.tools/tools/flame-altar" target="_blank" rel="noopener">Flame Altar planner</a>. Gear slots are worked out from item names. Not checked in game.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const DATA = /*TREE_DATA*/null;
+// the page's own link, for "Copy link": the GitHub Pages copy shares itself, the claude.ai one its artifact link
+const SHARE_BASE = /\.github\.io$/.test(location.hostname) ? location.origin + location.pathname : 'https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW';
+const CODE_VERSION = 'b2';
+const LS_CUR = 'fbt:v1:current', LS_SAVES = 'fbt:v1:saves';
+const CAP = DATA.levelCap || 50, MAX_WELLS = 19, MAX_ROOTS = 57, MAX_FLAME = 11, MAX_HAND = 6;
+const ATTRS = ['Strength', 'Constitution', 'Dexterity', 'Endurance', 'Intelligence', 'Spirit'];
+const ABBR = { Strength: 'STR', Constitution: 'CON', Dexterity: 'DEX', Endurance: 'END', Intelligence: 'INT', Spirit: 'SPI' };
+const GIVES = { Strength: ['Melee damage', 5, '%'], Constitution: ['Health', 50, ''], Dexterity: ['Bow and dagger damage', 5, '%'],
+  Endurance: ['Stamina', 10, ''], Intelligence: ['Magic damage', 5, '%'], Spirit: ['Mana', 20, ''] };
+const CLS = { W: 'Warrior', G: 'Ranger', M: 'Mage', N: 'Neutral' };
+const TYPE = { R: 'Starting point', A: 'Attribute', P: 'Passive skill', S: 'Active skill' };
+const SIZE = { R: 37, A: 29, P: 46, S: 58 };
+const HEALTH_FROM = { 'Athlete': 'Strength', 'Life Essences': 'Intelligence', 'Veiled Vigor': 'Dexterity' };
+const SLOT_ORDER = ['Head', 'Chest', 'Hands', 'Legs', 'Feet', 'Ring', 'Weapon', 'Tool'];
+const ONE_EACH = new Set(['Head', 'Chest', 'Hands', 'Legs', 'Feet']), RING_SLOTS = 2;
+// the example: a mage that heals and burns, for a first look (paths are bought on the way to each), in the
+// armour that raises its skills most
+const EXAMPLE = { name: 'Example: fire mage', level: 50, wells: 19, roots: 57, flame: 11,
+  targets: [['Mage Apprentice', 3], ['Quick Charge', 3], ['Arsonist', 3], ['Wizard', 3], ['Water Aura', 3], ['Life Essences', 3], ['Blink Attack', 1], ['Chain Hit', 1],
+    ['Mass Destruction', 1], ['Terror', 3], ['Healing Revive', 3], ['Exalted', 1], ['Arcane Concentration', 1], ['Double Jump', 1], ['Well Rested', 3]] };
+
+const nodes = DATA.nodes.map((a, i) => ({ i, x: a[0], y: a[1], t: a[2], c: a[3], max: Math.max(1, a[4]), multi: a[4] > 1, cost: a[5],
+  name: a[6], desc: a[7], dargs: a[8], per: a[9], pargs: a[10] }));
+const N = nodes.length;
+const adj = nodes.map(() => []);
+for (const [a, b] of DATA.links) { adj[a].push(b); adj[b].push(a); }
+for (const n of nodes) {
+  n.attr = n.t === 'A' && ATTRS.includes(n.name) ? n.name : null;
+  const m = n.t === 'A' && !n.attr ? /point of (\w+) for every two levels of the Flame/.exec(n.desc) : null;
+  n.flameAttr = m ? m[1] : null;
+  n.plain = (n.name + ' ' + n.desc.replace(/<[^>]+>/g, '')).toLowerCase();
+  n.boostable = n.multi && (n.t === 'P' || n.t === 'S');    // gear ranks only ever go on multi-level skills
+  n.gear = [];
+}
+const GEAR = DATA.gear.map(([name, ver, slot, perks], g) => ({ g, name, ver, slot, perks }));
+for (const it of GEAR) { it.plain = (it.name + ' ' + it.perks.map(([i]) => nodes[i].name).join(' ')).toLowerCase(); for (const [i, p] of it.perks) nodes[i].gear.push([it.g, p]); }
+
+// ---------- state ----------
+const S = { level: 50, wells: 19, roots: 57, flame: 11, allowOver: false, name: '', tab: 'skill' };
+let lvl = new Uint8Array(N);        // points spent, in levels
+let hand = new Uint8Array(N);       // item ranks set by hand
+let worn = [];                      // gear indices (a ring can be in twice)
+let gb = new Uint8Array(N);         // item ranks from worn gear, worked out on each change
+let sel = null, hover = null, pathPrev = null;
+const undoStack = [], redoStack = [];
+
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const owned = i => nodes[i].t === 'R' || lvl[i] > 0;
+const isOpen = i => !owned(i) && adj[i].some(owned);
+const budget = () => 2 * (S.level - 1) + 3 * S.wells + S.roots;
+const spentOf = lv => { let s = 0; for (let i = 0; i < N; i++) s += lv[i] * nodes[i].cost; return s; };
+const spent = () => spentOf(lvl);
+const bonus = i => hand[i] + gb[i];                          // item ranks on a skill, live or waiting
+const eff = i => lvl[i] ? lvl[i] + bonus(i) : 0;             // the level it works at: ranks count once a point is in
+const gearName = it => it.name + (it.ver === 'drop' ? ' (dropped)' : it.ver === 'crafted' ? ' (crafted)' : '');
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage off: nothing kept */ } },
+};
+function workOutGear() { gb = new Uint8Array(N); for (const g of worn) for (const [i, p] of GEAR[g].perks) gb[i] += p; }
+
+// ---------- effect text ----------
+function argVal(a, level, per) {
+  if (a[0] === 'i') return null;
+  return Math.abs(per ? a[2] : a[1] + a[2] * level);
+}
+function fmtArg(a, level, per) {
+  if (a[0] === 'i') return `[${a[1]}]`;
+  const v = argVal(a, level, per);
+  if (a[0] === 'p') return `${Math.round(v * 1000) / 10}%`;
+  if (a[0] === 'd') return `${Math.round(v * 10) / 10}s`;
+  return String(Math.round(v * 100) / 100);
+}
+function gameText(text, args, level, per) {
+  if (!text) return '';
+  let k = 0;
+  const s = text.replace(/%k/g, () => { const a = args[k++]; return a ? fmtArg(a, level, per) : '?'; }).replace(/%%/g, '%')
+    .replace(/(^|[^\d.])1(<\/b>)? seconds\b/g, '$11$2 second');
+  return esc(s).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/\n/g, '<br>').replace(/(<br>\s*){3,}/g, '<br><br>');
+}
+const shortText = (n, level) => {
+  const t = gameText(n.desc, n.dargs, Math.max(1, level), false).split(/<br>/)[0].replace(/<[^>]+>/g, '');
+  return t.length > 120 ? t.slice(0, 117).trimEnd() + '…' : t;
+};
+const costText = n => n.cost ? `${n.cost} ${n.cost === 1 ? 'point' : 'points'}${n.multi ? ' a level' : ''}` : 'free';
+const levelText = i => { const n = nodes[i]; return n.multi ? `${eff(i)}/${n.max}` : lvl[i] ? 'taken' : 'not taken'; };
+
+// ---------- rules ----------
+function snapshot() { return { lv: lvl.slice(), hand: hand.slice(), worn: worn.slice(), level: S.level, wells: S.wells, roots: S.roots, flame: S.flame }; }
+function restore(s) { lvl = s.lv.slice(); hand = s.hand.slice(); worn = s.worn.slice(); S.level = s.level; S.wells = s.wells; S.roots = s.roots; S.flame = s.flame; }
+function remember() { undoStack.push(snapshot()); if (undoStack.length > 80) undoStack.shift(); redoStack.length = 0; }
+
+// the cheapest way to reach node t from what's owned: nodes to buy, in order
+function pathTo(t) {
+  if (owned(t)) return [];
+  const dist = new Array(N).fill(Infinity), prev = new Array(N).fill(-1), done = new Uint8Array(N);
+  for (let i = 0; i < N; i++) if (owned(i)) dist[i] = 0;
+  for (;;) {
+    let u = -1;
+    for (let i = 0; i < N; i++) if (!done[i] && dist[i] < Infinity && (u < 0 || dist[i] < dist[u])) u = i;
+    if (u < 0 || u === t) break;
+    done[u] = 1;
+    for (const v of adj[u]) {
+      if (owned(v)) continue;
+      const d = dist[u] + nodes[v].cost + 0.001;           // (a hair per node, so equal costs take fewer nodes)
+      if (d < dist[v]) { dist[v] = d; prev[v] = u; }
+    }
+  }
+  if (dist[t] === Infinity) return null;
+  const out = [];
+  for (let v = t; v >= 0 && !owned(v); v = prev[v]) out.unshift(v);
+  return out;
+}
+// what stops hanging off a Spark if node i is refunded to nothing
+function dependents(i, lv = lvl) {
+  const seen = new Uint8Array(N), q = [];
+  for (let k = 0; k < N; k++) if (nodes[k].t === 'R') { seen[k] = 1; q.push(k); }
+  while (q.length) { const u = q.pop(); for (const v of adj[u]) if (!seen[v] && v !== i && lv[v] > 0) { seen[v] = 1; q.push(v); } }
+  const out = [];
+  for (let k = 0; k < N; k++) if (k !== i && lv[k] > 0 && !seen[k]) out.push(k);
+  return out;
+}
+function prune(lv) {
+  const loose = dependents(-1, lv);
+  for (const k of loose) lv[k] = 0;
+  return loose.length;
+}
+function canSpend(p) { return S.allowOver || spent() + p <= budget(); }
+
+function addLevel(i) {
+  const n = nodes[i];
+  if (n.t === 'R') { toast('Sparks are free: every path starts from one.'); return; }
+  if (!owned(i)) return takePath(i);
+  if (lvl[i] >= n.max) { toast(`${n.name} has all its points.${n.boostable ? ' Gear or the item bonus can take it higher.' : ''}`); return; }
+  if (!canSpend(n.cost)) return short(n.cost);
+  remember(); lvl[i]++; changed();
+}
+function takePath(i) {
+  const p = pathTo(i);
+  if (!p) { toast('No way to reach that node.'); return; }
+  const cost = p.reduce((s, k) => s + nodes[k].cost, 0);
+  if (!canSpend(cost)) return short(cost, p.length);
+  remember(); for (const k of p) lvl[k] = 1; changed();
+  if (p.length > 1) toast(`Took ${p.length} nodes for ${cost} points.`);
+}
+function removeLevel(i) {
+  const n = nodes[i];
+  if (n.t === 'R' || !lvl[i]) return;
+  if (lvl[i] === 1) {
+    const dep = dependents(i);
+    if (dep.length) { select(i); toast(`${dep.length} taken ${dep.length === 1 ? 'node hangs' : 'nodes hang'} off ${n.name}. Refund them first, or use "Refund with its branch".`); return; }
+  }
+  remember(); lvl[i]--; changed();
+}
+function removeBranch(i) {
+  const dep = dependents(i);
+  remember(); lvl[i] = 0; for (const k of dep) lvl[k] = 0; changed();
+  toast(`Refunded ${nodes[i].name} and ${dep.length} ${dep.length === 1 ? 'node' : 'nodes'} past it.`);
+}
+function setHand(i, v) {
+  v = clamp(v, 0, MAX_HAND);
+  if (v === hand[i] || !nodes[i].boostable) return;
+  remember(); hand[i] = v; changed();
+}
+function short(cost, count) {
+  const left = budget() - spent();
+  toast(`${count > 1 ? `That path takes ${count} nodes for ${cost} points` : `That costs ${cost} ${cost === 1 ? 'point' : 'points'}`}, and you have ${Math.max(0, left)} left. Tick "Plan past my points" to go over.`);
+}
+function resetAll() {
+  remember(); lvl = new Uint8Array(N); hand = new Uint8Array(N); worn = []; changed();
+  toast('Everything reset. Undo brings it back.');
+}
+
+// gear: one item per armour slot, two rings (the same ring twice is fine), weapons and tools as you like
+function wear(g) {
+  const it = GEAR[g];
+  let off = null;
+  remember();
+  if (ONE_EACH.has(it.slot)) { const k = worn.findIndex(w => GEAR[w].slot === it.slot); if (k >= 0) off = worn.splice(k, 1)[0]; }
+  else if (it.slot === 'Ring' && worn.filter(w => GEAR[w].slot === 'Ring').length >= RING_SLOTS) { const k = worn.findIndex(w => GEAR[w].slot === 'Ring'); off = worn.splice(k, 1)[0]; }
+  worn.push(g); changed();
+  toast(off != null ? `Swapped ${gearName(GEAR[off])} for ${gearName(it)}${it.slot === 'Ring' ? ' (two rings at a time)' : ''}.` : `Wearing ${gearName(it)}.`);
+}
+function takeOff(g) { const k = worn.lastIndexOf(g); if (k < 0) return; remember(); worn.splice(k, 1); changed(); }
+
+// ---------- build codes ----------
+// b2-<level>-<wells>-<roots>-<flame>-<node idx (2 base-36 chars) + level>…-<node idx + hand ranks>…-<gear idx>…
+function encode() {
+  let a = '', b = '', g = '';
+  for (let i = 0; i < N; i++) { if (lvl[i]) a += i.toString(36).padStart(2, '0') + lvl[i]; if (hand[i]) b += i.toString(36).padStart(2, '0') + hand[i]; }
+  for (const w of worn) g += w.toString(36).padStart(2, '0');
+  return `${CODE_VERSION}-${S.level}-${S.wells}-${S.roots}-${S.flame}-${a}-${b}-${g}`;
+}
+function decode(str) {
+  const m = /b([12])-(\d+)-(\d+)-(\d+)-(\d+)-([0-9a-z]*)(?:-([0-9a-z]*)-([0-9a-z]*))?/i.exec(String(str || ''));
+  if (!m) return null;
+  const pairs = (s, k) => { const out = []; s = (s || '').toLowerCase(); if (s.length % k) return null; for (let j = 0; j < s.length; j += k) out.push(s.slice(j, j + k)); return out; };
+  const A = pairs(m[6], 3), Bh = pairs(m[7], 3), G = pairs(m[8], 2);
+  if (!A || !Bh || !G) return null;
+  const lv = new Uint8Array(N), hd = new Uint8Array(N), wn = [];
+  for (const p of A) { const i = parseInt(p.slice(0, 2), 36), l = parseInt(p[2], 36); if (i < N && nodes[i].t !== 'R' && l > 0) lv[i] = Math.min(l, nodes[i].max); }
+  for (const p of Bh) { const i = parseInt(p.slice(0, 2), 36), l = parseInt(p[2], 36); if (i < N && nodes[i].boostable) hd[i] = Math.min(l, MAX_HAND); }
+  for (const p of G) { const g = parseInt(p, 36); if (g < GEAR.length) wn.push(g); }
+  const dropped = prune(lv);
+  return { lv, hand: hd, worn: wn, level: clamp(+m[2], 1, CAP), wells: clamp(+m[3], 0, MAX_WELLS), roots: clamp(+m[4], 0, MAX_ROOTS), flame: clamp(+m[5], 1, MAX_FLAME), dropped };
+}
+function loadCode(str, name) {
+  const d = decode(str);
+  if (!d) { toast("That doesn't look like a build code. Codes start with b2- (or b1-)."); return false; }
+  remember(); restore(d); if (name != null) S.name = name;
+  syncInputs(); changed();
+  if (d.dropped) toast(`Loaded. ${d.dropped} ${d.dropped === 1 ? 'node was' : 'nodes were'} cut off from a Spark and left out.`);
+  return true;
+}
+function buildExample() {
+  const lv = new Uint8Array(N), save = lvl;
+  lvl = lv;
+  for (const [name, want] of EXAMPLE.targets) {
+    const t = nodes.find(n => n.name === name && (n.t !== 'A' || n.flameAttr));
+    if (!t) continue;
+    for (const k of pathTo(t.i) || []) lvl[k] = 1;
+    lvl[t.i] = Math.min(t.max, want);
+  }
+  lvl = save;
+  const gear = [];                                           // the armour piece per slot that raises its skills most
+  for (const slot of ONE_EACH) {
+    let best = null, top = 0;
+    for (const it of GEAR) {
+      if (it.slot !== slot) continue;
+      const v = it.perks.reduce((s, [i, p]) => s + (lv[i] ? p : 0), 0);
+      if (v > top) { top = v; best = it.g; }
+    }
+    if (best != null) gear.push(best);
+  }
+  return { lv, worn: gear };
+}
+function loadExample() {
+  remember();
+  const ex = buildExample();
+  lvl = ex.lv; hand = new Uint8Array(N); worn = ex.worn;
+  Object.assign(S, { level: EXAMPLE.level, wells: EXAMPLE.wells, roots: EXAMPLE.roots, flame: EXAMPLE.flame, name: EXAMPLE.name });
+  syncInputs(); changed();
+}
+
+// ---------- the map ----------
+const NS = 'http://www.w3.org/2000/svg';
+const svg = $('map'), world = $('world'), wrap = $('mapwrap');
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+const hexPts = r => [0, 1, 2, 3, 4, 5].map(k => { const a = Math.PI / 3 * k - Math.PI / 2; return `${(r * Math.cos(a)).toFixed(1)},${(r * Math.sin(a)).toFixed(1)}`; }).join(' ');
+const starPts = r => { const q = r * .3; return `0,${-r} ${q},${-q} ${r},0 ${q},${q} 0,${r} ${-q},${q} ${-r},0 ${-q},${-q}`; };
+const B = (() => { let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity; for (const n of nodes) { x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y); x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y); } return { x0: x0 - 90, y0: y0 - 90, x1: x1 + 90, y1: y1 + 120 }; })();
+const centroid = c => { const v = nodes.filter(n => n.c === c); return { x: v.reduce((s, n) => s + n.x, 0) / v.length, y: v.reduce((s, n) => s + n.y, 0) / v.length }; };
+const CENTRE = { x: 4000, y: 4001 };
+
+const gEdges = el('g', {}, world), gNodes = el('g', {}, world), gLabels = el('g', { class: 'lbls' }, world);
+el('circle', { class: 'ring', cx: CENTRE.x, cy: CENTRE.y, r: 585 }, gEdges);
+for (const c of ['W', 'G', 'M']) {                         // big class names, shown zoomed out
+  const p = centroid(c), dx = p.x - CENTRE.x, dy = p.y - CENTRE.y, k = 1 + 420 / Math.hypot(dx, dy);
+  const t = el('text', { class: 'zone', x: CENTRE.x + dx * k, y: CENTRE.y + dy * k }, gEdges); t.textContent = CLS[c].toUpperCase();
+}
+const edgeEls = DATA.links.map(([a, b]) => el('line', { class: 'edge', x1: nodes[a].x, y1: nodes[a].y, x2: nodes[b].x, y2: nodes[b].y }, gEdges));
+const linksOf = nodes.map(() => []);
+DATA.links.forEach(([a, b], k) => { linksOf[a].push(k); linksOf[b].push(k); });
+for (const n of nodes) {
+  const r = SIZE[n.t] * (n.flameAttr ? 1.25 : 1);
+  const g = el('g', { class: `node t-${n.t} c-${n.c}`, transform: `translate(${n.x} ${n.y})`, 'data-i': n.i }, gNodes);
+  el('circle', { class: 'halo', r: r + 16 }, g);
+  if (n.t === 'R') el('polygon', { class: 'shape', points: starPts(r) }, g);
+  else if (n.t === 'S') el('polygon', { class: 'shape', points: hexPts(r) }, g);
+  else el('circle', { class: 'shape', r }, g);
+  if (n.flameAttr) el('circle', { class: 'inner', r: r - 12 }, g);
+  n.lvEl = el('text', { class: 'lv', y: 1 }, g);
+  if (n.attr || n.flameAttr) n.lvEl.textContent = ABBR[n.attr || n.flameAttr];
+  if (n.t === 'P' || n.t === 'S' || n.flameAttr) {           // names and item badges sit on their own layer, over every node
+    const lg = el('g', { transform: `translate(${n.x} ${n.y})` }, gLabels);
+    const l = el('text', { class: 'lbl', y: r + 34 }, lg); l.textContent = n.name;
+    n.lblG = lg;
+    if (n.boostable) {
+      n.badge = el('g', { class: 'badge', transform: `translate(${(r * .8).toFixed(1)} ${(-r * .8).toFixed(1)})`, display: 'none' }, lg);
+      el('circle', { r: 24 }, n.badge);
+      n.badgeT = el('text', { y: 1 }, n.badge);
+    }
+  }
+  n.g = g;
+}
+
+const V = { s: .2, tx: 0, ty: 0 };
+function applyView(glide) {
+  world.classList.toggle('glide', !!glide);
+  world.style.transform = `translate(${V.tx}px, ${V.ty}px) scale(${V.s})`;
+  svg.classList.toggle('near', V.s >= .4);
+  svg.classList.toggle('mid', V.s >= .19);
+  if (glide) setTimeout(() => world.classList.remove('glide'), 480);
+}
+function fitScale() { const r = svg.getBoundingClientRect(); return Math.min(r.width / (B.x1 - B.x0), r.height / (B.y1 - B.y0)); }
+function fit(glide) {
+  const r = svg.getBoundingClientRect(), s = fitScale();
+  V.s = s; V.tx = (r.width - (B.x1 - B.x0) * s) / 2 - B.x0 * s; V.ty = (r.height - (B.y1 - B.y0) * s) / 2 - B.y0 * s;
+  applyView(glide);
+}
+function centreOn(x, y, s, glide) {
+  const r = svg.getBoundingClientRect();
+  V.s = clamp(s || V.s, fitScale() * .8, 2.2); V.tx = r.width / 2 - x * V.s; V.ty = r.height / 2 - y * V.s;
+  applyView(glide);
+}
+function zoomAt(f, cx, cy) {
+  const s = clamp(V.s * f, fitScale() * .8, 2.2);
+  V.tx = cx - (cx - V.tx) * (s / V.s); V.ty = cy - (cy - V.ty) * (s / V.s); V.s = s;
+  applyView();
+}
+const jumpTo = c => { const p = c === 'N' ? CENTRE : centroid(c); centreOn(p.x, p.y, c === 'N' ? .42 : .24, true); };
+const showNode = i => centreOn(nodes[i].x, nodes[i].y, Math.max(V.s, .55), true);
+
+// pointer: drag to pan, pinch to zoom, click to spend, right-click to refund
+const ptrs = new Map();
+let drag = null;
+const nodeAt = t => { const g = t && t.closest ? t.closest('.node') : null; return g ? +g.dataset.i : null; };
+svg.addEventListener('pointerdown', e => {
+  ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (ptrs.size === 1) drag = { moved: false, travel: 0, node: nodeAt(e.target), btn: e.button, type: e.pointerType, id: e.pointerId };
+  else if (drag) drag.moved = true;
+});
+svg.addEventListener('pointermove', e => {
+  const p = ptrs.get(e.pointerId);
+  if (!p) { if (e.pointerType === 'mouse') setHover(nodeAt(e.target), e); return; }
+  const q = { x: e.clientX, y: e.clientY };
+  if (ptrs.size === 1 && drag) {
+    drag.travel += Math.abs(q.x - p.x) + Math.abs(q.y - p.y);
+    if (!drag.moved && drag.travel > 6) { drag.moved = true; svg.classList.add('panning'); try { svg.setPointerCapture(e.pointerId); } catch (_) {} setHover(null); }
+    if (drag.moved) { V.tx += q.x - p.x; V.ty += q.y - p.y; applyView(); }
+  } else if (ptrs.size === 2) {
+    const [a, b] = [...ptrs.entries()].map(([id, v]) => id === e.pointerId ? q : v), [oa, ob] = [...ptrs.values()];
+    const r = svg.getBoundingClientRect(), d0 = Math.hypot(oa.x - ob.x, oa.y - ob.y), d1 = Math.hypot(a.x - b.x, a.y - b.y);
+    V.tx += (a.x + b.x - oa.x - ob.x) / 2; V.ty += (a.y + b.y - oa.y - ob.y) / 2;
+    if (d0 > 0) zoomAt(d1 / d0, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top); else applyView();
+  }
+  ptrs.set(e.pointerId, q);
+});
+function endPtr(e) {
+  if (!ptrs.has(e.pointerId)) return;
+  ptrs.delete(e.pointerId);
+  if (drag && ptrs.size === 0) {
+    if (!drag.moved && e.type === 'pointerup' && drag.btn === 0) tap(drag.node, drag.type, e);
+    drag = null; svg.classList.remove('panning');
+  }
+}
+svg.addEventListener('pointerup', endPtr);
+svg.addEventListener('pointercancel', endPtr);
+svg.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && !ptrs.size) setHover(null); });
+svg.addEventListener('contextmenu', e => { e.preventDefault(); const i = nodeAt(e.target); if (i != null) { removeLevel(i); select(i); } });
+svg.addEventListener('wheel', e => { e.preventDefault(); const r = svg.getBoundingClientRect(); zoomAt(Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0015)), e.clientX - r.left, e.clientY - r.top); }, { passive: false });
+function tap(i, type, e) {
+  if (i == null) { select(null); return; }
+  if (type === 'touch') { select(i); return; }              // on touch a tap picks it; the bar below spends
+  if (e.shiftKey) { removeLevel(i); select(i); return; }
+  select(i); addLevel(i);
+  if (hover === i) setHover(i, e);
+}
+wrap.addEventListener('keydown', e => {
+  if (e.target !== wrap) return;
+  const r = svg.getBoundingClientRect(), step = 60;
+  const k = e.key;
+  if (k === 'ArrowLeft') V.tx += step; else if (k === 'ArrowRight') V.tx -= step; else if (k === 'ArrowUp') V.ty += step; else if (k === 'ArrowDown') V.ty -= step;
+  else if (k === '+' || k === '=') return zoomAt(1.25, r.width / 2, r.height / 2), e.preventDefault();
+  else if (k === '-' || k === '_') return zoomAt(.8, r.width / 2, r.height / 2), e.preventDefault();
+  else if (k === '0') return fit(true), e.preventDefault();
+  else return;
+  e.preventDefault(); applyView();
+});
+document.addEventListener('keydown', e => {
+  const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement && document.activeElement.tagName);
+  if (typing) return;
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
+  else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.key.toLowerCase() === 'z' && e.shiftKey))) { e.preventDefault(); redo(); }
+  else if (e.key === 'Escape') select(null);
+  else if (e.key === '/') { e.preventDefault(); $('q').focus(); }
+});
+
+// hover card (mouse only), with the path a locked node would take
+const tip = $('tip');
+function setHover(i, e) {
+  if (i !== hover) {
+    if (hover != null) nodes[hover].g.classList.remove('hover');
+    hover = i;
+    if (i != null) nodes[i].g.classList.add('hover');
+    showPath(i != null && !owned(i) ? pathTo(i) : null);
+  }
+  if (i == null) { tip.hidden = true; return; }
+  tip.innerHTML = cardHTML(i);
+  tip.className = `tip c-${nodes[i].c}`;
+  tip.hidden = false;
+  const r = wrap.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX - r.left + 18, y = e.clientY - r.top + 18;
+  if (x + w > r.width - 8) x = e.clientX - r.left - w - 18;
+  if (y + h > r.height - 8) y = Math.max(8, r.height - h - 8);
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = y + 'px';
+}
+function showPath(p) {
+  if (pathPrev) { for (const k of pathPrev.nodes) nodes[k].g.classList.remove('path'); for (const k of pathPrev.edges) edgeEls[k].classList.remove('path'); }
+  pathPrev = null;
+  if (!p || !p.length) return;
+  const set = new Set(p), edges = [];
+  for (const k of p) for (const li of linksOf[k]) { const [a, b] = DATA.links[li]; const o = a === k ? b : a; if (set.has(o) || (owned(o) && k === p[0])) edges.push(li); }
+  for (const k of p) nodes[k].g.classList.add('path');
+  for (const k of edges) edgeEls[k].classList.add('path');
+  pathPrev = { nodes: p, edges };
+}
+function bonusLine(i) {
+  const b = bonus(i);
+  if (!b) return '';
+  return lvl[i] ? `+${b} from items: works at level ${eff(i)} of ${nodes[i].max}` : `+${b} from items, waiting for a point here`;
+}
+function cardHTML(i) {
+  const n = nodes[i], L = lvl[i];
+  let h = `<h4>${esc(n.name)}</h4><div class="meta">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''} · ${costText(n)}${n.multi ? ` · ${L} of ${n.max} points in` : L ? ' · taken' : ''}</div>`;
+  if (n.t === 'R') return h + '<p class="desc">A starting point. All twelve Sparks round the centre are open from the start, so paths can begin at any of them.</p>';
+  if (bonus(i)) h += `<div class="gearline">${bonusLine(i)}</div>`;
+  h += `<p class="desc">${gameText(n.desc, n.dargs, Math.max(1, eff(i)), false)}</p>`;
+  if (n.multi && n.per) h += `<div class="foot">Per level: ${gameText(n.per, n.pargs, 1, true)}</div>`;
+  if (!owned(i)) {
+    const p = pathTo(i);
+    if (p) { const c = p.reduce((s, k) => s + nodes[k].cost, 0); h += `<div class="foot">Click to take ${p.length > 1 ? `the path here: <b>${p.length} nodes, ${c} points</b>` : `it: <b>${c} ${c === 1 ? 'point' : 'points'}</b>`}.</div>`; }
+  } else if (L < n.max) h += `<div class="foot">Click for another point (${n.cost}). Right-click refunds one.</div>`;
+  else h += `<div class="foot">All points in. Right-click refunds one.</div>`;
+  return h;
+}
+
+// ---------- drawing state ----------
+function paint() {
+  for (const n of nodes) {
+    const L = lvl[n.i], own = owned(n.i), cl = n.g.classList, open = !own && isOpen(n.i), b = n.boostable ? bonus(n.i) : 0;
+    cl.toggle('taken', own && n.t !== 'R');
+    cl.toggle('partial', n.multi && L > 0 && L < n.max);
+    cl.toggle('open', open);
+    cl.toggle('locked', !own && !open);
+    cl.toggle('sel', sel === n.i);
+    cl.toggle('boosted', b > 0 && L > 0);
+    if (n.lblG) n.lblG.classList.toggle('locked', !own && !open);
+    if (n.t === 'P' || n.t === 'S') n.lvEl.textContent = n.multi ? `${eff(n.i)}/${n.max}` : L ? '✓' : '';
+    if (n.badge) {
+      n.badge.setAttribute('display', b ? 'inline' : 'none');
+      if (b) { n.badgeT.textContent = `+${b}`; n.badge.classList.toggle('off', !L); }
+    }
+  }
+  DATA.links.forEach(([a, b], k) => {
+    const oa = owned(a), ob = owned(b);
+    edgeEls[k].classList.toggle('on', oa && ob);
+    edgeEls[k].classList.toggle('half', oa !== ob);
+  });
+}
+function paintPoints() {
+  const tot = budget(), sp = spent(), left = tot - sp;
+  $('ptLeft').innerHTML = left >= 0 ? `${left}<small>${left === 1 ? 'point' : 'points'} left</small>` : `${-left}<small>${-left === 1 ? 'point' : 'points'} over</small>`;
+  $('ptLeft').classList.toggle('over', left < 0);
+  $('ptOf').textContent = `${sp} of ${tot} spent`;
+  const by = { W: 0, G: 0, M: 0, N: 0 };
+  for (let i = 0; i < N; i++) by[nodes[i].c] += lvl[i] * nodes[i].cost;
+  const den = Math.max(tot, sp) || 1;
+  $('meter').innerHTML = ['W', 'G', 'M', 'N'].map(c => by[c] ? `<i class="c-${c}" style="width:${(by[c] / den * 100).toFixed(2)}%;background:var(--cls)" title="${CLS[c]}: ${by[c]}"></i>` : '').join('');
+  $('undo').disabled = !undoStack.length; $('redo').disabled = !redoStack.length;
+  $('gearCount').textContent = worn.length ? String(worn.length) : '';
+}
+const gearRow = (it, opts = {}) => {
+  const count = worn.filter(w => w === it.g).length;
+  const perks = it.perks.map(([i, p]) => `<span class="${lvl[i] ? 'mine' : ''}">+${p} ${esc(nodes[i].name)}</span>`).join(', ');
+  const acts = [];
+  if (count) acts.push(`<button class="btn small" type="button" data-off="${it.g}">Take off</button>`);
+  if (!count || (it.slot === 'Ring' && count < RING_SLOTS)) acts.push(`<button class="btn small" type="button" data-wear="${it.g}">${count ? 'Wear another' : 'Wear'}</button>`);
+  return `<li class="${count ? 'worn' : ''}"><span class="nm">${esc(gearName(it))}${opts.slot === false ? '' : `<span class="tag">${it.slot}</span>`}${count > 1 ? '<span class="tag">×2</span>' : ''}</span><span class="perks">${perks}</span><span class="acts">${acts.join('')}</span></li>`;
+};
+function paintSkill() {
+  const p = $('pane-skill');
+  if (sel == null) {
+    p.className = 'pane';
+    p.innerHTML = `<p class="hint">Pick a node to read it here. On the map: <kbd>click</kbd> spends a point (or takes the cheapest path to a node that isn't connected yet), <kbd>right-click</kbd> or <kbd>Shift</kbd>+<kbd>click</kbd> refunds one, drag to pan, scroll to zoom. On a touch screen, tap to pick and use the bar at the bottom of the map.</p>
+      <p class="hint">Every path starts from one of the twelve Sparks round the centre. A node opens once a neighbour is taken. <kbd>/</kbd> jumps to the search box.</p>
+      <p class="hint">Item bonuses show as a purple badge on the node. Add them here per skill, or wear gear in the Gear tab.</p>`;
+    return;
+  }
+  const n = nodes[sel], L = lvl[sel], b = bonus(sel);
+  p.className = `pane c-${n.c}`;
+  let h = `<div><h3>${esc(n.name)}</h3><div class="meta">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''} · ${costText(n)}</div></div>`;
+  if (n.t === 'R') { p.innerHTML = h + '<p class="desc">A starting point, and free. All twelve Sparks round the centre are open from the start, so a build can branch out from any of them.</p>'; return; }
+  if (n.multi) h += `<div>Level ${eff(sel)} of ${n.max}<span class="pips">${Array.from({ length: n.max }, (_, k) => `<i class="${k < L ? 'on' : ''}"></i>`).join('')}${Array.from({ length: b }, () => `<i class="gear${L ? '' : ' off'}"></i>`).join('')}</span></div>`;
+  else h += `<div>${L ? 'Taken' : 'Not taken'}</div>`;
+  h += `<p class="desc">${gameText(n.desc, n.dargs, Math.max(1, eff(sel)), false)}</p>`;
+  if (n.multi && n.per) h += `<div class="box">Per level: ${gameText(n.per, n.pargs, 1, true)}${L && eff(sel) >= 1 ? `<br>At level ${eff(sel) + 1}: ${shortText(n, eff(sel) + 1)}` : ''}</div>`;
+  if (n.boostable) {
+    const from = [];
+    if (gb[sel]) from.push(`+${gb[sel]} from worn gear (${worn.filter(w => GEAR[w].perks.some(([i]) => i === sel)).map(w => esc(gearName(GEAR[w]))).join(', ')})`);
+    if (hand[sel]) from.push(`+${hand[sel]} added here`);
+    h += `<div class="box gearbox"><div class="head"><b>Item bonus</b><span class="stepper"><button type="button" data-act="hminus" aria-label="One rank less" title="${hand[sel] ? 'One rank less' : 'Take gear off in the Gear tab to lower it'}" ${hand[sel] ? '' : 'disabled'}>−</button><output aria-live="polite">+${b}</output><button type="button" data-act="hplus" aria-label="One rank more" title="One rank more" ${hand[sel] >= MAX_HAND ? 'disabled' : ''}>+</button></span></div>
+      <div class="meta">${from.length ? from.join('; ') + '.' : 'None yet. Use + for a rank from an item, or wear gear in the Gear tab.'}</div>
+      ${b && !L ? '<div class="meta"><b>Waiting:</b> item ranks only count once a point is spent here.</div>' : ''}</div>`;
+    if (n.gear.length) {
+      const rows = n.gear.slice().sort((a, c) => c[1] - a[1] || GEAR[a[0]].name.localeCompare(GEAR[c[0]].name)).map(([g]) => gearRow(GEAR[g])).join('');
+      h += `<details class="gearfor"><summary>Gear that raises it · ${n.gear.length}</summary><ul class="gearlist">${rows}</ul></details>`;
+    }
+  }
+  const acts = [];
+  if (!owned(sel)) {
+    const path = pathTo(sel);
+    if (path) {
+      const c = path.reduce((s, k) => s + nodes[k].cost, 0);
+      if (path.length > 1) h += `<div class="box">Not connected yet. The cheapest way here takes ${path.length} nodes for ${c} points: ${path.slice(0, -1).map(k => esc(nodes[k].name)).join(', ')}, then this.</div>`;
+      acts.push(`<button class="btn primary" data-act="add">${path.length > 1 ? `Take the path (${c} points)` : `Take it (${c} ${c === 1 ? 'point' : 'points'})`}</button>`);
+    }
+  } else {
+    if (L < n.max) acts.push(`<button class="btn primary" data-act="add">Add a point (${n.cost})</button>`);
+    const dep = L === 1 ? dependents(sel) : [];
+    if (dep.length) {
+      const free = dep.reduce((s, k) => s + lvl[k] * nodes[k].cost, 0) + n.cost;
+      h += `<div class="box warn">${dep.length} taken ${dep.length === 1 ? 'node hangs' : 'nodes hang'} off this one, so it can't be refunded on its own.</div>`;
+      acts.push(`<button class="btn danger" data-act="branch">Refund with its branch (${free} points back)</button>`);
+    } else acts.push(`<button class="btn" data-act="sub">Refund a point</button>`);
+  }
+  acts.push(`<button class="btn" data-act="centre">Show on the map</button>`);
+  h += `<div class="row">${acts.join('')}</div>`;
+  p.innerHTML = h;
+}
+function attrTotals() {
+  const tree = Object.fromEntries(ATTRS.map(a => [a, 0])), flameN = Object.fromEntries(ATTRS.map(a => [a, 0]));
+  const F = S.flame - 1, half = Math.floor(S.flame / 2);
+  for (const n of nodes) {
+    if (!lvl[n.i]) continue;
+    if (n.attr) tree[n.attr] += 1;
+    if (n.flameAttr) flameN[n.flameAttr] += half;
+    if (n.name === 'Ranger' && n.t === 'P') { const v = argVal(n.dargs[0], eff(n.i)); tree.Dexterity += v; tree.Endurance += v; }
+  }
+  const total = Object.fromEntries(ATTRS.map(a => [a, tree[a] + flameN[a] + F]));
+  return { tree, flameN, F, total };
+}
+function paintBuild() {
+  const p = $('pane-build'), A = attrTotals(), T = A.total;
+  let health = T.Constitution * 50;
+  const hfx = [];
+  for (const [name, attr] of Object.entries(HEALTH_FROM)) {
+    const n = nodes.find(x => x.name === name && x.t !== 'A');
+    if (n && lvl[n.i]) { const add = argVal(n.dargs[0], eff(n.i)) * T[attr]; health += add; hfx.push(`${name} ${add}`); }
+  }
+  const by = { W: 0, G: 0, M: 0, N: 0 }, sp = spent();
+  for (let i = 0; i < N; i++) by[nodes[i].c] += lvl[i] * nodes[i].cost;
+  const act = nodes.filter(n => n.t === 'S' && lvl[n.i]), pas = nodes.filter(n => n.t === 'P' && lvl[n.i]);
+  const waiting = nodes.filter(n => n.boostable && bonus(n.i) && !lvl[n.i]);
+  const flameNodes = nodes.filter(n => n.flameAttr && lvl[n.i]);
+  const item = n => `<li class="c-${n.c}"><button type="button" data-node="${n.i}"><span class="nm">${esc(n.name)}</span><span class="lvl">${n.multi ? `${eff(n.i)}/${n.max}${bonus(n.i) ? ` <b>+${bonus(n.i)}</b>` : ''}` : 'taken'}</span><span class="fx">${esc(shortText(n, eff(n.i)))}</span></button></li>`;
+  p.innerHTML = `
+    <div class="stats">
+      <div class="stat"><b>+${Math.round(health)}</b><span>Health</span></div>
+      <div class="stat"><b>+${T.Spirit * 20}</b><span>Mana</span></div>
+      <div class="stat"><b>+${T.Endurance * 10}</b><span>Stamina</span></div>
+      <div class="stat"><b>+${T.Strength * 5}%</b><span>Melee damage</span></div>
+      <div class="stat"><b>+${T.Dexterity * 5}%</b><span>Bow and dagger</span></div>
+      <div class="stat"><b>+${T.Intelligence * 5}%</b><span>Magic damage</span></div>
+    </div>
+    <p class="hint">Bonuses from the tree and the Flame, on top of your gear and base stats.${hfx.length ? ` Health includes ${hfx.join(', ')}.` : ''}</p>
+    <h4>Attributes</h4>
+    <div style="overflow-x:auto"><table>
+      <thead><tr><th>Attribute</th><th>Tree</th><th>Flame</th><th>Total</th><th>Gives</th></tr></thead>
+      <tbody>${ATTRS.map(a => { const [what, per, u] = GIVES[a]; return `<tr><td>${a}</td><td>${A.tree[a]}</td><td>${A.F + A.flameN[a]}</td><td><b>${T[a]}</b></td><td class="gives">+${T[a] * per}${u} ${what}</td></tr>`; }).join('')}</tbody>
+    </table></div>
+    <p class="hint">Flame level ${S.flame} adds ${A.F} to each attribute.${flameNodes.length ? ` ${flameNodes.map(n => esc(n.name)).join(', ')} ${flameNodes.length === 1 ? 'adds' : 'each add'} ${Math.floor(S.flame / 2)} more (one per two Flame levels).` : ' The six "of the Flame" nodes add one more per two Flame levels.'}</p>
+    <h4>Points by class</h4>
+    <div class="stack">${['W', 'G', 'M', 'N'].map(c => by[c] ? `<i class="c-${c}" style="width:${(by[c] / (sp || 1) * 100).toFixed(2)}%"></i>` : '').join('')}</div>
+    <div class="keyrow">${['W', 'G', 'M', 'N'].map(c => `<span class="c-${c}">${CLS[c]} ${by[c]}</span>`).join('')}</div>
+    <h4>Active skills · ${act.length}</h4>
+    ${act.length ? `<ul class="list">${act.map(item).join('')}</ul>` : '<p class="hint">None taken.</p>'}
+    <h4>Passive skills · ${pas.length}</h4>
+    ${pas.length ? `<ul class="list">${pas.map(item).join('')}</ul>` : '<p class="hint">None taken.</p>'}
+    ${waiting.length ? `<h4>Item bonuses waiting for a point · ${waiting.length}</h4><ul class="list">${waiting.map(n => `<li class="c-${n.c}"><button type="button" data-node="${n.i}"><span class="nm">${esc(n.name)}</span><span class="lvl"><b>+${bonus(n.i)}</b></span><span class="fx">Spend a point here for it to count.</span></button></li>`).join('')}</ul>` : ''}
+    <div class="row"><button class="btn" type="button" id="btnCopySummary">Copy as text</button></div>`;
+}
+function paintGear() {
+  const q = $('gearQ').value.trim().toLowerCase();
+  const mineScore = it => it.perks.reduce((s, [i, p]) => s + (lvl[i] ? p : 0), 0);
+  let list, head;
+  if (q) {
+    const words = q.split(/\s+/);
+    list = GEAR.filter(it => words.every(w => it.plain.includes(w) || it.slot.toLowerCase() === w));
+    list.sort((a, b) => mineScore(b) - mineScore(a) || a.name.localeCompare(b.name));
+    head = `${list.length} ${list.length === 1 ? 'item' : 'items'}${list.length > 40 ? ', the first 40 shown' : ''}`;
+  } else {
+    list = GEAR.filter(it => mineScore(it) > 0).sort((a, b) => mineScore(b) - mineScore(a) || SLOT_ORDER.indexOf(a.slot) - SLOT_ORDER.indexOf(b.slot) || a.name.localeCompare(b.name));
+    head = list.length ? `Raises the skills you've taken · ${list.length}${list.length > 12 ? ', the best 12 shown (search for the rest)' : ''}` : '';
+    list = list.slice(0, 12);
+  }
+  $('gearFind').innerHTML = (head ? `<p class="slothead">${head}</p>` : '') +
+    (list.length ? `<ul class="gearlist">${list.slice(0, 40).map(it => gearRow(it)).join('')}</ul>` : q ? '<p class="hint">Nothing matches. Try a slot (gloves, ring) or a skill name.</p>' : '<p class="hint">Take a few skills and the gear that raises them shows here.</p>');
+  $('wornHead').textContent = `Worn · ${worn.length}`;
+  if (!worn.length) { $('wornList').innerHTML = '<p class="hint">Nothing worn yet.</p>'; return; }
+  let h = '';
+  for (const slot of SLOT_ORDER) {
+    const here = [...new Set(worn.filter(w => GEAR[w].slot === slot))];
+    if (!here.length) continue;
+    h += `<p class="slothead">${slot}</p><ul class="gearlist">${here.map(g => gearRow(GEAR[g], { slot: false })).join('')}</ul>`;
+  }
+  const weap = worn.filter(w => ['Weapon', 'Tool'].includes(GEAR[w].slot)).length;
+  if (weap) h += '<p class="hint">Weapon and tool ranks may only count while you hold that item.</p>';
+  h += '<div class="row"><button class="btn danger" type="button" data-alloff="1">Take it all off</button></div>';
+  $('wornList').innerHTML = h;
+}
+function summaryText() {
+  const A = attrTotals();
+  const lines = [`${S.name || 'Untitled build'}: ${spent()} of ${budget()} skill points (level ${S.level}, ${S.wells} Elixir Wells, ${S.roots} Shroud Roots, Flame ${S.flame})`,
+    'Attributes: ' + ATTRS.map(a => `${ABBR[a]} ${A.total[a]}`).join(', ')];
+  const act = nodes.filter(n => n.t === 'S' && lvl[n.i]), pas = nodes.filter(n => n.t === 'P' && lvl[n.i]);
+  const nm = n => n.name + (n.multi ? ` ${eff(n.i)}/${n.max}${bonus(n.i) ? ` (+${bonus(n.i)} items)` : ''}` : '');
+  if (act.length) lines.push('Active: ' + act.map(nm).join(', '));
+  if (pas.length) lines.push('Passive: ' + pas.map(nm).join(', '));
+  if (worn.length) lines.push('Gear: ' + worn.map(w => gearName(GEAR[w])).join(', '));
+  lines.push('Code: ' + encode());
+  return lines.join('\n');
+}
+function paintQuick() {
+  const q = $('quick');
+  const show = sel != null && nodes[sel].t !== 'R';
+  wrap.classList.toggle('picked', show);                     // (the bar takes the legend's place)
+  if (!show) { q.hidden = true; return; }
+  const n = nodes[sel], L = lvl[sel], own = owned(sel), b = bonus(sel);
+  q.className = `quick c-${n.c}`;
+  q.hidden = false;
+  let addLabel = '+', addTitle = `Add a point (${n.cost})`;
+  if (!own) { const p = pathTo(sel); const c = p ? p.reduce((s, k) => s + nodes[k].cost, 0) : 0; addLabel = `Take · ${c}`; addTitle = p && p.length > 1 ? `Take the path: ${p.length} nodes, ${c} points` : `Take it: ${c} points`; }
+  q.innerHTML = `<span class="qn">${esc(n.name)}</span><span class="ql">${n.multi ? `${eff(sel)}/${n.max}` : L ? 'taken' : costText(n)}${b ? ` <b>+${b}</b>` : ''}</span>
+    <button class="ibtn" data-act="sub" title="Refund a point" aria-label="Refund a point" ${own && L ? '' : 'disabled'}>−</button>
+    <button class="ibtn" data-act="add" title="${addTitle}" aria-label="${addTitle}" ${own && L >= n.max ? 'disabled' : ''}>${addLabel}</button>
+    <button class="ibtn" data-act="info" title="Read it in the panel" aria-label="Read it in the panel">i</button>
+    <button class="ibtn" data-act="close" title="Close (Esc)" aria-label="Close">×</button>`;
+}
+function paintSaves() {
+  $('codeOut').value = encode();
+  if ($('buildName') !== document.activeElement) $('buildName').value = S.name;
+  $('btnCopyLink').hidden = !SHARE_BASE;
+  const list = store.get(LS_SAVES, []);
+  $('saves').innerHTML = list.length ? list.map((s, k) => {
+    const d = decode(s.code), pts = d ? spentOf(d.lv) : 0;
+    return `<li><span class="nm">${esc(s.name || 'Untitled build')}</span><span class="meta">${pts} points · level ${d ? d.level : '?'}${d && d.worn.length ? ` · ${d.worn.length} gear` : ''} · ${new Date(s.at).toLocaleDateString()}</span>
+      <span class="row" data-k="${k}"><button class="btn" data-save="load">Load</button><button class="btn danger" data-save="del">Delete</button></span></li>`;
+  }).join('') : '<li class="hint" style="display:block">Nothing saved yet. Name the build above and save it.</li>';
+}
+function persist() { store.set(LS_CUR, { code: encode(), name: S.name, allowOver: S.allowOver, tab: S.tab }); }
+function changed() {
+  workOutGear();
+  paint(); paintPoints(); paintSkill(); paintBuild(); paintGear(); paintQuick(); paintSaves();
+  if (hover != null) showPath(!owned(hover) ? pathTo(hover) : null);
+  persist();
+}
+function select(i) {
+  sel = i;
+  paint(); paintSkill(); paintQuick();
+  if (i != null && S.tab !== 'skill' && S.tab !== 'gear' && window.matchMedia('(min-width: 861px)').matches) setTab('skill');
+}
+function undo() { if (!undoStack.length) return; redoStack.push(snapshot()); restore(undoStack.pop()); syncInputs(); changed(); }
+function redo() { if (!redoStack.length) return; undoStack.push(snapshot()); restore(redoStack.pop()); syncInputs(); changed(); }
+
+let toastTimer = 0;
+function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3800); }
+const TABS = ['skill', 'build', 'gear', 'saves'];
+function setTab(t) {
+  S.tab = TABS.includes(t) ? t : 'skill';
+  for (const k of TABS) { $('tab-' + k).setAttribute('aria-selected', String(k === S.tab)); $('pane-' + k).hidden = k !== S.tab; }
+  persist();
+}
+async function copy(text, okMsg, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); toast(okMsg); }
+  catch (e) { if (fallbackEl) { fallbackEl.focus(); fallbackEl.select(); } toast('Copy was blocked here. The text is selected: press Ctrl+C.'); }
+}
+
+// ---------- controls ----------
+const inputs = { inLevel: ['level', 1, CAP], inWells: ['wells', 0, MAX_WELLS], inRoots: ['roots', 0, MAX_ROOTS], inFlame: ['flame', 1, MAX_FLAME] };
+function syncInputs() { for (const [id, [k]] of Object.entries(inputs)) $(id).value = S[k]; $('allowOver').checked = S.allowOver; }
+for (const [id, [k, lo, hi]] of Object.entries(inputs)) {
+  $(id).addEventListener('change', () => {
+    const v = parseInt($(id).value, 10);
+    const nv = Number.isFinite(v) ? clamp(v, lo, hi) : S[k];
+    if (nv !== S[k]) { remember(); S[k] = nv; }
+    $(id).value = S[k]; changed();
+  });
+}
+$('allowOver').addEventListener('change', () => { S.allowOver = $('allowOver').checked; changed(); });
+$('btnMax').addEventListener('click', () => { remember(); Object.assign(S, { level: CAP, wells: MAX_WELLS, roots: MAX_ROOTS, flame: MAX_FLAME }); syncInputs(); changed(); });
+const showReset = on => { $('resetConfirm').hidden = !on; $('pointBtns').hidden = on; (on ? $('btnResetNo') : $('btnResetAll')).focus(); };
+$('btnResetAll').addEventListener('click', () => showReset(true));
+$('btnResetNo').addEventListener('click', () => showReset(false));
+$('btnResetYes').addEventListener('click', () => { resetAll(); showReset(false); });
+for (const k of TABS) $('tab-' + k).addEventListener('click', () => setTab(k));
+document.querySelector('.tabs').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const k = (TABS.indexOf(S.tab) + (e.key === 'ArrowRight' ? 1 : TABS.length - 1)) % TABS.length;
+  setTab(TABS[k]); $('tab-' + TABS[k]).focus();
+});
+function act(a) {
+  if (sel == null) return;
+  if (a === 'add') addLevel(sel); else if (a === 'sub') removeLevel(sel); else if (a === 'branch') removeBranch(sel);
+  else if (a === 'hplus') setHand(sel, hand[sel] + 1); else if (a === 'hminus') setHand(sel, hand[sel] - 1);
+  else if (a === 'centre') showNode(sel);
+  else if (a === 'close') select(null);
+  else if (a === 'info') { setTab('skill'); $('pane-skill').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+}
+function gearClick(e) {
+  const w = e.target.closest('[data-wear]'), o = e.target.closest('[data-off]');
+  if (w) { wear(+w.dataset.wear); return true; }
+  if (o) { takeOff(+o.dataset.off); return true; }
+  if (e.target.closest('[data-alloff]')) { remember(); worn = []; changed(); toast('Took all gear off.'); return true; }
+  return false;
+}
+$('pane-skill').addEventListener('click', e => {
+  if (gearClick(e)) return;
+  const b = e.target.closest('[data-act]'); if (b) act(b.dataset.act);
+});
+$('pane-gear').addEventListener('click', gearClick);
+$('gearQ').addEventListener('input', paintGear);
+$('quick').addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (b) act(b.dataset.act); });
+$('pane-build').addEventListener('click', e => {
+  const b = e.target.closest('[data-node]');
+  if (b) { const i = +b.dataset.node; select(i); showNode(i); return; }
+  if (e.target.id === 'btnCopySummary') copy(summaryText(), 'Build copied as text.');
+});
+$('undo').addEventListener('click', undo);
+$('redo').addEventListener('click', redo);
+$('zin').addEventListener('click', () => { const r = svg.getBoundingClientRect(); zoomAt(1.3, r.width / 2, r.height / 2); });
+$('zout').addEventListener('click', () => { const r = svg.getBoundingClientRect(); zoomAt(1 / 1.3, r.width / 2, r.height / 2); });
+$('fit').addEventListener('click', () => fit(true));
+$('jumps').innerHTML = [['N', 'Centre'], ['W', 'Warrior'], ['G', 'Ranger'], ['M', 'Mage']].map(([c, l]) => `<button class="chip c-${c}" type="button" data-jump="${c}"><span class="dot"></span>${l}</button>`).join('');
+$('jumps').addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (b) jumpTo(b.dataset.jump); });
+
+// search
+let hits = [], hitAt = 0;
+function runSearch() {
+  const q = $('q').value.trim().toLowerCase();
+  for (const n of nodes) n.g.classList.remove('hit');
+  svg.classList.toggle('searching', !!q);
+  const res = $('results');
+  if (!q) { hits = []; res.hidden = true; return; }
+  const words = q.split(/\s+/);
+  hits = nodes.filter(n => n.t !== 'R' && words.every(w => n.plain.includes(w)));
+  hits.sort((a, b) => (b.name.toLowerCase().startsWith(q) - a.name.toLowerCase().startsWith(q)) || (b.name.toLowerCase().includes(q) - a.name.toLowerCase().includes(q)) || a.name.localeCompare(b.name));
+  for (const n of hits) n.g.classList.add('hit');
+  hitAt = 0;
+  const uniq = [], seen = new Set();
+  for (const n of hits) { const key = n.attr ? 'attr:' + n.attr : n.i; if (!seen.has(key)) { seen.add(key); uniq.push(n); } }
+  res.innerHTML = (uniq.length ? uniq.slice(0, 40).map((n, k) => `<li><button type="button" class="${k === 0 ? 'at' : ''}" data-node="${n.i}"><span>${esc(n.name)}${n.attr ? ` <span class="m">×${hits.filter(h => h.attr === n.attr).length}</span>` : ''}</span><span class="m">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''}</span></button></li>`).join('')
+    : '<li class="note">Nothing matches. Try a word from an effect, like "fire" or "stamina".</li>') + (uniq.length ? `<li class="note">${hits.length} on the map are lit up.</li>` : '');
+  res.hidden = false;
+}
+$('q').addEventListener('input', runSearch);
+$('q').addEventListener('keydown', e => {
+  const btns = [...$('results').querySelectorAll('button')];
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); if (!btns.length) return; hitAt = clamp(hitAt + (e.key === 'ArrowDown' ? 1 : -1), 0, btns.length - 1); btns.forEach((b, k) => b.classList.toggle('at', k === hitAt)); btns[hitAt].scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'Enter' && btns[hitAt]) { e.preventDefault(); btns[hitAt].click(); }
+  else if (e.key === 'Escape') { $('q').value = ''; runSearch(); wrap.focus(); }
+});
+$('results').addEventListener('click', e => { const b = e.target.closest('[data-node]'); if (!b) return; const i = +b.dataset.node; select(i); centreOn(nodes[i].x, nodes[i].y, Math.max(V.s, .6), true); });
+
+// saves and codes
+$('buildName').addEventListener('input', () => { S.name = $('buildName').value.slice(0, 60); persist(); });
+$('btnSave').addEventListener('click', () => {
+  const list = store.get(LS_SAVES, []), name = S.name.trim() || 'Untitled build';
+  const k = list.findIndex(s => s.name === name);
+  const rec = { name, code: encode(), at: Date.now() };
+  if (k >= 0) list[k] = rec; else list.unshift(rec);
+  store.set(LS_SAVES, list.slice(0, 60)); paintSaves();
+  toast(store.get(LS_SAVES, null) ? (k >= 0 ? `Updated "${name}".` : `Saved "${name}".`) : 'This browser is blocking storage, so nothing was saved. Copy the code instead.');
+});
+$('saves').addEventListener('click', e => {
+  const b = e.target.closest('[data-save]'); if (!b) return;
+  const row = b.closest('[data-k]'), k = +row.dataset.k, list = store.get(LS_SAVES, []), s = list[k];
+  if (!s) return;
+  if (b.dataset.save === 'load') { if (loadCode(s.code, s.name)) toast(`Loaded "${s.name}".`); }
+  else if (b.dataset.save === 'del') { row.innerHTML = `<span class="meta">Delete it?</span><button class="btn danger" data-save="yes">Delete</button><button class="btn" data-save="no">Keep</button>`; }
+  else if (b.dataset.save === 'yes') { list.splice(k, 1); store.set(LS_SAVES, list); paintSaves(); toast(`Deleted "${s.name}".`); }
+  else if (b.dataset.save === 'no') paintSaves();
+});
+$('btnCopyCode').addEventListener('click', () => copy(encode(), 'Build code copied.', $('codeOut')));
+$('btnCopyLink').addEventListener('click', () => copy(`${SHARE_BASE}#${encode()}`, 'Link copied. Opening it loads this build.'));
+$('btnLoadCode').addEventListener('click', () => { if (loadCode($('codeIn').value)) { $('codeIn').value = ''; toast('Build loaded.'); } });
+$('codeIn').addEventListener('keydown', e => { if (e.key === 'Enter') $('btnLoadCode').click(); });
+$('btnExample').addEventListener('click', loadExample);
+
+// ---------- start ----------
+(function start() {
+  const cur = store.get(LS_CUR, null);
+  const fromHash = decode(decodeURIComponent((location.hash || '').slice(1)));
+  if (cur) { S.allowOver = !!cur.allowOver; if (cur.tab) S.tab = cur.tab; }
+  if (fromHash) { restore(fromHash); S.name = ''; }
+  else if (cur && decode(cur.code)) { restore(decode(cur.code)); S.name = cur.name || ''; }
+  else { const ex = buildExample(); lvl = ex.lv; worn = ex.worn; Object.assign(S, { level: EXAMPLE.level, wells: EXAMPLE.wells, roots: EXAMPLE.roots, flame: EXAMPLE.flame, name: EXAMPLE.name }); }
+  syncInputs(); setTab(S.tab);
+  requestAnimationFrame(() => { fit(); changed(); });
+  let last = 0;
+  new ResizeObserver(() => { const w = svg.clientWidth; if (Math.abs(w - last) > 40) { last = w; fit(); } }).observe(svg);
+})();
+</script>

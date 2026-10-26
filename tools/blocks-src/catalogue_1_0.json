@@ -1,0 +1,119 @@
+[
+ {
+  "n": "Ancient Beacon Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#d0a654",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ancient-beacon-block.webp"
+ },
+ {
+  "n": "Ancient Circles Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#5f676d",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ancient-circles-block.webp"
+ },
+ {
+  "n": "Ancient Dungeon Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#69737f",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ancient-dungeon-block.webp"
+ },
+ {
+  "n": "Ancient Stone Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#57616d",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ancient-stone-block.webp"
+ },
+ {
+  "n": "Weathered Ancient Stone Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#8c8367",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/weathered-ancient-stone-block.webp"
+ },
+ {
+  "n": "Moonstone Block",
+  "g": "Stone blocks",
+  "k": "wall",
+  "c": "#8a959a",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/moonstone-block.webp"
+ },
+ {
+  "n": "Ancient Gold Block",
+  "g": "Other blocks",
+  "k": "wall",
+  "c": "#6c6b5f",
+  "r": "Cinder's Cradle",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ancient-gold-block.webp"
+ },
+ {
+  "n": "Ornate Wood Block",
+  "g": "Wood blocks",
+  "k": "wall",
+  "c": "#5b5b5e",
+  "r": "Revelwood",
+  "u": "New in 1.0 · made at the Workbench",
+  "icon": "https://www.enshrouded.tools/img/items/ornate-wood-block.webp"
+ },
+ {
+  "n": "Ivy",
+  "g": "Overgrowth",
+  "k": "wall",
+  "c": "#839367",
+  "r": "Springlands",
+  "u": "made at the Farmer",
+  "icon": "https://www.enshrouded.tools/img/items/ivy.webp"
+ },
+ {
+  "n": "Climbing Rose",
+  "g": "Overgrowth",
+  "k": "wall",
+  "c": "#a0917c",
+  "r": "Revelwood",
+  "u": "made at the Farmer",
+  "icon": "https://www.enshrouded.tools/img/items/climbing-rose.webp"
+ },
+ {
+  "n": "Mycelium (overgrowth)",
+  "g": "Overgrowth",
+  "k": "wall",
+  "c": "#a39e94",
+  "r": "Nomad Highlands",
+  "u": "made at the Farmer",
+  "icon": "https://www.enshrouded.tools/img/items/mycelium-decoration.webp"
+ },
+ {
+  "n": "Wisteria",
+  "g": "Overgrowth",
+  "k": "wall",
+  "c": "#8c8388",
+  "r": "Veilwater Basin",
+  "u": "made at the Farmer",
+  "icon": "https://www.enshrouded.tools/img/items/wisteria.webp"
+ },
+ {
+  "n": "Underwater Overgrowth",
+  "g": "Overgrowth",
+  "k": "wall",
+  "c": "#818c41",
+  "r": "",
+  "u": "made at the Farmer",
+  "icon": "https://www.enshrouded.tools/img/items/underwater-overgrowth.webp"
+ }
+]

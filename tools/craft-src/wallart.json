@@ -1,0 +1,5748 @@
+{
+ "fetched": "2026-10-20",
+ "notes": "85 wall art and textiles in 1.0 (45 banners and flags, 7 rugs and mats, 8 paintings, 6 emblems, 4 signs, 10 wall flowers and wreaths, 5 tapestries). Source: enshrouded.tools item pages, read from the game files (build 25988036); every recipe is likely-1.0 (datamined, not checked in game). `region` is the first region where you could make it: the latest region its recipe tree reaches (raw resources where first found, crafters where rescued, every station on the way). `comfort` is the comfort it gives (type and value), `resist` any resistance it adds, and `unlock` the site's text for what unlocks the recipe. Sizes in blocks aren't published anywhere: `size` (blocks, h and w) is on the ones measured in game. Items that stand for planner library types in base-objects.json get these details merged in by make_craft_js.py.",
+ "byRegion": {
+  "Springlands": 3,
+  "Revelwood": 11,
+  "Nomad Highlands": 6,
+  "Kindlewastes": 23,
+  "Albaneve Summits": 22,
+  "Veilwater Basin": 6,
+  "Cinder's Cradle": 5,
+  "unknown": 9
+ },
+ "notCrafted": [
+  "Diamond Wall Emblem",
+  "Emblem Of The Flameborn",
+  "Flower Wreath (Twitch drop)",
+  "Spellweaver Standing Banner",
+  "Spellweaver Wall Banner",
+  "Vanguard Standing Banner",
+  "Vanguard Wall Banner",
+  "Wildheart Standing Banner",
+  "Wildheart Wall Banner"
+ ],
+ "duplicates": [],
+ "items": [
+  {
+   "name": "Gormander's War Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 6
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Mint Mushroom Meat",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Mint Mushroom Meat",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gormanders-war-banner-i"
+   ]
+  },
+  {
+   "name": "Gormander's War Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 4
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 3
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Mint Mushroom Meat",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Cade Hawthorn the Carpenter and pick up Mint Mushroom Meat",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/gormanders-war-banner-ii"
+   ]
+  },
+  {
+   "name": "Broken Hollow Halls Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 15
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 15
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 50
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 4
+    },
+    {
+     "item": "Saffron",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/broken-hollow-halls-banner"
+   ]
+  },
+  {
+   "name": "Giant Hollow Halls Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 15
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 15
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 150
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 15
+    },
+    {
+     "item": "Saffron",
+     "qty": 5
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/giant-hollow-halls-banner"
+   ]
+  },
+  {
+   "name": "Jezmina's War Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 6
+    },
+    {
+     "item": "Saffron",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 3
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Saffron",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/jezminas-war-banner-i"
+   ]
+  },
+  {
+   "name": "Jezmina's War Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 4
+    },
+    {
+     "item": "Saffron",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 3
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Saffron",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/jezminas-war-banner-ii"
+   ]
+  },
+  {
+   "name": "Long Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 2
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Fabric",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/long-wall-banner"
+   ]
+  },
+  {
+   "name": "Medium Hollow Halls Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 10
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 10
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 50
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 4
+    },
+    {
+     "item": "Saffron",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/medium-hollow-halls-banner"
+   ]
+  },
+  {
+   "name": "Ornate Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 4
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 4
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Fabric",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ornate-wall-banner"
+   ]
+  },
+  {
+   "name": "Vorgoth's War Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 6
+    },
+    {
+     "item": "Sulfur",
+     "qty": 3
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Sulfur",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Sulfur",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vorgoths-war-banner-i"
+   ]
+  },
+  {
+   "name": "Vorgoth's War Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 4
+    },
+    {
+     "item": "Sulfur",
+     "qty": 3
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Sulfur",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Sulfur",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vorgoths-war-banner-ii"
+   ]
+  },
+  {
+   "name": "Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Charcoal",
+     "qty": 2
+    },
+    {
+     "item": "Iron Bars",
+     "qty": 2
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Fabric",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-banner"
+   ]
+  },
+  {
+   "name": "Big Blue Wall Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 3
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-blue-wall-banner-i"
+   ]
+  },
+  {
+   "name": "Big Blue Wall Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 3
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-blue-wall-banner-ii"
+   ]
+  },
+  {
+   "name": "Big Red Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 3
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-red-wall-banner"
+   ]
+  },
+  {
+   "name": "Big Yellow Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 3
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-yellow-wall-banner"
+   ]
+  },
+  {
+   "name": "Blue Wall Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 2
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-wall-banner-i"
+   ]
+  },
+  {
+   "name": "Blue Wall Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 2
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-wall-banner-ii"
+   ]
+  },
+  {
+   "name": "Flag Pole I",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-i"
+   ]
+  },
+  {
+   "name": "Flag Pole II",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-ii"
+   ]
+  },
+  {
+   "name": "Flag Pole III",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-iii"
+   ]
+  },
+  {
+   "name": "Flag Pole IV",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-iv"
+   ]
+  },
+  {
+   "name": "Flag Pole V",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-v"
+   ]
+  },
+  {
+   "name": "Flag Pole VI",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 2,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 4
+    },
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Green Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Violet Fabric",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flag-pole-vi"
+   ]
+  },
+  {
+   "name": "Hollow's Eve Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Collector",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "String",
+     "qty": 2
+    },
+    {
+     "item": "Torn Cloth",
+     "qty": 5
+    },
+    {
+     "item": "Mauveine",
+     "qty": 2
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 2
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    },
+    {
+     "item": "White Glowing Substance",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Mauveine (Shroud Vapor (Enshrouded Ice))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Alden Crowley the Collector and pick up Mauveine",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/hollows-eve-banner"
+   ]
+  },
+  {
+   "name": "Keen Games Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Silver Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 3
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Silver Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up a Keen Games Banner",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/keen-games-banner"
+   ]
+  },
+  {
+   "name": "Red Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/red-wall-banner"
+   ]
+  },
+  {
+   "name": "Yellow Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wool",
+     "qty": 2
+    },
+    {
+     "item": "Yellow Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Wool (Spinning Machine (Conifer Logs))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Wool",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/yellow-wall-banner"
+   ]
+  },
+  {
+   "name": "Horizontal Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/horizontal-banner-i"
+   ]
+  },
+  {
+   "name": "Horizontal Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/horizontal-banner-ii"
+   ]
+  },
+  {
+   "name": "Vertical Banner I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vertical-banner-i"
+   ]
+  },
+  {
+   "name": "Vertical Banner II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vertical-banner-ii"
+   ]
+  },
+  {
+   "name": "Vertical Banner III",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vertical-banner-iii"
+   ]
+  },
+  {
+   "name": "Vertical Banner IV",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Tropical Wood",
+     "qty": 2
+    },
+    {
+     "item": "Red Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Daylily",
+     "qty": 2
+    }
+   ],
+   "region": "Veilwater Basin",
+   "regionBy": "Tropical Wood",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Daylily",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vertical-banner-iv"
+   ]
+  },
+  {
+   "name": "Standing Banner of the Ancients I",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Moonstone Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Moonstone Dust (Moonstone)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Moonstone Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/standing-banner-of-the-ancients-i"
+   ]
+  },
+  {
+   "name": "Standing Banner of the Ancients II",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Moonstone Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Moonstone Dust (Moonstone)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Moonstone Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/standing-banner-of-the-ancients-ii"
+   ]
+  },
+  {
+   "name": "Wall Banner of the Ancients I",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Moonstone Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Moonstone Dust (Moonstone)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Moonstone Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-banner-of-the-ancients-i"
+   ]
+  },
+  {
+   "name": "Wall Banner of the Ancients II",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Moonstone Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Moonstone Dust (Moonstone)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Moonstone Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-banner-of-the-ancients-ii"
+   ]
+  },
+  {
+   "name": "Wall Banner of the Ancients III",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Gold Bars",
+     "qty": 1
+    },
+    {
+     "item": "Blue Fabric",
+     "qty": 2
+    },
+    {
+     "item": "Moonstone Dust",
+     "qty": 1
+    }
+   ],
+   "region": "Cinder's Cradle",
+   "regionBy": "Moonstone Dust (Moonstone)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Valory the Bard and pick up Moonstone Dust",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-banner-of-the-ancients-iii"
+   ]
+  },
+  {
+   "name": "Spellweaver Standing Banner",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/spellweaver-standing-banner"
+   ]
+  },
+  {
+   "name": "Spellweaver Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/spellweaver-wall-banner"
+   ]
+  },
+  {
+   "name": "Vanguard Standing Banner",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vanguard-standing-banner"
+   ]
+  },
+  {
+   "name": "Vanguard Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/vanguard-wall-banner"
+   ]
+  },
+  {
+   "name": "Wildheart Standing Banner",
+   "category": "Banners and flags",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wildheart-standing-banner"
+   ]
+  },
+  {
+   "name": "Wildheart Wall Banner",
+   "category": "Banners and flags",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wildheart-wall-banner"
+   ]
+  },
+  {
+   "name": "Diamond Wall Emblem I",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 3
+    },
+    {
+     "item": "Charcoal",
+     "qty": 3
+    },
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Scrappy Sword",
+     "qty": 4
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "unlock": "rescue Valory the Bard and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/diamond-wall-emblem-i"
+   ]
+  },
+  {
+   "name": "Diamond Wall Emblem II",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 5
+    },
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Scrappy Sword",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "unlock": "rescue Valory the Bard and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/diamond-wall-emblem-ii"
+   ]
+  },
+  {
+   "name": "Shield Wall Emblem I",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 5
+    },
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Scrappy Sword",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "unlock": "rescue Valory the Bard and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/shield-wall-emblem-i"
+   ]
+  },
+  {
+   "name": "Shield Wall Emblem II",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Iron Bars",
+     "qty": 5
+    },
+    {
+     "item": "Charcoal",
+     "qty": 5
+    },
+    {
+     "item": "Nails",
+     "qty": 3
+    },
+    {
+     "item": "Scrappy Sword",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Iron Bars (Iron Ore)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "unlock": "rescue Valory the Bard and pick up Iron Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/shield-wall-emblem-ii"
+   ]
+  },
+  {
+   "name": "Diamond Wall Emblem",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/diamond-wall-emblem"
+   ]
+  },
+  {
+   "name": "Emblem Of The Flameborn",
+   "category": "Emblems",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": true,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/emblem-of-the-flameborn"
+   ]
+  },
+  {
+   "name": "\"Boar At Home\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/boar-at-home"
+   ]
+  },
+  {
+   "name": "\"Flower Snake\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flower-snake"
+   ]
+  },
+  {
+   "name": "\"Flower Vase\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flower-vase"
+   ]
+  },
+  {
+   "name": "\"Round-Billed Sailer On One Leg\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "renamedFrom": "\"Flightless Redtail On One Leg\"",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/round-billed-sailer-on-one-leg"
+   ]
+  },
+  {
+   "name": "\"Still Life\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/still-life"
+   ]
+  },
+  {
+   "name": "\"Temple Landscape\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/temple-landscape"
+   ]
+  },
+  {
+   "name": "\"Tower In The Night\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/tower-in-the-night"
+   ]
+  },
+  {
+   "name": "\"Wolf's Choir\"",
+   "category": "Paintings",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Palm Wood Logs",
+     "qty": 1
+    },
+    {
+     "item": "Fabric",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Palm Wood Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 3
+   },
+   "unlock": "rescue Valory the Bard and pick up Saffron",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wolfs-choir"
+   ]
+  },
+  {
+   "name": "Big Straw Mat",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Plant Fiber",
+     "qty": 20
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Hunter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Plant Fiber",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-straw-mat"
+   ]
+  },
+  {
+   "name": "Fur Rug",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Dried Fur",
+     "qty": 1
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Hunter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Animal Fur",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/fur-rug"
+   ]
+  },
+  {
+   "name": "Straw Mat",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Plant Fiber",
+     "qty": 10
+    }
+   ],
+   "region": "Springlands",
+   "regionBy": "Hunter",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 1
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Plant Fiber",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/straw-mat"
+   ]
+  },
+  {
+   "name": "Big Fur Rug",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Dried Fur",
+     "qty": 4
+    },
+    {
+     "item": "Linen",
+     "qty": 2
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Linen (Hand Spindle (Fossilized Bone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 2
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Linen",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-fur-rug"
+   ]
+  },
+  {
+   "name": "Big Furry Straw Mat",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Dried Fur",
+     "qty": 2
+    },
+    {
+     "item": "Leather",
+     "qty": 4
+    },
+    {
+     "item": "Straw",
+     "qty": 10
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Leather (Ammonia Gland)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Leather",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/big-furry-straw-mat"
+   ]
+  },
+  {
+   "name": "Furry Straw Mat",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Dried Fur",
+     "qty": 1
+    },
+    {
+     "item": "Leather",
+     "qty": 1
+    },
+    {
+     "item": "Straw",
+     "qty": 5
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Leather (Ammonia Gland)",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 3
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Leather",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/furry-straw-mat"
+   ]
+  },
+  {
+   "name": "Carpet",
+   "category": "Rugs and mats",
+   "mount": "floor",
+   "rarity": null,
+   "station": null,
+   "crafter": "Hunter",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Fabric",
+     "qty": 5
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 2
+    },
+    {
+     "item": "Saffron",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 2
+    },
+    {
+     "item": "Sulfur",
+     "qty": 2
+    }
+   ],
+   "region": "Kindlewastes",
+   "regionBy": "Saffron",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Carpet",
+    "value": 4
+   },
+   "unlock": "rescue Athalan Skree the Hunter and pick up Fabric",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/carpet"
+   ]
+  },
+  {
+   "name": "Direction Sign",
+   "category": "Signs",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Wood Planks (Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Wood Logs and place a Table Saw or rescue Cade Hawthorn the Carpenter, pick up Wood Logs and pick up Circular Sawblades",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/direction-sign"
+   ]
+  },
+  {
+   "name": "Ground Sign",
+   "category": "Signs",
+   "mount": "floor",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Wood Planks (Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Wood Logs and place a Table Saw or rescue Cade Hawthorn the Carpenter, pick up Wood Logs and pick up Circular Sawblades",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/ground-sign"
+   ]
+  },
+  {
+   "name": "Wall Sign",
+   "category": "Signs",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Workbench",
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Wood Planks",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Wood Planks (Table Saw (Circular Sawblades (Circular Sawblades from Fawnsong Frontier (Carpenter's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "pick up Wood Logs and place a Table Saw or rescue Cade Hawthorn the Carpenter, pick up Wood Logs and pick up Circular Sawblades",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-sign"
+   ]
+  },
+  {
+   "name": "Salon Sign",
+   "category": "Signs",
+   "mount": "wall",
+   "rarity": null,
+   "station": "Decoration Workbench",
+   "crafter": null,
+   "requires": [
+    "Smithing Tools"
+   ],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Nails",
+     "qty": 2
+    },
+    {
+     "item": "Steel Bars",
+     "qty": 2
+    },
+    {
+     "item": "Coal",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Steel Bars (Blast Furnace (Bellows (Bellows from the Forge of Obsidia (Blacksmith's quest))))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Oswald Anders the Blacksmith and pick up Steel Bars",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/salon-sign"
+   ]
+  },
+  {
+   "name": "Wall Tapestry I",
+   "category": "Tapestries",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Conifer Logs",
+     "qty": 1
+    },
+    {
+     "item": "Wool",
+     "qty": 10
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Sulfur",
+     "qty": 1
+    },
+    {
+     "item": "Mauveine",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-i"
+   ]
+  },
+  {
+   "name": "Wall Tapestry II",
+   "category": "Tapestries",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Sulfur",
+     "qty": 1
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 1
+    },
+    {
+     "item": "Wool",
+     "qty": 10
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mauveine",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-ii"
+   ]
+  },
+  {
+   "name": "Wall Tapestry III",
+   "category": "Tapestries",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Sulfur",
+     "qty": 1
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 1
+    },
+    {
+     "item": "Wool",
+     "qty": 10
+    },
+    {
+     "item": "Saffron",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Mauveine",
+     "qty": 1
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 1
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 4
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-iii"
+   ]
+  },
+  {
+   "name": "Wall Tapestry IV",
+   "category": "Tapestries",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Sulfur",
+     "qty": 2
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 2
+    },
+    {
+     "item": "Wool",
+     "qty": 18
+    },
+    {
+     "item": "Saffron",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 2
+    },
+    {
+     "item": "Mauveine",
+     "qty": 2
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-iv"
+   ]
+  },
+  {
+   "name": "Wall Tapestry V",
+   "category": "Tapestries",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Bard",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Sulfur",
+     "qty": 2
+    },
+    {
+     "item": "Conifer Logs",
+     "qty": 2
+    },
+    {
+     "item": "Wool",
+     "qty": 18
+    },
+    {
+     "item": "Saffron",
+     "qty": 2
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 2
+    },
+    {
+     "item": "Mauveine",
+     "qty": 2
+    },
+    {
+     "item": "Mint Mushroom Meat",
+     "qty": 2
+    }
+   ],
+   "region": "Albaneve Summits",
+   "regionBy": "Conifer Logs",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "comfort": {
+    "type": "Trophy",
+    "value": 5
+   },
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/wall-tapestry-v"
+   ]
+  },
+  {
+   "name": "Pink Wall Flower (long pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Long Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Long Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pink-wall-flower-long-pot"
+   ]
+  },
+  {
+   "name": "Pink Wall Flower (small pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Small Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Small Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/pink-wall-flower-small-pot"
+   ]
+  },
+  {
+   "name": "Red Wall Flower (long pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Long Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Long Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/red-wall-flower-long-pot"
+   ]
+  },
+  {
+   "name": "Red Wall Flower (small pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Small Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Small Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/red-wall-flower-small-pot"
+   ]
+  },
+  {
+   "name": "White Wall Flower (long pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Long Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Long Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/white-wall-flower-long-pot"
+   ]
+  },
+  {
+   "name": "White Wall Flower (small pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Small Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Small Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/white-wall-flower-small-pot"
+   ]
+  },
+  {
+   "name": "Yellow Wall Flower (long pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Long Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Long Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/yellow-wall-flower-long-pot"
+   ]
+  },
+  {
+   "name": "Yellow Wall Flower (small pot)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 4,
+   "craftTime": "Instant",
+   "inputs": [
+    {
+     "item": "Small Plant Pot",
+     "qty": 4
+    },
+    {
+     "item": "Flower Soil",
+     "qty": 1
+    },
+    {
+     "item": "Metal Scraps",
+     "qty": 1
+    },
+    {
+     "item": "Charcoal",
+     "qty": 1
+    }
+   ],
+   "region": "Revelwood",
+   "regionBy": "Small Plant Pot (Kiln (Revelwood Stone))",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Lump of Clay",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/yellow-wall-flower-small-pot"
+   ]
+  },
+  {
+   "name": "Flower Wreath",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": "Farmer",
+   "requires": [],
+   "makes": 1,
+   "craftTime": "60s",
+   "inputs": [
+    {
+     "item": "Straw",
+     "qty": 1
+    },
+    {
+     "item": "Indigo Plant",
+     "qty": 1
+    },
+    {
+     "item": "Aureolin Flower",
+     "qty": 1
+    },
+    {
+     "item": "Chamomile",
+     "qty": 1
+    }
+   ],
+   "region": "Nomad Highlands",
+   "regionBy": "Straw",
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "unlock": "rescue Emily Fray the Farmer and pick up Straw",
+   "note": "Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flower-wreath"
+   ]
+  },
+  {
+   "name": "Flower Wreath (Twitch drop)",
+   "category": "Wall flowers and wreaths",
+   "mount": "wall",
+   "rarity": null,
+   "station": null,
+   "crafter": null,
+   "requires": [],
+   "makes": 1,
+   "inputs": [],
+   "found": true,
+   "confidence": "likely-1.0",
+   "newIn1_0": false,
+   "note": "Not crafted: found in the world, not made. Its size in blocks isn't published: measure it in game.",
+   "sources": [
+    "https://www.enshrouded.tools/items/flower-wreath-twitch-drop"
+   ]
+  }
+ ],
+ "resources": {
+  "Wool": {
+   "kind": "crafted",
+   "source": "Spinning Machine",
+   "recipe": {
+    "station": "Spinning Machine",
+    "crafter": null,
+    "requires": [],
+    "makes": 12,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Raw Wool",
+      "qty": 16
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/wool"
+   ]
+  },
+  "Blue Fabric": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": "Loom",
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fabric",
+      "qty": 1
+     },
+     {
+      "item": "Indigo Plant",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/blue-fabric"
+   ]
+  },
+  "Steel Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "10 min",
+    "inputs": [
+     {
+      "item": "Iron Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/steel-bars"
+   ]
+  },
+  "Dried Fur": {
+   "kind": "crafted",
+   "source": "Drying Rack",
+   "recipe": {
+    "station": "Drying Rack",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Animal Fur",
+      "qty": 1
+     },
+     {
+      "item": "Salt",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/dried-fur"
+   ]
+  },
+  "Linen": {
+   "kind": "crafted",
+   "source": "Hand Spindle",
+   "recipe": {
+    "station": "Hand Spindle",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "10s",
+    "inputs": [
+     {
+      "item": "Flax",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/linen"
+   ]
+  },
+  "Leather": {
+   "kind": "crafted",
+   "source": "Tanning Station",
+   "recipe": {
+    "station": "Tanning Station",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "15 min",
+    "inputs": [
+     {
+      "item": "Dried Fur",
+      "qty": 10
+     },
+     {
+      "item": "Salt",
+      "qty": 20
+     },
+     {
+      "item": "Ammonia Gland",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/leather"
+   ]
+  },
+  "Straw": {
+   "kind": "gathered",
+   "source": "Nomad Highlands",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/straw"
+   ]
+  },
+  "Red Fabric": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": "Loom",
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fabric",
+      "qty": 1
+     },
+     {
+      "item": "Sulfur",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/red-fabric"
+   ]
+  },
+  "Plant Fiber": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Plant Fiber is gathered from bushes all over Embervale and also lies around as a loose pickup; bushes can be grown from Shrub Seedlings. Its 38 uses include the Big Straw Mat and Marksman Hood at the Hunter, the Wooden Bed and Ornate Wooden Bed at the Carpenter, Goat Food, the Cat Pillow and Sword Garden Gnome at the Farmer, and the Explosive Barrel.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/plant-fiber"
+   ]
+  },
+  "Yellow Fabric": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": "Loom",
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fabric",
+      "qty": 1
+     },
+     {
+      "item": "Saffron",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/yellow-fabric"
+   ]
+  },
+  "Palm Wood Logs": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/palm-wood-logs"
+   ]
+  },
+  "Fabric": {
+   "kind": "crafted",
+   "source": "Loom",
+   "recipe": {
+    "station": "Loom",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Linen",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fabric"
+   ]
+  },
+  "Saffron": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/saffron"
+   ]
+  },
+  "Indigo Plant": {
+   "kind": "unknown",
+   "source": null,
+   "recipe": null
+  },
+  "Mint Mushroom Meat": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/mint-mushroom-meat"
+   ]
+  },
+  "Sulfur": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sulfur"
+   ]
+  },
+  "Charcoal": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 12,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal"
+   ]
+  },
+  "Iron Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Iron Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-bars"
+   ]
+  },
+  "Torn Cloth": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Torn Cloth comes from drops rather than crafting, and it goes into 90 recipes. These include the Bandage, the Ragged, Fur, Mage, Magician and Alchemist Apprentice armor, and the Tiny Backpack made by hand. At the Ectoplasm Press it goes into Ectoplasm, Greater Ectoplasm and Excellent Ectoplasm, and it is also used for supply sacks, war banners, showcases and stone furniture.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/torn-cloth"
+   ]
+  },
+  "Nails": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 2,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Metal Scraps",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nails"
+   ]
+  },
+  "Scrappy Sword": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 1
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 3
+     },
+     {
+      "item": "Nails",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/scrappy-sword"
+   ]
+  },
+  "Wood Planks": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 2,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-planks"
+   ]
+  },
+  "Conifer Logs": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/conifer-logs"
+   ]
+  },
+  "String": {
+   "kind": "crafted",
+   "source": "Manual Crafting",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Plant Fiber or Paper Reed",
+      "qty": 3,
+      "anyOf": [
+       "Plant Fiber",
+       "Paper Reed"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/string"
+   ]
+  },
+  "Green Fabric": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": "Loom",
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fabric",
+      "qty": 1
+     },
+     {
+      "item": "Mint Mushroom Meat",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/green-fabric"
+   ]
+  },
+  "Violet Fabric": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": "Loom",
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fabric",
+      "qty": 1
+     },
+     {
+      "item": "Mauveine",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/violet-fabric"
+   ]
+  },
+  "Aureolin Flower": {
+   "kind": "gathered",
+   "source": "Springlands",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/aureolin-flower"
+   ]
+  },
+  "Chamomile": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/chamomile"
+   ]
+  },
+  "Mauveine": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Tar",
+      "qty": 5
+     },
+     {
+      "item": "Shroud Vapor",
+      "qty": 1
+     },
+     {
+      "item": "Nitrate",
+      "qty": 1
+     },
+     {
+      "item": "Sulfur",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/mauveine"
+   ]
+  },
+  "White Glowing Substance": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 20,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Springlands Dirt",
+      "qty": 7
+     },
+     {
+      "item": "Mycelium",
+      "qty": 10
+     },
+     {
+      "item": "Bonemeal",
+      "qty": 20
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/white-glowing-substance"
+   ]
+  },
+  "Tropical Wood": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/tropical-wood"
+   ]
+  },
+  "Daylily": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/daylily"
+   ]
+  },
+  "Silver Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "10 min",
+    "inputs": [
+     {
+      "item": "Silver Ore",
+      "qty": 20
+     },
+     {
+      "item": "Coal",
+      "qty": 40
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-bars"
+   ]
+  },
+  "Long Plant Pot": {
+   "kind": "crafted",
+   "source": "Kiln",
+   "recipe": {
+    "station": "Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 4,
+    "time": "30s",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 1
+     },
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/long-plant-pot"
+   ]
+  },
+  "Flower Soil": {
+   "kind": "crafted",
+   "source": "Farmer",
+   "recipe": {
+    "station": null,
+    "crafter": "Farmer",
+    "requires": [],
+    "makes": 10,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Farm Soil",
+      "qty": 10
+     },
+     {
+      "item": "Honey",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/flower-soil"
+   ]
+  },
+  "Metal Scraps": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Metal Scraps are a common drop from Scavengers, and they can also be salvaged from destroyed metal objects or picked up loose in the world. They go into Nails and Metal Sheets and 112 other recipes. Those include stations such as the Forge, Kiln and Cooking Station, the Scrappy tools, the Explorer armor set, scrap pots, vats and pans, crypt torches and the Grappling Hook.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-scraps"
+   ]
+  },
+  "Small Plant Pot": {
+   "kind": "crafted",
+   "source": "Kiln",
+   "recipe": {
+    "station": "Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 4,
+    "time": "30s",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 1
+     },
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/small-plant-pot"
+   ]
+  },
+  "Coal": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/coal"
+   ]
+  },
+  "Gold Bars": {
+   "kind": "crafted",
+   "source": "Blast Furnace",
+   "recipe": {
+    "station": "Blast Furnace",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "11 min",
+    "inputs": [
+     {
+      "item": "Coal",
+      "qty": 40
+     },
+     {
+      "item": "Gold Ore or Archaic Shards",
+      "qty": 20,
+      "anyOf": [
+       "Gold Ore",
+       "Archaic Shards"
+      ]
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-bars"
+   ]
+  },
+  "Moonstone Dust": {
+   "kind": "crafted",
+   "source": "Mill",
+   "recipe": {
+    "station": "Mill",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Moonstone",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/moonstone-dust"
+   ]
+  },
+  "Workbench": {
+   "kind": "crafted",
+   "source": "By hand",
+   "recipe": {
+    "station": null,
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 3
+     },
+     {
+      "item": "Any wood",
+      "qty": 8,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/workbench"
+   ]
+  },
+  "Decoration Workbench": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Nails",
+      "qty": 2
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/decoration-workbench"
+   ]
+  },
+  "Smithing Tools": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 5
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/smithing-tools"
+   ]
+  },
+  "Raw Wool": {
+   "kind": "gathered",
+   "source": "Albaneve Summits",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/raw-wool"
+   ]
+  },
+  "Spinning Machine": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Conifer Logs",
+      "qty": 3
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 5
+     },
+     {
+      "item": "Linen",
+      "qty": 1
+     },
+     {
+      "item": "Spinning Wheel",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/spinning-machine"
+   ]
+  },
+  "Indigo Plant (material)": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/indigo-plant-material"
+   ]
+  },
+  "Loom": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 5
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 10
+     },
+     {
+      "item": "Fossilized Bone",
+      "qty": 5
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 1
+     },
+     {
+      "item": "Linen",
+      "qty": 30
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/loom"
+   ]
+  },
+  "Iron Ore": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/iron-ore"
+   ]
+  },
+  "Blast Furnace": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Bellows",
+      "qty": 1
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Any sand",
+      "qty": 30,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/blast-furnace"
+   ]
+  },
+  "Animal Fur": {
+   "kind": "crafted",
+   "source": "Hunter",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "String",
+      "qty": 1
+     },
+     {
+      "item": "Wet Boot or Fur Patch",
+      "qty": 3,
+      "anyOf": [
+       "Wet Boot",
+       "Fur Patch"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/animal-fur"
+   ]
+  },
+  "Salt": {
+   "kind": "gathered",
+   "source": "Springlands Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/salt"
+   ]
+  },
+  "Drying Rack": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 10
+     },
+     {
+      "item": "String",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/drying-rack"
+   ]
+  },
+  "Flax": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/flax"
+   ]
+  },
+  "Hand Spindle": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fossilized Bone",
+      "qty": 3
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 4
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/hand-spindle"
+   ]
+  },
+  "Ammonia Gland": {
+   "kind": "gathered",
+   "source": "Fell Mushroom Crabs, Nomad Highlands Shroud and Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/ammonia-gland"
+   ]
+  },
+  "Tanning Station": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 10
+     },
+     {
+      "item": "Nails",
+      "qty": 4
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Tar",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/tanning-station"
+   ]
+  },
+  "Charcoal Kiln": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/charcoal-kiln"
+   ]
+  },
+  "Smelter": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 50
+     },
+     {
+      "item": "Crucible",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/smelter"
+   ]
+  },
+  "Wood Logs": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Wood Logs come from chopping down trees, with bigger trees giving more, and from breaking wooden objects. Twigs and Resin drop with them. Their 166 uses include stations such as the Forge, Loom, Kitchen, Seedbed and Table Saw, crude and carved wooden furniture, doors, fences and palisades, weapon racks and wall mounts, and weapons like the Club, Spiked Club and Wooden Shield.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-logs"
+   ]
+  },
+  "Table Saw": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 8
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Circular Sawblades",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/table-saw"
+   ]
+  },
+  "Tar": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 20,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 24,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 6,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tar"
+   ]
+  },
+  "Shroud Vapor": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "2 min",
+    "inputs": [
+     {
+      "item": "Enshrouded Ice",
+      "qty": 10
+     },
+     {
+      "item": "Active Mycelium",
+      "qty": 15
+     },
+     {
+      "item": "Salt",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/shroud-vapor"
+   ]
+  },
+  "Nitrate": {
+   "kind": "crafted",
+   "source": "Laboratory",
+   "recipe": {
+    "station": "Laboratory",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Shroud Sand",
+      "qty": 5
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 1
+     },
+     {
+      "item": "Salt",
+      "qty": 1
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/nitrate"
+   ]
+  },
+  "Laboratory": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Scientific Instruments",
+      "qty": 1
+     },
+     {
+      "item": "Athanor",
+      "qty": 1
+     },
+     {
+      "item": "Fired Bricks",
+      "qty": 40
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 10
+     },
+     {
+      "item": "Glass",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/laboratory"
+   ]
+  },
+  "Springlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Springlands Dirt is a terrain material found in the Springlands. Its 18 uses include Farm Soil at the Farmer, Workbench blocks such as the Dirt Road Block, Field Stones and Limestone Block, Springlands Rubble, Goo and White Glowing Substance at the Alchemist, the Climbing Rose and the Crucible.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/springlands-dirt"
+   ]
+  },
+  "Mycelium (material)": {
+   "kind": "gathered",
+   "source": "Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/mycelium-material"
+   ]
+  },
+  "Bonemeal": {
+   "kind": "crafted",
+   "source": "Grinding Stones",
+   "recipe": {
+    "station": "Grinding Stones",
+    "crafter": null,
+    "requires": [],
+    "makes": 3,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Bones",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bonemeal"
+   ]
+  },
+  "Wood Acid": {
+   "kind": "crafted",
+   "source": "Charcoal Kiln",
+   "recipe": {
+    "station": "Charcoal Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 15,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     },
+     {
+      "item": "Any dirt",
+      "qty": 3,
+      "anyOf": [
+       "Springlands Dirt",
+       "Revelwood Dirt",
+       "Blackmire Dirt",
+       "Nomad Highlands Dirt",
+       "Albaneve Summits Dirt",
+       "Veilwater Basin Dirt",
+       "Cinder's Cradle Dirt"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/wood-acid"
+   ]
+  },
+  "Silver Ore": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/silver-ore"
+   ]
+  },
+  "Lump of Clay": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/lump-of-clay"
+   ]
+  },
+  "Kiln": {
+   "kind": "crafted",
+   "source": "Carpenter",
+   "recipe": {
+    "station": null,
+    "crafter": "Carpenter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Revelwood Stone",
+      "qty": 50
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Twigs",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/kiln"
+   ]
+  },
+  "Farm Soil": {
+   "kind": "crafted",
+   "source": "Farmer",
+   "recipe": {
+    "station": null,
+    "crafter": "Farmer",
+    "requires": [],
+    "makes": 10,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Springlands Dirt",
+      "qty": 7
+     },
+     {
+      "item": "Bonemeal",
+      "qty": 3
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/farm-soil"
+   ]
+  },
+  "Honey": {
+   "kind": "crafted",
+   "source": "Beehive",
+   "recipe": {
+    "station": "Beehive",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "3 min",
+    "inputs": [
+     {
+      "item": "Sugar",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/honey"
+   ]
+  },
+  "Moonstone": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/moonstone"
+   ]
+  },
+  "Mill": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Planks",
+      "qty": 30
+     },
+     {
+      "item": "Shell Limestone",
+      "qty": 20
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 10
+     },
+     {
+      "item": "Improved Millstone",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/mill"
+   ]
+  },
+  "Spinning Wheel": {
+   "kind": "crafted",
+   "source": "Huntress",
+   "recipe": {
+    "station": null,
+    "crafter": "Hunter",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Wood Logs",
+      "qty": 2
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 2
+     },
+     {
+      "item": "Fossilized Bone",
+      "qty": 3
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 2
+     },
+     {
+      "item": "Nails",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/spinning-wheel"
+   ]
+  },
+  "Fossilized Bone": {
+   "kind": "gathered",
+   "source": "Giant Fossils",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fossilized-bone"
+   ]
+  },
+  "Bronze Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Copper Bars",
+      "qty": 7
+     },
+     {
+      "item": "Tin Bars",
+      "qty": 3
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bronze-bars"
+   ]
+  },
+  "Fired Bricks": {
+   "kind": "crafted",
+   "source": "Kiln",
+   "recipe": {
+    "station": "Kiln",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "30s",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 1
+     },
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/fired-bricks"
+   ]
+  },
+  "Bellows": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Conifer Logs",
+      "qty": 10
+     },
+     {
+      "item": "Leather",
+      "qty": 10
+     },
+     {
+      "item": "Linen",
+      "qty": 5
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/bellows"
+   ]
+  },
+  "Hardwood": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/hardwood"
+   ]
+  },
+  "Bamboo Logs": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/bamboo-logs"
+   ]
+  },
+  "Revelwood Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Dirt is a terrain material found in the Revelwood. The Workbench uses it for Fertile Revelwood Dirt and Revelwood Stone, the Grinding Stones for Revelwood Rubble, and it also goes into the Antique and Flint colors.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-dirt"
+   ]
+  },
+  "Blackmire Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Blackmire Dirt is a terrain material that stacks to 1,000. Its one crafting use is Fertile Blackmire Dirt, made at the Workbench.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/blackmire-dirt"
+   ]
+  },
+  "Nomad Highlands Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Nomad Highlands Dirt is a terrain material found in the Nomad Highlands. It has five uses: Fertile Nomad Highlands Dirt and the Castle Wall Stone Block at the Workbench, Nomad Highlands Rubble at the Grinding Stones, and the Deceit and Forgotten Library colors.",
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/nomad-highlands-dirt"
+   ]
+  },
+  "Albaneve Summits Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Albaneve Summits Dirt is the Common terrain material dug up in the Albaneve Summits, stacking to 1,000.",
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/albaneve-summits-dirt"
+   ]
+  },
+  "Veilwater Basin Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Veilwater Basin Dirt is a terrain material found in the Veilwater Basin. It has four uses: Fertile Veilwater Basin Dirt at the Workbench, Veilwater Basin Rubble at the Grinding Stones, Wisteria at the Farmer and the Algae Seedling at the Seedbed.",
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-dirt"
+   ]
+  },
+  "Cinder's Cradle Dirt": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Cinder's Cradle Dirt is a terrain material that stacks to 1,000. It is an ingredient of Cinder's Cradle Rubble at the Grinding Stones and of Fertile Cinder's Cradle Dirt and Fertile Altered Dirt at the Workbench.",
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-dirt"
+   ]
+  },
+  "Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Stone is picked up as small stones lying on the ground all over Embervale, Shroud included. Larger stones and rock formations in the Springlands and Revelwood can be mined with a pickaxe. Its 97 uses start with the Axe, made by hand, and the Pickaxe, and run through stations such as the Forge, Kiln, Mill, Charcoal Kiln and Grinding Stones to stone furniture, coffins, statues and building blocks.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/stone"
+   ]
+  },
+  "Crucible": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Lump of Clay",
+      "qty": 3
+     },
+     {
+      "item": "Springlands Dirt",
+      "qty": 3
+     },
+     {
+      "item": "Any sand",
+      "qty": 5,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/crucible"
+   ]
+  },
+  "Forge": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Stone",
+      "qty": 30
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 12
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/forge"
+   ]
+  },
+  "Circular Sawblades": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 2
+     },
+     {
+      "item": "Charcoal",
+      "qty": 6
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/circular-sawblades"
+   ]
+  },
+  "Paper Reed": {
+   "kind": "gathered",
+   "source": "Near Lakes",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/paper-reed"
+   ]
+  },
+  "Enshrouded Ice": {
+   "kind": "gathered",
+   "source": "Albaneve Summits Shroud",
+   "recipe": null,
+   "region": "Albaneve Summits",
+   "sources": [
+    "https://www.enshrouded.tools/items/enshrouded-ice"
+   ]
+  },
+  "Active Mycelium": {
+   "kind": "gathered",
+   "source": "Springlands Shroud",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/active-mycelium"
+   ]
+  },
+  "Shroud Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes Shroud",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/shroud-sand"
+   ]
+  },
+  "Scientific Instruments": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Glass",
+      "qty": 10
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 10
+     },
+     {
+      "item": "Iron Bars",
+      "qty": 5
+     },
+     {
+      "item": "Charcoal",
+      "qty": 20
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/scientific-instruments"
+   ]
+  },
+  "Athanor": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Glass",
+      "qty": 10
+     },
+     {
+      "item": "Bronze Bars",
+      "qty": 10
+     },
+     {
+      "item": "Lump of Clay",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/athanor"
+   ]
+  },
+  "Copper Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Copper Ore",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-bars"
+   ]
+  },
+  "Glass": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "5 min",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Any sand",
+      "qty": 30,
+      "anyOf": [
+       "Sand",
+       "Fine Sand",
+       "Veilwater Basin Sand",
+       "Cinder's Cradle Sand"
+      ]
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/glass"
+   ]
+  },
+  "Bones": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Bones are a common drop from wildlife and Hollow across Embervale, and bone piles, including those in and around the Hollow Halls, can be mined for more. They feed 46 recipes, among them the Flute at the Bard, Scout Pants at the Hunter, the Reaper's Wand at the Alchemist, and crypt furniture and the Bone Arrow at the Collector.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/bones"
+   ]
+  },
+  "Grinding Stones": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Flintstone",
+      "qty": 10
+     },
+     {
+      "item": "Stone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/grinding-stones"
+   ]
+  },
+  "Revelwood Stone": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Revelwood Stone is a terrain material that stacks to 1,000, with 1,867 placed in the world. It goes into nine recipes, including the Kiln, the Cooking Station and Revelwood Rubble at the Grinding Stones.",
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/revelwood-stone"
+   ]
+  },
+  "Twigs": {
+   "kind": "crafted",
+   "source": "Table Saw",
+   "recipe": {
+    "station": "Table Saw",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "60s",
+    "inputs": [
+     {
+      "item": "Any wood",
+      "qty": 1,
+      "anyOf": [
+       "Wood Logs",
+       "Hardwood",
+       "Palm Wood Logs",
+       "Conifer Logs",
+       "Bamboo Logs",
+       "Tropical Wood"
+      ]
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/twigs"
+   ]
+  },
+  "Sugar": {
+   "kind": "crafted",
+   "source": "Cooking Station",
+   "recipe": {
+    "station": "Cooking Station",
+    "crafter": null,
+    "requires": [],
+    "makes": 5,
+    "time": "90s",
+    "inputs": [
+     {
+      "item": "Sugar Cane",
+      "qty": 10
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/sugar"
+   ]
+  },
+  "null": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "sources": [
+    "https://www.enshrouded.tools/items/beehive"
+   ]
+  },
+  "Gold Ore": {
+   "kind": "gathered",
+   "source": "Veilwater Basin, Underwater",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/gold-ore"
+   ]
+  },
+  "Archaic Shards": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle, Ancient Constructs",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/archaic-shards"
+   ]
+  },
+  "Shell Limestone": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/shell-limestone"
+   ]
+  },
+  "Improved Millstone": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": "Alchemy Station",
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Shell Limestone",
+      "qty": 30
+     },
+     {
+      "item": "Flintstone",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/improved-millstone"
+   ]
+  },
+  "Tin Bars": {
+   "kind": "crafted",
+   "source": "Smelter",
+   "recipe": {
+    "station": "Smelter",
+    "crafter": null,
+    "requires": [],
+    "makes": 10,
+    "time": "4 min",
+    "inputs": [
+     {
+      "item": "Tin Ore",
+      "qty": 10
+     },
+     {
+      "item": "Charcoal",
+      "qty": 10
+     },
+     {
+      "item": "Wood Acid",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-bars"
+   ]
+  },
+  "Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/sand"
+   ]
+  },
+  "Fine Sand": {
+   "kind": "gathered",
+   "source": "Kindlewastes",
+   "recipe": null,
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/fine-sand"
+   ]
+  },
+  "Veilwater Basin Sand": {
+   "kind": "gathered",
+   "source": "Veilwater Basin",
+   "recipe": null,
+   "region": "Veilwater Basin",
+   "sources": [
+    "https://www.enshrouded.tools/items/veilwater-basin-sand"
+   ]
+  },
+  "Cinder's Cradle Sand": {
+   "kind": "gathered",
+   "source": "Cinder's Cradle",
+   "recipe": null,
+   "region": "Cinder's Cradle",
+   "sources": [
+    "https://www.enshrouded.tools/items/cinders-cradle-sand"
+   ]
+  },
+  "Wet Boot": {
+   "kind": "gathered",
+   "source": "Fishing",
+   "recipe": null,
+   "sources": [
+    "https://www.enshrouded.tools/items/wet-boot"
+   ]
+  },
+  "Fur Patch": {
+   "kind": "gathered",
+   "source": null,
+   "recipe": null,
+   "note": "Fur Patch is a common drop from small wildlife such as rats and bats, found all over Embervale.",
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/fur-patch"
+   ]
+  },
+  "Alchemy Station": {
+   "kind": "crafted",
+   "source": "Alchemist",
+   "recipe": {
+    "station": null,
+    "crafter": "Alchemist",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Fired Bricks",
+      "qty": 20
+     },
+     {
+      "item": "Wood Planks",
+      "qty": 6
+     },
+     {
+      "item": "Nails",
+      "qty": 10
+     },
+     {
+      "item": "Wood Logs",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 5
+     },
+     {
+      "item": "Cauldron",
+      "qty": 1
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/alchemy-station"
+   ]
+  },
+  "Copper Ore": {
+   "kind": "gathered",
+   "source": "Revelwood",
+   "recipe": null,
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/copper-ore"
+   ]
+  },
+  "Flintstone": {
+   "kind": "gathered",
+   "source": "Springlands",
+   "recipe": null,
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/flintstone"
+   ]
+  },
+  "Sugar Cane": {
+   "kind": "gathered",
+   "source": "Nomad Highlands",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/sugar-cane"
+   ]
+  },
+  "Cooking Station": {
+   "kind": "crafted",
+   "source": "Farmer",
+   "recipe": {
+    "station": null,
+    "crafter": "Farmer",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Flintstone",
+      "qty": 4
+     },
+     {
+      "item": "Kettle",
+      "qty": 1
+     },
+     {
+      "item": "Revelwood Stone",
+      "qty": 10
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Revelwood",
+   "sources": [
+    "https://www.enshrouded.tools/items/cooking-station"
+   ]
+  },
+  "Tin Ore": {
+   "kind": "gathered",
+   "source": "Nomad Highlands Shroud",
+   "recipe": null,
+   "region": "Nomad Highlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/tin-ore"
+   ]
+  },
+  "Cauldron": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": "Forge",
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Iron Bars",
+      "qty": 3
+     },
+     {
+      "item": "Copper Bars",
+      "qty": 2
+     },
+     {
+      "item": "Bonemeal",
+      "qty": 15
+     }
+    ]
+   },
+   "region": "Kindlewastes",
+   "sources": [
+    "https://www.enshrouded.tools/items/cauldron"
+   ]
+  },
+  "Kettle": {
+   "kind": "crafted",
+   "source": "Blacksmith",
+   "recipe": {
+    "station": null,
+    "crafter": "Blacksmith",
+    "requires": [],
+    "makes": 1,
+    "time": "Instant",
+    "inputs": [
+     {
+      "item": "Metal Sheets",
+      "qty": 5
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/kettle"
+   ]
+  },
+  "Metal Sheets": {
+   "kind": "crafted",
+   "source": "Forge",
+   "recipe": {
+    "station": "Forge",
+    "crafter": null,
+    "requires": [],
+    "makes": 1,
+    "time": "90s",
+    "inputs": [
+     {
+      "item": "Charcoal",
+      "qty": 2
+     },
+     {
+      "item": "Metal Scraps",
+      "qty": 2
+     }
+    ]
+   },
+   "region": "Springlands",
+   "sources": [
+    "https://www.enshrouded.tools/items/metal-sheets"
+   ]
+  }
+ }
+}

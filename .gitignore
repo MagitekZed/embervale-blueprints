@@ -1,0 +1,11 @@
+# Only the tools are published. Everything else in this folder (notes, build write-ups, assistant
+# instructions) stays private, so this file lists what's allowed rather than what isn't.
+/*
+!/.gitignore
+!/.github/
+!/README.md
+!/tools/
+
+__pycache__/
+*.pyc
+_site/

@@ -1,0 +1,1145 @@
+<title>Flameborn Build Tester</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: one screen. The tree map fills the left; a side panel holds the point budget, the picked skill,
+   the build summary, worn gear and saves. Phones stack the panel under the map. */
+:root {
+  --bg: #e9ebf0;
+  --panel: #f7f8fa;
+  --ink: #1e1b27;
+  --muted: #5d5970;
+  --line: #d3d1dc;
+  --map: #e1dee9;
+  --edge: #b2abc4;
+  --accent: #a8600f;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(168, 96, 15, .14);
+  --gear: #7b3fb8;
+  --gear-ink: #ffffff;
+  --warrior: #bf5530;
+  --ranger: #3b8a32;
+  --mage: #2c69bb;
+  --neutral: #8f7027;
+  --node: #f7f8fa;
+  --good: #2b7a4b;
+  --bad: #b3261e;
+  --shadow: 0 6px 24px rgba(30, 27, 39, .16);
+  --font-display: "Alegreya SC", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Alegreya Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #110f17; --panel: #1a1723; --ink: #ece8f4; --muted: #a29cb3; --line: #2d2939; --map: #0d0b13; --edge: #3b3452;
+    --accent: #f0a84a; --accent-ink: #1c1306; --accent-soft: rgba(240, 168, 74, .16); --gear: #c28bf5; --gear-ink: #1b0f29;
+    --warrior: #e6805a; --ranger: #80c970; --mage: #70aaef; --neutral: #d9b569; --node: #1a1723;
+    --good: #72d39b; --bad: #ff7b70; --shadow: 0 8px 28px rgba(0, 0, 0, .5); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #110f17; --panel: #1a1723; --ink: #ece8f4; --muted: #a29cb3; --line: #2d2939; --map: #0d0b13; --edge: #3b3452;
+  --accent: #f0a84a; --accent-ink: #1c1306; --accent-soft: rgba(240, 168, 74, .16); --gear: #c28bf5; --gear-ink: #1b0f29;
+  --warrior: #e6805a; --ranger: #80c970; --mage: #70aaef; --neutral: #d9b569; --node: #1a1723;
+  --good: #72d39b; --bad: #ff7b70; --shadow: 0 8px 28px rgba(0, 0, 0, .5); color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--bg); color: var(--ink); font: 15px/1.45 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0; box-sizing: border-box;
+}
+*, *::before, *::after { box-sizing: border-box; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.app { height: 100%; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 10px; padding-block: 12px; }
+.top { display: flex; align-items: baseline; gap: 6px 14px; flex-wrap: wrap; }
+.top h1 { font: 700 24px/1.1 var(--font-display); letter-spacing: .02em; margin: 0; text-wrap: balance; }
+.top .sub { color: var(--muted); font-size: 14px; min-width: 0; }
+.main { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 12px; }
+
+/* ---- the map ---- */
+.mapwrap { position: relative; min-height: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--map); touch-action: none; user-select: none; -webkit-user-select: none; }
+.mapwrap:focus-visible { outline-offset: -3px; }
+#map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; }
+#map.panning { cursor: grabbing; }
+#world { transform-origin: 0 0; }
+#world.glide { transition: transform .45s cubic-bezier(.2, .7, .2, 1); }
+@media (prefers-reduced-motion: reduce) { #world.glide { transition: none; } }
+.ring { fill: none; stroke: var(--accent); stroke-opacity: .28; stroke-width: 10; }
+.zone { font: 700 170px var(--font-display); fill: var(--ink); opacity: .13; text-anchor: middle; letter-spacing: .08em; pointer-events: none; }
+#map.mid .zone { opacity: 0; }
+.edge { stroke: var(--edge); stroke-width: 6; stroke-linecap: round; opacity: .6; }
+.edge.half { opacity: 1; }
+.edge.on { stroke: var(--accent); stroke-width: 9; opacity: .95; }
+.edge.path { stroke: var(--accent); stroke-dasharray: 18 14; opacity: 1; stroke-width: 8; }
+.c-W { --cls: var(--warrior); } .c-G { --cls: var(--ranger); } .c-M { --cls: var(--mage); } .c-N { --cls: var(--neutral); }
+.node { cursor: pointer; }
+.node .shape { fill: var(--node); stroke: var(--cls); stroke-width: 7; }
+.node .inner { fill: none; stroke: var(--cls); stroke-width: 4; }
+.node .halo { fill: none; stroke: transparent; stroke-width: 9; }
+.node text { font-family: var(--font-body); font-weight: 700; text-anchor: middle; dominant-baseline: central; fill: var(--ink); pointer-events: none; }
+.node .lv { font-size: 30px; font-variant-numeric: tabular-nums; }
+.t-S .lv { font-size: 34px; }
+.t-A .lv { font-size: 19px; letter-spacing: .04em; }
+.lbls { pointer-events: none; }
+.lbls .lbl { font-size: 30px; font-weight: 500; fill: var(--ink); stroke: var(--map); stroke-width: 9px; paint-order: stroke; stroke-linejoin: round; opacity: 0; }
+#map.near .lbls .lbl { opacity: 1; }
+#map.near .lbls .locked .lbl { opacity: .55; }
+.badge circle { fill: var(--gear); stroke: var(--map); stroke-width: 5; }
+.badge text { font-size: 25px; fill: var(--gear-ink); font-variant-numeric: tabular-nums; }
+.badge.off circle { fill: var(--map); stroke: var(--gear); stroke-width: 4; stroke-dasharray: 7 5; }
+.badge.off text { fill: var(--gear); }
+.node.locked .shape, .node.locked .inner { stroke-opacity: .45; }
+.node.locked text.lv { opacity: .45; }
+.node.open .shape { stroke-width: 9; }
+.node.taken .shape { fill: var(--cls); }
+.node.taken .inner { stroke: var(--node); }
+.node.taken text.lv { fill: var(--node); }
+.node.partial .shape { fill: color-mix(in srgb, var(--cls) 55%, var(--node)); }
+.node.boosted .shape { stroke: var(--gear); stroke-width: 10; }
+.t-R .shape { fill: var(--accent); stroke: var(--accent); }
+.node.sel .halo { stroke: var(--accent); }
+.node.hover .halo { stroke: var(--ink); stroke-opacity: .5; }
+.node.path .halo { stroke: var(--accent); stroke-dasharray: 16 12; }
+.node.hit .halo { stroke: var(--ink); animation: pulse 1.2s ease-in-out infinite; }
+#map.searching .node:not(.hit) { opacity: .35; }
+@keyframes pulse { 50% { stroke-opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { .node.hit .halo { animation: none; } }
+
+.tools { position: absolute; top: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; pointer-events: none; }
+.tools > * { pointer-events: auto; }
+.search { position: relative; width: min(300px, 100%); display: grid; gap: 6px; min-width: 0; }
+.search input { width: 100%; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); box-shadow: var(--shadow); }
+.results { list-style: none; margin: 0; padding: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); max-height: 280px; overflow: auto; }
+.results button { display: flex; width: 100%; justify-content: space-between; gap: 8px; text-align: left; padding: 5px 8px; border: 0; background: none; border-radius: 6px; }
+.results button:hover, .results button.at { background: var(--accent-soft); }
+.results .m { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.results .note { color: var(--muted); font-size: 13px; padding: 4px 8px; }
+.jumps { display: flex; flex-wrap: wrap; gap: 4px; }
+.btns { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.chip, .ibtn { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 3px 10px; font-size: 13px; box-shadow: var(--shadow); }
+.chip .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--cls); margin-right: 5px; vertical-align: 1px; }
+.ibtn { border-radius: 8px; min-width: 34px; height: 34px; padding: 0 8px; font-size: 16px; line-height: 1; white-space: nowrap; }
+.ibtn:disabled { opacity: .45; cursor: default; }
+.chip:hover, .ibtn:not(:disabled):hover { border-color: var(--accent); }
+
+.mapwrap.picked .legend { display: none; }
+.legend { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; font-size: 12px; color: var(--muted); box-shadow: var(--shadow); max-width: calc(100% - 20px); }
+.legend svg { vertical-align: -3px; margin-right: 3px; }
+.legend .shape { fill: var(--node); stroke: var(--muted); stroke-width: 1.6; }
+.legend .filled { fill: var(--muted); }
+.legend .gearfill { fill: var(--gear); }
+.legend .gearoff { fill: none; stroke: var(--gear); stroke-width: 1.4; stroke-dasharray: 2 1.5; }
+.quick { position: absolute; left: 10px; right: 10px; bottom: 10px; margin-inline: auto; width: fit-content; display: flex; align-items: center; gap: 8px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 6px 6px 6px 12px; box-shadow: var(--shadow); max-width: calc(100% - 20px); }
+.quick .qn { font-weight: 700; color: var(--cls); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.quick .ql { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.quick .ql b { color: var(--gear); }
+.toast { position: absolute; bottom: 64px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 7px 14px; border-radius: 8px; font-size: 14px; max-width: min(460px, calc(100% - 20px)); box-shadow: var(--shadow); text-align: center; pointer-events: none; }
+.tip { position: absolute; z-index: 5; width: 320px; max-width: calc(100% - 20px); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; box-shadow: var(--shadow); pointer-events: none; font-size: 14px; }
+.tip h4 { margin: 0; font: 700 18px/1.15 var(--font-display); color: var(--cls); }
+.tip .meta { color: var(--muted); font-size: 13px; margin: 2px 0 6px; }
+.tip .desc { margin: 0; }
+.tip .foot { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.tip .foot b { color: var(--accent); }
+.tip .gearline { color: var(--gear); font-weight: 700; }
+
+/* ---- the side panel ---- */
+.side { min-height: 0; overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; }
+.points { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+.pt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.pt-big { font: 700 34px/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.pt-big small { font: 500 15px var(--font-body); color: var(--muted); margin-left: 4px; }
+.pt-big.over { color: var(--bad); }
+.pt-of { color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.meter { height: 8px; border-radius: 99px; background: var(--line); overflow: hidden; display: flex; }
+.meter i { display: block; height: 100%; }
+.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; }
+.field { display: grid; gap: 2px; min-width: 0; }
+.field span { font-size: 13px; color: var(--muted); }
+.field input { width: 100%; padding: 5px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); font-variant-numeric: tabular-nums; }
+.field em { font-style: normal; font-size: 12px; color: var(--muted); }
+.row { display: flex; gap: 8px 12px; align-items: center; flex-wrap: wrap; }
+.btn { border: 1px solid var(--line); background: var(--bg); border-radius: 7px; padding: 5px 12px; }
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+.btn.danger { color: var(--bad); }
+.btn.small { padding: 2px 9px; font-size: 13px; }
+.chk { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; }
+.confirm { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border: 1px solid color-mix(in srgb, var(--bad) 45%, var(--line)); border-radius: 8px; padding: 6px 8px; font-size: 14px; }
+.tabs { display: flex; border-bottom: 1px solid var(--line); padding: 0 8px; position: sticky; top: 0; background: var(--panel); z-index: 1; }
+.tabs button { border: 0; background: none; padding: 10px 11px 8px; font: 700 15px var(--font-display); letter-spacing: .03em; color: var(--muted); border-bottom: 3px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tabs .count { font: 700 12px var(--font-body); color: var(--gear); margin-left: 3px; }
+.pane { padding: 14px 16px 18px; display: grid; gap: 12px; align-content: start; }
+.pane h3 { margin: 0; font: 700 22px/1.15 var(--font-display); color: var(--cls, var(--ink)); text-wrap: balance; }
+.pane h4 { margin: 4px 0 0; font: 700 13px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.meta { color: var(--muted); font-size: 14px; }
+.desc { margin: 0; }
+.desc b { font-weight: 700; }
+.box { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; background: var(--bg); font-size: 14px; }
+.box.warn { border-color: color-mix(in srgb, var(--bad) 45%, var(--line)); }
+.box.gearbox { border-color: color-mix(in srgb, var(--gear) 40%, var(--line)); display: grid; gap: 6px; }
+.gearbox .head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.gearbox .head b { color: var(--gear); }
+.stepper { display: inline-flex; align-items: center; gap: 4px; }
+.stepper output { min-width: 34px; text-align: center; font: 700 18px var(--font-display); color: var(--gear); font-variant-numeric: tabular-nums; }
+.stepper button { width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 7px; background: var(--panel); font-size: 16px; line-height: 1; }
+.stepper button:disabled { opacity: .45; cursor: default; }
+.pips { display: inline-flex; gap: 4px; vertical-align: middle; margin-left: 6px; }
+.pips i { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--cls); }
+.pips i.on { background: var(--cls); }
+.pips i.gear { border-color: var(--gear); background: var(--gear); }
+.pips i.gear.off { background: none; border-style: dashed; }
+.hint { color: var(--muted); font-size: 14px; margin: 0; }
+.hint kbd, .tip kbd { font: 600 12px var(--font-body); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--bg); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th, td { padding: 4px 6px; text-align: right; border-bottom: 1px solid var(--line); }
+th:first-child, td:first-child { text-align: left; }
+th { font-size: 12px; color: var(--muted); font-weight: 500; }
+td.gives { color: var(--muted); font-size: 13px; }
+.stack { display: flex; height: 10px; border-radius: 99px; overflow: hidden; background: var(--line); }
+.stack i { display: block; height: 100%; background: var(--cls); }
+.keyrow { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--muted); }
+.keyrow span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--cls); margin-right: 5px; vertical-align: 0; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.list button { width: 100%; text-align: left; display: grid; grid-template-columns: 1fr auto; gap: 0 8px; padding: 5px 8px; border: 0; border-radius: 6px; background: none; }
+.list button:hover { background: var(--accent-soft); }
+.list .nm { font-weight: 700; color: var(--cls); }
+.list .lvl { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.list .lvl b { color: var(--gear); }
+.list .fx { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.stat { border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; background: var(--bg); }
+.stat b { display: block; font: 700 20px var(--font-display); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 12px; color: var(--muted); }
+textarea { width: 100%; min-height: 64px; resize: vertical; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); font-size: 13px; word-break: break-all; }
+.text { width: 100%; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--bg); }
+.saves { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.saves li { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; align-items: center; background: var(--bg); }
+.saves .nm { font-weight: 700; overflow-wrap: anywhere; }
+.saves .meta { font-size: 13px; grid-column: 1; }
+.saves .row { grid-row: 1 / span 2; grid-column: 2; }
+.gearlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.gearlist li { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; background: var(--bg); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; align-items: center; }
+.gearlist li.worn { border-color: color-mix(in srgb, var(--gear) 55%, var(--line)); }
+.gearlist .nm { font-weight: 700; overflow-wrap: anywhere; }
+.gearlist .tag { font: 500 12px var(--font-body); color: var(--muted); margin-left: 4px; }
+.gearlist .perks { grid-column: 1; font-size: 13px; color: var(--muted); }
+.gearlist .perks .mine { color: var(--gear); font-weight: 700; }
+.gearlist .acts { grid-column: 2; grid-row: 1 / span 2; display: flex; gap: 4px; }
+.slothead { margin: 6px 0 0; font: 700 12px var(--font-body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+details.gearfor summary { cursor: pointer; font-size: 14px; color: var(--muted); }
+details.gearfor[open] summary { margin-bottom: 6px; }
+.foot-note { color: var(--muted); font-size: 12.5px; margin: 0; }
+.foot-note a { color: inherit; }
+
+@media (max-width: 860px) {
+  html, body { height: auto; }
+  .app { height: auto; }
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .mapwrap { height: 64vh; min-height: 360px; }
+  .side { overflow: visible; }
+  .legend { display: none; }
+  .tabs { position: static; }
+}
+</style>
+
+<div class="app">
+  <header class="top">
+    <h1>Flameborn Build Tester</h1>
+    <span class="sub">Enshrouded 1.0 skill tree, all 243 nodes. Click to spend, right-click to refund.</span>
+  </header>
+  <div class="main">
+    <section class="mapwrap" id="mapwrap" tabindex="0" aria-label="Skill tree map. Arrow keys pan, plus and minus zoom, 0 fits the tree.">
+      <svg id="map" role="img" aria-label="Skill tree"><g id="world"></g></svg>
+      <div class="tools">
+        <div class="search">
+          <input id="q" type="search" placeholder="Find a skill or effect" aria-label="Find a skill or effect" autocomplete="off">
+          <ul class="results" id="results" hidden></ul>
+          <div class="jumps" id="jumps"></div>
+        </div>
+        <div class="btns">
+          <button class="ibtn" id="undo" title="Undo (Ctrl+Z)" aria-label="Undo">↶</button>
+          <button class="ibtn" id="redo" title="Redo (Ctrl+Y)" aria-label="Redo">↷</button>
+          <button class="ibtn" id="zout" title="Zoom out (−)" aria-label="Zoom out">−</button>
+          <button class="ibtn" id="zin" title="Zoom in (+)" aria-label="Zoom in">+</button>
+          <button class="ibtn" id="fit" title="Fit the whole tree (0)" aria-label="Fit the whole tree">⤢</button>
+        </div>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><svg width="14" height="14" viewBox="-8 -8 16 16"><polygon class="filled" points="0,-7 2,-2 7,0 2,2 0,7 -2,2 -7,0 -2,-2"/></svg>Spark (start)</span>
+        <span><svg width="12" height="12" viewBox="-7 -7 14 14"><circle class="shape" r="5"/></svg>Attribute</span>
+        <span><svg width="16" height="16" viewBox="-8 -8 16 16"><circle class="shape" r="6.5"/></svg>Passive</span>
+        <span><svg width="18" height="18" viewBox="-9 -9 18 18"><polygon class="shape" points="0,-8 6.9,-4 6.9,4 0,8 -6.9,4 -6.9,-4"/></svg>Active</span>
+        <span><svg width="16" height="16" viewBox="-8 -8 16 16"><circle class="filled" r="6.5"/></svg>Taken</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14"><circle class="gearfill" r="6"/></svg>Item bonus</span>
+        <span><svg width="14" height="14" viewBox="-7 -7 14 14"><circle class="gearoff" r="5.5"/></svg>Waiting for a point</span>
+      </div>
+      <div class="quick" id="quick" hidden></div>
+      <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+      <div class="tip" id="tip" hidden></div>
+    </section>
+
+    <aside class="side" aria-label="Build">
+      <div class="points">
+        <div class="pt-head">
+          <span class="pt-big" id="ptLeft">0<small>points left</small></span>
+          <span class="pt-of" id="ptOf"></span>
+        </div>
+        <div class="meter" id="meter" aria-hidden="true"></div>
+        <div class="inputs">
+          <label class="field" for="inLevel"><span>Character level</span><input id="inLevel" type="number" min="1" max="50" step="1" inputmode="numeric"><em>2 points a level after 1</em></label>
+          <label class="field" for="inFlame"><span>Flame level</span><input id="inFlame" type="number" min="1" max="11" step="1" inputmode="numeric"><em>+1 to every attribute a level after 1</em></label>
+          <label class="field" for="inWells"><span>Elixir Wells cleared</span><input id="inWells" type="number" min="0" max="19" step="1" inputmode="numeric"><em>3 points each, 19 in all</em></label>
+          <label class="field" for="inRoots"><span>Shroud Roots felled</span><input id="inRoots" type="number" min="0" max="57" step="1" inputmode="numeric"><em>1 point each, 57 in all</em></label>
+        </div>
+        <div class="row" id="pointBtns">
+          <button class="btn" id="btnMax" type="button">Max everything</button>
+          <button class="btn danger" id="btnResetAll" type="button" title="Refund every point and remove every item bonus">Reset all</button>
+          <label class="chk" for="allowOver"><input id="allowOver" type="checkbox"> Plan past my points</label>
+        </div>
+        <div class="confirm" id="resetConfirm" hidden>
+          <span>Refund every point and remove all item bonuses and worn gear? Your level and Flame settings stay.</span>
+          <button class="btn danger" id="btnResetYes" type="button">Reset all</button>
+          <button class="btn" id="btnResetNo" type="button">Cancel</button>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Panel">
+        <button role="tab" id="tab-skill" aria-controls="pane-skill" aria-selected="true">Skill</button>
+        <button role="tab" id="tab-build" aria-controls="pane-build" aria-selected="false">Build</button>
+        <button role="tab" id="tab-gear" aria-controls="pane-gear" aria-selected="false">Gear<span class="count" id="gearCount"></span></button>
+        <button role="tab" id="tab-saves" aria-controls="pane-saves" aria-selected="false">Saves</button>
+      </div>
+      <div class="pane" id="pane-skill" role="tabpanel" aria-labelledby="tab-skill"></div>
+      <div class="pane" id="pane-build" role="tabpanel" aria-labelledby="tab-build" hidden></div>
+      <div class="pane" id="pane-gear" role="tabpanel" aria-labelledby="tab-gear" hidden>
+        <p class="hint">Pick the gear you wear. Its skill ranks add to skills you've spent a point in, and can take them past their top level (3/3 becomes 4/3). Ranks on a skill with no point in it wait until you spend one. Only skill ranks are counted here, not armour or other stats.</p>
+        <h4 id="wornHead">Worn</h4>
+        <div id="wornList"></div>
+        <h4>Add gear</h4>
+        <label class="field" for="gearQ"><span>Find an item, a slot or a skill</span><input id="gearQ" class="text" type="search" placeholder="Like gloves, ring or Arsonist" autocomplete="off"></label>
+        <div id="gearFind"></div>
+      </div>
+      <div class="pane" id="pane-saves" role="tabpanel" aria-labelledby="tab-saves" hidden>
+        <label class="field" for="buildName"><span>Build name</span><input id="buildName" class="text" type="text" maxlength="60" placeholder="Untitled build"></label>
+        <div class="row"><button class="btn primary" id="btnSave" type="button">Save in this browser</button></div>
+        <ul class="saves" id="saves"></ul>
+        <h4>Build code</h4>
+        <p class="hint">The code holds the tree, item bonuses, worn gear and the four numbers above. Paste it back here, or send the link.</p>
+        <textarea id="codeOut" readonly aria-label="Build code"></textarea>
+        <div class="row"><button class="btn" id="btnCopyCode" type="button">Copy code</button><button class="btn" id="btnCopyLink" type="button" hidden>Copy link</button></div>
+        <label class="field" for="codeIn"><span>Load a code or link</span><input id="codeIn" class="text" type="text" placeholder="b2-50-19-57-11-…"></label>
+        <div class="row"><button class="btn" id="btnLoadCode" type="button">Load it</button></div>
+        <h4>Example</h4>
+        <div class="row"><button class="btn" id="btnExample" type="button">Load the example build</button></div>
+        <p class="foot-note">Saved builds stay in this browser only. Clearing site data removes them, so keep codes for builds you care about.</p>
+      </div>
+      <div class="pane" style="padding-top:0">
+        <p class="foot-note">Unofficial. Tree, costs, effects and the gear that raises each skill from <a href="https://www.enshrouded.tools/skill-tree" target="_blank" rel="noopener">enshrouded.tools</a>, which reads the 1.0 game files (build 25988036). Skill points from its <a href="https://www.enshrouded.tools/leveling" target="_blank" rel="noopener">levelling page</a>: 2 a level, 3 per Elixir Well, 1 per Shroud Root, 212 in all. The Flame's attribute bonus is from its <a href="https://www.enshrouded.tools/tools/flame-altar" target="_blank" rel="noopener">Flame Altar planner</a>. Gear slots are worked out from item names. Not checked in game.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<script>
+const DATA = {"levelCap":50,"nodes":[[3846.7,3433.8,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4153.3,3435,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4563.4,4152.8,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4413.4,4414.6,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[3586.9,4416.8,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[3432.9,4149.9,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4383.6,3897.1,"P","N",3,1,"Well Rested","The base duration for the Rested buff is increased by <b>%k<\/b> minutes.\n\n<b>Rested<\/b>\nThe Rested buff increases your Stamina Maximum and Regeneration significantly.\n\nIt requires <b>shelter, sitting or sleeping,<\/b> as well as <b>warmth<\/b> from a heat source.\n\nThe buff can be refreshed <b>anywhere.<\/b>\n\nSurrounding comfort items further increase its duration.",[["n",0,2]],"<b>%k<\/b> minutes per level",[["n",0,2]]],[3616.2,4103.1,"P","N",3,1,"Mason","Tools deal <b>%k<\/b> increased damage against stone.\nThis includes stone terrain and gemstone veins.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[3897.3,3617.6,"P","N",3,1,"Lumberjack","Tools deal <b>%k<\/b> increased damage against wood.\nThis includes trees and wooden terrain.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[3833.2,3902.4,"P","N",0,2,"Miner","Mining resources has a <b>10%<\/b> chance to grant one additional resource.",[],"",[]],[3719.5,3717,"P","N",0,1,"Quality Gear","Tools have a <b>%k<\/b> chance to restore <b>1<\/b> durability on hit.",[["p",0.2,0]],"",[]],[3717.7,4277,"S","N",0,2,"Merciless Attack","Perform a <b>Merciless Attack<\/b> by pressing <b>%k<\/b> to deal <b>%k<\/b> damage to an <b>overpowered<\/b> enemy. \n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks. \n\nWands, Staves and Bows cannot perform Merciless Attacks.",[["i","Interact"],["p",5,0]],"",[]],[4864.9,2911,"S","G",0,3,"Sneak Attack","Perform a <b>Sneak Attack<\/b> by sneaking up to an unaware enemy and pressing <b>%k<\/b>.\n\n<b>Sneak Attack<\/b> deals <b>+900%%<\/b> increased damage.\n\nWands, Staves and Bows cannot perform Sneak Attacks.",[["i","Interact"]],"",[]],[4558.3,4557.4,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5366.1,5141.6,"P","M",3,1,"Healing Revive","Revive players with <b>%k<\/b> increased Health.\n\nDefault Health of revived players is <b>10%%<\/b>.",[["p",0,0.08]],"<b>%k<\/b> Health per level",[["p",0,0.08]]],[5396.5,5396.4,"P","M",0,2,"Waters Of Life","Increases <b>Water Aura<\/b> healing to <b>2<\/b> Health per <b>2<\/b> points of Intelligence.",[],"",[]],[4952.8,4255.4,"P","M",3,1,"Mage Apprentice","Damage with Wands and Staves increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[5482.1,4540.8,"P","M",3,2,"Arsonist","All <b>Fire<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[5231.5,4628.4,"P","M",3,2,"Dark Arts","All <b>Shroud<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[5554.9,4274,"P","M",3,2,"Iceman","All <b>Ice<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[5942.2,4341.8,"P","M",3,2,"Frost","When receiving Melee damage, the attacker will be slowed down for <b>%k<\/b>.",[["d",0,3]],"<b>%k<\/b> per level",[["d",0,3]]],[4762.4,4203,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5565.8,3790.1,"P","M",3,1,"Quick Charge","Charge Time of spells is reduced by <b>%k<\/b>.",[["p",0,-0.1]],"<b>%k<\/b> Charge Time per level",[["p",0,-0.1]]],[4617.5,5234.7,"P","M",0,2,"Blink Attack","Blinking into an enemy triggers an explosion which deals <b>Fire<\/b> damage in a small radius.\n\nDamage and Mana cost scale with the Intelligence attribute.",[],"",[]],[4760.7,5155.9,"P","M",0,2,"Emergency Blink","You can blink while being stunned. This will break the stunned state.",[],"",[]],[5183.6,3998.2,"P","M",3,1,"Counterstrike","After receiving damage, there is a <b>%k<\/b> chance to reflect <b>%k<\/b> of the damage back to the attacker as <b>Fire<\/b> damage.\n\nThis magical attack can trigger other skills.",[["p",0,0.08],["p",0,0.2]],"<b>%k<\/b> chance and <b>%k<\/b> reflected damage per level",[["p",0,0.08],["p",0,0.2]]],[5714.1,3539.1,"A","M",0,5,"Arcane Concentration","Gain one point of Spirit for every two levels of the Flame.",[],"",[]],[4836.6,3164.7,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[6183,4585.6,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5669.6,3394.4,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5909.7,4512,"P","M",3,2,"Wizard","Critical Strike chance with Wands and Staves is increased by <b>%k<\/b>.",[["p",0,0.02]],"<b>%k<\/b> Critical Strike chance per level",[["p",0,0.02]]],[6243.1,4754.1,"P","M",0,3,"Chain Hit","Critical Strikes with Magic weapons hit an additional random target within <b>15<\/b> meters for <b>5 Shock<\/b> damage per Intelligence. \nThe initial target can be hit twice instead of chaining to another one.",[],"",[]],[6071.2,4903.2,"P","M",0,3,"Mass Destruction","Critical Strikes with Magic weapons deal <b>2 Shock<\/b> damage per Intelligence to all enemies within <b>%k<\/b> meters of the target.",[["n",15,0]],"<b>%k<\/b> meters range per level",[["n",15,0]]],[6135.1,3225.2,"P","M",0,4,"Blood Magic","When your Mana drops below <b>20%<\/b>, you restore up to <b>35%<\/b> of your maximum Mana at the cost of <b>1<\/b> Health per Mana restored. \n\nThis effect stops at <b>1<\/b> Health.\n\n<b>Cooldown:<\/b> 2 minutes",[],"",[]],[5166.4,4738.8,"P","M",3,1,"Necromancer","When killing an enemy with a Magic weapon, you have a <b>%k<\/b> chance to summon a friendly <b>Skull Companion<\/b>.",[["p",0,0.05]],"<b>%k<\/b> chance per level",[["p",0,0.05]]],[6238.4,3604.7,"P","M",3,2,"Terror","Critical Strikes with spells have a <b>%k<\/b> chance to stun the target for <b>2<\/b> seconds.",[["p",0,0.2]],"<b>%k<\/b> chance per level",[["p",0,0.2]]],[4696.9,3300.6,"P","G",3,1,"Airborne","Gliders consume <b>%k<\/b> less Stamina.",[["p",0,0.12]],"<b>%k<\/b> cost reduction per level",[["p",0,0.12]]],[4256.2,3046.7,"P","G",3,1,"Marksman","Damage with Bows is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[3258.7,1963.1,"P","G",0,3,"Calm Spirit","<b>Wild Animals<\/b> within <b>50<\/b> meters will no longer attack you unless provoked. \n\nDoes not affect animals corrupted by the Shroud.",[],"",[]],[3793.4,2834.1,"P","G",3,2,"Snake Eater","Increases your <b>Poison Resistance<\/b> by <b>%k<\/b>, which reduces the amount of <b>Poison<\/b> damage received.\n\n<b>Poison<\/b> damage bypasses armor and can only be mitigated by <b>Poison Resistance<\/b>.",[["p",0,0.04]],"<b>%k<\/b> Resistance per level",[["p",0,0.04]]],[3301.4,3305.5,"P","G",3,1,"Runner","Sprint Speed is increased by <b>%k<\/b> and Stamina cost while sprinting is decreased by <b>%k<\/b>.",[["p",0,0.05],["p",0,0.05]],"<b>%k<\/b> Speed and <b>%k<\/b> cost reduction per level",[["p",0,0.05],["p",0,0.05]]],[4208.6,2632.3,"P","G",3,1,"Counter Battery","Damage against <b>ranged<\/b> enemies is increased by <b>%k<\/b>.",[["p",0,0.08]],"<b>%k<\/b> damage per level",[["p",0,0.08]]],[3624.1,1860.8,"P","G",0,3,"Vukah Language","<b>Vukah<\/b> within <b>50<\/b> meters will no longer attack you unless provoked.",[],"",[]],[5024.3,3404.1,"S","G",0,4,"Updraft","Jumping with %k while gliding lifts you upwards. Can be used once per flight.\n\n<b>Charge<\/b>\nAs the Updraft charges before activation, the resulting lift is increased. A full charge grants you an additional boost. The charge is accelerated while inside your base.\n\n<b>Cost:<\/b> %k Mana",[["i","Action"],["n",100,0]],"",[]],[4804.1,1875,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[4204.2,3238.4,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[2997.8,1854.4,"P","G",0,4,"Beast Master","When you are targeted by an attack, <b>Wild Animals<\/b> within <b>50<\/b> meters will attack the enemy.",[],"",[]],[2920.2,2713.7,"P","G",0,3,"Good Metabolism","Health, Mana, and Stamina Orbs restore <b>30%<\/b> instead of <b>10%<\/b> of their respective resource.\n\nHealth and Mana Potions restore <b>20%<\/b> more resources.",[],"",[]],[3763.6,1637.9,"P","G",0,4,"Vukah Culture","When you are targeted by an attack, <b>Vukah<\/b> within <b>50<\/b> meters will attack the enemy.",[],"",[]],[4562.6,1902.9,"P","G",3,2,"Ranger","Increases your Dexterity and Endurance attributes by <b>%k<\/b>.\n\nBase Stamina Regeneration is increased by <b>%k<\/b>.",[["n",0,1],["n",0,5]],"<b>%k<\/b> Dexterity and Endurance per level.\n<b>%k<\/b> Stamina Regeneration per level.",[["n",0,1],["n",0,5]]],[3643.6,2669.1,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[3745.7,3049.7,"P","G",0,2,"Mithridatist","Gain a <b>25%<\/b> chance to avoid being poisoned.",[],"",[]],[3725.2,2445,"P","G",0,2,"Bounty Bonanza","After defeating a <b>Fell<\/b> enemy with a <b>Skillshot<\/b>, your group gains an additional <b>%k<\/b> Experience Points.\n\n<b>Skillshot<\/b>\nStriking enemy weak points, such as their heads, with Arrows is considered a Skillshot.\n\nSkillshots deal 100%% increased base damage against enemies without helmets and 50%% against helmeted enemies. \nIt can be further increased by the Skillshot damage attribute.",[["n",5,0]],"",[]],[4497.1,2709.4,"P","G",3,2,"Sniper","Critical Strike chance with Bows is increased by <b>%k<\/b>.",[["p",0,0.02]],"<b>%k<\/b> Critical Strike chance per level",[["p",0,0.02]]],[5042.1,1763.5,"P","G",0,3,"Shrapnel Blast","Every target hit with an <b>Explosive Arrow<\/b>, increases its damage by <b>10%<\/b>.",[],"",[]],[4681.1,1660.1,"P","G",0,4,"Echoing Explosives","Every enemy hit with an <b>Explosive Arrow<\/b> has a <b>40%<\/b> chance to trigger a secondary explosion for <b>50%<\/b> damage in a small radius.",[],"",[]],[3796.6,3237.3,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[2324.1,2327,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[4676.4,2144.4,"P","G",3,1,"Blessed Arrows","Critical Strikes with Bows restore <b>%k<\/b> Mana.",[["n",0,8]],"<b>%k<\/b> Mana per level",[["n",0,8]]],[3238.6,4203.9,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[3442.1,4557.5,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[3995.1,5178.2,"S","W",0,4,"Evasion Attack","When equipped with a Melee weapon, you can perform an Evasion Attack by pressing <b>%k<\/b> while evading. \nYou will dash towards the enemy and deal <b>50%%<\/b> additional weapon damage.\n\n<b>Cost:<\/b> %k Stamina\n\n<b>Block Breaker<\/b> \nThis special attack fills a blocking enemy's <i>Stun Bar<\/i> twice as much when hit.",[["i","Attack"],["n",25,0]],"",[]],[1959.8,4746.8,"A","W",0,5,"Barbarian","Gain one point of Strength for every two levels of the Flame.",[],"",[]],[3300.8,4697.1,"P","W",3,1,"Warrior's Path","Damage with One-Handed Axes, Clubs and Swords is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[3525.6,5296.9,"P","W",3,1,"Shiny Plates","Magical Armor points from equipped items are increased by <b>%k<\/b>.",[["p",0,0.04]],"<b>%k<\/b> increased Magical Armor per level",[["p",0,0.04]]],[3743.6,4953.1,"P","W",3,1,"Heavy Plates","Physical Armor points from equipped items are increased by <b>%k<\/b>.",[["p",0,0.04]],"<b>%k<\/b> increased Physical Armor per level",[["p",0,0.04]]],[2822.7,4895.2,"P","W",3,2,"Slasher","Melee <b>Cutting<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[2282.9,4627,"P","W",3,2,"Brute","Melee <b>Blunt<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[5608.6,2390.7,"P","G",3,2,"Thrust","Melee <b>Piercing<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[2973.6,4593.2,"P","W",3,1,"Heavy Handed","Filling up enemy <i>Stun Bars<\/i> is increased by <b>%k<\/b> when attacking blocking enemies with Melee weapons.\n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks.",[["p",0,0.1]],"<b>%k<\/b> effect per level",[["p",0,0.1]]],[2290,4987.3,"P","W",0,3,"Breach","<b>Overpowered<\/b> enemies receive <b>%k<\/b> increased Melee physical damage for <b>3<\/b> seconds.\n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks.",[["p",1,0]],"",[]],[2640.4,3758.4,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[3404.6,5028,"P","W",3,2,"Veteran","Critical Strike chance with One- or Two-Handed Axes, Clubs, Hammers, Swords, Greatswords and Daggers is increased by <b>%k<\/b>.",[["p",0,0.02]],"<b>%k<\/b> Critical Strike chance per level",[["p",0,0.02]]],[2199.1,3517.4,"P","W",0,3,"Crash Down: Force","When attacking from a double jump, <b>Crash Down<\/b> deals <b>20%<\/b> more weapon damage.",[],"",[]],[4891.9,2698.7,"P","G",3,1,"Backstab Mastery","<b>Backstab<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.2]],"<b>%k<\/b> damage per level",[["p",0,0.2]]],[3326.9,5430.9,"P","W",0,3,"Tower","While there are three or more enemies within <b>20<\/b> meters, you receive <b>%k<\/b> increased <b>Physical Resistance<\/b>.",[["p",0.1,0]],"",[]],[3860.5,5580.5,"P","W",0,3,"Warden","While there are three or more enemies within <b>20<\/b> meters, you receive <b>%k<\/b> increased <b>Magical Resistance<\/b>.",[["p",0.1,0]],"",[]],[3841.3,5774.5,"P","W",3,1,"Absorb","When you receive <b>Magic<\/b> damage, you have a <b>%k<\/b> chance to restore <b>1<\/b> Mana per Health point lost.",[["p",0,0.04]],"<b>%k<\/b> chance per level",[["p",0,0.04]]],[2323,3421.6,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2093.9,4510.3,"P","W",3,2,"Blood Rage","When an enemy within <b>%k<\/b> meters is killed by a Melee weapon, you fall into <b>Blood Rage<\/b>.\n\n<b>Blood Rage<\/b>\nIncreases Melee weapon damage by <b>%k<\/b> for <b>10<\/b> seconds.",[["n",0,5],["p",0.15,0]],"<b>%k<\/b> meters range per level",[["n",0,5]]],[6103.6,3435.6,"P","M",3,2,"Bloodletting","Critical Strikes with spells have a <b>%k<\/b> chance to spawn two Health, Mana, and/or Stamina Orbs.\n\nGathering an Orb restores <b>10%%<\/b> of the respective resource.",[["p",0,0.2]],"<b>%k<\/b> chance per level",[["p",0,0.2]]],[4151.6,5769.6,"P","M",0,4,"Life Burst","Defeating an enemy with a Magic weapon restores Health equal to <b>%k<\/b> times your Intelligence to all players within <b>15<\/b> meters of the target.",[["n",5,0]],"",[]],[3249.6,5608.9,"P","W",3,2,"Soul Leech","When killing an enemy with a Melee weapon, all players within <b>%k<\/b> meters of the target restore <b>%k<\/b> Mana.",[["n",0,5],["n",0,15]],"<b>%k<\/b> meters range and <b>%k<\/b> Mana per level",[["n",0,5],["n",0,15]]],[2735.4,5264.5,"P","W",3,2,"Battle Heal","Critical Strikes with Melee weapons heal you for <b>%k<\/b> of your maximum Health.",[["p",0,0.01]],"<b>%k<\/b> of maximum Health per level",[["p",0,0.01]]],[2736.9,5517.8,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[2491.8,5270.2,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2422.9,4420.9,"P","W",0,5,"Relentless","Critical Strikes with Two-Handed weapons increase your Critical Strike chance by <b>%k<\/b> for the next hit.",[["p",0.08,0]],"",[]],[4275.9,3724.6,"S","N",0,2,"Double Jump","Allows jumping a second time while airborne.\n\n<b>Cost:<\/b> %k Stamina",[["n",10,0]],"",[]],[2473.5,3592.6,"S","W",0,3,"Crash Down Attack","When equipped with a Melee weapon, you can perform a special attack by holding <b>%k<\/b> during a jump.\n\nCrash Down deals 50%% more weapon damage in a small blast radius and costs Stamina depending on weapon type used. \n\n<b>Cost:<\/b> %k - %k Stamina\n\n<b>Block Breaker<\/b> \nThis special attack fills a blocking enemy's <i>Stun Bar<\/i> twice as much when hit..",[["i","Attack"],["n",35,0],["n",60,0]],"",[]],[2035.1,3800.9,"P","W",0,3,"Blood Warrior","Defeating an enemy with a <b>Sneak Attack<\/b> or <b>Merciless Attack<\/b> spawns a Health Orb.\n\nGathering an Orb restores <b>10%<\/b> of the respective resource.",[],"",[]],[4587.3,5022,"S","M",0,4,"Blink","Replaces the Dodge Roll ability with a short-range teleport. \n\nBlink also replaces the sideways Dodge Roll of the Strategic Maneuver skill.\n\n<b>Cost:<\/b> %k Stamina",[["n",20,0]],"",[]],[3895.3,4383.1,"P","N",3,1,"Power Parry","Your Parry Power is increased by <b>%k<\/b>.\n\n<b>Parry<\/b>\nYou can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry<\/b> the attack and fill up the enemy's <i>Stun Bar<\/i>.\nWait to see a <b>flash<\/b> on the enemy or projectile to perform a parry.\n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks.",[["p",0,0.1]],"<b>%k<\/b> Parry Power per level",[["p",0,0.1]]],[4187.6,3948.3,"P","N",3,1,"Inner Fires","<b>Time in the Shroud<\/b> is increased by <b>%k<\/b>, allowing you to explore for longer.\n\n<b>Time in the Shroud<\/b>\nShould this time run out, the Shroud will consume you.",[["d",0,60]],"<b>%k<\/b> per level",[["d",0,60]]],[3754.4,5359.5,"P","W",3,1,"Purification","Defeating a Shroud infested enemy with a One- or Two-Handed Axe, Club, Hammer, Sword or Greatsword restores <b>%k<\/b> seconds of <b>Time in the Shroud<\/b>.\n\n<b>Time in the Shroud<\/b>\nShould this time run out, the Shroud will consume you.",[["n",0,3]],"<b>%k<\/b> seconds per level",[["n",0,3]]],[5020,5457.3,"P","M",3,1,"Shroud Mitigation","Dealing damage with a Magic weapon has a <b>%k<\/b> chance to trigger a small flame burst that restores <b>%k<\/b> seconds of <b>Time in the Shroud <\/b> to you and your allies within <b>%k<\/b> meters.\n\n<b>Time in the Shroud<\/b>\nShould this time run out, the Shroud will consume you.",[["p",0,0.1],["n",9,0],["n",20,0]],"<b>%k<\/b> chance per level",[["p",0,0.1]]],[3948.8,4193.1,"P","N",0,2,"Snap","Triggering a <b>Merciless Attack<\/b> restores <b>%k<\/b> Mana.",[["p",0.2,0]],"",[]],[4697.4,4696.4,"P","M",3,1,"Healer","Health gain from healing spells and Water Aura is increased by <b>%k<\/b>.",[["p",0,0.15]],"<b>%k<\/b> Healing per level",[["p",0,0.15]]],[2607,2339.2,"P","G",0,3,"Sweet Tooth","Stamina Regeneration of sweets is increased by <b>50%<\/b>.",[],"",[]],[5798.5,5263.4,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[4339.6,5743.3,"P","M",0,3,"Sting","Repeated Wand damage is increased by <b>%k<\/b>.",[["p",0.2,0]],"",[]],[4562.4,6099.5,"A","M",0,5,"Exalted","Gain one point of Intelligence for every two levels of the Flame.",[],"",[]],[4752.8,5615.6,"P","M",0,3,"Arcane Proliferation","Wand attacks have a <b>30%<\/b> chance to spawn double the amount of projectiles. Extra projectiles spawned deal <b>50%<\/b> less damage.",[],"",[]],[4278.7,4278.2,"P","N",3,1,"Saviour","Time to revive an ally is reduced by <b>%k<\/b> seconds.\n\nDefault revive time is <b>6<\/b> seconds.",[["n",0,-1]],"<b>%k<\/b> second per level",[["n",0,-1]]],[4609.5,2330.2,"P","G",3,1,"Vitality Surge","Critical Strikes with Bows, Daggers and Throwables restore <b>%k<\/b> Stamina.",[["n",0,3]],"<b>%k<\/b> Stamina per level",[["n",0,3]]],[4405.8,5109.3,"P","M",3,1,"Arcane Deflection","Successfully parrying an enemy's attack restores <b>%k<\/b> Mana.\n\n<b>Parry<\/b>\nYou can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry<\/b> the attack and fill up the enemy's <i>Stun Bar<\/i>.\nWait to see a <b>flash<\/b> on the enemy or projectile to perform a parry.",[["n",0,10]],"<b>%k<\/b> Mana per level",[["n",0,10]]],[2258.5,3661.2,"P","W",3,1,"Vigorous Deflection","Successfully parrying an enemy's attack restores <b>%k<\/b> Stamina.\n\n<b>Parry<\/b>\nYou can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry<\/b> the attack and fill up the enemy's <i>Stun Bar<\/i>.\nWait to see a <b>flash<\/b> on the enemy or projectile to perform a parry.",[["n",0,15]],"<b>%k<\/b> Stamina per level",[["n",0,15]]],[4342.7,2053.6,"P","G",3,1,"Eagle's Bane","Damage against <b>flying<\/b> enemies is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[4590.7,2975.2,"P","G",3,1,"Silent Stride","Increases your movement speed while <b>sneaking<\/b> by <b>%k<\/b>.",[["p",0,0.2]],"<b>%k<\/b> movement speed per level",[["p",0,0.2]]],[4308,2253.1,"P","G",3,1,"Skill Shot","<b>Skillshot<\/b> damage is increased by <b>%k<\/b>.\n\n<b>Skillshot<\/b>\nStriking enemy weak points, such as their heads, with Arrows is considered a Skillshot.\n\nSkillshots deal 100%% increased base damage against enemies without helmets and 50%% against helmeted enemies. \nIt can be further increased by the Skillshot damage attribute.",[["p",0,0.2]],"<b>%k<\/b> damage per level",[["p",0,0.2]]],[2710.4,2919.7,"P","G",3,1,"Swiftshot Sustenance","Defeating an enemy with a Bow has a <b>%k<\/b> chance to spawn a Stamina Orb. \n\nGathering an Orb restores <b>10%%<\/b> of the respective resource.",[["p",0,0.12]],"<b>%k<\/b> chance per level",[["p",0,0.12]]],[2940,3116.9,"P","G",3,1,"Arachnoid","Stamina cost while climbing is reduced by <b>%k<\/b>.",[["p",0,0.2]],"<b>%k<\/b> cost reduction per level",[["p",0,0.2]]],[3114,2941.1,"P","G",0,3,"Wanderlust","Stamina cost for <b>sprinting on dirt roads<\/b> is reduced from <b>90% to 80%<\/b>.\n\nStamina cost for <b>sprinting on stone roads<\/b> is reduced from <b>75% to 50%<\/b>.",[],"",[]],[6320.5,4468.9,"P","M",3,2,"Thunder","All <b>Shock<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[3987.8,2077.5,"S","G",0,3,"Bee Sting","Firing or aiming your Bow while airborne slows down your fall briefly. Every shot lifts you slightly, granting more airtime.\n\n<b>Cost:<\/b> %k Stamina per second",[["n",10,0]],"",[]],[5523.7,3588.8,"S","M",0,3,"Begone!","A magic-powered punch that pushes back and stuns enemies.\n\nReplaces your unarmed attacks as long as you have the necessary Mana available.\n\n<b>Cost:<\/b> %k Mana",[["n",30,0]],"",[]],[3659.3,6167.2,"S","W",0,3,"Martyr","When you are killed by an enemy, all allies within <b>30<\/b> meters are healed for <b>50%<\/b> of their maximum Health.\n\nThey also receive a <b>Final Blessing<\/b> buff, increasing their maximum Health by <b>100<\/b> points for <b>15<\/b> minutes.",[],"",[]],[5016.4,5210.1,"S","M",3,1,"Water Aura","You emit a healing aura that heals you and all injured allies within <b>%k<\/b> meters. \n\nThe healing scales with your Intelligence attribute and restores <b>1<\/b> Health per <b>2<\/b> points of Intelligence.",[["n",0.1,5]],"<b>%k<\/b> meters range per level",[["n",0.1,5]]],[5791.2,4834.3,"S","M",3,1,"Radiant Aura","All <b>Fell<\/b> enemies within <b>%k<\/b> meters take <b>%k Fire<\/b> damage per Intelligence per second.",[["n",0.1,2],["n",0,1]],"<b>%k<\/b> meters range and <b>%k Fire<\/b> damage per Intelligence per level",[["n",0.1,2],["n",0,1]]],[3213.4,6050.8,"S","W",3,2,"Nemesis","Increase the attention you draw from enemies by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> attention drawn per level",[["p",0,0.1]]],[2119.7,5087.1,"S","W",0,3,"Shockwave","Trigger a Shockwave when you parry an attack or <b>overpower<\/b> an enemy.\n\nThe Shockwave pushes back nearby enemies. It also fills their <i>Stun Bar<\/i>, scaling with your Strength attribute.\n\n<b>Parry<\/b>\nYou can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry<\/b> the attack and fill up the enemy's <i>Stun Bar<\/i>.\nWait to see a <b>flash<\/b> on the enemy or projectile to perform a parry.\n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks.",[],"",[]],[2476.6,5520.6,"S","W",0,4,"Swift Blades","Increases the attack speed of all One-Handed Melee weapons by <b>%k<\/b>.",[["p",0.15,0]],"",[]],[1904.3,4566.7,"S","W",0,4,"Heavy Hitter","Increases the attack speed of all Two-Handed Melee weapons by <b>%k<\/b>.",[["p",0.1,0]],"",[]],[2459.1,4887.2,"S","W",3,2,"Bash","Parrying enemy attacks bashes them for <b>%k Blunt<\/b> damage. Bash damage is increased by your Strength attribute.\n\n<b>Parry<\/b>\nYou can block when equipped with any Melee weapon, Ward, or Shield. A well-timed block will <b>parry<\/b> the attack and fill up the enemy's <i>Stun Bar<\/i>.\nWait to see a <b>flash<\/b> on the enemy or projectile to perform a parry.",[["n",0,10]],"<b>%k Blunt<\/b> damage per level",[["n",0,10]]],[4354.1,1757.9,"S","G",0,4,"Multi Shot","Shooting <i>Regular Arrows<\/i> has a <b>20%<\/b> chance to spawn a <b>Flurry of Arrows<\/b> that spreads slightly.\n\n<i>Regular Arrows<\/i> fired this way will subtract from your ammunition.\n\n<b>Flurry of Arrows<\/b> does not trigger on <i>Special Arrows<\/i>.",[],"",[]],[5620.7,2868.6,"S","G",0,3,"Shell Shock","Infuse your <b>Ranged Explosives<\/b> with Mana. They now stun enemies for <b>2<\/b> seconds.\n\n<b>Cost:<\/b> %k Mana per stunned enemy",[["n",8,0]],"",[]],[4357,5335.8,"S","M",3,1,"Unity","Damaging enemies with Wands has a <b>%k<\/b> chance to restore <b>%k<\/b> of your maximum Mana.",[["p",0,0.1],["p",0,0.02]],"<b>%k<\/b> chance and <b>%k<\/b> of maximum Mana per level",[["p",0,0.1],["p",0,0.02]]],[3434.8,3848.9,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[3583.8,3586.8,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4414.4,3586.9,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4564.7,3848.9,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[4152,4566.6,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[3848.7,4565.3,"R","N",0,0,"Spark","Allows you to revive yourself at the Flame Altar.",[],"",[]],[3795.3,4764.6,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[3239.7,3796.6,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[3444.2,3442.2,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[4556.2,3441.8,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[4762.2,3796.5,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[4204.6,4760.9,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[3388.2,6277.6,"S","W",3,2,"Earth Aura","You emit a protective aura that increases Physical and Magical Resistances by <b>%k<\/b> for you and all allies within <b>%k<\/b> meters.",[["p",0.1,0],["n",0,4]],"<b>%k<\/b> meters range per level",[["n",0,4]]],[3586.7,5540.3,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[3160.8,4840.8,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[4203.2,5166.3,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[1703.1,3382.1,"S","W",0,3,"Splash Dash","Allows you to perform an evasive dash while swimming or diving.\n\n<b>Cost<\/b>: %k Stamina",[["n",40,0]],"",[]],[5231.9,4330.2,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[4902.9,4903.5,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[3438,1905,"A","G",0,5,"Endurance of the Flame","Gain one point of Endurance for every two levels of the Flame.",[],"",[]],[3458,2516,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[5099.6,2900.7,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[2602.5,2604,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[3385.2,1704.7,"A","G",0,1,"Dexterity","Increases your Dexterity attribute by 1.\n\nIncreases Bow and Dagger damage by 5% per Attribute Point.",[],"",[]],[5397.3,2604.6,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[3541.5,2287.9,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[3024.9,3026.1,"A","G",0,1,"Endurance","Increases your Endurance attribute by 1.\n\nIncreases Stamina by %k per Attribute Point.",[["n",10,0]],"",[]],[2640,4240.8,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[3827.2,5968.6,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[3101.7,5162.1,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2854.7,4306.6,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2701.9,3527.4,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2210.4,4834.6,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[2701.2,4471.7,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[2383.3,5133.6,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[3164,5788.3,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[2311.8,5689.7,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[5788.5,3166,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5295.5,3526.7,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5750.4,3692,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5610,4752.2,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[5281.7,5529.1,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[4918.2,5969.8,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5518.3,5264,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5964.1,3826.3,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[6384.5,4638.5,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5716.6,4460.2,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[3482.7,5930.5,"A","W",0,5,"Thick Skin","Gain one point of Constitution for every two levels of the Flame.",[],"",[]],[5817,2182.1,"A","G",0,5,"Graceful Stride","Gain one point of Dexterity for every two levels of the Flame.",[],"",[]],[4000,2815,"S","G",0,3,"Eagle Eye","Greatly increases the zoom while aiming with Bows.\n\nTo aim, hold down the %k while a Bow is selected in the Action bar.\n(Alternatively, hold %k to aim your equipped Bow.)",[["i","Action"],["i","Aim"]],"",[]],[2463.4,2458.6,"S","G",0,4,"Dessert Stomach","You gain one additional Food slot.",[],"",[]],[4215.1,1535.3,"P","G",0,3,"Multi Shot Spread","Adds a <b>25%<\/b> chance to spawn an additional <i>Regular Arrow<\/i> with your <b>Flurry of Arrows<\/b> from the <b>Multi Shot<\/b> skill.\n\nThis additional <i>Regular Arrow<\/i> does not subtract from your ammunition.",[],"",[]],[4581.7,1633.1,"P","G",0,3,"Multi Shot Trigger","Shooting <i>Special Arrows<\/i> now triggers a <b>Flurry of Arrows<\/b> from the <b>Multi Shot<\/b> skill.\n\n<i>Special Arrows<\/i> fired this way will subtract from your ammunition.",[],"",[]],[4104.1,4385.5,"P","N",3,1,"Opportunity","Increases the damage multiplier of <b>Merciless Attacks<\/b> by <b>%k<\/b>.",[["p",0,0.4]],"<b>%k<\/b> damage per level",[["p",0,0.4]]],[5294.9,2333.7,"P","G",3,1,"Dagger Mastery","Damage with Daggers is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[5136.6,2387.8,"P","G",0,3,"Slice And Dice","After a Critical Strike with a Dagger, the base damage of your next Bow attack within %k seconds is increased by <b>%k<\/b>.",[["n",10,0],["p",0.5,0]],"",[]],[4255.1,4951.2,"P","M",3,1,"Eternal Spark","Dealing damage with Wand projectiles has a <b>%k<\/b> chance to restore <b>1<\/b> durability to that weapon.",[["p",0,0.15]],"<b>%k<\/b> chance per level",[["p",0,0.15]]],[2976.5,3405.9,"P","W",3,1,"Finesse","Dealing damage with One-Handed Swords, One-Handed Axes, One-Handed Clubs or Daggers has a <b>%k<\/b> chance to restore <b>1<\/b> durability to that weapon.",[["p",0,0.15]],"<b>%k<\/b> chance per level",[["p",0,0.15]]],[2813,4000.5,"P","W",3,2,"Steadfast","Defeating an enemy with a Melee weapon restores <b>%k<\/b> durability to that weapon.",[["n",0,1]],"<b>%k<\/b> durability per level",[["n",0,1]]],[5746.2,2400.5,"P","G",0,2,"Venomous Blades","Increases the chance to poison enemies to <b>30%<\/b> when using Daggers with the <b>Venomous Blades<\/b> perk.",[],"",[]],[5655.8,2692.4,"P","G",0,3,"Venom Mastery","Increases the damage dealt with the <b>Venomous Blades<\/b> Dagger perk by <b>100%<\/b>.",[],"",[]],[5075.2,3129.6,"P","G",0,3,"Quick Reflex Block","Briefly increases your Block value when blocking with Daggers, ensuring a near-miss parry reduces Stamina minimally.",[],"",[]],[5211.8,5015.8,"S","M",3,1,"Life Essences","Increases your maximum Health by <b>%k<\/b> times your Intelligence attribute.",[["n",0,3]],"<b>%k<\/b> times per level",[["n",0,3]]],[4378.4,4100.8,"S","N",0,3,"Giant Slayer Hook","Use your <b>Grappling Hook<\/b> to pull yourself towards large enemies during combat. \n\nThe cost of this skill scales with enemy level. The higher the enemy level, the more it costs.\n\n<b>Base Cost:<\/b> %k Stamina",[["n",30,0]],"",[]],[4133.9,4136,"S","N",0,4,"Grounding Hook","Use your <b>Grappling Hook<\/b> to pull <b>flying<\/b> enemies towards you during combat.\n\nThe cost of this skill scales with enemy level. The higher the enemy level, the more it costs.\n\n<b>Base Cost:<\/b> %k Stamina",[["n",30,0]],"",[]],[2201.5,3183.9,"S","W",0,3,"Upwards Slash Attack","When equipped with a Melee weapon, launch a powerful upward strike during the ascent of your jump. \n\nUse this skill to rapidly close the distance on <b>flying<\/b> enemies.\n\n<b>Cost:<\/b> %k Stamina",[["n",25,0]],"",[]],[2207.7,4317,"P","W",3,1,"Titan Edge","Damage with Two-Handed Greatswords is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[1859.4,4374.4,"S","W",0,3,"Whirlwind Crescendo","When equipped with a Two-Handed weapon, trigger a whirl attack at the end of an attack chain.\n\n<b>Cost:<\/b> %k Stamina",[["n",75,0]],"",[]],[3300.2,2789,"S","G",0,3,"Kick","When equipped with a Melee weapon, you can perform a Kick by attacking while blocking.\n\nKicking deals little damage, but hits the target with massive force and pushes them back, filling their <i>Stun Bar<\/i>.\n\n<i>Stun Bar<\/i> increase scales with Dexterity.\nStun time depends on the enemy's size.\n\n<b>Overpower<\/b> \nAttacking blocking enemies or parrying their attacks fills their <i>Stun Bar<\/i> until they become <b>overpowered<\/b>.\n<b>Overpowered<\/b> enemies are open for Merciless Attacks.",[],"",[]],[5134.2,5616.9,"P","M",3,1,"Shroud Resistance","Increases your <b>Shroud Resistance<\/b> by <b>%k<\/b>, which reduces the amount of <b>Shroud<\/b> damage received.",[["p",0,0.05]],"<b>%k<\/b> Resistance per level",[["p",0,0.05]]],[5671.3,4607.7,"P","M",3,1,"Fire Resistance","Increases your <b>Fire Resistance<\/b> by <b>%k<\/b>, which reduces the amount of <b>Fire<\/b> damage received.",[["p",0,0.05]],"<b>%k<\/b> Resistance per level",[["p",0,0.05]]],[5772.3,4159.1,"P","M",3,1,"Ice Resistance","Increases your <b>Ice Resistance<\/b> by <b>%k<\/b>, which reduces the amount of <b>Ice<\/b> damage received.",[["p",0,0.05]],"<b>%k<\/b> Resistance per level",[["p",0,0.05]]],[6483.8,4331,"P","M",3,1,"Shock Resistance","Increases your <b>Shock Resistance<\/b> by <b>%k<\/b>, which reduces the amount of <b>Shock<\/b> damage received.",[["p",0,0.05]],"<b>%k<\/b> Resistance per level",[["p",0,0.05]]],[2479.3,2189.7,"P","G",0,5,"Last Meal","Your Food buffs persist through death, but they last half as long.",[],"",[]],[5599.2,2249.9,"P","G",0,4,"Expose Weakness","Critical Strikes with Daggers break the armor of enemies, applying a <b>debuff<\/b> which lets them take <b>%k<\/b> increased physical damage for <b>%k<\/b> seconds.",[["p",0.25,0],["n",5,0]],"",[]],[5805.3,5530.9,"P","M",3,2,"Righteous Fire","Healing any target with a spell triggers a burst of fire that deals <b>%k<\/b> of the heal amount as <b>Fire<\/b> damage to nearby <b>Fell<\/b> enemies.",[["p",0,0.2]],"<b>%k Fire<\/b> damage per level",[["p",0,0.2]]],[5525,5531.5,"P","M",0,4,"Divine Surge","Healing spells can perform Critical Strikes that scale with your Critical Strike damage.",[],"",[]],[5245.9,5779.6,"P","M",3,2,"Shared Misery","When you receive <b>Shroud<\/b> damage, all players within <b>%k<\/b> meters receive <b>%k<\/b> increased <b>Shroud Resistance<\/b> for <b>30<\/b> seconds.",[["n",0,5],["p",0.15,0]],"<b>%k<\/b> meters range per level",[["n",0,5]]],[4100.4,3621.4,"P","N",3,1,"Fisherman's Resolve","Increases your Fishing Endurance by <b>%k<\/b>.\n\nAllows for extended battles with hooked fish.",[["n",0,5]],"<b>%k<\/b> Fishing Endurance per level",[["n",0,5]]],[3047,3743.7,"P","W",0,3,"Wet Dog","Weakens the effect of the <b>Wet<\/b> and <b>Soaked<\/b> debuffs.\n\nStamina and Stamina Regeneration is reduced by <b>20%<\/b> instead of <b>30%<\/b>.\n\n<b>Wet<\/b> \nReduces Stamina and Stamina Regeneration by <b>30%<\/b> for <b>15<\/b> minutes. Warmth reduces the remaining duration.\n\n<b>Soaked<\/b> \nReduces Stamina and Stamina Regeneration by <b>30%<\/b> for <b>30<\/b> seconds. Also reduces <b>Ice and Shock Resistances<\/b> by <b>30%<\/b> but increases <b>Fire Resistance<\/b> by <b>30%<\/b>.\n<b>Soaked<\/b> can be applied to enemies.\n<b>Soaked<\/b> duration can not be reduced by warmth, and transitions into the <b>Wet<\/b> debuff once it ends.",[],"",[]],[2762.2,3668.4,"P","W",0,3,"Soaked Dog","Weakens the effect of the <b>Wet<\/b> and <b>Soaked<\/b> debuffs.\n\nStamina and Stamina Regeneration is reduced by <b>10%<\/b> instead of <b>20%<\/b>.\n\n<b>Wet<\/b> \nReduces Stamina and Stamina Regeneration by <b>30%<\/b> for <b>15<\/b> minutes. Warmth reduces the remaining duration.\n\n<b>Soaked<\/b> \nReduces Stamina and Stamina Regeneration by <b>30%<\/b> for <b>30<\/b> seconds. Also reduces <b>Ice and Shock Resistances<\/b> by <b>30%<\/b> but increases <b>Fire Resistance<\/b> by <b>30%<\/b>.\n<b>Soaked<\/b> can be applied to enemies.\n<b>Soaked<\/b> duration can not be reduced by warmth, and transitions into the <b>Wet<\/b> debuff once it ends.",[],"",[]],[2057.8,2649,"S","G",0,1,"Strategic Maneuver","Replaces the Dodge Roll ability with a sideways Dodge Roll while an enemy target is locked.\n\nUse it to roll around your enemies, making it easier to flank them or deliver backstabs. \n\nBlink replaces the sideways Dodge Roll of the Strategic Maneuver skill.\n\n<b>Cost:<\/b> %k Stamina",[["n",20,0]],"",[]],[4705.2,2787,"P","G",3,1,"Cutthroat","Sneak Attack Damage is increased by <b>%k<\/b>.",[["p",0,1]],"<b>%k<\/b> damage per level",[["p",0,1]]],[2886.6,2884.6,"P","G",3,2,"Rebound","Base Stamina Regeneration is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> Stamina Regeneration per level",[["p",0,0.1]]],[5027.3,4593.9,"P","M",3,1,"Bone to Ash","Damage against Hollow is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[3358.4,2238.5,"P","G",3,1,"Cull the Herd","Damage against Wildlife is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[3672.5,2149.5,"P","G",3,1,"Primal Force","Damage against Vukah is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[5333.8,3642.2,"P","M",3,1,"Sleight of Hand","Unarmed damage is increased by <b>%k<\/b>.",[["p",0,0.3]],"<b>%k<\/b> damage per level",[["p",0,0.3]]],[5881.4,2916.1,"P","G",3,1,"Vile Concoction","Throwable damage is increased by <b>%k<\/b>.",[["p",0,0.12]],"<b>%k<\/b> damage per level",[["p",0,0.12]]],[4953.3,3743.8,"P","M",3,1,"Mana Currents","Base Mana Regeneration is increased by <b>%k<\/b>.",[["n",0,5]],"<b>%k<\/b> Mana Regeneration per level",[["n",0,5]]],[4937.9,2375.8,"P","G",3,1,"Fatal Precision","Critical Strike chance is increased by <b>%k<\/b>.\nCritical Strike damage is increased by <b>%k<\/b>.",[["p",0,0.01],["p",0,0.05]],"<b>%k<\/b> Critical Strike chance and <b>%k<\/b> Critical Strike damage per level",[["p",0,0.01],["p",0,0.05]]],[5905.8,3488.2,"P","M",3,1,"Spellslinger","Staff damage is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[3540,5715.2,"A","W",0,1,"Constitution","Increases your Constitution attribute by 1.\n\nIncreases Health by %k per Attribute Point.",[["n",50,0]],"",[]],[1712.7,4614.3,"A","W",0,1,"Strength","Increases your Strength attribute by 1.\n\nIncreases Melee damage by 5% per Attribute Point.",[],"",[]],[5257.6,5257.1,"A","M",0,1,"Intelligence","Increases your Intelligence attribute by 1.\n\nIncreases Magic damage by 5% per Attribute Point.",[],"",[]],[5361,3763,"A","M",0,1,"Spirit","Increases your Spirit attribute by 1.\n\nIncreases Mana by %k per Attribute Point.",[["n",20,0]],"",[]],[4579.4,5678.5,"P","M",3,1,"Wand Mastery","Wand damage is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[2569.4,4383,"S","W",0,3,"Two-Handed Specialization","Unlocks Special Abilities of Two-Handed Melee weapons. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[2956,5042.8,"S","W",0,3,"One-Handed Specialization","Unlocks Special Abilities of One-Handed Melee weapons. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[4545.6,5504.1,"S","M",0,3,"Wand Specialization","Unlocks Special Abilities of Wands. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[4486.8,2183.9,"S","G",0,3,"Bow Specialization","Unlocks Special Abilities of Bows. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[5296.1,3095.5,"S","G",0,3,"Dagger Specialization","Unlocks Special Abilities of Daggers. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[3808.6,4049.4,"S","N",0,2,"Pickaxe Specialization","Unlocks Special Abilities of Pickaxes. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[3948.5,3811.1,"S","N",0,2,"Felling Axe Specialization","Unlocks Special Abilities of Felling Axes. \nPress <b>%k<\/b> to unleash a powerful Special Ability after generating enough Focus. \n\n<b>Focus<\/b>\nGenerate Focus by attacking. Focus can be built up with any weapon type and is used to trigger Special Abilities of weapons.",[["i","Action"]],"",[]],[1955.2,3451.9,"S","W",3,1,"Athlete","Increases your maximum Health by <b>%k<\/b> times your Strength attribute.",[["n",0,3]],"<b>%k<\/b> times per level",[["n",0,3]]],[3046.6,4255.9,"P","W",3,1,"Barbarian's Path","Damage with Two-Handed Axes, Clubs and Hammers is increased by <b>%k<\/b>.",[["p",0,0.05]],"<b>%k<\/b> damage per level",[["p",0,0.05]]],[5248.2,2751.9,"S","G",3,1,"Veiled Vigor","Increases your maximum Health by <b>%k<\/b> times your Dexterity attribute.",[["n",0,3]],"<b>%k<\/b> times per level",[["n",0,3]]],[3615.1,3900,"P","N",3,1,"Prospector","Tools deal <b>%k<\/b> increased damage against metal.\nThis includes metal ore veins.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[4281.1,5566.3,"S","M",0,4,"Wand Evasion Attack","When equipped with a Wand, you can perform a Wand Evasion Attack by pressing <b>%k<\/b> while evading.\nIt fires a magical disc that pierces enemies and deals <b>50%%<\/b> additional weapon damage.\n\n<b>Cost:<\/b> %k Mana",[["i","Attack"],["n",50,0]],"",[]],[4512.1,5911.9,"S","M",0,3,"Aerial Wand Attack","When equipped with a Wand, you can perform a special attack by holding <b>%k<\/b> during a jump.\n\nIt fires a magical projectile that deals <b>50%%<\/b> additional weapon damage in a small blast radius.\n\n<b>Cost:<\/b> %k Mana",[["i","Attack"],["n",25,0]],"",[]],[5525.6,4408.6,"P","M",3,2,"Totem Mastery","Increases the maximum amount of summoned totems by <b>%k<\/b>.",[["n",0,1]],"<b>%k<\/b> totem per level",[["n",0,1]]],[5358.6,4787.5,"P","M",3,2,"Advanced Necromancy","Increases the maximum amount of summoned Hollow allies from spells by <b>%k<\/b>.",[["n",0,1]],"<b>%k<\/b> Hollow ally per level",[["n",0,1]]],[4409.6,2472.6,"P","G",3,2,"Puncture","Ranged <b>Piercing<\/b> damage is increased by <b>%k<\/b>.",[["p",0,0.1]],"<b>%k<\/b> damage per level",[["p",0,0.1]]],[4356.9,2664.3,"P","G",3,1,"Barrage","Dealing damage with Bows has a <b>%k<\/b> chance to restore <b>1<\/b> durability to that weapon.",[["p",0,0.15]],"<b>%k<\/b> chance per level",[["p",0,0.15]]],[5456.3,3391.7,"P","M",0,3,"Blast and Cast","After a Critical Strike with a Wand, the base damage of your next Staff attack within %k seconds is increased by <b>%k<\/b>.",[["n",10,0],["p",0.5,0]],"",[]],[3407.9,2973,"P","G",3,1,"Survival Instinct","Defeating a Shroud infested enemy with a Bow or Dagger restores <b>%k<\/b> seconds of <b>Time in the Shroud<\/b>.\n\n<b>Time in the Shroud<\/b>\nShould this time run out, the Shroud will consume you.",[["n",0,3]],"<b>%k<\/b> seconds per level",[["n",0,3]]],[4001.6,3998.3,"S","N",0,3,"Airborne Architect","Turn into a spark inside the base to move freely through the air in first person while building. To toggle this mode, hold %k.",[["i","Action"]],"",[]]],"links":[[0,8],[0,56],[1,45],[1,204],[2,21],[2,189],[3,13],[3,102],[4,11],[4,60],[5,7],[5,59],[6,92],[6,129],[7,228],[7,233],[8,10],[8,229],[9,10],[9,233],[9,242],[10,233],[11,91],[11,95],[12,27],[12,74],[12,107],[12,208],[13,96],[14,169],[14,188],[15,220],[16,21],[16,25],[16,143],[16,210],[17,143],[17,166],[17,172],[17,236],[18,210],[19,20],[19,143],[19,197],[19,236],[20,30],[20,197],[22,165],[22,221],[23,90],[24,90],[25,215],[26,217],[27,36],[27,147],[27,187],[28,30],[28,112],[28,171],[29,114],[29,163],[29,240],[30,117],[30,172],[31,32],[31,171],[33,80],[33,163],[33,217],[34,210],[34,237],[35,80],[35,170],[35,217],[36,43],[36,107],[36,135],[37,41],[37,45],[37,53],[37,107],[37,175],[37,239],[38,46],[38,149],[38,151],[39,50],[39,51],[40,110],[40,111],[40,134],[40,152],[40,183],[40,194],[40,241],[41,108],[42,48],[42,149],[42,151],[43,215],[44,49],[44,54],[47,148],[47,152],[49,58],[49,106],[49,123],[49,226],[50,51],[50,52],[50,146],[50,151],[50,194],[51,56],[51,175],[51,241],[53,103],[54,55],[57,176],[57,207],[58,216],[59,231],[60,63],[61,65],[61,182],[62,67],[62,79],[62,121],[62,158],[62,219],[63,69],[63,72],[63,140],[64,65],[64,139],[65,72],[65,93],[65,132],[66,85],[66,140],[67,86],[67,158],[67,159],[68,150],[69,231],[70,119],[70,122],[71,88],[71,105],[71,184],[71,205],[73,88],[74,147],[75,82],[75,139],[76,77],[76,139],[77,81],[77,154],[77,218],[78,157],[78,191],[78,230],[79,86],[79,193],[80,217],[81,99],[81,234],[81,235],[82,161],[82,218],[83,84],[83,85],[83,224],[84,120],[84,155],[84,161],[85,120],[85,160],[86,192],[87,128],[87,242],[88,157],[89,105],[89,142],[90,96],[90,182],[91,131],[91,179],[92,242],[93,139],[94,116],[94,195],[95,179],[96,144],[96,210],[97,176],[98,117],[98,201],[99,234],[99,235],[100,168],[100,235],[101,222],[101,225],[101,235],[103,216],[103,226],[104,125],[104,182],[105,230],[106,113],[108,113],[108,226],[109,148],[109,152],[112,198],[114,165],[114,213],[115,138],[115,154],[116,144],[116,167],[116,220],[117,166],[117,196],[118,138],[118,161],[119,158],[119,160],[120,162],[121,193],[122,158],[122,160],[123,177],[124,150],[124,163],[124,214],[125,141],[125,225],[125,234],[126,133],[127,134],[128,135],[129,136],[130,137],[131,132],[133,205],[136,215],[137,182],[138,173],[139,218],[140,155],[141,182],[142,191],[142,207],[144,188],[145,149],[147,227],[147,232],[148,176],[148,207],[148,209],[150,181],[150,185],[150,200],[150,232],[151,211],[151,212],[153,156],[153,192],[153,223],[154,173],[156,159],[156,231],[157,183],[157,205],[159,223],[161,173],[163,217],[164,215],[164,240],[165,170],[166,196],[167,202],[168,203],[169,202],[170,217],[174,185],[174,200],[176,199],[177,178],[179,190],[180,200],[181,216],[183,205],[184,205],[184,231],[185,186],[187,227],[189,190],[192,193],[193,219],[195,203],[201,202],[205,206],[215,221],[222,225],[222,235],[226,238],[228,242],[229,242]],"gear":[["Adventurer Boots","crafted","Feet",[[63,1]]],["Adventurer Boots","drop","Feet",[[63,1]]],["Adventurer Chest","crafted","Chest",[[79,1]]],["Adventurer Chest","drop","Chest",[[72,1],[79,1]]],["Adventurer Gloves","crafted","Hands",[[69,1]]],["Adventurer Gloves","drop","Hands",[[66,1],[69,1]]],["Adventurer Helmet","crafted","Head",[[231,1]]],["Adventurer Helmet","drop","Head",[[67,1],[231,1]]],["Adventurer Trousers","crafted","Legs",[[230,1]]],["Adventurer Trousers","drop","Legs",[[230,1],[231,1]]],["Alchemist Apprentice Boots","drop","Feet",[[19,1],[34,1]]],["Alchemist Apprentice Chest","drop","Chest",[[18,1],[30,1]]],["Alchemist Apprentice Gloves","drop","Hands",[[17,1],[22,1]]],["Alchemist Apprentice Hat","drop","Head",[[16,1],[112,1]]],["Alchemist Apprentice Trousers","drop","Legs",[[35,1],[80,1]]],["Alpine Antler Boots","crafted","Feet",[[40,1]]],["Alpine Antler Boots","drop","Feet",[[40,1]]],["Alpine Antler Chest","crafted","Chest",[[103,1]]],["Alpine Antler Chest","drop","Chest",[[49,1],[103,1]]],["Alpine Antler Gloves","crafted","Hands",[[37,1]]],["Alpine Antler Gloves","drop","Hands",[[37,1]]],["Alpine Antler Hood","crafted","Head",[[238,1]]],["Alpine Antler Hood","drop","Head",[[216,1],[238,1]]],["Alpine Antler Trousers","crafted","Legs",[[58,1]]],["Alpine Antler Trousers","drop","Legs",[[58,1],[109,1]]],["Ancient Ring of Health","","Ring",[[72,1],[83,1]]],["Ancient Ring of Mana","","Ring",[[30,1],[217,1]]],["Ancient Ring of Stamina","","Ring",[[53,1],[216,1]]],["Archmage Boots","crafted","Feet",[[34,1]]],["Archmage Boots","drop","Feet",[[19,1],[34,1]]],["Archmage Chest","crafted","Chest",[[30,1]]],["Archmage Chest","drop","Chest",[[18,1],[30,1]]],["Archmage Gloves","crafted","Hands",[[22,1]]],["Archmage Gloves","drop","Hands",[[17,1],[22,1]]],["Archmage Hat","crafted","Head",[[16,1]]],["Archmage Hat","drop","Head",[[16,1],[112,1]]],["Archmage Trousers","crafted","Legs",[[80,1]]],["Archmage Trousers","drop","Legs",[[35,1],[80,1]]],["Ashwind Strider Boots","crafted","Feet",[[40,1]]],["Ashwind Strider Boots","drop","Feet",[[40,1]]],["Ashwind Strider Chest","crafted","Chest",[[103,1]]],["Ashwind Strider Chest","drop","Chest",[[49,1],[103,1]]],["Ashwind Strider Gloves","crafted","Hands",[[37,1]]],["Ashwind Strider Gloves","drop","Hands",[[37,1]]],["Ashwind Strider Hood","crafted","Head",[[238,1]]],["Ashwind Strider Hood","drop","Head",[[216,1],[238,1]]],["Ashwind Strider Pants","crafted","Legs",[[58,1]]],["Ashwind Strider Pants","drop","Legs",[[58,1],[109,1]]],["Assassin Boots","crafted","Feet",[[68,1]]],["Assassin Boots","drop","Feet",[[68,1]]],["Assassin Chest","crafted","Chest",[[232,1]]],["Assassin Chest","drop","Chest",[[209,1],[232,1]]],["Assassin Gloves","crafted","Hands",[[180,1]]],["Assassin Gloves","drop","Hands",[[180,1]]],["Assassin Hood","crafted","Head",[[74,1]]],["Assassin Hood","drop","Head",[[74,1]]],["Assassin Trousers","crafted","Legs",[[208,1]]],["Assassin Trousers","drop","Legs",[[208,1],[232,1]]],["Astrodome Shield","crafted","Weapon",[[105,1]]],["Astrodome Shield","drop","Weapon",[[91,1],[104,1],[105,1]]],["Beastmaster Shaman Staff","","Weapon",[[96,1],[96,2],[215,2]]],["Blackguard Boots","","Feet",[[63,1],[138,1]]],["Blackguard Chest","","Chest",[[72,1],[230,1]]],["Blackguard Gloves","","Hands",[[66,1],[69,1]]],["Blackguard Helmet","","Head",[[67,1],[231,1]]],["Blackguard Trousers","","Legs",[[67,1],[230,1]]],["Bloodfeather Chest","crafted","Chest",[[232,1]]],["Bloodfeather Chest","drop","Chest",[[209,1],[232,1]]],["Bloodfeather Gloves","crafted","Hands",[[180,1]]],["Bloodfeather Gloves","drop","Hands",[[180,1]]],["Bloodfeather Helmet","crafted","Head",[[74,1]]],["Bloodfeather Helmet","drop","Head",[[74,1]]],["Bloodfeather Pants","crafted","Legs",[[208,1]]],["Bloodfeather Pants","drop","Legs",[[208,1],[232,1]]],["Bloodfeather Shoes","crafted","Feet",[[68,1]]],["Bloodfeather Shoes","drop","Feet",[[68,1]]],["Brazen Bull Boots","crafted","Feet",[[93,1]]],["Brazen Bull Boots","drop","Feet",[[93,1],[138,1]]],["Brazen Bull Chest","crafted","Chest",[[65,1]]],["Brazen Bull Chest","drop","Chest",[[65,1]]],["Brazen Bull Gloves","crafted","Hands",[[82,1]]],["Brazen Bull Gloves","drop","Hands",[[82,1]]],["Brazen Bull Helmet","crafted","Head",[[93,1]]],["Brazen Bull Helmet","drop","Head",[[93,1],[118,1]]],["Brazen Bull Shield","crafted","Weapon",[[91,1]]],["Brazen Bull Shield","drop","Weapon",[[91,1]]],["Brazen Bull Trousers","crafted","Legs",[[64,1]]],["Brazen Bull Trousers","drop","Legs",[[64,1],[77,1]]],["Bronze Axe","","Weapon",[[8,1]]],["Bronze Pickaxe","","Tool",[[7,1]]],["Celestium Axe","","Weapon",[[8,1]]],["Celestium Pickaxe","","Tool",[[7,1]]],["Circlet Of Lightning","","Head",[[35,1],[112,1],[217,1]]],["Clearwater Staff","","Weapon",[[96,1],[215,3]]],["Commander's Ring","","Ring",[[65,1],[122,1]]],["Copper Axe","","Weapon",[[8,1]]],["Copper Pickaxe","","Tool",[[7,1]]],["Crestflame Chest","crafted","Chest",[[65,1]]],["Crestflame Chest","drop","Chest",[[65,1]]],["Crestflame Gloves","crafted","Hands",[[82,1]]],["Crestflame Gloves","drop","Hands",[[82,1]]],["Crestflame Helmet","crafted","Head",[[93,1]]],["Crestflame Helmet","drop","Head",[[93,1],[118,1]]],["Crestflame Pants","crafted","Legs",[[64,1]]],["Crestflame Pants","drop","Legs",[[64,1],[77,1]]],["Crestflame Shield","crafted","Weapon",[[91,1]]],["Crestflame Shield","drop","Weapon",[[91,1]]],["Crestflame boots","crafted","Feet",[[93,1]]],["Crestflame boots","drop","Feet",[[93,1],[138,1]]],["Crystalwater Staff","","Weapon",[[96,2],[215,3]]],["Cutthroat Boots","crafted","Feet",[[68,1]]],["Cutthroat Boots","drop","Feet",[[68,1]]],["Cutthroat Chest","crafted","Chest",[[232,1]]],["Cutthroat Chest","drop","Chest",[[209,1],[232,1]]],["Cutthroat Gloves","crafted","Hands",[[180,1]]],["Cutthroat Gloves","drop","Hands",[[180,1]]],["Cutthroat Helmet","crafted","Head",[[74,1]]],["Cutthroat Helmet","drop","Head",[[74,1]]],["Cutthroat Trousers","crafted","Legs",[[208,1]]],["Cutthroat Trousers","drop","Legs",[[208,1],[232,1]]],["Dark Staff","","Weapon",[[215,2]]],["Darya's Staff","","Weapon",[[215,3]]],["Deadeye Boots","crafted","Feet",[[106,1]]],["Deadeye Boots","drop","Feet",[[106,1]]],["Deadeye Gloves","crafted","Hands",[[108,1]]],["Deadeye Gloves","drop","Hands",[[108,1]]],["Deadeye Hood","crafted","Head",[[53,1]]],["Deadeye Hood","drop","Head",[[53,1]]],["Deadeye Trousers","crafted","Legs",[[41,1]]],["Deadeye Trousers","drop","Legs",[[41,1]]],["Deadeye Vest","crafted","Chest",[[49,1]]],["Deadeye Vest","drop","Chest",[[49,1],[216,1]]],["Deceiving Staff","","Weapon",[[215,2]]],["Deerstalker Boots","crafted","Feet",[[40,1]]],["Deerstalker Boots","drop","Feet",[[40,1]]],["Deerstalker Chest","crafted","Chest",[[103,1]]],["Deerstalker Chest","drop","Chest",[[49,1],[103,1]]],["Deerstalker Gloves","crafted","Hands",[[37,1]]],["Deerstalker Gloves","drop","Hands",[[37,1]]],["Deerstalker Hood","crafted","Head",[[238,1]]],["Deerstalker Hood","drop","Head",[[216,1],[238,1]]],["Deerstalker Trousers","crafted","Legs",[[58,1]]],["Deerstalker Trousers","drop","Legs",[[58,1],[109,1]]],["Diving Helmet","","Head",[[204,1]]],["Eagle Eye Boots","","Feet",[[40,1]]],["Eagle Eye Chest","","Chest",[[49,1],[103,1]]],["Eagle Eye Gloves","","Hands",[[37,1]]],["Eagle Eye Helmet","","Head",[[216,1],[238,1]]],["Eagle Eye Trousers","","Legs",[[58,1],[109,1]]],["Elder Boots","","Feet",[[19,1],[34,1]]],["Elder Chest","","Chest",[[18,1],[30,1]]],["Elder Gloves","","Hands",[[17,1],[22,1]]],["Elder Hat","","Head",[[16,1],[117,1]]],["Elder Trousers","","Legs",[[35,1],[80,1]]],["Elder's Staff","","Weapon",[[215,1]]],["Elite Hollow Boots","","Feet",[[40,2],[210,1]]],["Elite Hollow Chestplate","","Chest",[[65,2],[210,1]]],["Elite Hollow Gloves","","Hands",[[210,1]]],["Elite Hollow Helmet","","Head",[[210,1]]],["Elite Hollow Pants","","Legs",[[64,2],[210,1]]],["Emberguard Boots","crafted","Feet",[[63,1]]],["Emberguard Boots","drop","Feet",[[63,1]]],["Emberguard Chestplate","crafted","Chest",[[79,1]]],["Emberguard Chestplate","drop","Chest",[[72,1],[79,1]]],["Emberguard Gloves","crafted","Hands",[[69,1]]],["Emberguard Gloves","drop","Hands",[[66,1],[69,1]]],["Emberguard Helmet","crafted","Head",[[231,1]]],["Emberguard Helmet","drop","Head",[[67,1],[231,1]]],["Emberguard Pants","crafted","Legs",[[230,1]]],["Emberguard Pants","drop","Legs",[[230,1],[231,1]]],["Emberguard Shield","crafted","Weapon",[[91,1],[179,1]]],["Emberguard Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Eternal Chain Heal I","","Weapon",[[96,1]]],["Eternal Chain Heal II","","Weapon",[[96,2]]],["Eternal Heal Beam I","","Weapon",[[96,1]]],["Eternal Heal Beam II","","Weapon",[[96,2]]],["Eternal Heal Cascade I","","Weapon",[[96,1]]],["Eternal Heal Cascade II","","Weapon",[[96,2]]],["Ethereal Ward","crafted","Weapon",[[104,1],[182,1],[197,1]]],["Ethereal Ward","drop","Weapon",[[104,1],[125,1],[182,1],[197,1],[222,1]]],["Exceptional Ring of Health","","Ring",[[72,1],[83,1]]],["Exceptional Ring of Mana","","Ring",[[30,1],[217,1]]],["Exceptional Ring of Stamina","","Ring",[[53,1],[216,1]]],["Fell Black Knight Shield","","Weapon",[[91,2]]],["Fell Crusader Shield","","Weapon",[[91,1],[104,1],[105,1]]],["Fell Defender Shield","","Weapon",[[91,1]]],["Flame Arcanist Boots","crafted","Feet",[[34,1]]],["Flame Arcanist Boots","drop","Feet",[[19,1],[34,1]]],["Flame Arcanist Chest","crafted","Chest",[[30,1]]],["Flame Arcanist Chest","drop","Chest",[[18,1],[30,1]]],["Flame Arcanist Gloves","crafted","Hands",[[22,1]]],["Flame Arcanist Gloves","drop","Hands",[[17,1],[22,1]]],["Flame Arcanist Hat","crafted","Head",[[16,1]]],["Flame Arcanist Hat","drop","Head",[[16,1],[112,1]]],["Flame Arcanist Pants","crafted","Legs",[[80,1]]],["Flame Arcanist Pants","drop","Legs",[[35,1],[80,1]]],["Flaming Gauntlets","","Hands",[[17,1],[104,1],[222,1]]],["Fowler Boots","crafted","Feet",[[68,1]]],["Fowler Boots","drop","Feet",[[68,1]]],["Fowler Chest","crafted","Chest",[[232,1]]],["Fowler Chest","drop","Chest",[[209,1],[232,1]]],["Fowler Gloves","crafted","Hands",[[180,1]]],["Fowler Gloves","drop","Hands",[[180,1]]],["Fowler Helmet","crafted","Head",[[74,1]]],["Fowler Helmet","drop","Head",[[74,1]]],["Fowler Trousers","crafted","Legs",[[208,1]]],["Fowler Trousers","drop","Legs",[[208,1],[232,1]]],["Frostbite Slasher Boots","crafted","Feet",[[68,1]]],["Frostbite Slasher Boots","drop","Feet",[[68,1]]],["Frostbite Slasher Chest","crafted","Chest",[[232,1]]],["Frostbite Slasher Chest","drop","Chest",[[209,1],[232,1]]],["Frostbite Slasher Gloves","crafted","Hands",[[180,1]]],["Frostbite Slasher Gloves","drop","Hands",[[180,1]]],["Frostbite Slasher Hood","crafted","Head",[[74,1]]],["Frostbite Slasher Hood","drop","Head",[[74,1]]],["Frostbite Slasher Trousers","crafted","Legs",[[208,1]]],["Frostbite Slasher Trousers","drop","Legs",[[208,1],[232,1]]],["Frozen Gauntlets","","Hands",[[19,1],[104,1],[222,1]]],["Gemini Ring","","Ring",[[68,1],[74,1],[180,1],[216,1]]],["Ghostly Ward","crafted","Weapon",[[104,1],[182,1],[196,1]]],["Ghostly Ward","drop","Weapon",[[104,1],[125,1],[182,1],[196,1],[222,1]]],["Gilded Axe","","Weapon",[[8,1]]],["Gilded Pickaxe","","Tool",[[7,1]]],["Gloom Monarch Boots","","Feet",[[77,1]]],["Gloom Monarch Chestplate","","Chest",[[64,1],[65,1]]],["Gloom Monarch Gloves","","Hands",[[213,1]]],["Gloom Monarch Helmet","","Head",[[83,1]]],["Gloom Monarch Trousers","","Legs",[[25,1]]],["Golden Bulwark Boots","crafted","Feet",[[93,1]]],["Golden Bulwark Boots","drop","Feet",[[93,1],[138,1]]],["Golden Bulwark Chestplate","crafted","Chest",[[65,1]]],["Golden Bulwark Chestplate","drop","Chest",[[65,1]]],["Golden Bulwark Gloves","crafted","Hands",[[82,1]]],["Golden Bulwark Gloves","drop","Hands",[[82,1]]],["Golden Bulwark Helmet","crafted","Head",[[93,1]]],["Golden Bulwark Helmet","drop","Head",[[93,1],[118,1]]],["Golden Bulwark Pants","crafted","Legs",[[64,1]]],["Golden Bulwark Pants","drop","Legs",[[64,1],[77,1]]],["Golden Bulwark Shield","crafted","Weapon",[[91,1]]],["Golden Bulwark Shield","drop","Weapon",[[91,1]]],["Greater Ring of Health","","Ring",[[72,1],[83,1]]],["Greater Ring of Mana","","Ring",[[30,1],[217,1]]],["Greater Ring of Stamina","","Ring",[[53,1],[216,1]]],["Greatsword Gauntlets","","Hands",[[105,1],[192,1],[230,1]]],["Guard of the North Boots","","Feet",[[19,1],[63,1],[106,1]]],["Guard of the North Chestplate","","Chest",[[30,1],[72,1],[216,1]]],["Guard of the North Gloves","","Hands",[[17,1],[37,1],[66,1]]],["Guard of the North Helmet","","Head",[[67,1],[112,1],[216,1]]],["Guard of the North Pants","","Legs",[[217,1],[231,1],[238,1]]],["Guardian Boots","crafted","Feet",[[93,1]]],["Guardian Boots","drop","Feet",[[93,1],[138,1]]],["Guardian Chestplate","crafted","Chest",[[65,1]]],["Guardian Chestplate","drop","Chest",[[65,1]]],["Guardian Gloves","crafted","Hands",[[82,1]]],["Guardian Gloves","drop","Hands",[[82,1]]],["Guardian Helmet","crafted","Head",[[93,1]]],["Guardian Helmet","drop","Head",[[93,1],[118,1]]],["Guardian Shield","crafted","Weapon",[[91,1]]],["Guardian Shield","drop","Weapon",[[91,1]]],["Guardian Trousers","crafted","Legs",[[64,1]]],["Guardian Trousers","drop","Legs",[[64,1],[77,1]]],["Hailcaster Boots","crafted","Feet",[[20,1]]],["Hailcaster Boots","drop","Feet",[[20,1],[197,1]]],["Hailcaster Chest","crafted","Chest",[[188,1]]],["Hailcaster Chest","drop","Chest",[[30,1],[188,1]]],["Hailcaster Gloves","crafted","Hands",[[222,1]]],["Hailcaster Gloves","drop","Hands",[[222,1]]],["Hailcaster Hat","crafted","Head",[[117,1]]],["Hailcaster Hat","drop","Head",[[16,1],[117,1]]],["Hailcaster Pants","crafted","Legs",[[182,1]]],["Hailcaster Pants","drop","Legs",[[125,1],[182,1]]],["Hawk Boots","","Feet",[[40,1],[92,1],[107,1]]],["Hawk Chest","","Chest",[[6,1],[209,1],[232,1]]],["Hawk Gloves","","Hands",[[37,1],[92,1],[180,1]]],["Hawk Helmet","","Head",[[6,1],[74,1],[216,1]]],["Hawk Trousers","","Legs",[[6,1],[208,1],[232,1]]],["Healer Boots","crafted","Feet",[[96,1]]],["Healer Boots","drop","Feet",[[96,1],[201,1]]],["Healer Gloves","crafted","Hands",[[96,1]]],["Healer Gloves","drop","Hands",[[22,1],[96,1]]],["Healer Headwrap","crafted","Head",[[94,1]]],["Healer Headwrap","drop","Head",[[94,1]]],["Healer Pants","crafted","Legs",[[14,1]]],["Healer Pants","drop","Legs",[[14,1]]],["Healer Tunic","crafted","Chest",[[116,1]]],["Healer Tunic","drop","Chest",[[116,1],[203,1]]],["Helix","","Weapon",[[215,1]]],["Herbalist Boots","crafted","Feet",[[96,1]]],["Herbalist Boots","drop","Feet",[[96,1],[201,1]]],["Herbalist Gloves","crafted","Hands",[[96,1]]],["Herbalist Gloves","drop","Hands",[[22,1],[96,1]]],["Herbalist Headwrap","crafted","Head",[[94,1]]],["Herbalist Headwrap","drop","Head",[[94,1]]],["Herbalist Pants","crafted","Legs",[[14,1]]],["Herbalist Pants","drop","Legs",[[14,1]]],["Herbalist Tunic","crafted","Chest",[[116,1]]],["Herbalist Tunic","drop","Chest",[[116,1],[203,1]]],["Hero's Shield","crafted","Weapon",[[91,1],[179,1]]],["Hero's Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Hunter Boots","crafted","Feet",[[40,1]]],["Hunter Boots","drop","Feet",[[40,1]]],["Hunter Gloves","crafted","Hands",[[37,1]]],["Hunter Gloves","drop","Hands",[[37,1]]],["Hunter Hood","crafted","Head",[[238,1]]],["Hunter Hood","drop","Head",[[216,1],[238,1]]],["Hunter Trousers","crafted","Legs",[[58,1]]],["Hunter Trousers","drop","Legs",[[58,1],[109,1]]],["Hunter Vest","crafted","Chest",[[103,1]]],["Hunter Vest","drop","Chest",[[49,1],[103,1]]],["Incredible Ward","crafted","Weapon",[[104,1],[182,1],[195,1]]],["Incredible Ward","drop","Weapon",[[104,1],[125,1],[182,1],[195,1],[222,1]]],["Infernal Wand","","Weapon",[[215,1]]],["Invisible Barrier Ward","crafted","Weapon",[[104,1],[182,1],[195,1]]],["Invisible Barrier Ward","drop","Weapon",[[104,1],[125,1],[182,1],[195,1],[222,1]]],["Iron Axe","","Weapon",[[8,1]]],["Iron Pickaxe","","Tool",[[7,1]]],["Knight Boots","","Feet",[[63,1],[183,1]]],["Knight Chestplate","","Chest",[[230,1]]],["Knight Gloves","","Hands",[[66,1],[105,1]]],["Knight Helmet","","Head",[[68,1],[183,1]]],["Knight Trousers","","Legs",[[68,1],[230,1]]],["Lesser Ring of Health","","Ring",[[72,1],[83,1]]],["Lesser Ring of Mana","","Ring",[[30,1],[217,1]]],["Lesser Ring of Stamina","","Ring",[[53,1],[216,1]]],["Lifelock Boots","crafted","Feet",[[96,1]]],["Lifelock Boots","drop","Feet",[[96,1],[201,1]]],["Lifelock Chest","crafted","Chest",[[116,1]]],["Lifelock Chest","drop","Chest",[[116,1],[203,1]]],["Lifelock Gloves","crafted","Hands",[[96,1]]],["Lifelock Gloves","drop","Hands",[[22,1],[96,1]]],["Lifelock Helmet","crafted","Head",[[94,1]]],["Lifelock Helmet","drop","Head",[[94,1]]],["Lifelock Pants","crafted","Legs",[[14,1]]],["Lifelock Pants","drop","Legs",[[14,1]]],["Lightning Shaman Staff","","Weapon",[[215,2]]],["Luminary Staff","","Weapon",[[215,3]]],["Mage Boots","crafted","Feet",[[34,1]]],["Mage Boots","drop","Feet",[[19,1],[34,1]]],["Mage Chest","crafted","Chest",[[30,1]]],["Mage Chest","drop","Chest",[[18,1],[30,1]]],["Mage Gloves","crafted","Hands",[[22,1]]],["Mage Gloves","drop","Hands",[[17,1],[22,1]]],["Mage Hat","crafted","Head",[[16,1]]],["Mage Hat","drop","Head",[[16,1],[112,1]]],["Mage Trousers","crafted","Legs",[[80,1]]],["Mage Trousers","drop","Legs",[[35,1],[80,1]]],["Magician Boots","crafted","Feet",[[34,1]]],["Magician Boots","drop","Feet",[[19,1],[34,1]]],["Magician Chest","crafted","Chest",[[30,1]]],["Magician Chest","drop","Chest",[[18,1],[30,1]]],["Magician Gloves","crafted","Hands",[[22,1]]],["Magician Gloves","drop","Hands",[[17,1],[22,1]]],["Magician Hat","crafted","Head",[[16,1]]],["Magician Hat","drop","Head",[[16,1],[112,1]]],["Magician Trousers","crafted","Legs",[[80,1]]],["Magician Trousers","drop","Legs",[[35,1],[80,1]]],["Marksman Boots","","Feet",[[106,1]]],["Marksman Gloves","","Hands",[[108,1]]],["Marksman Hood","","Head",[[53,1]]],["Marksman Trousers","","Legs",[[41,1]]],["Marksman Vest","","Chest",[[49,1],[216,1]]],["Mercenary Boots","crafted","Feet",[[63,1]]],["Mercenary Boots","drop","Feet",[[63,1]]],["Mercenary Chest","crafted","Chest",[[79,1]]],["Mercenary Chest","drop","Chest",[[72,1],[79,1]]],["Mercenary Gloves","crafted","Hands",[[69,1]]],["Mercenary Gloves","drop","Hands",[[66,1],[69,1]]],["Mercenary Helmet","crafted","Head",[[231,1]]],["Mercenary Helmet","drop","Head",[[67,1],[231,1]]],["Mercenary Shield","crafted","Weapon",[[91,1],[179,1]]],["Mercenary Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Mercenary Trousers","crafted","Legs",[[230,1]]],["Mercenary Trousers","drop","Legs",[[230,1],[231,1]]],["Miner Helmet","","Head",[[6,1],[7,1],[233,1]]],["Mining Sieve","","Tool",[[233,1]]],["Mother's Eye","","Weapon",[[8,1]]],["Mountain's Shadow Boots","crafted","Feet",[[63,1]]],["Mountain's Shadow Boots","drop","Feet",[[63,1]]],["Mountain's Shadow Chest","crafted","Chest",[[79,1]]],["Mountain's Shadow Chest","drop","Chest",[[72,1],[79,1]]],["Mountain's Shadow Gloves","crafted","Hands",[[69,1]]],["Mountain's Shadow Gloves","drop","Hands",[[66,1],[69,1]]],["Mountain's Shadow Helmet","crafted","Head",[[231,1]]],["Mountain's Shadow Helmet","drop","Head",[[67,1],[231,1]]],["Mountain's Shadow Shield","crafted","Weapon",[[91,1],[179,1]]],["Mountain's Shadow Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Mountain's Shadow Trousers","crafted","Legs",[[230,1]]],["Mountain's Shadow Trousers","drop","Legs",[[230,1],[231,1]]],["Mystic Boots","","Feet",[[20,1],[197,1]]],["Mystic Chest","","Chest",[[30,1],[188,1]]],["Mystic Gloves","","Hands",[[222,1]]],["Mystic Hat","","Head",[[16,1],[117,1]]],["Mystic Pants","","Legs",[[125,1],[182,1]]],["Omen Boots","","Feet",[[34,1]]],["Omen Chest","","Chest",[[18,1],[30,1]]],["Omen Gloves","","Hands",[[17,1],[222,1]]],["Omen Helmet","","Head",[[16,1],[195,1]]],["Omen Trousers","","Legs",[[18,1],[94,1]]],["Pearlfrost Mentor Boots","crafted","Feet",[[96,1]]],["Pearlfrost Mentor Boots","drop","Feet",[[96,1],[201,1]]],["Pearlfrost Mentor Chest","crafted","Chest",[[116,1]]],["Pearlfrost Mentor Chest","drop","Chest",[[116,1],[203,1]]],["Pearlfrost Mentor Gloves","crafted","Hands",[[96,1]]],["Pearlfrost Mentor Gloves","drop","Hands",[[22,1],[96,1]]],["Pearlfrost Mentor Hat","crafted","Head",[[94,1]]],["Pearlfrost Mentor Hat","drop","Head",[[94,1]]],["Pearlfrost Mentor Pants","crafted","Legs",[[14,1]]],["Pearlfrost Mentor Pants","drop","Legs",[[14,1]]],["Pikemead's Bulwark","","Weapon",[[93,1],[94,1],[241,1]]],["Plaguebringer Boots","","Feet",[[40,1],[106,1]]],["Plaguebringer Chest","","Chest",[[49,1],[103,1]]],["Plaguebringer Gloves","","Hands",[[37,1],[108,1]]],["Plaguebringer Hood","","Head",[[53,1],[216,1]]],["Plaguebringer Trousers","","Legs",[[58,1],[109,1]]],["Prismatic Ward","crafted","Weapon",[[104,1],[182,1],[195,1]]],["Prismatic Ward","drop","Weapon",[[104,1],[125,1],[182,1],[195,1],[222,1]]],["Quetzal Hunter Chest","crafted","Chest",[[103,1]]],["Quetzal Hunter Chest","drop","Chest",[[49,1],[103,1]]],["Quetzal Hunter Gloves","crafted","Hands",[[37,1]]],["Quetzal Hunter Gloves","drop","Hands",[[37,1]]],["Quetzal Hunter Helmet","crafted","Head",[[238,1]]],["Quetzal Hunter Helmet","drop","Head",[[216,1],[238,1]]],["Quetzal Hunter Pants","crafted","Legs",[[58,1]]],["Quetzal Hunter Pants","drop","Legs",[[58,1],[109,1]]],["Quetzal Hunter Shoes","crafted","Feet",[[40,1]]],["Quetzal Hunter Shoes","drop","Feet",[[40,1]]],["Radiant Paladin Boots","","Feet",[[63,1],[138,1]]],["Radiant Paladin Chestplate","","Chest",[[72,1],[79,1]]],["Radiant Paladin Gloves","","Hands",[[66,1],[69,1]]],["Radiant Paladin Helmet","","Head",[[67,1],[231,1]]],["Radiant Paladin Trousers","","Legs",[[230,1],[231,1]]],["Ranger Boots","crafted","Feet",[[40,1]]],["Ranger Boots","drop","Feet",[[40,1]]],["Ranger Gloves","crafted","Hands",[[37,1]]],["Ranger Gloves","drop","Hands",[[37,1]]],["Ranger Hood","crafted","Head",[[238,1]]],["Ranger Hood","drop","Head",[[216,1],[238,1]]],["Ranger Trousers","crafted","Legs",[[58,1]]],["Ranger Trousers","drop","Legs",[[58,1],[109,1]]],["Ranger Vest","crafted","Chest",[[103,1]]],["Ranger Vest","drop","Chest",[[49,1],[103,1]]],["Ring Of The Burning Light","","Ring",[[17,1],[30,1],[196,1]]],["Ring of Endless Life","","Ring",[[39,1]]],["Ring of Frost","","Ring",[[19,1],[30,1],[197,1]]],["Ring of Health","","Ring",[[72,1],[83,1]]],["Ring of Mana","","Ring",[[30,1],[217,1]]],["Ring of Rapacity","","Ring",[[22,1],[215,1]]],["Ring of Rivulets","","Ring",[[16,1],[37,1],[63,1]]],["Ring of Stamina","","Ring",[[53,1],[216,1]]],["Ring of Thundersnow","","Ring",[[30,1],[80,1],[112,1]]],["Ring of the Ancients","","Ring",[[16,1],[37,1],[63,1]]],["Ring of the Ether","","Ring",[[68,1],[180,1],[216,3],[232,1]]],["Ring of the Flame","","Ring",[[92,1],[93,1],[94,1]]],["Ring of the Heir","","Ring",[[18,1],[30,1],[195,1]]],["Ring of the Mother Flame","","Ring",[[16,1],[17,1],[117,1]]],["Riptide","","Weapon",[[69,1],[91,1],[122,1]]],["Rising Fighter Boots","drop","Feet",[[63,1]]],["Rising Fighter Chest","drop","Chest",[[72,1],[79,1]]],["Rising Fighter Gloves","drop","Hands",[[66,1],[69,1]]],["Rising Fighter Helmet","drop","Head",[[67,1],[231,1]]],["Rising Fighter Shield","crafted","Weapon",[[91,1]]],["Rising Fighter Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Rising Fighter Trousers","drop","Legs",[[230,1],[231,1]]],["Rogue Boots","crafted","Feet",[[183,1]]],["Rogue Boots","drop","Feet",[[63,1],[183,1]]],["Rogue Chestplate","crafted","Chest",[[230,1]]],["Rogue Chestplate","drop","Chest",[[230,1]]],["Rogue Gloves","crafted","Hands",[[105,1]]],["Rogue Gloves","drop","Hands",[[66,1],[105,1]]],["Rogue Helmet","crafted","Head",[[183,1]]],["Rogue Helmet","drop","Head",[[68,1],[183,1]]],["Rogue Shield","crafted","Weapon",[[105,1]]],["Rogue Shield","drop","Weapon",[[91,1],[104,1],[105,1]]],["Rogue Trousers","crafted","Legs",[[230,1]]],["Rogue Trousers","drop","Legs",[[68,1],[230,1]]],["Root Staff","","Weapon",[[215,1]]],["Sage Boots","crafted","Feet",[[96,1]]],["Sage Boots","drop","Feet",[[96,1],[201,1]]],["Sage Gloves","crafted","Hands",[[96,1]]],["Sage Gloves","drop","Hands",[[22,1],[96,1]]],["Sage Headwrap","crafted","Head",[[94,1]]],["Sage Headwrap","drop","Head",[[94,1]]],["Sage Pants","crafted","Legs",[[14,1]]],["Sage Pants","drop","Legs",[[14,1]]],["Sage Tunic","crafted","Chest",[[116,1]]],["Sage Tunic","drop","Chest",[[116,1],[203,1]]],["Scout Boots","drop","Feet",[[40,1]]],["Scout Chest","drop","Chest",[[49,1],[103,1]]],["Scout Gloves","drop","Hands",[[37,1]]],["Scout Hood","drop","Head",[[216,1],[238,1]]],["Scout Pants","drop","Legs",[[58,1],[109,1]]],["Scrap Shield","","Weapon",[[91,1],[105,1]]],["Scrappy Axe","","Weapon",[[8,1]]],["Scrappy Pickaxe","","Tool",[[7,1]]],["Sharpshooter Boots","","Feet",[[106,1]]],["Sharpshooter Gloves","","Hands",[[108,1]]],["Sharpshooter Hood","","Head",[[53,1]]],["Sharpshooter Trousers","","Legs",[[41,1]]],["Sharpshooter Vest","","Chest",[[49,1],[216,1]]],["Shepherd's Staff","","Weapon",[[215,1]]],["Shield of Arisztar","crafted","Weapon",[[105,1]]],["Shield of Arisztar","drop","Weapon",[[91,1],[104,1],[105,1]]],["Shield of Light","crafted","Weapon",[[91,1]]],["Shield of Light","drop","Weapon",[[91,1]]],["Shroud Weaver","","Weapon",[[215,2]]],["Skull Stalker Chest","crafted","Chest",[[49,1]]],["Skull Stalker Chest","drop","Chest",[[49,1],[216,1]]],["Skull Stalker Gloves","crafted","Hands",[[108,1]]],["Skull Stalker Gloves","drop","Hands",[[108,1]]],["Skull Stalker Helmet","crafted","Head",[[53,1]]],["Skull Stalker Helmet","drop","Head",[[53,1]]],["Skull Stalker Pants","crafted","Legs",[[41,1]]],["Skull Stalker Pants","drop","Legs",[[41,1]]],["Skull Stalker Shoes","crafted","Feet",[[106,1]]],["Skull Stalker Shoes","drop","Feet",[[106,1]]],["Sky Specter Boots","crafted","Feet",[[68,1]]],["Sky Specter Boots","drop","Feet",[[68,1],[107,1]]],["Sky Specter Chest","crafted","Chest",[[232,1]]],["Sky Specter Chest","drop","Chest",[[209,1],[232,1]]],["Sky Specter Gloves","crafted","Hands",[[180,1]]],["Sky Specter Gloves","drop","Hands",[[180,1]]],["Sky Specter Helmet","crafted","Head",[[74,1]]],["Sky Specter Helmet","drop","Head",[[74,1]]],["Sky Specter Pants","crafted","Legs",[[208,1]]],["Sky Specter Pants","drop","Legs",[[208,1],[232,1]]],["Soldier Boots","crafted","Feet",[[63,1]]],["Soldier Boots","drop","Feet",[[63,1]]],["Soldier Chestplate","crafted","Chest",[[79,1]]],["Soldier Chestplate","drop","Chest",[[72,1],[79,1]]],["Soldier Gloves","crafted","Hands",[[69,1]]],["Soldier Gloves","drop","Hands",[[66,1],[69,1]]],["Soldier Helmet","crafted","Head",[[231,1]]],["Soldier Helmet","drop","Head",[[67,1],[231,1]]],["Soldier Shield","crafted","Weapon",[[91,1],[179,1]]],["Soldier Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Soldier Trousers","crafted","Legs",[[230,1]]],["Soldier Trousers","drop","Legs",[[230,1],[231,1]]],["Spearfisher's Shield","","Weapon",[[69,1],[91,1],[122,1]]],["Spectral Ward","crafted","Weapon",[[39,1],[182,1]]],["Spectral Ward","drop","Weapon",[[39,1],[104,1],[125,1],[182,1],[222,1]]],["Spellbreaker Boots","","Feet",[[20,1],[63,1]]],["Spellbreaker Chest","","Chest",[[65,1],[72,1]]],["Spellbreaker Gloves","","Hands",[[17,1],[66,1]]],["Spellbreaker Hat","","Head",[[25,2],[91,1]]],["Spellbreaker Pants","","Legs",[[25,1],[66,1]]],["Staff Of Reeds","","Weapon",[[34,1]]],["Staff Of The Moor","","Weapon",[[34,2]]],["Staff Of The Serpent","","Weapon",[[215,1]]],["Staff of the Ram","","Weapon",[[215,3]]],["Steel Axe","","Weapon",[[8,1]]],["Steel Pickaxe","","Tool",[[7,1]]],["Stormbound Staff","","Weapon",[[215,3]]],["Stormshield","drop","Weapon",[[65,1]]],["Sunpiercer Chestplate","crafted","Chest",[[79,1]]],["Sunpiercer Chestplate","drop","Chest",[[72,1],[79,1]]],["Sunpiercer Gloves","crafted","Hands",[[69,1]]],["Sunpiercer Gloves","drop","Hands",[[66,1],[69,1]]],["Sunpiercer Helmet","crafted","Head",[[231,1]]],["Sunpiercer Helmet","drop","Head",[[67,1],[231,1]]],["Sunpiercer Pants","crafted","Legs",[[230,1]]],["Sunpiercer Pants","drop","Legs",[[230,1],[231,1]]],["Sunpiercer Shield","crafted","Weapon",[[91,1],[179,1]]],["Sunpiercer Shield","drop","Weapon",[[91,1],[122,1],[179,1]]],["Sunpiercer Shoes","crafted","Feet",[[63,1]]],["Sunpiercer Shoes","drop","Feet",[[63,1]]],["Superior Ring of Health","","Ring",[[72,1],[83,1]]],["Superior Ring of Mana","","Ring",[[30,1],[217,1]]],["Superior Ring of Stamina","","Ring",[[53,1],[216,1]]],["Swimfins","","Feet",[[204,1]]],["Tank Boots","crafted","Feet",[[93,1]]],["Tank Boots","drop","Feet",[[93,1],[138,1]]],["Tank Chestplate","crafted","Chest",[[65,1]]],["Tank Chestplate","drop","Chest",[[65,1]]],["Tank Gloves","crafted","Hands",[[82,1]]],["Tank Gloves","drop","Hands",[[82,1]]],["Tank Helmet","crafted","Head",[[93,1]]],["Tank Helmet","drop","Head",[[93,1],[118,1]]],["Tank Trousers","crafted","Legs",[[64,1]]],["Tank Trousers","drop","Legs",[[64,1],[77,1]]],["Thaumaturge Boots","crafted","Feet",[[34,1]]],["Thaumaturge Boots","drop","Feet",[[19,1],[34,1]]],["Thaumaturge Chest","crafted","Chest",[[30,1]]],["Thaumaturge Chest","drop","Chest",[[18,1],[30,1]]],["Thaumaturge Gloves","crafted","Hands",[[22,1]]],["Thaumaturge Gloves","drop","Hands",[[17,1],[22,1]]],["Thaumaturge Hat","crafted","Head",[[16,1]]],["Thaumaturge Hat","drop","Head",[[16,1],[112,1]]],["Thaumaturge Pants","crafted","Legs",[[80,1]]],["Thaumaturge Pants","drop","Legs",[[35,1],[80,1]]],["Tidecaller Gloves","crafted","Hands",[[22,1]]],["Tidecaller Gloves","drop","Hands",[[17,1],[22,1]]],["Tidecaller Headpiece","crafted","Head",[[16,1]]],["Tidecaller Headpiece","drop","Head",[[16,1],[112,1]]],["Tidecaller Pants","crafted","Legs",[[80,1]]],["Tidecaller Pants","drop","Legs",[[35,1],[80,1]]],["Tidecaller Shoes","crafted","Feet",[[34,1]]],["Tidecaller Shoes","drop","Feet",[[19,1],[34,1]]],["Tidecaller Tunic","crafted","Chest",[[30,1]]],["Tidecaller Tunic","drop","Chest",[[18,1],[30,1]]],["Trailblazer Boots","crafted","Feet",[[106,1]]],["Trailblazer Boots","drop","Feet",[[106,1]]],["Trailblazer Chest","crafted","Chest",[[49,1]]],["Trailblazer Chest","drop","Chest",[[49,1],[216,1]]],["Trailblazer Gloves","crafted","Hands",[[108,1]]],["Trailblazer Gloves","drop","Hands",[[108,1]]],["Trailblazer Hood","crafted","Head",[[53,1]]],["Trailblazer Hood","drop","Head",[[53,1]]],["Trailblazer Trousers","crafted","Legs",[[41,1]]],["Trailblazer Trousers","drop","Legs",[[41,1]]],["Transcendental Ward","crafted","Weapon",[[104,1],[182,1],[198,1]]],["Transcendental Ward","drop","Weapon",[[104,1],[125,1],[182,1],[198,1],[222,1]]],["Twisting Wand","","Weapon",[[215,1]]],["Ultimate Ring of Health","","Ring",[[72,1],[83,1]]],["Ultimate Ring of Mana","","Ring",[[30,1],[217,1]]],["Ultimate Ring of Stamina","","Ring",[[53,1],[216,1]]],["Valiant Shield","crafted","Weapon",[[91,1]]],["Valiant Shield","drop","Weapon",[[91,1]]],["Venerable Hollow Boots","","Feet",[[40,2],[210,1]]],["Venerable Hollow Chestplate","","Chest",[[65,2],[210,1]]],["Venerable Hollow Gloves","","Hands",[[210,2]]],["Venerable Hollow Helmet","","Head",[[210,2]]],["Venerable Hollow Pants","","Legs",[[64,2],[210,1]]],["Vorgoth's Soulbound Boots","","Feet",[[66,2],[105,2],[192,2],[230,2]]],["Vorgoth's Soulbound Chest","","Chest",[[37,2],[49,2],[232,1],[238,2]]],["Vorgoth's Soulbound Crown","","Head",[[25,2],[34,2],[35,1],[217,2]]],["Vorgoth's Soulbound Gloves","","Hands",[[68,2],[74,2],[180,2],[232,1]]],["Vorgoth's Soulbound Pants","","Legs",[[35,1],[125,2],[188,2],[222,2]]],["Wanderer's Boots","","Feet",[[40,1]]],["Warden Boots","crafted","Feet",[[93,1]]],["Warden Boots","drop","Feet",[[93,1],[138,1]]],["Warden Chestplate","crafted","Chest",[[65,1]]],["Warden Chestplate","drop","Chest",[[65,1]]],["Warden Gloves","crafted","Hands",[[82,1]]],["Warden Gloves","drop","Hands",[[82,1]]],["Warden Helmet","crafted","Head",[[79,1]]],["Warden Helmet","drop","Head",[[67,1],[79,1]]],["Warden Trousers","crafted","Legs",[[64,1]]],["Warden Trousers","drop","Legs",[[64,1],[77,1]]],["Warlock Boots","crafted","Feet",[[20,1]]],["Warlock Boots","drop","Feet",[[20,1],[197,1]]],["Warlock Gloves","crafted","Hands",[[222,1]]],["Warlock Gloves","drop","Hands",[[222,1]]],["Warlock Helmet","crafted","Head",[[117,1]]],["Warlock Helmet","drop","Head",[[16,1],[117,1]]],["Warlock Pants","crafted","Legs",[[182,1]]],["Warlock Pants","drop","Legs",[[125,1],[182,1]]],["Warlock Shirt","crafted","Chest",[[188,1]]],["Warlock Shirt","drop","Chest",[[30,1],[188,1]]],["Warrior Arms","","Hands",[[66,1],[105,1]]],["Warrior Boots","","Feet",[[63,1],[183,1]]],["Warrior Chest","","Chest",[[230,1]]],["Warrior Helmet","","Head",[[68,1],[183,1]]],["Warrior Trousers","","Legs",[[68,1],[230,1]]],["Waveborne Ritualist Boots","crafted","Feet",[[96,1]]],["Waveborne Ritualist Boots","drop","Feet",[[96,1],[201,1]]],["Waveborne Ritualist Gloves","crafted","Hands",[[96,1]]],["Waveborne Ritualist Gloves","drop","Hands",[[22,1],[96,1]]],["Waveborne Ritualist Helmet","crafted","Head",[[94,1]]],["Waveborne Ritualist Helmet","drop","Head",[[94,1]]],["Waveborne Ritualist Pants","crafted","Legs",[[14,1]]],["Waveborne Ritualist Pants","drop","Legs",[[14,1]]],["Waveborne Ritualist Tunic","crafted","Chest",[[116,1]]],["Waveborne Ritualist Tunic","drop","Chest",[[116,1],[203,1]]],["Wayfarer Pants","","Legs",[[36,1],[40,1],[209,1]]],["Wizard Boots","","Feet",[[20,1],[197,1]]],["Wizard Chest","","Chest",[[30,1],[188,1]]],["Wizard Gloves","","Hands",[[222,1]]],["Wizard Hat","","Head",[[16,1],[117,1]]],["Wizard Pants","","Legs",[[125,1],[182,1]]],["Wolf's Fang Boots","crafted","Feet",[[183,1]]],["Wolf's Fang Boots","drop","Feet",[[63,1],[183,1]]],["Wolf's Fang Chest","crafted","Chest",[[230,1]]],["Wolf's Fang Chest","drop","Chest",[[230,1]]],["Wolf's Fang Gloves","crafted","Hands",[[105,1]]],["Wolf's Fang Gloves","drop","Hands",[[66,1],[105,1]]],["Wolf's Fang Hood","crafted","Head",[[183,1]]],["Wolf's Fang Hood","drop","Head",[[68,1],[183,1]]],["Wolf's Fang Shield","crafted","Weapon",[[105,1]]],["Wolf's Fang Shield","drop","Weapon",[[91,1],[104,1],[105,1]]],["Wolf's Fang Trousers","crafted","Legs",[[230,1]]],["Wolf's Fang Trousers","drop","Legs",[[68,1],[230,1]]]],"gearFetched":"2026-10-21"};
+// the page's own link, for "Copy link": the GitHub Pages copy shares itself, the claude.ai one its artifact link
+const SHARE_BASE = /\.github\.io$/.test(location.hostname) ? location.origin + location.pathname : 'https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW';
+const CODE_VERSION = 'b2';
+const LS_CUR = 'fbt:v1:current', LS_SAVES = 'fbt:v1:saves';
+const CAP = DATA.levelCap || 50, MAX_WELLS = 19, MAX_ROOTS = 57, MAX_FLAME = 11, MAX_HAND = 6;
+const ATTRS = ['Strength', 'Constitution', 'Dexterity', 'Endurance', 'Intelligence', 'Spirit'];
+const ABBR = { Strength: 'STR', Constitution: 'CON', Dexterity: 'DEX', Endurance: 'END', Intelligence: 'INT', Spirit: 'SPI' };
+const GIVES = { Strength: ['Melee damage', 5, '%'], Constitution: ['Health', 50, ''], Dexterity: ['Bow and dagger damage', 5, '%'],
+  Endurance: ['Stamina', 10, ''], Intelligence: ['Magic damage', 5, '%'], Spirit: ['Mana', 20, ''] };
+const CLS = { W: 'Warrior', G: 'Ranger', M: 'Mage', N: 'Neutral' };
+const TYPE = { R: 'Starting point', A: 'Attribute', P: 'Passive skill', S: 'Active skill' };
+const SIZE = { R: 37, A: 29, P: 46, S: 58 };
+const HEALTH_FROM = { 'Athlete': 'Strength', 'Life Essences': 'Intelligence', 'Veiled Vigor': 'Dexterity' };
+const SLOT_ORDER = ['Head', 'Chest', 'Hands', 'Legs', 'Feet', 'Ring', 'Weapon', 'Tool'];
+const ONE_EACH = new Set(['Head', 'Chest', 'Hands', 'Legs', 'Feet']), RING_SLOTS = 2;
+// the example: a mage that heals and burns, for a first look (paths are bought on the way to each), in the
+// armour that raises its skills most
+const EXAMPLE = { name: 'Example: fire mage', level: 50, wells: 19, roots: 57, flame: 11,
+  targets: [['Mage Apprentice', 3], ['Quick Charge', 3], ['Arsonist', 3], ['Wizard', 3], ['Water Aura', 3], ['Life Essences', 3], ['Blink Attack', 1], ['Chain Hit', 1],
+    ['Mass Destruction', 1], ['Terror', 3], ['Healing Revive', 3], ['Exalted', 1], ['Arcane Concentration', 1], ['Double Jump', 1], ['Well Rested', 3]] };
+
+const nodes = DATA.nodes.map((a, i) => ({ i, x: a[0], y: a[1], t: a[2], c: a[3], max: Math.max(1, a[4]), multi: a[4] > 1, cost: a[5],
+  name: a[6], desc: a[7], dargs: a[8], per: a[9], pargs: a[10] }));
+const N = nodes.length;
+const adj = nodes.map(() => []);
+for (const [a, b] of DATA.links) { adj[a].push(b); adj[b].push(a); }
+for (const n of nodes) {
+  n.attr = n.t === 'A' && ATTRS.includes(n.name) ? n.name : null;
+  const m = n.t === 'A' && !n.attr ? /point of (\w+) for every two levels of the Flame/.exec(n.desc) : null;
+  n.flameAttr = m ? m[1] : null;
+  n.plain = (n.name + ' ' + n.desc.replace(/<[^>]+>/g, '')).toLowerCase();
+  n.boostable = n.multi && (n.t === 'P' || n.t === 'S');    // gear ranks only ever go on multi-level skills
+  n.gear = [];
+}
+const GEAR = DATA.gear.map(([name, ver, slot, perks], g) => ({ g, name, ver, slot, perks }));
+for (const it of GEAR) { it.plain = (it.name + ' ' + it.perks.map(([i]) => nodes[i].name).join(' ')).toLowerCase(); for (const [i, p] of it.perks) nodes[i].gear.push([it.g, p]); }
+
+// ---------- state ----------
+const S = { level: 50, wells: 19, roots: 57, flame: 11, allowOver: false, name: '', tab: 'skill' };
+let lvl = new Uint8Array(N);        // points spent, in levels
+let hand = new Uint8Array(N);       // item ranks set by hand
+let worn = [];                      // gear indices (a ring can be in twice)
+let gb = new Uint8Array(N);         // item ranks from worn gear, worked out on each change
+let sel = null, hover = null, pathPrev = null;
+const undoStack = [], redoStack = [];
+
+const $ = id => document.getElementById(id);
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const owned = i => nodes[i].t === 'R' || lvl[i] > 0;
+const isOpen = i => !owned(i) && adj[i].some(owned);
+const budget = () => 2 * (S.level - 1) + 3 * S.wells + S.roots;
+const spentOf = lv => { let s = 0; for (let i = 0; i < N; i++) s += lv[i] * nodes[i].cost; return s; };
+const spent = () => spentOf(lvl);
+const bonus = i => hand[i] + gb[i];                          // item ranks on a skill, live or waiting
+const eff = i => lvl[i] ? lvl[i] + bonus(i) : 0;             // the level it works at: ranks count once a point is in
+const gearName = it => it.name + (it.ver === 'drop' ? ' (dropped)' : it.ver === 'crafted' ? ' (crafted)' : '');
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage off: nothing kept */ } },
+};
+function workOutGear() { gb = new Uint8Array(N); for (const g of worn) for (const [i, p] of GEAR[g].perks) gb[i] += p; }
+
+// ---------- effect text ----------
+function argVal(a, level, per) {
+  if (a[0] === 'i') return null;
+  return Math.abs(per ? a[2] : a[1] + a[2] * level);
+}
+function fmtArg(a, level, per) {
+  if (a[0] === 'i') return `[${a[1]}]`;
+  const v = argVal(a, level, per);
+  if (a[0] === 'p') return `${Math.round(v * 1000) / 10}%`;
+  if (a[0] === 'd') return `${Math.round(v * 10) / 10}s`;
+  return String(Math.round(v * 100) / 100);
+}
+function gameText(text, args, level, per) {
+  if (!text) return '';
+  let k = 0;
+  const s = text.replace(/%k/g, () => { const a = args[k++]; return a ? fmtArg(a, level, per) : '?'; }).replace(/%%/g, '%')
+    .replace(/(^|[^\d.])1(<\/b>)? seconds\b/g, '$11$2 second');
+  return esc(s).replace(/&lt;(\/?)(b|i)&gt;/g, '<$1$2>').replace(/\n/g, '<br>').replace(/(<br>\s*){3,}/g, '<br><br>');
+}
+const shortText = (n, level) => {
+  const t = gameText(n.desc, n.dargs, Math.max(1, level), false).split(/<br>/)[0].replace(/<[^>]+>/g, '');
+  return t.length > 120 ? t.slice(0, 117).trimEnd() + '…' : t;
+};
+const costText = n => n.cost ? `${n.cost} ${n.cost === 1 ? 'point' : 'points'}${n.multi ? ' a level' : ''}` : 'free';
+const levelText = i => { const n = nodes[i]; return n.multi ? `${eff(i)}/${n.max}` : lvl[i] ? 'taken' : 'not taken'; };
+
+// ---------- rules ----------
+function snapshot() { return { lv: lvl.slice(), hand: hand.slice(), worn: worn.slice(), level: S.level, wells: S.wells, roots: S.roots, flame: S.flame }; }
+function restore(s) { lvl = s.lv.slice(); hand = s.hand.slice(); worn = s.worn.slice(); S.level = s.level; S.wells = s.wells; S.roots = s.roots; S.flame = s.flame; }
+function remember() { undoStack.push(snapshot()); if (undoStack.length > 80) undoStack.shift(); redoStack.length = 0; }
+
+// the cheapest way to reach node t from what's owned: nodes to buy, in order
+function pathTo(t) {
+  if (owned(t)) return [];
+  const dist = new Array(N).fill(Infinity), prev = new Array(N).fill(-1), done = new Uint8Array(N);
+  for (let i = 0; i < N; i++) if (owned(i)) dist[i] = 0;
+  for (;;) {
+    let u = -1;
+    for (let i = 0; i < N; i++) if (!done[i] && dist[i] < Infinity && (u < 0 || dist[i] < dist[u])) u = i;
+    if (u < 0 || u === t) break;
+    done[u] = 1;
+    for (const v of adj[u]) {
+      if (owned(v)) continue;
+      const d = dist[u] + nodes[v].cost + 0.001;           // (a hair per node, so equal costs take fewer nodes)
+      if (d < dist[v]) { dist[v] = d; prev[v] = u; }
+    }
+  }
+  if (dist[t] === Infinity) return null;
+  const out = [];
+  for (let v = t; v >= 0 && !owned(v); v = prev[v]) out.unshift(v);
+  return out;
+}
+// what stops hanging off a Spark if node i is refunded to nothing
+function dependents(i, lv = lvl) {
+  const seen = new Uint8Array(N), q = [];
+  for (let k = 0; k < N; k++) if (nodes[k].t === 'R') { seen[k] = 1; q.push(k); }
+  while (q.length) { const u = q.pop(); for (const v of adj[u]) if (!seen[v] && v !== i && lv[v] > 0) { seen[v] = 1; q.push(v); } }
+  const out = [];
+  for (let k = 0; k < N; k++) if (k !== i && lv[k] > 0 && !seen[k]) out.push(k);
+  return out;
+}
+function prune(lv) {
+  const loose = dependents(-1, lv);
+  for (const k of loose) lv[k] = 0;
+  return loose.length;
+}
+function canSpend(p) { return S.allowOver || spent() + p <= budget(); }
+
+function addLevel(i) {
+  const n = nodes[i];
+  if (n.t === 'R') { toast('Sparks are free: every path starts from one.'); return; }
+  if (!owned(i)) return takePath(i);
+  if (lvl[i] >= n.max) { toast(`${n.name} has all its points.${n.boostable ? ' Gear or the item bonus can take it higher.' : ''}`); return; }
+  if (!canSpend(n.cost)) return short(n.cost);
+  remember(); lvl[i]++; changed();
+}
+function takePath(i) {
+  const p = pathTo(i);
+  if (!p) { toast('No way to reach that node.'); return; }
+  const cost = p.reduce((s, k) => s + nodes[k].cost, 0);
+  if (!canSpend(cost)) return short(cost, p.length);
+  remember(); for (const k of p) lvl[k] = 1; changed();
+  if (p.length > 1) toast(`Took ${p.length} nodes for ${cost} points.`);
+}
+function removeLevel(i) {
+  const n = nodes[i];
+  if (n.t === 'R' || !lvl[i]) return;
+  if (lvl[i] === 1) {
+    const dep = dependents(i);
+    if (dep.length) { select(i); toast(`${dep.length} taken ${dep.length === 1 ? 'node hangs' : 'nodes hang'} off ${n.name}. Refund them first, or use "Refund with its branch".`); return; }
+  }
+  remember(); lvl[i]--; changed();
+}
+function removeBranch(i) {
+  const dep = dependents(i);
+  remember(); lvl[i] = 0; for (const k of dep) lvl[k] = 0; changed();
+  toast(`Refunded ${nodes[i].name} and ${dep.length} ${dep.length === 1 ? 'node' : 'nodes'} past it.`);
+}
+function setHand(i, v) {
+  v = clamp(v, 0, MAX_HAND);
+  if (v === hand[i] || !nodes[i].boostable) return;
+  remember(); hand[i] = v; changed();
+}
+function short(cost, count) {
+  const left = budget() - spent();
+  toast(`${count > 1 ? `That path takes ${count} nodes for ${cost} points` : `That costs ${cost} ${cost === 1 ? 'point' : 'points'}`}, and you have ${Math.max(0, left)} left. Tick "Plan past my points" to go over.`);
+}
+function resetAll() {
+  remember(); lvl = new Uint8Array(N); hand = new Uint8Array(N); worn = []; changed();
+  toast('Everything reset. Undo brings it back.');
+}
+
+// gear: one item per armour slot, two rings (the same ring twice is fine), weapons and tools as you like
+function wear(g) {
+  const it = GEAR[g];
+  let off = null;
+  remember();
+  if (ONE_EACH.has(it.slot)) { const k = worn.findIndex(w => GEAR[w].slot === it.slot); if (k >= 0) off = worn.splice(k, 1)[0]; }
+  else if (it.slot === 'Ring' && worn.filter(w => GEAR[w].slot === 'Ring').length >= RING_SLOTS) { const k = worn.findIndex(w => GEAR[w].slot === 'Ring'); off = worn.splice(k, 1)[0]; }
+  worn.push(g); changed();
+  toast(off != null ? `Swapped ${gearName(GEAR[off])} for ${gearName(it)}${it.slot === 'Ring' ? ' (two rings at a time)' : ''}.` : `Wearing ${gearName(it)}.`);
+}
+function takeOff(g) { const k = worn.lastIndexOf(g); if (k < 0) return; remember(); worn.splice(k, 1); changed(); }
+
+// ---------- build codes ----------
+// b2-<level>-<wells>-<roots>-<flame>-<node idx (2 base-36 chars) + level>…-<node idx + hand ranks>…-<gear idx>…
+function encode() {
+  let a = '', b = '', g = '';
+  for (let i = 0; i < N; i++) { if (lvl[i]) a += i.toString(36).padStart(2, '0') + lvl[i]; if (hand[i]) b += i.toString(36).padStart(2, '0') + hand[i]; }
+  for (const w of worn) g += w.toString(36).padStart(2, '0');
+  return `${CODE_VERSION}-${S.level}-${S.wells}-${S.roots}-${S.flame}-${a}-${b}-${g}`;
+}
+function decode(str) {
+  const m = /b([12])-(\d+)-(\d+)-(\d+)-(\d+)-([0-9a-z]*)(?:-([0-9a-z]*)-([0-9a-z]*))?/i.exec(String(str || ''));
+  if (!m) return null;
+  const pairs = (s, k) => { const out = []; s = (s || '').toLowerCase(); if (s.length % k) return null; for (let j = 0; j < s.length; j += k) out.push(s.slice(j, j + k)); return out; };
+  const A = pairs(m[6], 3), Bh = pairs(m[7], 3), G = pairs(m[8], 2);
+  if (!A || !Bh || !G) return null;
+  const lv = new Uint8Array(N), hd = new Uint8Array(N), wn = [];
+  for (const p of A) { const i = parseInt(p.slice(0, 2), 36), l = parseInt(p[2], 36); if (i < N && nodes[i].t !== 'R' && l > 0) lv[i] = Math.min(l, nodes[i].max); }
+  for (const p of Bh) { const i = parseInt(p.slice(0, 2), 36), l = parseInt(p[2], 36); if (i < N && nodes[i].boostable) hd[i] = Math.min(l, MAX_HAND); }
+  for (const p of G) { const g = parseInt(p, 36); if (g < GEAR.length) wn.push(g); }
+  const dropped = prune(lv);
+  return { lv, hand: hd, worn: wn, level: clamp(+m[2], 1, CAP), wells: clamp(+m[3], 0, MAX_WELLS), roots: clamp(+m[4], 0, MAX_ROOTS), flame: clamp(+m[5], 1, MAX_FLAME), dropped };
+}
+function loadCode(str, name) {
+  const d = decode(str);
+  if (!d) { toast("That doesn't look like a build code. Codes start with b2- (or b1-)."); return false; }
+  remember(); restore(d); if (name != null) S.name = name;
+  syncInputs(); changed();
+  if (d.dropped) toast(`Loaded. ${d.dropped} ${d.dropped === 1 ? 'node was' : 'nodes were'} cut off from a Spark and left out.`);
+  return true;
+}
+function buildExample() {
+  const lv = new Uint8Array(N), save = lvl;
+  lvl = lv;
+  for (const [name, want] of EXAMPLE.targets) {
+    const t = nodes.find(n => n.name === name && (n.t !== 'A' || n.flameAttr));
+    if (!t) continue;
+    for (const k of pathTo(t.i) || []) lvl[k] = 1;
+    lvl[t.i] = Math.min(t.max, want);
+  }
+  lvl = save;
+  const gear = [];                                           // the armour piece per slot that raises its skills most
+  for (const slot of ONE_EACH) {
+    let best = null, top = 0;
+    for (const it of GEAR) {
+      if (it.slot !== slot) continue;
+      const v = it.perks.reduce((s, [i, p]) => s + (lv[i] ? p : 0), 0);
+      if (v > top) { top = v; best = it.g; }
+    }
+    if (best != null) gear.push(best);
+  }
+  return { lv, worn: gear };
+}
+function loadExample() {
+  remember();
+  const ex = buildExample();
+  lvl = ex.lv; hand = new Uint8Array(N); worn = ex.worn;
+  Object.assign(S, { level: EXAMPLE.level, wells: EXAMPLE.wells, roots: EXAMPLE.roots, flame: EXAMPLE.flame, name: EXAMPLE.name });
+  syncInputs(); changed();
+}
+
+// ---------- the map ----------
+const NS = 'http://www.w3.org/2000/svg';
+const svg = $('map'), world = $('world'), wrap = $('mapwrap');
+const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; };
+const hexPts = r => [0, 1, 2, 3, 4, 5].map(k => { const a = Math.PI / 3 * k - Math.PI / 2; return `${(r * Math.cos(a)).toFixed(1)},${(r * Math.sin(a)).toFixed(1)}`; }).join(' ');
+const starPts = r => { const q = r * .3; return `0,${-r} ${q},${-q} ${r},0 ${q},${q} 0,${r} ${-q},${q} ${-r},0 ${-q},${-q}`; };
+const B = (() => { let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity; for (const n of nodes) { x0 = Math.min(x0, n.x); y0 = Math.min(y0, n.y); x1 = Math.max(x1, n.x); y1 = Math.max(y1, n.y); } return { x0: x0 - 90, y0: y0 - 90, x1: x1 + 90, y1: y1 + 120 }; })();
+const centroid = c => { const v = nodes.filter(n => n.c === c); return { x: v.reduce((s, n) => s + n.x, 0) / v.length, y: v.reduce((s, n) => s + n.y, 0) / v.length }; };
+const CENTRE = { x: 4000, y: 4001 };
+
+const gEdges = el('g', {}, world), gNodes = el('g', {}, world), gLabels = el('g', { class: 'lbls' }, world);
+el('circle', { class: 'ring', cx: CENTRE.x, cy: CENTRE.y, r: 585 }, gEdges);
+for (const c of ['W', 'G', 'M']) {                         // big class names, shown zoomed out
+  const p = centroid(c), dx = p.x - CENTRE.x, dy = p.y - CENTRE.y, k = 1 + 420 / Math.hypot(dx, dy);
+  const t = el('text', { class: 'zone', x: CENTRE.x + dx * k, y: CENTRE.y + dy * k }, gEdges); t.textContent = CLS[c].toUpperCase();
+}
+const edgeEls = DATA.links.map(([a, b]) => el('line', { class: 'edge', x1: nodes[a].x, y1: nodes[a].y, x2: nodes[b].x, y2: nodes[b].y }, gEdges));
+const linksOf = nodes.map(() => []);
+DATA.links.forEach(([a, b], k) => { linksOf[a].push(k); linksOf[b].push(k); });
+for (const n of nodes) {
+  const r = SIZE[n.t] * (n.flameAttr ? 1.25 : 1);
+  const g = el('g', { class: `node t-${n.t} c-${n.c}`, transform: `translate(${n.x} ${n.y})`, 'data-i': n.i }, gNodes);
+  el('circle', { class: 'halo', r: r + 16 }, g);
+  if (n.t === 'R') el('polygon', { class: 'shape', points: starPts(r) }, g);
+  else if (n.t === 'S') el('polygon', { class: 'shape', points: hexPts(r) }, g);
+  else el('circle', { class: 'shape', r }, g);
+  if (n.flameAttr) el('circle', { class: 'inner', r: r - 12 }, g);
+  n.lvEl = el('text', { class: 'lv', y: 1 }, g);
+  if (n.attr || n.flameAttr) n.lvEl.textContent = ABBR[n.attr || n.flameAttr];
+  if (n.t === 'P' || n.t === 'S' || n.flameAttr) {           // names and item badges sit on their own layer, over every node
+    const lg = el('g', { transform: `translate(${n.x} ${n.y})` }, gLabels);
+    const l = el('text', { class: 'lbl', y: r + 34 }, lg); l.textContent = n.name;
+    n.lblG = lg;
+    if (n.boostable) {
+      n.badge = el('g', { class: 'badge', transform: `translate(${(r * .8).toFixed(1)} ${(-r * .8).toFixed(1)})`, display: 'none' }, lg);
+      el('circle', { r: 24 }, n.badge);
+      n.badgeT = el('text', { y: 1 }, n.badge);
+    }
+  }
+  n.g = g;
+}
+
+const V = { s: .2, tx: 0, ty: 0 };
+function applyView(glide) {
+  world.classList.toggle('glide', !!glide);
+  world.style.transform = `translate(${V.tx}px, ${V.ty}px) scale(${V.s})`;
+  svg.classList.toggle('near', V.s >= .4);
+  svg.classList.toggle('mid', V.s >= .19);
+  if (glide) setTimeout(() => world.classList.remove('glide'), 480);
+}
+function fitScale() { const r = svg.getBoundingClientRect(); return Math.min(r.width / (B.x1 - B.x0), r.height / (B.y1 - B.y0)); }
+function fit(glide) {
+  const r = svg.getBoundingClientRect(), s = fitScale();
+  V.s = s; V.tx = (r.width - (B.x1 - B.x0) * s) / 2 - B.x0 * s; V.ty = (r.height - (B.y1 - B.y0) * s) / 2 - B.y0 * s;
+  applyView(glide);
+}
+function centreOn(x, y, s, glide) {
+  const r = svg.getBoundingClientRect();
+  V.s = clamp(s || V.s, fitScale() * .8, 2.2); V.tx = r.width / 2 - x * V.s; V.ty = r.height / 2 - y * V.s;
+  applyView(glide);
+}
+function zoomAt(f, cx, cy) {
+  const s = clamp(V.s * f, fitScale() * .8, 2.2);
+  V.tx = cx - (cx - V.tx) * (s / V.s); V.ty = cy - (cy - V.ty) * (s / V.s); V.s = s;
+  applyView();
+}
+const jumpTo = c => { const p = c === 'N' ? CENTRE : centroid(c); centreOn(p.x, p.y, c === 'N' ? .42 : .24, true); };
+const showNode = i => centreOn(nodes[i].x, nodes[i].y, Math.max(V.s, .55), true);
+
+// pointer: drag to pan, pinch to zoom, click to spend, right-click to refund
+const ptrs = new Map();
+let drag = null;
+const nodeAt = t => { const g = t && t.closest ? t.closest('.node') : null; return g ? +g.dataset.i : null; };
+svg.addEventListener('pointerdown', e => {
+  ptrs.set(e.pointerId, { x: e.clientX, y: e.clientY });
+  if (ptrs.size === 1) drag = { moved: false, travel: 0, node: nodeAt(e.target), btn: e.button, type: e.pointerType, id: e.pointerId };
+  else if (drag) drag.moved = true;
+});
+svg.addEventListener('pointermove', e => {
+  const p = ptrs.get(e.pointerId);
+  if (!p) { if (e.pointerType === 'mouse') setHover(nodeAt(e.target), e); return; }
+  const q = { x: e.clientX, y: e.clientY };
+  if (ptrs.size === 1 && drag) {
+    drag.travel += Math.abs(q.x - p.x) + Math.abs(q.y - p.y);
+    if (!drag.moved && drag.travel > 6) { drag.moved = true; svg.classList.add('panning'); try { svg.setPointerCapture(e.pointerId); } catch (_) {} setHover(null); }
+    if (drag.moved) { V.tx += q.x - p.x; V.ty += q.y - p.y; applyView(); }
+  } else if (ptrs.size === 2) {
+    const [a, b] = [...ptrs.entries()].map(([id, v]) => id === e.pointerId ? q : v), [oa, ob] = [...ptrs.values()];
+    const r = svg.getBoundingClientRect(), d0 = Math.hypot(oa.x - ob.x, oa.y - ob.y), d1 = Math.hypot(a.x - b.x, a.y - b.y);
+    V.tx += (a.x + b.x - oa.x - ob.x) / 2; V.ty += (a.y + b.y - oa.y - ob.y) / 2;
+    if (d0 > 0) zoomAt(d1 / d0, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top); else applyView();
+  }
+  ptrs.set(e.pointerId, q);
+});
+function endPtr(e) {
+  if (!ptrs.has(e.pointerId)) return;
+  ptrs.delete(e.pointerId);
+  if (drag && ptrs.size === 0) {
+    if (!drag.moved && e.type === 'pointerup' && drag.btn === 0) tap(drag.node, drag.type, e);
+    drag = null; svg.classList.remove('panning');
+  }
+}
+svg.addEventListener('pointerup', endPtr);
+svg.addEventListener('pointercancel', endPtr);
+svg.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse' && !ptrs.size) setHover(null); });
+svg.addEventListener('contextmenu', e => { e.preventDefault(); const i = nodeAt(e.target); if (i != null) { removeLevel(i); select(i); } });
+svg.addEventListener('wheel', e => { e.preventDefault(); const r = svg.getBoundingClientRect(); zoomAt(Math.exp(-e.deltaY * (e.deltaMode ? .05 : .0015)), e.clientX - r.left, e.clientY - r.top); }, { passive: false });
+function tap(i, type, e) {
+  if (i == null) { select(null); return; }
+  if (type === 'touch') { select(i); return; }              // on touch a tap picks it; the bar below spends
+  if (e.shiftKey) { removeLevel(i); select(i); return; }
+  select(i); addLevel(i);
+  if (hover === i) setHover(i, e);
+}
+wrap.addEventListener('keydown', e => {
+  if (e.target !== wrap) return;
+  const r = svg.getBoundingClientRect(), step = 60;
+  const k = e.key;
+  if (k === 'ArrowLeft') V.tx += step; else if (k === 'ArrowRight') V.tx -= step; else if (k === 'ArrowUp') V.ty += step; else if (k === 'ArrowDown') V.ty -= step;
+  else if (k === '+' || k === '=') return zoomAt(1.25, r.width / 2, r.height / 2), e.preventDefault();
+  else if (k === '-' || k === '_') return zoomAt(.8, r.width / 2, r.height / 2), e.preventDefault();
+  else if (k === '0') return fit(true), e.preventDefault();
+  else return;
+  e.preventDefault(); applyView();
+});
+document.addEventListener('keydown', e => {
+  const typing = /^(INPUT|TEXTAREA)$/.test(document.activeElement && document.activeElement.tagName);
+  if (typing) return;
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
+  else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'y' || (e.key.toLowerCase() === 'z' && e.shiftKey))) { e.preventDefault(); redo(); }
+  else if (e.key === 'Escape') select(null);
+  else if (e.key === '/') { e.preventDefault(); $('q').focus(); }
+});
+
+// hover card (mouse only), with the path a locked node would take
+const tip = $('tip');
+function setHover(i, e) {
+  if (i !== hover) {
+    if (hover != null) nodes[hover].g.classList.remove('hover');
+    hover = i;
+    if (i != null) nodes[i].g.classList.add('hover');
+    showPath(i != null && !owned(i) ? pathTo(i) : null);
+  }
+  if (i == null) { tip.hidden = true; return; }
+  tip.innerHTML = cardHTML(i);
+  tip.className = `tip c-${nodes[i].c}`;
+  tip.hidden = false;
+  const r = wrap.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX - r.left + 18, y = e.clientY - r.top + 18;
+  if (x + w > r.width - 8) x = e.clientX - r.left - w - 18;
+  if (y + h > r.height - 8) y = Math.max(8, r.height - h - 8);
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = y + 'px';
+}
+function showPath(p) {
+  if (pathPrev) { for (const k of pathPrev.nodes) nodes[k].g.classList.remove('path'); for (const k of pathPrev.edges) edgeEls[k].classList.remove('path'); }
+  pathPrev = null;
+  if (!p || !p.length) return;
+  const set = new Set(p), edges = [];
+  for (const k of p) for (const li of linksOf[k]) { const [a, b] = DATA.links[li]; const o = a === k ? b : a; if (set.has(o) || (owned(o) && k === p[0])) edges.push(li); }
+  for (const k of p) nodes[k].g.classList.add('path');
+  for (const k of edges) edgeEls[k].classList.add('path');
+  pathPrev = { nodes: p, edges };
+}
+function bonusLine(i) {
+  const b = bonus(i);
+  if (!b) return '';
+  return lvl[i] ? `+${b} from items: works at level ${eff(i)} of ${nodes[i].max}` : `+${b} from items, waiting for a point here`;
+}
+function cardHTML(i) {
+  const n = nodes[i], L = lvl[i];
+  let h = `<h4>${esc(n.name)}</h4><div class="meta">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''} · ${costText(n)}${n.multi ? ` · ${L} of ${n.max} points in` : L ? ' · taken' : ''}</div>`;
+  if (n.t === 'R') return h + '<p class="desc">A starting point. All twelve Sparks round the centre are open from the start, so paths can begin at any of them.</p>';
+  if (bonus(i)) h += `<div class="gearline">${bonusLine(i)}</div>`;
+  h += `<p class="desc">${gameText(n.desc, n.dargs, Math.max(1, eff(i)), false)}</p>`;
+  if (n.multi && n.per) h += `<div class="foot">Per level: ${gameText(n.per, n.pargs, 1, true)}</div>`;
+  if (!owned(i)) {
+    const p = pathTo(i);
+    if (p) { const c = p.reduce((s, k) => s + nodes[k].cost, 0); h += `<div class="foot">Click to take ${p.length > 1 ? `the path here: <b>${p.length} nodes, ${c} points</b>` : `it: <b>${c} ${c === 1 ? 'point' : 'points'}</b>`}.</div>`; }
+  } else if (L < n.max) h += `<div class="foot">Click for another point (${n.cost}). Right-click refunds one.</div>`;
+  else h += `<div class="foot">All points in. Right-click refunds one.</div>`;
+  return h;
+}
+
+// ---------- drawing state ----------
+function paint() {
+  for (const n of nodes) {
+    const L = lvl[n.i], own = owned(n.i), cl = n.g.classList, open = !own && isOpen(n.i), b = n.boostable ? bonus(n.i) : 0;
+    cl.toggle('taken', own && n.t !== 'R');
+    cl.toggle('partial', n.multi && L > 0 && L < n.max);
+    cl.toggle('open', open);
+    cl.toggle('locked', !own && !open);
+    cl.toggle('sel', sel === n.i);
+    cl.toggle('boosted', b > 0 && L > 0);
+    if (n.lblG) n.lblG.classList.toggle('locked', !own && !open);
+    if (n.t === 'P' || n.t === 'S') n.lvEl.textContent = n.multi ? `${eff(n.i)}/${n.max}` : L ? '✓' : '';
+    if (n.badge) {
+      n.badge.setAttribute('display', b ? 'inline' : 'none');
+      if (b) { n.badgeT.textContent = `+${b}`; n.badge.classList.toggle('off', !L); }
+    }
+  }
+  DATA.links.forEach(([a, b], k) => {
+    const oa = owned(a), ob = owned(b);
+    edgeEls[k].classList.toggle('on', oa && ob);
+    edgeEls[k].classList.toggle('half', oa !== ob);
+  });
+}
+function paintPoints() {
+  const tot = budget(), sp = spent(), left = tot - sp;
+  $('ptLeft').innerHTML = left >= 0 ? `${left}<small>${left === 1 ? 'point' : 'points'} left</small>` : `${-left}<small>${-left === 1 ? 'point' : 'points'} over</small>`;
+  $('ptLeft').classList.toggle('over', left < 0);
+  $('ptOf').textContent = `${sp} of ${tot} spent`;
+  const by = { W: 0, G: 0, M: 0, N: 0 };
+  for (let i = 0; i < N; i++) by[nodes[i].c] += lvl[i] * nodes[i].cost;
+  const den = Math.max(tot, sp) || 1;
+  $('meter').innerHTML = ['W', 'G', 'M', 'N'].map(c => by[c] ? `<i class="c-${c}" style="width:${(by[c] / den * 100).toFixed(2)}%;background:var(--cls)" title="${CLS[c]}: ${by[c]}"></i>` : '').join('');
+  $('undo').disabled = !undoStack.length; $('redo').disabled = !redoStack.length;
+  $('gearCount').textContent = worn.length ? String(worn.length) : '';
+}
+const gearRow = (it, opts = {}) => {
+  const count = worn.filter(w => w === it.g).length;
+  const perks = it.perks.map(([i, p]) => `<span class="${lvl[i] ? 'mine' : ''}">+${p} ${esc(nodes[i].name)}</span>`).join(', ');
+  const acts = [];
+  if (count) acts.push(`<button class="btn small" type="button" data-off="${it.g}">Take off</button>`);
+  if (!count || (it.slot === 'Ring' && count < RING_SLOTS)) acts.push(`<button class="btn small" type="button" data-wear="${it.g}">${count ? 'Wear another' : 'Wear'}</button>`);
+  return `<li class="${count ? 'worn' : ''}"><span class="nm">${esc(gearName(it))}${opts.slot === false ? '' : `<span class="tag">${it.slot}</span>`}${count > 1 ? '<span class="tag">×2</span>' : ''}</span><span class="perks">${perks}</span><span class="acts">${acts.join('')}</span></li>`;
+};
+function paintSkill() {
+  const p = $('pane-skill');
+  if (sel == null) {
+    p.className = 'pane';
+    p.innerHTML = `<p class="hint">Pick a node to read it here. On the map: <kbd>click</kbd> spends a point (or takes the cheapest path to a node that isn't connected yet), <kbd>right-click</kbd> or <kbd>Shift</kbd>+<kbd>click</kbd> refunds one, drag to pan, scroll to zoom. On a touch screen, tap to pick and use the bar at the bottom of the map.</p>
+      <p class="hint">Every path starts from one of the twelve Sparks round the centre. A node opens once a neighbour is taken. <kbd>/</kbd> jumps to the search box.</p>
+      <p class="hint">Item bonuses show as a purple badge on the node. Add them here per skill, or wear gear in the Gear tab.</p>`;
+    return;
+  }
+  const n = nodes[sel], L = lvl[sel], b = bonus(sel);
+  p.className = `pane c-${n.c}`;
+  let h = `<div><h3>${esc(n.name)}</h3><div class="meta">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''} · ${costText(n)}</div></div>`;
+  if (n.t === 'R') { p.innerHTML = h + '<p class="desc">A starting point, and free. All twelve Sparks round the centre are open from the start, so a build can branch out from any of them.</p>'; return; }
+  if (n.multi) h += `<div>Level ${eff(sel)} of ${n.max}<span class="pips">${Array.from({ length: n.max }, (_, k) => `<i class="${k < L ? 'on' : ''}"></i>`).join('')}${Array.from({ length: b }, () => `<i class="gear${L ? '' : ' off'}"></i>`).join('')}</span></div>`;
+  else h += `<div>${L ? 'Taken' : 'Not taken'}</div>`;
+  h += `<p class="desc">${gameText(n.desc, n.dargs, Math.max(1, eff(sel)), false)}</p>`;
+  if (n.multi && n.per) h += `<div class="box">Per level: ${gameText(n.per, n.pargs, 1, true)}${L && eff(sel) >= 1 ? `<br>At level ${eff(sel) + 1}: ${shortText(n, eff(sel) + 1)}` : ''}</div>`;
+  if (n.boostable) {
+    const from = [];
+    if (gb[sel]) from.push(`+${gb[sel]} from worn gear (${worn.filter(w => GEAR[w].perks.some(([i]) => i === sel)).map(w => esc(gearName(GEAR[w]))).join(', ')})`);
+    if (hand[sel]) from.push(`+${hand[sel]} added here`);
+    h += `<div class="box gearbox"><div class="head"><b>Item bonus</b><span class="stepper"><button type="button" data-act="hminus" aria-label="One rank less" title="${hand[sel] ? 'One rank less' : 'Take gear off in the Gear tab to lower it'}" ${hand[sel] ? '' : 'disabled'}>−</button><output aria-live="polite">+${b}</output><button type="button" data-act="hplus" aria-label="One rank more" title="One rank more" ${hand[sel] >= MAX_HAND ? 'disabled' : ''}>+</button></span></div>
+      <div class="meta">${from.length ? from.join('; ') + '.' : 'None yet. Use + for a rank from an item, or wear gear in the Gear tab.'}</div>
+      ${b && !L ? '<div class="meta"><b>Waiting:</b> item ranks only count once a point is spent here.</div>' : ''}</div>`;
+    if (n.gear.length) {
+      const rows = n.gear.slice().sort((a, c) => c[1] - a[1] || GEAR[a[0]].name.localeCompare(GEAR[c[0]].name)).map(([g]) => gearRow(GEAR[g])).join('');
+      h += `<details class="gearfor"><summary>Gear that raises it · ${n.gear.length}</summary><ul class="gearlist">${rows}</ul></details>`;
+    }
+  }
+  const acts = [];
+  if (!owned(sel)) {
+    const path = pathTo(sel);
+    if (path) {
+      const c = path.reduce((s, k) => s + nodes[k].cost, 0);
+      if (path.length > 1) h += `<div class="box">Not connected yet. The cheapest way here takes ${path.length} nodes for ${c} points: ${path.slice(0, -1).map(k => esc(nodes[k].name)).join(', ')}, then this.</div>`;
+      acts.push(`<button class="btn primary" data-act="add">${path.length > 1 ? `Take the path (${c} points)` : `Take it (${c} ${c === 1 ? 'point' : 'points'})`}</button>`);
+    }
+  } else {
+    if (L < n.max) acts.push(`<button class="btn primary" data-act="add">Add a point (${n.cost})</button>`);
+    const dep = L === 1 ? dependents(sel) : [];
+    if (dep.length) {
+      const free = dep.reduce((s, k) => s + lvl[k] * nodes[k].cost, 0) + n.cost;
+      h += `<div class="box warn">${dep.length} taken ${dep.length === 1 ? 'node hangs' : 'nodes hang'} off this one, so it can't be refunded on its own.</div>`;
+      acts.push(`<button class="btn danger" data-act="branch">Refund with its branch (${free} points back)</button>`);
+    } else acts.push(`<button class="btn" data-act="sub">Refund a point</button>`);
+  }
+  acts.push(`<button class="btn" data-act="centre">Show on the map</button>`);
+  h += `<div class="row">${acts.join('')}</div>`;
+  p.innerHTML = h;
+}
+function attrTotals() {
+  const tree = Object.fromEntries(ATTRS.map(a => [a, 0])), flameN = Object.fromEntries(ATTRS.map(a => [a, 0]));
+  const F = S.flame - 1, half = Math.floor(S.flame / 2);
+  for (const n of nodes) {
+    if (!lvl[n.i]) continue;
+    if (n.attr) tree[n.attr] += 1;
+    if (n.flameAttr) flameN[n.flameAttr] += half;
+    if (n.name === 'Ranger' && n.t === 'P') { const v = argVal(n.dargs[0], eff(n.i)); tree.Dexterity += v; tree.Endurance += v; }
+  }
+  const total = Object.fromEntries(ATTRS.map(a => [a, tree[a] + flameN[a] + F]));
+  return { tree, flameN, F, total };
+}
+function paintBuild() {
+  const p = $('pane-build'), A = attrTotals(), T = A.total;
+  let health = T.Constitution * 50;
+  const hfx = [];
+  for (const [name, attr] of Object.entries(HEALTH_FROM)) {
+    const n = nodes.find(x => x.name === name && x.t !== 'A');
+    if (n && lvl[n.i]) { const add = argVal(n.dargs[0], eff(n.i)) * T[attr]; health += add; hfx.push(`${name} ${add}`); }
+  }
+  const by = { W: 0, G: 0, M: 0, N: 0 }, sp = spent();
+  for (let i = 0; i < N; i++) by[nodes[i].c] += lvl[i] * nodes[i].cost;
+  const act = nodes.filter(n => n.t === 'S' && lvl[n.i]), pas = nodes.filter(n => n.t === 'P' && lvl[n.i]);
+  const waiting = nodes.filter(n => n.boostable && bonus(n.i) && !lvl[n.i]);
+  const flameNodes = nodes.filter(n => n.flameAttr && lvl[n.i]);
+  const item = n => `<li class="c-${n.c}"><button type="button" data-node="${n.i}"><span class="nm">${esc(n.name)}</span><span class="lvl">${n.multi ? `${eff(n.i)}/${n.max}${bonus(n.i) ? ` <b>+${bonus(n.i)}</b>` : ''}` : 'taken'}</span><span class="fx">${esc(shortText(n, eff(n.i)))}</span></button></li>`;
+  p.innerHTML = `
+    <div class="stats">
+      <div class="stat"><b>+${Math.round(health)}</b><span>Health</span></div>
+      <div class="stat"><b>+${T.Spirit * 20}</b><span>Mana</span></div>
+      <div class="stat"><b>+${T.Endurance * 10}</b><span>Stamina</span></div>
+      <div class="stat"><b>+${T.Strength * 5}%</b><span>Melee damage</span></div>
+      <div class="stat"><b>+${T.Dexterity * 5}%</b><span>Bow and dagger</span></div>
+      <div class="stat"><b>+${T.Intelligence * 5}%</b><span>Magic damage</span></div>
+    </div>
+    <p class="hint">Bonuses from the tree and the Flame, on top of your gear and base stats.${hfx.length ? ` Health includes ${hfx.join(', ')}.` : ''}</p>
+    <h4>Attributes</h4>
+    <div style="overflow-x:auto"><table>
+      <thead><tr><th>Attribute</th><th>Tree</th><th>Flame</th><th>Total</th><th>Gives</th></tr></thead>
+      <tbody>${ATTRS.map(a => { const [what, per, u] = GIVES[a]; return `<tr><td>${a}</td><td>${A.tree[a]}</td><td>${A.F + A.flameN[a]}</td><td><b>${T[a]}</b></td><td class="gives">+${T[a] * per}${u} ${what}</td></tr>`; }).join('')}</tbody>
+    </table></div>
+    <p class="hint">Flame level ${S.flame} adds ${A.F} to each attribute.${flameNodes.length ? ` ${flameNodes.map(n => esc(n.name)).join(', ')} ${flameNodes.length === 1 ? 'adds' : 'each add'} ${Math.floor(S.flame / 2)} more (one per two Flame levels).` : ' The six "of the Flame" nodes add one more per two Flame levels.'}</p>
+    <h4>Points by class</h4>
+    <div class="stack">${['W', 'G', 'M', 'N'].map(c => by[c] ? `<i class="c-${c}" style="width:${(by[c] / (sp || 1) * 100).toFixed(2)}%"></i>` : '').join('')}</div>
+    <div class="keyrow">${['W', 'G', 'M', 'N'].map(c => `<span class="c-${c}">${CLS[c]} ${by[c]}</span>`).join('')}</div>
+    <h4>Active skills · ${act.length}</h4>
+    ${act.length ? `<ul class="list">${act.map(item).join('')}</ul>` : '<p class="hint">None taken.</p>'}
+    <h4>Passive skills · ${pas.length}</h4>
+    ${pas.length ? `<ul class="list">${pas.map(item).join('')}</ul>` : '<p class="hint">None taken.</p>'}
+    ${waiting.length ? `<h4>Item bonuses waiting for a point · ${waiting.length}</h4><ul class="list">${waiting.map(n => `<li class="c-${n.c}"><button type="button" data-node="${n.i}"><span class="nm">${esc(n.name)}</span><span class="lvl"><b>+${bonus(n.i)}</b></span><span class="fx">Spend a point here for it to count.</span></button></li>`).join('')}</ul>` : ''}
+    <div class="row"><button class="btn" type="button" id="btnCopySummary">Copy as text</button></div>`;
+}
+function paintGear() {
+  const q = $('gearQ').value.trim().toLowerCase();
+  const mineScore = it => it.perks.reduce((s, [i, p]) => s + (lvl[i] ? p : 0), 0);
+  let list, head;
+  if (q) {
+    const words = q.split(/\s+/);
+    list = GEAR.filter(it => words.every(w => it.plain.includes(w) || it.slot.toLowerCase() === w));
+    list.sort((a, b) => mineScore(b) - mineScore(a) || a.name.localeCompare(b.name));
+    head = `${list.length} ${list.length === 1 ? 'item' : 'items'}${list.length > 40 ? ', the first 40 shown' : ''}`;
+  } else {
+    list = GEAR.filter(it => mineScore(it) > 0).sort((a, b) => mineScore(b) - mineScore(a) || SLOT_ORDER.indexOf(a.slot) - SLOT_ORDER.indexOf(b.slot) || a.name.localeCompare(b.name));
+    head = list.length ? `Raises the skills you've taken · ${list.length}${list.length > 12 ? ', the best 12 shown (search for the rest)' : ''}` : '';
+    list = list.slice(0, 12);
+  }
+  $('gearFind').innerHTML = (head ? `<p class="slothead">${head}</p>` : '') +
+    (list.length ? `<ul class="gearlist">${list.slice(0, 40).map(it => gearRow(it)).join('')}</ul>` : q ? '<p class="hint">Nothing matches. Try a slot (gloves, ring) or a skill name.</p>' : '<p class="hint">Take a few skills and the gear that raises them shows here.</p>');
+  $('wornHead').textContent = `Worn · ${worn.length}`;
+  if (!worn.length) { $('wornList').innerHTML = '<p class="hint">Nothing worn yet.</p>'; return; }
+  let h = '';
+  for (const slot of SLOT_ORDER) {
+    const here = [...new Set(worn.filter(w => GEAR[w].slot === slot))];
+    if (!here.length) continue;
+    h += `<p class="slothead">${slot}</p><ul class="gearlist">${here.map(g => gearRow(GEAR[g], { slot: false })).join('')}</ul>`;
+  }
+  const weap = worn.filter(w => ['Weapon', 'Tool'].includes(GEAR[w].slot)).length;
+  if (weap) h += '<p class="hint">Weapon and tool ranks may only count while you hold that item.</p>';
+  h += '<div class="row"><button class="btn danger" type="button" data-alloff="1">Take it all off</button></div>';
+  $('wornList').innerHTML = h;
+}
+function summaryText() {
+  const A = attrTotals();
+  const lines = [`${S.name || 'Untitled build'}: ${spent()} of ${budget()} skill points (level ${S.level}, ${S.wells} Elixir Wells, ${S.roots} Shroud Roots, Flame ${S.flame})`,
+    'Attributes: ' + ATTRS.map(a => `${ABBR[a]} ${A.total[a]}`).join(', ')];
+  const act = nodes.filter(n => n.t === 'S' && lvl[n.i]), pas = nodes.filter(n => n.t === 'P' && lvl[n.i]);
+  const nm = n => n.name + (n.multi ? ` ${eff(n.i)}/${n.max}${bonus(n.i) ? ` (+${bonus(n.i)} items)` : ''}` : '');
+  if (act.length) lines.push('Active: ' + act.map(nm).join(', '));
+  if (pas.length) lines.push('Passive: ' + pas.map(nm).join(', '));
+  if (worn.length) lines.push('Gear: ' + worn.map(w => gearName(GEAR[w])).join(', '));
+  lines.push('Code: ' + encode());
+  return lines.join('\n');
+}
+function paintQuick() {
+  const q = $('quick');
+  const show = sel != null && nodes[sel].t !== 'R';
+  wrap.classList.toggle('picked', show);                     // (the bar takes the legend's place)
+  if (!show) { q.hidden = true; return; }
+  const n = nodes[sel], L = lvl[sel], own = owned(sel), b = bonus(sel);
+  q.className = `quick c-${n.c}`;
+  q.hidden = false;
+  let addLabel = '+', addTitle = `Add a point (${n.cost})`;
+  if (!own) { const p = pathTo(sel); const c = p ? p.reduce((s, k) => s + nodes[k].cost, 0) : 0; addLabel = `Take · ${c}`; addTitle = p && p.length > 1 ? `Take the path: ${p.length} nodes, ${c} points` : `Take it: ${c} points`; }
+  q.innerHTML = `<span class="qn">${esc(n.name)}</span><span class="ql">${n.multi ? `${eff(sel)}/${n.max}` : L ? 'taken' : costText(n)}${b ? ` <b>+${b}</b>` : ''}</span>
+    <button class="ibtn" data-act="sub" title="Refund a point" aria-label="Refund a point" ${own && L ? '' : 'disabled'}>−</button>
+    <button class="ibtn" data-act="add" title="${addTitle}" aria-label="${addTitle}" ${own && L >= n.max ? 'disabled' : ''}>${addLabel}</button>
+    <button class="ibtn" data-act="info" title="Read it in the panel" aria-label="Read it in the panel">i</button>
+    <button class="ibtn" data-act="close" title="Close (Esc)" aria-label="Close">×</button>`;
+}
+function paintSaves() {
+  $('codeOut').value = encode();
+  if ($('buildName') !== document.activeElement) $('buildName').value = S.name;
+  $('btnCopyLink').hidden = !SHARE_BASE;
+  const list = store.get(LS_SAVES, []);
+  $('saves').innerHTML = list.length ? list.map((s, k) => {
+    const d = decode(s.code), pts = d ? spentOf(d.lv) : 0;
+    return `<li><span class="nm">${esc(s.name || 'Untitled build')}</span><span class="meta">${pts} points · level ${d ? d.level : '?'}${d && d.worn.length ? ` · ${d.worn.length} gear` : ''} · ${new Date(s.at).toLocaleDateString()}</span>
+      <span class="row" data-k="${k}"><button class="btn" data-save="load">Load</button><button class="btn danger" data-save="del">Delete</button></span></li>`;
+  }).join('') : '<li class="hint" style="display:block">Nothing saved yet. Name the build above and save it.</li>';
+}
+function persist() { store.set(LS_CUR, { code: encode(), name: S.name, allowOver: S.allowOver, tab: S.tab }); }
+function changed() {
+  workOutGear();
+  paint(); paintPoints(); paintSkill(); paintBuild(); paintGear(); paintQuick(); paintSaves();
+  if (hover != null) showPath(!owned(hover) ? pathTo(hover) : null);
+  persist();
+}
+function select(i) {
+  sel = i;
+  paint(); paintSkill(); paintQuick();
+  if (i != null && S.tab !== 'skill' && S.tab !== 'gear' && window.matchMedia('(min-width: 861px)').matches) setTab('skill');
+}
+function undo() { if (!undoStack.length) return; redoStack.push(snapshot()); restore(undoStack.pop()); syncInputs(); changed(); }
+function redo() { if (!redoStack.length) return; undoStack.push(snapshot()); restore(redoStack.pop()); syncInputs(); changed(); }
+
+let toastTimer = 0;
+function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3800); }
+const TABS = ['skill', 'build', 'gear', 'saves'];
+function setTab(t) {
+  S.tab = TABS.includes(t) ? t : 'skill';
+  for (const k of TABS) { $('tab-' + k).setAttribute('aria-selected', String(k === S.tab)); $('pane-' + k).hidden = k !== S.tab; }
+  persist();
+}
+async function copy(text, okMsg, fallbackEl) {
+  try { await navigator.clipboard.writeText(text); toast(okMsg); }
+  catch (e) { if (fallbackEl) { fallbackEl.focus(); fallbackEl.select(); } toast('Copy was blocked here. The text is selected: press Ctrl+C.'); }
+}
+
+// ---------- controls ----------
+const inputs = { inLevel: ['level', 1, CAP], inWells: ['wells', 0, MAX_WELLS], inRoots: ['roots', 0, MAX_ROOTS], inFlame: ['flame', 1, MAX_FLAME] };
+function syncInputs() { for (const [id, [k]] of Object.entries(inputs)) $(id).value = S[k]; $('allowOver').checked = S.allowOver; }
+for (const [id, [k, lo, hi]] of Object.entries(inputs)) {
+  $(id).addEventListener('change', () => {
+    const v = parseInt($(id).value, 10);
+    const nv = Number.isFinite(v) ? clamp(v, lo, hi) : S[k];
+    if (nv !== S[k]) { remember(); S[k] = nv; }
+    $(id).value = S[k]; changed();
+  });
+}
+$('allowOver').addEventListener('change', () => { S.allowOver = $('allowOver').checked; changed(); });
+$('btnMax').addEventListener('click', () => { remember(); Object.assign(S, { level: CAP, wells: MAX_WELLS, roots: MAX_ROOTS, flame: MAX_FLAME }); syncInputs(); changed(); });
+const showReset = on => { $('resetConfirm').hidden = !on; $('pointBtns').hidden = on; (on ? $('btnResetNo') : $('btnResetAll')).focus(); };
+$('btnResetAll').addEventListener('click', () => showReset(true));
+$('btnResetNo').addEventListener('click', () => showReset(false));
+$('btnResetYes').addEventListener('click', () => { resetAll(); showReset(false); });
+for (const k of TABS) $('tab-' + k).addEventListener('click', () => setTab(k));
+document.querySelector('.tabs').addEventListener('keydown', e => {
+  if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+  const k = (TABS.indexOf(S.tab) + (e.key === 'ArrowRight' ? 1 : TABS.length - 1)) % TABS.length;
+  setTab(TABS[k]); $('tab-' + TABS[k]).focus();
+});
+function act(a) {
+  if (sel == null) return;
+  if (a === 'add') addLevel(sel); else if (a === 'sub') removeLevel(sel); else if (a === 'branch') removeBranch(sel);
+  else if (a === 'hplus') setHand(sel, hand[sel] + 1); else if (a === 'hminus') setHand(sel, hand[sel] - 1);
+  else if (a === 'centre') showNode(sel);
+  else if (a === 'close') select(null);
+  else if (a === 'info') { setTab('skill'); $('pane-skill').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+}
+function gearClick(e) {
+  const w = e.target.closest('[data-wear]'), o = e.target.closest('[data-off]');
+  if (w) { wear(+w.dataset.wear); return true; }
+  if (o) { takeOff(+o.dataset.off); return true; }
+  if (e.target.closest('[data-alloff]')) { remember(); worn = []; changed(); toast('Took all gear off.'); return true; }
+  return false;
+}
+$('pane-skill').addEventListener('click', e => {
+  if (gearClick(e)) return;
+  const b = e.target.closest('[data-act]'); if (b) act(b.dataset.act);
+});
+$('pane-gear').addEventListener('click', gearClick);
+$('gearQ').addEventListener('input', paintGear);
+$('quick').addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (b) act(b.dataset.act); });
+$('pane-build').addEventListener('click', e => {
+  const b = e.target.closest('[data-node]');
+  if (b) { const i = +b.dataset.node; select(i); showNode(i); return; }
+  if (e.target.id === 'btnCopySummary') copy(summaryText(), 'Build copied as text.');
+});
+$('undo').addEventListener('click', undo);
+$('redo').addEventListener('click', redo);
+$('zin').addEventListener('click', () => { const r = svg.getBoundingClientRect(); zoomAt(1.3, r.width / 2, r.height / 2); });
+$('zout').addEventListener('click', () => { const r = svg.getBoundingClientRect(); zoomAt(1 / 1.3, r.width / 2, r.height / 2); });
+$('fit').addEventListener('click', () => fit(true));
+$('jumps').innerHTML = [['N', 'Centre'], ['W', 'Warrior'], ['G', 'Ranger'], ['M', 'Mage']].map(([c, l]) => `<button class="chip c-${c}" type="button" data-jump="${c}"><span class="dot"></span>${l}</button>`).join('');
+$('jumps').addEventListener('click', e => { const b = e.target.closest('[data-jump]'); if (b) jumpTo(b.dataset.jump); });
+
+// search
+let hits = [], hitAt = 0;
+function runSearch() {
+  const q = $('q').value.trim().toLowerCase();
+  for (const n of nodes) n.g.classList.remove('hit');
+  svg.classList.toggle('searching', !!q);
+  const res = $('results');
+  if (!q) { hits = []; res.hidden = true; return; }
+  const words = q.split(/\s+/);
+  hits = nodes.filter(n => n.t !== 'R' && words.every(w => n.plain.includes(w)));
+  hits.sort((a, b) => (b.name.toLowerCase().startsWith(q) - a.name.toLowerCase().startsWith(q)) || (b.name.toLowerCase().includes(q) - a.name.toLowerCase().includes(q)) || a.name.localeCompare(b.name));
+  for (const n of hits) n.g.classList.add('hit');
+  hitAt = 0;
+  const uniq = [], seen = new Set();
+  for (const n of hits) { const key = n.attr ? 'attr:' + n.attr : n.i; if (!seen.has(key)) { seen.add(key); uniq.push(n); } }
+  res.innerHTML = (uniq.length ? uniq.slice(0, 40).map((n, k) => `<li><button type="button" class="${k === 0 ? 'at' : ''}" data-node="${n.i}"><span>${esc(n.name)}${n.attr ? ` <span class="m">×${hits.filter(h => h.attr === n.attr).length}</span>` : ''}</span><span class="m">${TYPE[n.t]}${n.c !== 'N' ? ' · ' + CLS[n.c] : ''}</span></button></li>`).join('')
+    : '<li class="note">Nothing matches. Try a word from an effect, like "fire" or "stamina".</li>') + (uniq.length ? `<li class="note">${hits.length} on the map are lit up.</li>` : '');
+  res.hidden = false;
+}
+$('q').addEventListener('input', runSearch);
+$('q').addEventListener('keydown', e => {
+  const btns = [...$('results').querySelectorAll('button')];
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); if (!btns.length) return; hitAt = clamp(hitAt + (e.key === 'ArrowDown' ? 1 : -1), 0, btns.length - 1); btns.forEach((b, k) => b.classList.toggle('at', k === hitAt)); btns[hitAt].scrollIntoView({ block: 'nearest' }); }
+  else if (e.key === 'Enter' && btns[hitAt]) { e.preventDefault(); btns[hitAt].click(); }
+  else if (e.key === 'Escape') { $('q').value = ''; runSearch(); wrap.focus(); }
+});
+$('results').addEventListener('click', e => { const b = e.target.closest('[data-node]'); if (!b) return; const i = +b.dataset.node; select(i); centreOn(nodes[i].x, nodes[i].y, Math.max(V.s, .6), true); });
+
+// saves and codes
+$('buildName').addEventListener('input', () => { S.name = $('buildName').value.slice(0, 60); persist(); });
+$('btnSave').addEventListener('click', () => {
+  const list = store.get(LS_SAVES, []), name = S.name.trim() || 'Untitled build';
+  const k = list.findIndex(s => s.name === name);
+  const rec = { name, code: encode(), at: Date.now() };
+  if (k >= 0) list[k] = rec; else list.unshift(rec);
+  store.set(LS_SAVES, list.slice(0, 60)); paintSaves();
+  toast(store.get(LS_SAVES, null) ? (k >= 0 ? `Updated "${name}".` : `Saved "${name}".`) : 'This browser is blocking storage, so nothing was saved. Copy the code instead.');
+});
+$('saves').addEventListener('click', e => {
+  const b = e.target.closest('[data-save]'); if (!b) return;
+  const row = b.closest('[data-k]'), k = +row.dataset.k, list = store.get(LS_SAVES, []), s = list[k];
+  if (!s) return;
+  if (b.dataset.save === 'load') { if (loadCode(s.code, s.name)) toast(`Loaded "${s.name}".`); }
+  else if (b.dataset.save === 'del') { row.innerHTML = `<span class="meta">Delete it?</span><button class="btn danger" data-save="yes">Delete</button><button class="btn" data-save="no">Keep</button>`; }
+  else if (b.dataset.save === 'yes') { list.splice(k, 1); store.set(LS_SAVES, list); paintSaves(); toast(`Deleted "${s.name}".`); }
+  else if (b.dataset.save === 'no') paintSaves();
+});
+$('btnCopyCode').addEventListener('click', () => copy(encode(), 'Build code copied.', $('codeOut')));
+$('btnCopyLink').addEventListener('click', () => copy(`${SHARE_BASE}#${encode()}`, 'Link copied. Opening it loads this build.'));
+$('btnLoadCode').addEventListener('click', () => { if (loadCode($('codeIn').value)) { $('codeIn').value = ''; toast('Build loaded.'); } });
+$('codeIn').addEventListener('keydown', e => { if (e.key === 'Enter') $('btnLoadCode').click(); });
+$('btnExample').addEventListener('click', loadExample);
+
+// ---------- start ----------
+(function start() {
+  const cur = store.get(LS_CUR, null);
+  const fromHash = decode(decodeURIComponent((location.hash || '').slice(1)));
+  if (cur) { S.allowOver = !!cur.allowOver; if (cur.tab) S.tab = cur.tab; }
+  if (fromHash) { restore(fromHash); S.name = ''; }
+  else if (cur && decode(cur.code)) { restore(decode(cur.code)); S.name = cur.name || ''; }
+  else { const ex = buildExample(); lvl = ex.lv; worn = ex.worn; Object.assign(S, { level: EXAMPLE.level, wells: EXAMPLE.wells, roots: EXAMPLE.roots, flame: EXAMPLE.flame, name: EXAMPLE.name }); }
+  syncInputs(); setTab(S.tab);
+  requestAnimationFrame(() => { fit(); changed(); });
+  let last = 0;
+  new ResizeObserver(() => { const w = svg.clientWidth; if (Math.abs(w - last) > 40) { last = w; fit(); } }).observe(svg);
+})();
+</script>

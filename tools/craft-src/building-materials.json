@@ -1,0 +1,5251 @@
+{
+  "fetched": "2026-10-20",
+  "notes": "107 building materials with a 1.0 recipe (94 from the planner's 118-entry block catalogue, 13 new in 1.0), plus 29 catalogue terrain materials and 4 new 1.0 terrain materials that have no recipe and are listed under resources as gathered (with catalogueName where the names differ). Source: enshrouded.tools item pages, read from the 1.0 game files (footer: 'Data from game build 25988036'), cross-checked against the site's building-blocks table (tiers, per-craft yields) and its 1.0 page, which diffs the last Early Access build (23966345) against 1.0. Every recipe is likely-1.0 (datamined, not checked in game). changes1_0 compares the 1.0 recipe with the pre-1.0 wiki recipe in tools/blocks-src/recipes.json ('old -> new', '+ item qty' added, '- item qty' dropped); recipeChanged1_0 is the site's own diff against the last Early Access build. Where the two disagree, the item is flagged: a wiki-only difference means the wiki was stale or wrong before 1.0. The input 'Fired Brick' is 'Fired Bricks' in 1.0 (a rename, same item). station is the station the recipe uses (Workbench, Grinding Stones); crafter is null for the player's own Workbench and the survivor (Farmer) otherwise; requires is [] because no page shows a requirement. Yields: blocks 100, roofs 50, roads, soils, fertile dirts and rubbles 10, all read from each page's 'Makes' line. tier is the site's building tier (biome); roads and soils have none. Rubbles are timed Grinding Stones recipes (70-80s). Resources follow each input's primary recipe (the one its 'Where to get it' line names) down to raw materials; alternatives are in otherRecipes. Resource recipes carry the site's diff (changed1_0) and, where the pre-1.0 intermediates list has the same station, a wiki comparison (changes1_0). The site's 'About' blurbs quote Early Access and are ignored (e.g. Revelwood Stone's still says Workbench, Blackmire Rubble's says no recipe). The site also lists 5 Overgrowth paints (Ivy, Climbing Rose, Mycelium, Wisteria, Underwater Overgrowth; Farmer, 100 per craft) that are not in the catalogue and not new in 1.0, so they are left out. Left out as not hammer materials: Ancient Column Block, Red Marble Column Block (new 1.0 furniture props, Decoration Workbench).",
+  "items": [
+    {
+      "name": "Castle Block",
+      "category": "Stone blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 5
+        },
+        {
+          "item": "Granite",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/castle-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Castle Wall Stone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Nomad Highlands Dirt",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/castle-wall-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Citywall Block",
+      "category": "Stone blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Revelwood Stone",
+          "qty": 8
+        },
+        {
+          "item": "Revelwood Dirt",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "+ Revelwood Stone 8",
+        "+ Revelwood Dirt 2",
+        "- Stone 8",
+        "- Springlands Dirt 2"
+      ],
+      "recipeChanged1_0": [
+        "+ 2 Revelwood Dirt",
+        "+ 8 Revelwood Stone",
+        "- 2 Springlands Dirt",
+        "- 8 Stone"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/citywall-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Desert City Wall",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 15
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/desert-city-wall",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Desert Temple Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 8
+        },
+        {
+          "item": "Indigo Plant",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/desert-temple-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Drak Temple Block",
+      "category": "Stone blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 9
+        },
+        {
+          "item": "Gold Bars",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/drak-temple-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Fancy Stone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 7
+        },
+        {
+          "item": "Wood Planks",
+          "qty": 3
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fancy-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Fired Bricks Block",
+      "category": "Stone blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Input renamed Fired Brick -> Fired Bricks"
+      ],
+      "recipeChanged1_0": [
+        "+ 10 Fired Bricks",
+        "- 10 Fired Brick"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fired-bricks-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Granite Block",
+      "category": "Stone blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/granite-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Highly Polished Stone Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 15
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/highly-polished-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Hollow Halls Block",
+      "category": "Stone blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Tar",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/hollow-halls-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Limestone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 6
+        },
+        {
+          "item": "Springlands Dirt",
+          "qty": 4
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/limestone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Mixed Sandstone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 5
+        },
+        {
+          "item": "Limestone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/mixed-sandstone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Mycelium Overgrown Block",
+      "category": "Stone blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 2
+        },
+        {
+          "item": "Mycelium",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/mycelium-overgrown-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Polished Granite Block",
+      "category": "Stone blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 15
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/polished-granite-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Refined Sandstone Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 5
+        },
+        {
+          "item": "Sand",
+          "qty": 2
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 2
+        },
+        {
+          "item": "Indigo Plant",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/refined-sandstone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Refined Stone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 5
+        },
+        {
+          "item": "Flintstone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/refined-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Regular Sandstone Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 8
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/regular-sandstone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Regular Stone Block",
+      "category": "Stone blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/regular-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Rough Flintstone Block",
+      "category": "Stone blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Flintstone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/rough-flintstone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Rough Sandstone Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Sandstone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/rough-sandstone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Rough Stone Block",
+      "category": "Stone blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/rough-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Roughly Cut Stone Block",
+      "category": "Stone blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 8
+        },
+        {
+          "item": "Rubble",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/roughly-cut-stone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Shell Limestone Block",
+      "category": "Stone blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/shell-limestone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Temple Stones",
+      "category": "Stone blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Blackmire Stone",
+          "qty": 8
+        },
+        {
+          "item": "Blackmire Dirt",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "+ Blackmire Stone 8",
+        "+ Blackmire Dirt 2",
+        "- Stone 8",
+        "- Springlands Dirt 2"
+      ],
+      "recipeChanged1_0": [
+        "+ 2 Blackmire Dirt",
+        "+ 8 Blackmire Stone",
+        "- 2 Springlands Dirt",
+        "- 8 Stone"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/temple-stones",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Weathered Stone Block",
+      "category": "Stone blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Revelwood Stone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Stone 10 -> 5",
+        "+ Revelwood Stone 5"
+      ],
+      "recipeChanged1_0": [
+        "+ 5 Revelwood Stone",
+        "Stone 10 → 5"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/weathered-stone-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Well Block",
+      "category": "Stone blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 8
+        },
+        {
+          "item": "Shroud Liquid",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "+ Stone 8",
+        "- Sandstone 8"
+      ],
+      "recipeChanged1_0": [
+        "+ 8 Stone",
+        "- 8 Sandstone"
+      ],
+      "newIn1_0": false,
+      "flags": [
+        "Odd: a Kindlewastes (tier 4) block that now takes plain Stone instead of Sandstone, the opposite of 1.0's 'use the biome's stone' change. The site's 1.0 diff confirms it."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/well-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ancient Beacon Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Celestium Ore",
+          "qty": 3
+        },
+        {
+          "item": "Magma Gel",
+          "qty": 3
+        },
+        {
+          "item": "Cinder Rock",
+          "qty": 4
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-beacon-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ancient Circles Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Basalt",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-circles-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ancient Dungeon Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Basalt",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-dungeon-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ancient Stone Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Moonstone",
+          "qty": 10
+        },
+        {
+          "item": "Basalt",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-stone-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Moonstone Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Moonstone",
+          "qty": 10
+        },
+        {
+          "item": "Sparkling Dust",
+          "qty": 4
+        },
+        {
+          "item": "Basalt",
+          "qty": 3
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/moonstone-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Weathered Ancient Stone Block",
+      "category": "Stone blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Ancient Stone Block",
+          "qty": 100
+        },
+        {
+          "item": "Blackmire Stone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "flags": [
+        "Conversion recipe: 100 Ancient Stone Block + 5 Blackmire Stone make 100, so it costs a full stack of Ancient Stone Block plus the stone."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/weathered-ancient-stone-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Bamboo Wood Block",
+      "category": "Wood blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bamboo Logs",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/bamboo-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Brick-Timbered Block",
+      "category": "Wood blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks Block",
+          "qty": 1
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "flags": [
+        "Uses 1 Fired Bricks Block (the building block, itself crafted 100 at a time), not loose Fired Bricks. The pre-1.0 data marked this as suspicious; the 1.0 data confirms it."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/brick-timbered-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Conifer Wood Block",
+      "category": "Wood blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Conifer Logs",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/conifer-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Half-Timbered Block",
+      "category": "Wood blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Lump of Clay",
+          "qty": 5
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/half-timbered-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Half-timbered Shell Limestone Block",
+      "category": "Wood blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Tropical Wood",
+          "qty": 5
+        },
+        {
+          "item": "Shell Limestone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/half-timbered-shell-limestone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Palm Wood Block",
+      "category": "Wood blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Palm Wood Logs",
+          "qty": 7
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 3
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/palm-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Plaited Block",
+      "category": "Wood blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Twigs",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/plaited-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Refined Wood Block",
+      "category": "Wood blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 8
+        },
+        {
+          "item": "Wood Logs",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/refined-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Rough Wood Block",
+      "category": "Wood blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/rough-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Shroud Wood Block",
+      "category": "Wood blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shroud Wood",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Tarred Wood Block",
+      "category": "Wood blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 2
+        },
+        {
+          "item": "Tar",
+          "qty": 2
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/tarred-wood-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Ornate Wood Block",
+      "category": "Wood blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Planks",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ornate-wood-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Blue Luminescent Block",
+      "category": "Luminescent blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Luminous Growth",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/blue-luminescent-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Green Luminescent Block",
+      "category": "Luminescent blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Purified Slime",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/green-luminescent-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "White Luminescent Block",
+      "category": "Luminescent blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "White Glowing Substance",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/white-luminescent-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Yellow Luminescent Block",
+      "category": "Luminescent blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Glass",
+          "qty": 3
+        },
+        {
+          "item": "Saffron",
+          "qty": 3
+        },
+        {
+          "item": "Flintstone",
+          "qty": 4
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/yellow-luminescent-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Bone Block",
+      "category": "Other blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bones",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/bone-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Bronze Block",
+      "category": "Other blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any wood",
+          "qty": 5,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/bronze-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Copper Block",
+      "category": "Other blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Copper Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any wood",
+          "qty": 5,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Ectoplasm Block",
+      "category": "Other blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Flintstone",
+          "qty": 5
+        },
+        {
+          "item": "Ectoplasm Shard",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "flags": [
+        "Tier conflict: Keen's 1.0 changelog (as quoted on enshrouded.tools/1-0) says it is 'now a tier 2 building material', but the site's building-blocks table puts it in tier 3, Nomad Highlands."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/ectoplasm-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Iron Block",
+      "category": "Other blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Iron Bars",
+          "qty": 1
+        },
+        {
+          "item": "Any wood",
+          "qty": 5,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Metal Block",
+      "category": "Other blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Metal Sheets",
+          "qty": 1
+        },
+        {
+          "item": "Any wood",
+          "qty": 5,
+          "anyOf": [
+            "Wood Logs",
+            "Hardwood",
+            "Palm Wood Logs",
+            "Conifer Logs",
+            "Bamboo Logs",
+            "Tropical Wood"
+          ]
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/metal-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Midnight Tomb Block",
+      "category": "Other blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Red Marble Fragment",
+          "qty": 9
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/midnight-tomb-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Obsidian Block",
+      "category": "Other blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Obsidian",
+          "qty": 9
+        },
+        {
+          "item": "Silver Bars",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/obsidian-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Red Carpet Block",
+      "category": "Other blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Red Fabric",
+          "qty": 4
+        },
+        {
+          "item": "Paper Reed",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Red Fabric 8 -> 4",
+        "- Heart's Desire 1"
+      ],
+      "recipeChanged1_0": [
+        "- 1 Heart's Desire",
+        "Red Fabric 8 → 4"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/red-carpet-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Red Marble Block",
+      "category": "Other blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Red Marble Fragment",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/red-marble-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Starlight Block",
+      "category": "Other blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 8
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Lapislazuli",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/starlight-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Ancient Gold Block",
+      "category": "Other blocks",
+      "tier": "7, Cinder's Cradle",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Gold Bars",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-gold-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Castle Roof Block",
+      "category": "Roof blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/castle-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Desert Shingle Roof Block",
+      "category": "Roof blocks",
+      "tier": "4, Kindlewastes",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Lump of Clay",
+          "qty": 10
+        },
+        {
+          "item": "Bronze Bars",
+          "qty": 1
+        },
+        {
+          "item": "Lapislazuli",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/desert-shingle-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Drak Temple Roof Block",
+      "category": "Roof blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/drak-temple-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Granite Ornamented Roof Block",
+      "category": "Roof blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 10
+        },
+        {
+          "item": "Silver Bars",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/granite-ornamented-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Granite Shingle Roof Block",
+      "category": "Roof blocks",
+      "tier": "5, Albaneve Summits",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 10
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/granite-shingle-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Palm Leaf Roof Block",
+      "category": "Roof blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Palm Leaves",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/palm-leaf-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Plant Fiber Roof Block",
+      "category": "Roof blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Plant Fiber",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/plant-fiber-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Roof Tiles Block",
+      "category": "Roof blocks",
+      "tier": "2, Revelwood",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fired Bricks",
+          "qty": 4
+        },
+        {
+          "item": "Lump of Clay",
+          "qty": 1
+        },
+        {
+          "item": "Plant Fiber",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Input renamed Fired Brick -> Fired Bricks"
+      ],
+      "recipeChanged1_0": [
+        "+ 4 Fired Bricks",
+        "- 4 Fired Brick"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/roof-tiles-block",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Shell Limestone Shingles",
+      "category": "Roof blocks",
+      "tier": "6, Veilwater Basin",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Lump of Clay",
+          "qty": 5
+        },
+        {
+          "item": "Shell Limestone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/shell-limestone-shingles",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Stone Shingle Roof Block",
+      "category": "Roof blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Flintstone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/stone-shingle-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Straw Roof Block",
+      "category": "Roof blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Straw",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/straw-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Tarred Shingle Roof Block",
+      "category": "Roof blocks",
+      "tier": "1, Springlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Wood Logs",
+          "qty": 5
+        },
+        {
+          "item": "Tar",
+          "qty": 5
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/tarred-shingle-roof-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Tarred Straw Block",
+      "category": "Roof blocks",
+      "tier": "3, Nomad Highlands",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 50,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Straw",
+          "qty": 4
+        },
+        {
+          "item": "Tar",
+          "qty": 1
+        }
+      ],
+      "stackSize": 5000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/tarred-straw-block",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Climbing Rose",
+      "category": "Overgrowth",
+      "tier": "2, Revelwood",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Revelwood Dirt",
+          "qty": 4
+        },
+        {
+          "item": "Flax",
+          "qty": 1
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "recipeChanged1_0": [
+        "+ 4 Revelwood Dirt",
+        "- 4 Springlands Dirt"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/climbing-rose",
+        "https://www.enshrouded.tools/building-blocks",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Ivy",
+      "category": "Overgrowth",
+      "tier": "1, Springlands",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 4
+        },
+        {
+          "item": "Honey",
+          "qty": 1
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/ivy",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Mycelium (overgrowth)",
+      "category": "Overgrowth",
+      "tier": "3, Nomad Highlands",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fossilized Bone",
+          "qty": 2
+        },
+        {
+          "item": "Mycelium",
+          "qty": 3
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/mycelium-decoration"
+      ]
+    },
+    {
+      "name": "Underwater Overgrowth",
+      "category": "Overgrowth",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Underwater Mud",
+          "qty": 2
+        },
+        {
+          "item": "Paper Reed",
+          "qty": 3
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/underwater-overgrowth"
+      ]
+    },
+    {
+      "name": "Wisteria",
+      "category": "Overgrowth",
+      "tier": "6, Veilwater Basin",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 100,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Veilwater Basin Dirt",
+          "qty": 2
+        },
+        {
+          "item": "Passionflower",
+          "qty": 3
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/wisteria",
+        "https://www.enshrouded.tools/building-blocks"
+      ]
+    },
+    {
+      "name": "Dirt Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Springlands Dirt",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/dirt-road-block"
+      ]
+    },
+    {
+      "name": "Field Stones",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 6
+        },
+        {
+          "item": "Springlands Dirt",
+          "qty": 4
+        }
+      ],
+      "stackSize": 500,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/field-stones"
+      ]
+    },
+    {
+      "name": "Granite Rubble Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Granite",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/granite-rubble-road-block"
+      ]
+    },
+    {
+      "name": "Limestone Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Limestone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/limestone-road-block"
+      ]
+    },
+    {
+      "name": "Rocky Stone Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/rocky-stone-road-block"
+      ]
+    },
+    {
+      "name": "Shell Limestone Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 7
+        },
+        {
+          "item": "Veilwater Basin Rubble",
+          "qty": 3
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/shell-limestone-road-block"
+      ]
+    },
+    {
+      "name": "Smooth Stone Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Stone",
+          "qty": 5
+        },
+        {
+          "item": "Springlands Dirt",
+          "qty": 5
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/smooth-stone-road-block"
+      ]
+    },
+    {
+      "name": "Ancient Road Block",
+      "category": "Roads",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Cinder Rock",
+          "qty": 7
+        },
+        {
+          "item": "Cinder's Cradle Rubble",
+          "qty": 3
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-road-block",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Blackmire Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "80s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Blackmire Dirt",
+          "qty": 4
+        },
+        {
+          "item": "Blackmire Stone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Now craftable (pre-1.0 wiki: not craftable)"
+      ],
+      "newIn1_0": false,
+      "flags": [
+        "The pre-1.0 wiki said it had no recipe, unlike the other biome rubbles, and the site's (Early Access) About blurb says the same, but the 1.0 data has a Grinding Stones recipe. It isn't in the site's changed-recipe list, so it is probably one of 1.0's 617 new recipes."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/blackmire-rubble"
+      ]
+    },
+    {
+      "name": "Farm Soil",
+      "category": "Soil & terrain",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Springlands Dirt",
+          "qty": 7
+        },
+        {
+          "item": "Bonemeal",
+          "qty": 3
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/farm-soil"
+      ]
+    },
+    {
+      "name": "Fertile Blackmire Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 1
+        },
+        {
+          "item": "Blackmire Dirt",
+          "qty": 9
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-blackmire-dirt"
+      ]
+    },
+    {
+      "name": "Fertile Kindlewastes Sand",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fertilised Farm Soil",
+          "qty": 1
+        },
+        {
+          "item": "Any sand",
+          "qty": 9,
+          "anyOf": [
+            "Sand",
+            "Fine Sand",
+            "Veilwater Basin Sand",
+            "Cinder's Cradle Sand"
+          ]
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Sand 9 -> Any sand 9 (slot takes any of Sand, Fine Sand, Veilwater Basin Sand, Cinder's Cradle Sand)"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-kindlewastes-sand"
+      ]
+    },
+    {
+      "name": "Fertile Nomad Highlands Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 1
+        },
+        {
+          "item": "Nomad Highlands Dirt",
+          "qty": 9
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-nomad-highlands-dirt"
+      ]
+    },
+    {
+      "name": "Fertile Revelwood Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 1
+        },
+        {
+          "item": "Revelwood Dirt",
+          "qty": 9
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-revelwood-dirt"
+      ]
+    },
+    {
+      "name": "Fertile Springlands Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 1
+        },
+        {
+          "item": "Springlands Dirt",
+          "qty": 9
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-springlands-dirt"
+      ]
+    },
+    {
+      "name": "Fertile Veilwater Basin Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Shell Limestone",
+          "qty": 1
+        },
+        {
+          "item": "Veilwater Basin Sand",
+          "qty": 1
+        },
+        {
+          "item": "Veilwater Basin Dirt",
+          "qty": 8
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-veilwater-basin-dirt"
+      ]
+    },
+    {
+      "name": "Fertilised Farm Soil",
+      "category": "Soil & terrain",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fossilized Bone Dust",
+          "qty": 2
+        },
+        {
+          "item": "Nitrate",
+          "qty": 3
+        },
+        {
+          "item": "Any sand",
+          "qty": 10,
+          "anyOf": [
+            "Sand",
+            "Fine Sand",
+            "Veilwater Basin Sand",
+            "Cinder's Cradle Sand"
+          ]
+        },
+        {
+          "item": "Farm Soil",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/fertilised-farm-soil"
+      ]
+    },
+    {
+      "name": "Flower Soil",
+      "category": "Soil & terrain",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Farm Soil",
+          "qty": 10
+        },
+        {
+          "item": "Honey",
+          "qty": 1
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/flower-soil"
+      ]
+    },
+    {
+      "name": "Kindlewastes Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "70s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Sandstone",
+          "qty": 5
+        },
+        {
+          "item": "Any sand",
+          "qty": 4,
+          "anyOf": [
+            "Sand",
+            "Fine Sand",
+            "Veilwater Basin Sand",
+            "Cinder's Cradle Sand"
+          ]
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "Sand 4 -> Any sand 4 (slot takes any of Sand, Fine Sand, Veilwater Basin Sand, Cinder's Cradle Sand)"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/kindlewastes-rubble"
+      ]
+    },
+    {
+      "name": "Nomad Highlands Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "75s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Nomad Highlands Dirt",
+          "qty": 4
+        },
+        {
+          "item": "Limestone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/nomad-highlands-rubble"
+      ]
+    },
+    {
+      "name": "Revelwood Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "80s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Revelwood Dirt",
+          "qty": 4
+        },
+        {
+          "item": "Revelwood Stone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "+ Revelwood Stone 5",
+        "- Stone 5"
+      ],
+      "recipeChanged1_0": [
+        "+ 5 Revelwood Stone",
+        "- 5 Stone"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/revelwood-rubble",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Shroud Infused Farm Soil",
+      "category": "Soil & terrain",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Chitin Powder",
+          "qty": 5
+        },
+        {
+          "item": "Shroud Sand",
+          "qty": 10
+        },
+        {
+          "item": "Farm Soil",
+          "qty": 5
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": [
+        "+ Farm Soil 5"
+      ],
+      "recipeChanged1_0": [
+        "+ 5 Farm Soil"
+      ],
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-infused-farm-soil",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Springlands Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "80s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Springlands Dirt",
+          "qty": 4
+        },
+        {
+          "item": "Stone",
+          "qty": 5
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/springlands-rubble"
+      ]
+    },
+    {
+      "name": "Veilwater Basin Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "80s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Shell Limestone",
+          "qty": 5
+        },
+        {
+          "item": "Veilwater Basin Dirt",
+          "qty": 1
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": false,
+      "sources": [
+        "https://www.enshrouded.tools/items/veilwater-basin-rubble"
+      ]
+    },
+    {
+      "name": "Basalt Farm Soil",
+      "category": "Soil & terrain",
+      "station": null,
+      "crafter": "Farmer",
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Fertilised Farm Soil",
+          "qty": 5
+        },
+        {
+          "item": "Basalt Dust",
+          "qty": 10
+        }
+      ],
+      "stackSize": 250,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/basalt-farm-soil",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Cinder's Cradle Rubble",
+      "category": "Soil & terrain",
+      "station": "Grinding Stones",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "80s",
+      "inputs": [
+        {
+          "item": "Rubble",
+          "qty": 1
+        },
+        {
+          "item": "Cinder Rock",
+          "qty": 5
+        },
+        {
+          "item": "Cinder's Cradle Dirt",
+          "qty": 1
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "sources": [
+        "https://www.enshrouded.tools/items/cinders-cradle-rubble",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Fertile Altered Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Cinder Rock",
+          "qty": 1
+        },
+        {
+          "item": "Basalt",
+          "qty": 1
+        },
+        {
+          "item": "Cinder's Cradle Dirt",
+          "qty": 8
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "flags": [
+        "Same recipe as Fertile Cinder's Cradle Dirt (Cinder Rock 1, Basalt 1, Cinder's Cradle Dirt 8). Two separate items in the game data; what sets them apart in game isn't known."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-altered-dirt",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    },
+    {
+      "name": "Fertile Cinder's Cradle Dirt",
+      "category": "Soil & terrain",
+      "station": "Workbench",
+      "crafter": null,
+      "requires": [],
+      "makes": 10,
+      "craftTime": "Instant",
+      "inputs": [
+        {
+          "item": "Cinder Rock",
+          "qty": 1
+        },
+        {
+          "item": "Basalt",
+          "qty": 1
+        },
+        {
+          "item": "Cinder's Cradle Dirt",
+          "qty": 8
+        }
+      ],
+      "stackSize": 1000,
+      "confidence": "likely-1.0",
+      "catalogueName": null,
+      "changes1_0": null,
+      "newIn1_0": true,
+      "flags": [
+        "Same recipe as Fertile Altered Dirt (Cinder Rock 1, Basalt 1, Cinder's Cradle Dirt 8). Two separate items in the game data; what sets them apart in game isn't known."
+      ],
+      "sources": [
+        "https://www.enshrouded.tools/items/fertile-cinders-cradle-dirt",
+        "https://www.enshrouded.tools/1-0"
+      ]
+    }
+  ],
+  "resources": {
+    "Acidic Mycelium": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/acidic-mycelium"
+      ]
+    },
+    "Albaneve Summits Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in Albaneve Summits.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/albaneve-summits-dirt"
+      ]
+    },
+    "Ancient Stone Block": {
+      "kind": "crafted",
+      "source": "Workbench",
+      "recipe": {
+        "station": "Workbench",
+        "crafter": null,
+        "requires": [],
+        "makes": 100,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Moonstone",
+            "qty": 10
+          },
+          {
+            "item": "Basalt",
+            "qty": 10
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/ancient-stone-block"
+      ]
+    },
+    "Any dirt": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Springlands Dirt",
+        "Revelwood Dirt",
+        "Blackmire Dirt",
+        "Nomad Highlands Dirt",
+        "Albaneve Summits Dirt",
+        "Veilwater Basin Dirt",
+        "Cinder's Cradle Dirt"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any sand": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Sand",
+        "Fine Sand",
+        "Veilwater Basin Sand",
+        "Cinder's Cradle Sand"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Any wood": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Wood Logs",
+        "Hardwood",
+        "Palm Wood Logs",
+        "Conifer Logs",
+        "Bamboo Logs",
+        "Tropical Wood"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Bamboo Logs": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bamboo-logs"
+      ]
+    },
+    "Basalt": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/basalt"
+      ],
+      "newIn1_0": true,
+      "note": "New in 1.0 (Cinder's Cradle)."
+    },
+    "Basalt Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Basalt",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/basalt-dust"
+      ]
+    },
+    "Blackmire Bark": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig Blackmire trees with a pickaxe.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/blackmire-bark"
+      ]
+    },
+    "Blackmire Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in Blackmire.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/blackmire-dirt"
+      ]
+    },
+    "Blackmire Heartwood": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Found in Blackmire.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/blackmire-heartwood"
+      ]
+    },
+    "Blackmire Stone": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Mine in Blackmire.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/blackmire-stone"
+      ]
+    },
+    "Bonemeal": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Bones",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bonemeal"
+      ]
+    },
+    "Bones": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools; dropped by 25 enemies (e.g. Boar, Common Goat, Direwolf).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bones"
+      ]
+    },
+    "Bronze Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Copper Bars",
+            "qty": 7
+          },
+          {
+            "item": "Tin Bars",
+            "qty": 3
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Time 300s → 240s"
+        ],
+        "changes1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Copper Bars",
+              "qty": 10
+            },
+            {
+              "item": "Tin Bars",
+              "qty": 4
+            },
+            {
+              "item": "Coal",
+              "qty": 10
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/bronze-bars"
+      ]
+    },
+    "Celestium Ore": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/celestium-ore"
+      ]
+    },
+    "Charcoal": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 12,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 17 → 12",
+          "Makes 15 → 10",
+          "Time 300s → 120s"
+        ],
+        "changes1_0": [
+          "Any wood 17 -> 12",
+          "Makes 15 -> 10"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/charcoal"
+      ]
+    },
+    "Chitin Powder": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Critter Parts or Critter Carapace",
+            "qty": 3,
+            "anyOf": [
+              "Critter Parts",
+              "Critter Carapace"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "+ 3 Critter Parts or Critter Carapace",
+          "- 3 Critter Carapace"
+        ],
+        "changes1_0": [
+          "Critter Carapace 3 -> Critter Parts or Critter Carapace 3 (slot takes any of Critter Parts, Critter Carapace)"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/chitin-powder"
+      ]
+    },
+    "Cinder Rock": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinder-rock"
+      ],
+      "newIn1_0": true,
+      "note": "New in 1.0 (Cinder's Cradle)."
+    },
+    "Cinder's Cradle Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "New in 1.0 (Cinder's Cradle). No 'Where to get it' line on enshrouded.tools.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinders-cradle-dirt"
+      ],
+      "newIn1_0": true
+    },
+    "Cinder's Cradle Rubble": {
+      "kind": "crafted",
+      "sourceInferred": true,
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "80s",
+        "inputs": [
+          {
+            "item": "Rubble",
+            "qty": 1
+          },
+          {
+            "item": "Cinder Rock",
+            "qty": 5
+          },
+          {
+            "item": "Cinder's Cradle Dirt",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinders-cradle-rubble"
+      ]
+    },
+    "Cinder's Cradle Sand": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "newIn1_0": true,
+      "note": "New in 1.0 (Cinder's Cradle).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/cinders-cradle-sand"
+      ]
+    },
+    "Coal": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/coal"
+      ]
+    },
+    "Conifer Logs": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/conifer-logs"
+      ]
+    },
+    "Copper Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Copper Ore",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Charcoal 20 → 10",
+          "Time 300s → 210s"
+        ],
+        "changes1_0": [
+          "Charcoal 20 -> 10",
+          "Copper Ore 20 -> 10"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 20
+            },
+            {
+              "item": "Copper Ore",
+              "qty": 20
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-bars"
+      ]
+    },
+    "Copper Ore": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/copper-ore"
+      ]
+    },
+    "Critter Parts or Critter Carapace": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Critter Parts",
+        "Critter Carapace"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Diamond": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/diamond"
+      ]
+    },
+    "Ectoplasm Shard": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ectoplasm-shard"
+      ]
+    },
+    "Fabric": {
+      "kind": "crafted",
+      "source": "Loom",
+      "recipe": {
+        "station": "Loom",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "2 min",
+        "inputs": [
+          {
+            "item": "Linen",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fabric"
+      ]
+    },
+    "Farm Soil": {
+      "kind": "crafted",
+      "source": "Farmer",
+      "recipe": {
+        "station": null,
+        "crafter": "Farmer",
+        "requires": [],
+        "makes": 10,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Springlands Dirt",
+            "qty": 7
+          },
+          {
+            "item": "Bonemeal",
+            "qty": 3
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/farm-soil"
+      ]
+    },
+    "Fertilised Farm Soil": {
+      "kind": "crafted",
+      "source": "Farmer",
+      "recipe": {
+        "station": null,
+        "crafter": "Farmer",
+        "requires": [],
+        "makes": 10,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fossilized Bone Dust",
+            "qty": 2
+          },
+          {
+            "item": "Nitrate",
+            "qty": 3
+          },
+          {
+            "item": "Any sand",
+            "qty": 10,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          },
+          {
+            "item": "Farm Soil",
+            "qty": 10
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fertilised-farm-soil"
+      ]
+    },
+    "Fine Sand": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fine-sand"
+      ]
+    },
+    "Fired Bricks": {
+      "kind": "crafted",
+      "source": "Kiln",
+      "recipe": {
+        "station": "Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "30s",
+        "inputs": [
+          {
+            "item": "Lump of Clay",
+            "qty": 1
+          },
+          {
+            "item": "Any wood",
+            "qty": 1,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fired-bricks"
+      ]
+    },
+    "Fired Bricks Block": {
+      "kind": "crafted",
+      "source": "Workbench",
+      "recipe": {
+        "station": "Workbench",
+        "crafter": null,
+        "requires": [],
+        "makes": 100,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fired Bricks",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "+ 10 Fired Bricks",
+          "- 10 Fired Brick"
+        ]
+      },
+      "category": "Building",
+      "sources": [
+        "https://www.enshrouded.tools/items/fired-bricks-block"
+      ]
+    },
+    "Flax": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flax"
+      ]
+    },
+    "Flintstone": {
+      "kind": "gathered",
+      "source": "Springlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/flintstone"
+      ]
+    },
+    "Foliage": {
+      "kind": "gathered",
+      "source": "Blackmire",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/foliage"
+      ]
+    },
+    "Fossilized Bone": {
+      "kind": "gathered",
+      "source": "Giant Fossils",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fossilized-bone"
+      ]
+    },
+    "Fossilized Bone Dust": {
+      "kind": "crafted",
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 3,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Fossilized Bone",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Mill",
+          "crafter": null,
+          "requires": [],
+          "makes": 5,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Fossilized Bone",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/fossilized-bone-dust"
+      ]
+    },
+    "Glass": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Any sand",
+            "qty": 30,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": [
+          "Charcoal 5 -> 10",
+          "Sand 30 -> Any sand 30 (slot takes any of Sand, Fine Sand, Veilwater Basin Sand, Cinder's Cradle Sand)"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Any sand",
+              "qty": 40,
+              "anyOf": [
+                "Sand",
+                "Fine Sand",
+                "Veilwater Basin Sand",
+                "Cinder's Cradle Sand"
+              ]
+            }
+          ]
+        },
+        {
+          "station": "Kiln",
+          "crafter": "Carpenter",
+          "requires": [],
+          "makes": 1,
+          "time": "Instant",
+          "inputs": [
+            {
+              "item": "Glass Shards",
+              "qty": 5
+            },
+            {
+              "item": "Charcoal",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/glass"
+      ]
+    },
+    "Gold Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "11 min",
+        "inputs": [
+          {
+            "item": "Coal",
+            "qty": 40
+          },
+          {
+            "item": "Gold Ore or Archaic Shards",
+            "qty": 20,
+            "anyOf": [
+              "Gold Ore",
+              "Archaic Shards"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "+ 20 Gold Ore or Archaic Shards",
+          "- 20 Gold Ore",
+          "Time 960s → 660s"
+        ],
+        "changes1_0": [
+          "Gold Ore 20 -> Gold Ore or Archaic Shards 20 (slot takes any of Gold Ore, Archaic Shards)"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-bars"
+      ]
+    },
+    "Gold Coins": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: The wiki (pre-1.0) says it is found in Veilwater Basin. 1.0 changelog (enshrouded.tools/1-0): found in chests all over Embervale and traded for vanity items; now part of the Springlands material set.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/gold-coins"
+      ]
+    },
+    "Gold Ore or Archaic Shards": {
+      "source": null,
+      "kind": "any-of",
+      "options": [
+        "Gold Ore",
+        "Archaic Shards"
+      ],
+      "recipe": null,
+      "note": "Recipe slot that accepts any one of the options.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "Granite": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/granite"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Honey": {
+      "kind": "crafted",
+      "sourceInferred": true,
+      "source": "Beehive",
+      "recipe": {
+        "station": "Beehive",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Sugar",
+            "qty": 1
+          },
+          {
+            "item": "Water",
+            "qty": 2,
+            "waterCharges": true
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/honey"
+      ]
+    },
+    "Ice": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/ice"
+      ]
+    },
+    "Indigo Plant": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "pageName": "Indigo Plant (material)",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/indigo-plant-material"
+      ]
+    },
+    "Iron Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Iron Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 20
+          }
+        ],
+        "changed1_0": [
+          "Time 600s → 300s"
+        ],
+        "changes1_0": [
+          "Charcoal 25 -> 20"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "5 min",
+          "inputs": [
+            {
+              "item": "Iron Ore",
+              "qty": 20
+            },
+            {
+              "item": "Coal",
+              "qty": 40
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-bars"
+      ]
+    },
+    "Iron Ore": {
+      "kind": "gathered",
+      "source": "Kindlewastes Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/iron-ore"
+      ]
+    },
+    "Lapislazuli": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/lapislazuli"
+      ]
+    },
+    "Limestone": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/limestone"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Linen": {
+      "kind": "crafted",
+      "source": "Hand Spindle",
+      "recipe": {
+        "station": "Hand Spindle",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "10s",
+        "inputs": [
+          {
+            "item": "Flax",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "otherRecipes": [
+        {
+          "station": "Spinning Machine",
+          "crafter": null,
+          "requires": [],
+          "makes": 15,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Flax",
+              "qty": 10
+            }
+          ]
+        },
+        {
+          "station": "Spinning Wheel",
+          "crafter": null,
+          "requires": [],
+          "makes": 1,
+          "time": "30s",
+          "inputs": [
+            {
+              "item": "Flax",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/linen"
+      ]
+    },
+    "Luminous Growth": {
+      "kind": "gathered",
+      "source": "Caves",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/luminous-growth"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Lump of Clay": {
+      "kind": "gathered",
+      "source": "Revelwood",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/lump-of-clay"
+      ]
+    },
+    "Magma Gel": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/magma-gel"
+      ]
+    },
+    "Metal Scraps": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools; the site's map shows 54 in Embervale; dropped by 15 enemies (e.g. Cyclops, Hollow Damned, Hollow Reaper).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/metal-scraps"
+      ]
+    },
+    "Metal Sheets": {
+      "kind": "crafted",
+      "source": "Forge",
+      "recipe": {
+        "station": "Forge",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 2
+          },
+          {
+            "item": "Metal Scraps",
+            "qty": 2
+          }
+        ],
+        "changed1_0": [
+          "Time 120s → 90s"
+        ],
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/metal-sheets"
+      ]
+    },
+    "Moonstone": {
+      "kind": "gathered",
+      "source": "Cinder's Cradle",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/moonstone"
+      ]
+    },
+    "Moss": {
+      "kind": "gathered",
+      "source": "First: Revelwood",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/moss"
+      ]
+    },
+    "Mother-Of-Pearl": {
+      "kind": "crafted",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Pearl",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mother-of-pearl"
+      ]
+    },
+    "Mushroom Flesh": {
+      "kind": "gathered",
+      "source": "Blackmire",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mushroom-flesh"
+      ]
+    },
+    "Mycelium": {
+      "kind": "gathered",
+      "source": "Shroud",
+      "recipe": null,
+      "pageName": "Mycelium (material)",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/mycelium-material"
+      ]
+    },
+    "Nitrate": {
+      "kind": "crafted",
+      "source": "Laboratory",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Shroud Sand",
+            "qty": 5
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          },
+          {
+            "item": "Salt",
+            "qty": 1
+          },
+          {
+            "item": "Any sand",
+            "qty": 5,
+            "anyOf": [
+              "Sand",
+              "Fine Sand",
+              "Veilwater Basin Sand",
+              "Cinder's Cradle Sand"
+            ]
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": [
+          "Sand 5 -> Any sand 5 (slot takes any of Sand, Fine Sand, Veilwater Basin Sand, Cinder's Cradle Sand)"
+        ]
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/nitrate"
+      ]
+    },
+    "Nomad Highlands Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in Nomad Highlands.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/nomad-highlands-dirt"
+      ]
+    },
+    "Obsidian": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/obsidian"
+      ]
+    },
+    "Palm Leaves": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/palm-leaves"
+      ]
+    },
+    "Palm Wood Logs": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/palm-wood-logs"
+      ]
+    },
+    "Paper Reed": {
+      "kind": "gathered",
+      "source": "Near Lakes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/paper-reed"
+      ]
+    },
+    "Passionflower": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, At Night",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/passionflower"
+      ]
+    },
+    "Pearl": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/pearl"
+      ]
+    },
+    "Plant Fiber": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/plant-fiber"
+      ]
+    },
+    "Purified Slime": {
+      "kind": "crafted",
+      "source": "Ectoplasm Press",
+      "recipe": {
+        "station": "Ectoplasm Press",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "10s",
+        "inputs": [
+          {
+            "item": "Charcoal",
+            "qty": 3
+          },
+          {
+            "item": "Salt",
+            "qty": 10
+          },
+          {
+            "item": "Toxic Slime",
+            "qty": 3
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/purified-slime"
+      ]
+    },
+    "Red Fabric": {
+      "kind": "crafted",
+      "source": "Huntress",
+      "recipe": {
+        "station": "Loom",
+        "crafter": "Hunter",
+        "requires": [],
+        "makes": 1,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Fabric",
+            "qty": 1
+          },
+          {
+            "item": "Sulfur",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "note": "Pre-1.0 wiki recipe stations: None.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/red-fabric"
+      ]
+    },
+    "Red Marble Fragment": {
+      "kind": "gathered",
+      "source": "Hollow Halls and Albaneve Summits",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/red-marble-fragment"
+      ]
+    },
+    "Revelwood Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in Revelwood.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/revelwood-dirt"
+      ]
+    },
+    "Revelwood Stone": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools; the site's map shows 1,867 in Embervale. FLAG: the pre-1.0 wiki had a recipe for it (Workbench: Revelwood Dirt x1, Stone x9, makes 10); the 1.0 data has none, so it looks gathered-only now (the site's About blurb, which quotes Early Access, still describes the old recipe). Pre-1.0 wiki: Found in Revelwood. 1.0 recipes for Citywall Block, Weathered Stone Block and Revelwood Rubble now take it, and with no recipe it has to be dug or mined (no 'How to craft' section on its page, and the site's terraforming table lists it as a Hard terrain material).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/revelwood-stone"
+      ]
+    },
+    "Rubble": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Mine ruined buildings with a pickaxe (the wiki's 'Found in' cell is blank).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/rubble"
+      ]
+    },
+    "Saffron": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/saffron"
+      ]
+    },
+    "Salt": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/salt"
+      ]
+    },
+    "Sand": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sand"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Sandstone": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sandstone"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Shell Limestone": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shell-limestone"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Shroud Liquid": {
+      "kind": "gathered",
+      "source": "Springlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-liquid"
+      ]
+    },
+    "Shroud Sand": {
+      "kind": "crafted",
+      "source": "Kindlewastes Shroud",
+      "recipe": {
+        "station": "Laboratory",
+        "crafter": null,
+        "requires": [],
+        "makes": 100,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Sandstone",
+            "qty": 10
+          },
+          {
+            "item": "Acidic Mycelium",
+            "qty": 5
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-sand"
+      ]
+    },
+    "Shroud Wood": {
+      "kind": "gathered",
+      "source": "Shroud, Dead Trees",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/shroud-wood"
+      ]
+    },
+    "Silver Bars": {
+      "kind": "crafted",
+      "source": "Blast Furnace",
+      "recipe": {
+        "station": "Blast Furnace",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "10 min",
+        "inputs": [
+          {
+            "item": "Silver Ore",
+            "qty": 20
+          },
+          {
+            "item": "Coal",
+            "qty": 40
+          }
+        ],
+        "changed1_0": [
+          "Time 720s → 600s"
+        ],
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-bars"
+      ]
+    },
+    "Silver Ore": {
+      "kind": "gathered",
+      "source": "Albaneve Summits Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/silver-ore"
+      ]
+    },
+    "Snow": {
+      "kind": "gathered",
+      "source": "Albaneve Summits",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/snow"
+      ]
+    },
+    "Sparkling Dust": {
+      "kind": "crafted",
+      "source": "Mill",
+      "recipe": {
+        "station": "Mill",
+        "crafter": null,
+        "requires": [],
+        "makes": 1,
+        "time": "3 min",
+        "inputs": [
+          {
+            "item": "Diamond",
+            "qty": 1
+          },
+          {
+            "item": "Moonstone",
+            "qty": 1
+          },
+          {
+            "item": "Celestium Ore",
+            "qty": 1
+          },
+          {
+            "item": "Mother-Of-Pearl",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sparkling-dust"
+      ]
+    },
+    "Springlands Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in the Springlands.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/springlands-dirt"
+      ]
+    },
+    "Stone": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Pick up small stones anywhere in Embervale (including the Shroud) or mine rocks with a pickaxe.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/stone"
+      ]
+    },
+    "Straw": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/straw"
+      ]
+    },
+    "Sugar": {
+      "kind": "crafted",
+      "source": "Cooking Station",
+      "recipe": {
+        "station": "Cooking Station",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "90s",
+        "inputs": [
+          {
+            "item": "Sugar Cane",
+            "qty": 10
+          }
+        ],
+        "changed1_0": [
+          "Time 360s → 90s"
+        ],
+        "changes1_0": null
+      },
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/sugar"
+      ]
+    },
+    "Sugar Cane": {
+      "kind": "gathered",
+      "source": "Nomad Highlands",
+      "recipe": null,
+      "category": "Food and potions",
+      "sources": [
+        "https://www.enshrouded.tools/items/sugar-cane"
+      ]
+    },
+    "Sulfur": {
+      "kind": "gathered",
+      "source": "Kindlewastes",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/sulfur"
+      ]
+    },
+    "Tar": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 20,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 24,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 6,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Any wood 30 → 24",
+          "Time 360s → 300s"
+        ],
+        "changes1_0": [
+          "Any wood 30 -> 24"
+        ]
+      },
+      "otherRecipes": "31 other recipes (e.g. Campfire: Grilled Fatty Meat x1)",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tar"
+      ]
+    },
+    "Tin Bars": {
+      "kind": "crafted",
+      "source": "Smelter",
+      "recipe": {
+        "station": "Smelter",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "4 min",
+        "inputs": [
+          {
+            "item": "Tin Ore",
+            "qty": 10
+          },
+          {
+            "item": "Charcoal",
+            "qty": 10
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 2
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": [
+          "Tin Ore 15 -> 10",
+          "Charcoal 5 -> 10",
+          "Makes 3 -> 10"
+        ]
+      },
+      "otherRecipes": [
+        {
+          "station": "Blast Furnace",
+          "crafter": null,
+          "requires": [],
+          "makes": 20,
+          "time": "4 min",
+          "inputs": [
+            {
+              "item": "Tin Ore",
+              "qty": 15
+            },
+            {
+              "item": "Coal",
+              "qty": 15
+            },
+            {
+              "item": "Wood Acid",
+              "qty": 4
+            }
+          ]
+        }
+      ],
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-bars"
+      ]
+    },
+    "Tin Ore": {
+      "kind": "gathered",
+      "source": "Nomad Highlands Shroud",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tin-ore"
+      ]
+    },
+    "Toxic Slime": {
+      "kind": "gathered",
+      "source": "Hollow Halls",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/toxic-slime"
+      ]
+    },
+    "Tropical Wood": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/tropical-wood"
+      ]
+    },
+    "Twigs": {
+      "kind": "crafted",
+      "sourceInferred": true,
+      "source": "Table Saw",
+      "recipe": {
+        "station": "Table Saw",
+        "crafter": null,
+        "requires": [],
+        "makes": 5,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 1,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/twigs"
+      ]
+    },
+    "Underwater Luminous Growth": {
+      "kind": "gathered",
+      "source": "Veilwater Basin, Underwater",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/underwater-luminous-growth"
+      ]
+    },
+    "Underwater Mud": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Found (underwater) in Veilwater Basin.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/underwater-mud"
+      ]
+    },
+    "Veilwater Basin Dirt": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data). No 'Where to get it' line on enshrouded.tools. Pre-1.0 wiki: Dig the ground in Veilwater Basin.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/veilwater-basin-dirt"
+      ]
+    },
+    "Veilwater Basin Rubble": {
+      "kind": "crafted",
+      "sourceInferred": true,
+      "source": "Grinding Stones",
+      "recipe": {
+        "station": "Grinding Stones",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "80s",
+        "inputs": [
+          {
+            "item": "Rubble",
+            "qty": 1
+          },
+          {
+            "item": "Shell Limestone",
+            "qty": 5
+          },
+          {
+            "item": "Veilwater Basin Dirt",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null
+      },
+      "note": "No 'Where to get it' line on enshrouded.tools.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/veilwater-basin-rubble"
+      ]
+    },
+    "Veilwater Basin Sand": {
+      "kind": "gathered",
+      "source": "Veilwater Basin",
+      "recipe": null,
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/veilwater-basin-sand"
+      ],
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data)."
+    },
+    "Vukah Nesting Material": {
+      "kind": "gathered",
+      "source": "Blackmire",
+      "recipe": null,
+      "note": "Planner catalogue terrain material; no recipe on enshrouded.tools (1.0 data).",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/vukah-nesting-material"
+      ]
+    },
+    "Water": {
+      "source": null,
+      "kind": "water",
+      "recipe": null,
+      "note": "Water charges, not an inventory item: drawn from base water storage near the crafter.",
+      "sources": [
+        "https://www.enshrouded.tools"
+      ]
+    },
+    "White Glowing Substance": {
+      "kind": "crafted",
+      "source": "Alchemist",
+      "recipe": {
+        "station": null,
+        "crafter": "Alchemist",
+        "requires": [],
+        "makes": 20,
+        "time": "Instant",
+        "inputs": [
+          {
+            "item": "Springlands Dirt",
+            "qty": 7
+          },
+          {
+            "item": "Mycelium",
+            "qty": 10
+          },
+          {
+            "item": "Bonemeal",
+            "qty": 20
+          },
+          {
+            "item": "Wood Acid",
+            "qty": 1
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/white-glowing-substance"
+      ]
+    },
+    "Wood Acid": {
+      "kind": "crafted",
+      "source": "Charcoal Kiln",
+      "recipe": {
+        "station": "Charcoal Kiln",
+        "crafter": null,
+        "requires": [],
+        "makes": 10,
+        "time": "5 min",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 15,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          },
+          {
+            "item": "Any dirt",
+            "qty": 3,
+            "anyOf": [
+              "Springlands Dirt",
+              "Revelwood Dirt",
+              "Blackmire Dirt",
+              "Nomad Highlands Dirt",
+              "Albaneve Summits Dirt",
+              "Veilwater Basin Dirt",
+              "Cinder's Cradle Dirt"
+            ]
+          }
+        ],
+        "changed1_0": [
+          "Time 420s → 300s"
+        ],
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-acid"
+      ]
+    },
+    "Wood Logs": {
+      "kind": "gathered",
+      "source": null,
+      "recipe": null,
+      "note": "No 'Where to get it' line on enshrouded.tools; the site's map shows 86,812 in Embervale.",
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-logs"
+      ]
+    },
+    "Wood Planks": {
+      "kind": "crafted",
+      "source": "Table Saw",
+      "recipe": {
+        "station": "Table Saw",
+        "crafter": null,
+        "requires": [],
+        "makes": 2,
+        "time": "60s",
+        "inputs": [
+          {
+            "item": "Any wood",
+            "qty": 1,
+            "anyOf": [
+              "Wood Logs",
+              "Hardwood",
+              "Palm Wood Logs",
+              "Conifer Logs",
+              "Bamboo Logs",
+              "Tropical Wood"
+            ]
+          }
+        ],
+        "changed1_0": null,
+        "changes1_0": null
+      },
+      "category": "Materials",
+      "sources": [
+        "https://www.enshrouded.tools/items/wood-planks"
+      ]
+    }
+  }
+}
