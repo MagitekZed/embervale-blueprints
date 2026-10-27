@@ -17,7 +17,7 @@ const GAME = {
   winTop: 2.5,      // a window's top, level with the top of a normal door, where it fits
   altarSizes: [40, 80, 120, 160], // Flame Altar build area by altar level, in metres
 };
-const MAX_GRID = 256;                                   // squares a side: 128 m at 0.5 m (a 120 m build area with room round it)
+const MAX_GRID = 336;                                   // squares a side: 168 m at 0.5 m (the 160 m build area with room round it; 256 before v71)
 const MAX_LEVELS = 200;                                      // levels are cheap (cropped, run-encoded); the altar's volume is the real limit
 const CELL_SIZES = [1, 0.5]; // metres per grid square: 1M cube, or a single 0.5 m block
 

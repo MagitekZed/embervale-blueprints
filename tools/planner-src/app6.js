@@ -45,7 +45,7 @@ function renderPlanPane() {
     limitsSection(),
     h('div', { class: 'section' }, h('h4', { text: 'Grid, canvas & altar' }),
       h('label', { class: 'field' }, h('span', { text: 'Square size' }), res),
-      h('p', { class: 'note', text: `Use 1 m for whole-base layouts. Switch to 0.5 m to place single blocks: thin walls, trim, half-metre steps (canvas up to ${MAX_GRID / 2} m, room for a 120 m build area).` }),
+      h('p', { class: 'note', text: `Use 1 m for whole-base layouts. Switch to 0.5 m to place single blocks: thin walls, trim, half-metre steps (canvas up to ${MAX_GRID / 2} m, room for the 160 m build area).` }),
       h('div', { class: 'grid3' }, h('label', { class: 'field' }, h('span', { text: 'Width (m)' }), w), h('label', { class: 'field' }, h('span', { text: 'Depth (m)' }), hh),
         h('div', { class: 'field' }, h('span', { text: ' ' }), h('button', { class: 'btn', type: 'button', text: 'Resize', onclick: () => resizePlan(Math.round(Number(w.value) / cm), Math.round(Number(hh.value) / cm)) }))),
       h('label', { class: 'field' }, h('span', { text: 'Altar build area' }), altar),
@@ -265,7 +265,7 @@ function newPlanDialog(project) {
     ['48:40', 'Altar level 1', '48 × 48 m canvas, room for a 40 m build area'],
     ['88:80', 'Altar level 2', '88 × 88 m canvas, room for an 80 m build area'],
     ['128:120', 'Altar level 3', '128 × 128 m canvas, room for a 120 m build area'],
-    ['160:160', 'Altar level 4', '160 × 160 m canvas, the full 160 m build area'],
+    ['168:160', 'Altar level 4', '168 × 168 m canvas, room for the full 160 m build area'],
     ['32:40', 'Single building', '32 × 32 m, for one house or tower. Pairs well with 0.5 m squares'],
   ];
   const radios = presets.map(([v, t, d], i) => h('label', { class: 'choice' }, h('input', { type: 'radio', name: 'np-size', value: v, checked: i === 0 }), h('span', null, h('b', { text: t }), h('small', { text: d }))));
