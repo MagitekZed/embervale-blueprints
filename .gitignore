@@ -7,6 +7,8 @@
 !/LICENSE.md
 !/NOTICE.md
 !/tools/
+# the drafted plans and their generators are creative work: they stay out of the public copy
+/tools/drafts/
 
 __pycache__/
 *.pyc

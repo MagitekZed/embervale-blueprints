@@ -36,7 +36,6 @@ Pushing to `main` builds and deploys the site (`.github/workflows/pages.yml`).
 | `tools/skill-tree-src/` | The Build Tester's page, the skill tree and gear data, and their build and fetch scripts |
 | `tools/craft-src/` | Recipe data for the crafting list and the scripts that fetch and merge it |
 | `tools/blocks-src/` | The block catalogue's pipeline: wiki extraction and colour sampling |
-| `tools/drafts/` | Python generators for drafted plans (the plans themselves are the `.json` files beside them) |
 | `tools/site/` | Turns the built pages into the Pages site |
 
 The pages were first built as claude.ai artifacts, where they save to a shared database. On GitHub Pages they fall back to the browser's own storage.
