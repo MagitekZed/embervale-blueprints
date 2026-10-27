@@ -2,9 +2,9 @@
 
 Unofficial, fan-made planning tools for **Enshrouded 1.0**. They run in the browser, with nothing to install.
 
-- **[Embervale Blueprints](https://magitekzed.github.io/embervale-blueprints/)**: a block-by-block base planner. Draw plans in 0.5 m blocks over levels or single block layers, see them in 3D, walk through them, and track a build as you go. It includes every 1.0 building block and item, a crafting list that totals resources down to what you gather and where, and an inventory the build tracking counts from.
-- **[Flameborn Build Tester](https://magitekzed.github.io/embervale-blueprints/build-tester.html)**: the full 1.0 skill tree (243 nodes) laid out as in the game. Set your level, Elixir Wells, Shroud Roots and Flame level, spend points, add item skill bonuses and worn gear, and see your attributes and stats. Builds share as a link.
-- **[Build guide](https://magitekzed.github.io/embervale-blueprints/build-guide.html)**: how the planner's build tracking works, from counting what you have to marking blocks built.
+- **[Embervale Blueprints](https://zedtlabs.dev/embervale-blueprints/)**: a block-by-block base planner. Draw plans in 0.5 m blocks over levels or single block layers, see them in 3D, walk through them, and track a build as you go. It includes every 1.0 building block and item, a crafting list that totals resources down to what you gather and where, and an inventory the build tracking counts from.
+- **[Flameborn Build Tester](https://zedtlabs.dev/embervale-blueprints/build-tester.html)**: the full 1.0 skill tree (243 nodes) laid out as in the game. Set your level, Elixir Wells, Shroud Roots and Flame level, spend points, add item skill bonuses and worn gear, and see your attributes and stats. Builds share as a link.
+- **[Build guide](https://zedtlabs.dev/embervale-blueprints/build-guide.html)**: how the planner's build tracking works, from counting what you have to marking blocks built.
 
 Plans, the inventory and saved builds are kept in your browser (local storage). Clearing your site data removes them, so copy out anything you want to keep: the planner's Plan tab has "Copy plan JSON", and the Build Tester gives each build a code.
 

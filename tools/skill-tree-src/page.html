@@ -352,8 +352,10 @@ details.gearfor[open] summary { margin-bottom: 6px; }
 
 <script>
 const DATA = /*TREE_DATA*/null;
-// the page's own link, for "Copy link": the GitHub Pages copy shares itself, the claude.ai one its artifact link
-const SHARE_BASE = /\.github\.io$/.test(location.hostname) ? location.origin + location.pathname : 'https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW';
+// the page's own link, for "Copy link": inside claude.ai it's the artifact's link; anywhere else (the GitHub Pages
+// copy, on github.io or the custom domain) the page shares its own address
+const IN_ARTIFACT = !!window.claude || /claude/i.test(location.hostname);
+const SHARE_BASE = IN_ARTIFACT ? 'https://claude.ai/artifact/9bvTQYyRwNJ7LUobdViRkW' : location.origin + location.pathname;
 const CODE_VERSION = 'b2';
 const LS_CUR = 'fbt:v1:current', LS_SAVES = 'fbt:v1:saves';
 const CAP = DATA.levelCap || 50, MAX_WELLS = 19, MAX_ROOTS = 57, MAX_FLAME = 11, MAX_HAND = 6;
