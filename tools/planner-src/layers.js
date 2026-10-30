@@ -99,6 +99,33 @@ function layerView(k) {
 // the levels a layer passes through (for their areas and items)
 const layerLevels = k => { const [Z0, Z1] = layerZ(k); return S.plan.levels.filter(L => L.elev < Z1 - 1e-6 && L.elev + L.height > Z0 + 1e-6); };
 
+// ---- items in block layers go at the layer's height, not at the floor of whichever level holds the layer (a tall
+// level reaching up past the layer used to take them, down at its own floor, out of sight)
+let layerOccCache = new Map();
+function layerOcc(L, k) {                                     // level L's pieces on layer k (cached until the plan changes)
+  if (layerOccCache.plan !== S.plan || layerOccCache.ver !== planVer) { layerOccCache = new Map(); layerOccCache.plan = S.plan; layerOccCache.ver = planVer; }
+  const key = L.id + ':' + k;
+  if (!layerOccCache.has(key)) { const [Z0, Z1] = layerZ(k); layerOccCache.set(key, occupancy(L, Z0 - L.elev, Z1 - L.elev)); }
+  return layerOccCache.get(key);
+}
+function layerWallLevel(x, y, k) {                            // the level whose wall is in square (x, y) on layer k
+  if (!inB(x, y)) return null;
+  const pal = S.plan.palette;
+  return layerLevels(k).find(B => { const e = pal[layerOcc(B, k)[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block'); }) || null;
+}
+// Where an item placed on the current layer goes: a door or window on the level whose wall it sits in; anything else
+// on the level whose floor is at the layer's foot under it (else one whose floor is at that height, else the level
+// holding the layer). Its bottom sits at the layer's foot, or for a hanging one its top at the layer's top.
+function layerItemHome(mount, g, def) {
+  const P = S.plan, k = curLayer(), [Z0, Z1] = layerZ(k);
+  const at = L => mount === 'ceiling' ? Math.max(0, Z1 - L.elev - def.h) : Math.max(0, Z0 - L.elev);
+  if (g.home) { const L = P.levels.find(B => B.id === g.home); if (L) return { L, z: at(L) }; }
+  const cx = clamp(Math.floor(g.x + g.w / 2), 0, P.w - 1), cy = clamp(Math.floor(g.y + g.h / 2), 0, P.h - 1);
+  const flat = P.levels.filter(B => Math.abs(B.elev - Z0) < 1e-6 && !trimParent(B) && holdsZ(B, Z0, Z1));
+  const L = flat.find(B => floorUnder(P.palette, P.palette[B.grid[cy][cx]])) || (flat.includes(lv()) ? lv() : flat[0]) || lv();
+  return { L, z: at(L) };
+}
+
 // Materials match when they're the same block in the same colour, whatever their size or tag.
 const sameMat = (a, b) => a.color === b.color && matName(a.name) === matName(b.name);
 const runName = n => n.replace(/\s+[\d.]+ m$/, '').trim();

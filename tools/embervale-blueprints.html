@@ -1781,10 +1781,19 @@ function ensureBrushes() {
 // Where the item being placed would go: doors and windows into the wall under the cursor, wall items back
 // against the nearest wall, the rest centred on the cursor. Snapped to the block grid.
 function ghostFor(gx, gy) {
-  const def = S.itemDef, P = S.plan, st = itemStep(P), L = lv(), mount = mountOf(def);
+  const def = S.itemDef, P = S.plan, st = itemStep(P), mount = mountOf(def);
+  // in block layers the walls are the ones at the layer's height: a door or window snaps into whichever level's wall
+  // is there (that's the wall it cuts, so it goes on that level), a wall item hangs on any wall at that height
+  let L = lv(), home = null;
+  if (layerOn()) {
+    const k = curLayer();
+    const B = IN_WALL.has(mount) ? layerWallLevel(Math.floor(gx), Math.floor(gy), k) : null;
+    L = B ? { ...B, grid: layerOcc(B, k), anyBase: true } : { ...lv(), grid: layerView(k), anyBase: true };
+    home = B && B.id;
+  }
   if (IN_WALL.has(mount)) {
     const slot = wallSlot(L, gx, gy, def.w, S.itemRot);
-    if (slot) return slot;
+    if (slot) { slot.home = home; return slot; }
   }
   let rot = S.itemRot, wallAt = null;
   if (mount === 'wall') { const f = wallBehind(L, gx, gy); if (f != null) { rot = f; wallAt = [Math.floor(gx), Math.floor(gy)]; } }
@@ -1798,10 +1807,11 @@ function placeItem() {
   const g = S.ghostItem, def = S.itemDef;
   if (!g || !def) return;
   begin();
-  const L = lv(), mount = mountOf(def), inWall = IN_WALL.has(mount);
+  const mount = mountOf(def), inWall = IN_WALL.has(mount);
+  let L = lv(), z = def.z != null ? def.z : defaultZ(mount, def.h, L);
+  if (layerOn()) ({ L, z } = layerItemHome(mount, g, def));     // (in block layers: at the layer's height)
   const it = { id: uid('i'), level: L.id, type: def.type, label: def.name, x: g.x, y: g.y, w: def.w, d: inWall ? 1 : def.d, h: def.h, rot: g.rot != null ? g.rot : S.itemRot, color: def.color };
   if (mount !== 'floor') it.mount = mount;
-  const z = def.z != null ? def.z : defaultZ(mount, def.h, L);
   if (z > 0) it.z = z;
   S.plan.items.push(it, ...mirrorItems(it));
   commit();
@@ -3191,6 +3201,33 @@ function layerView(k) {
 // the levels a layer passes through (for their areas and items)
 const layerLevels = k => { const [Z0, Z1] = layerZ(k); return S.plan.levels.filter(L => L.elev < Z1 - 1e-6 && L.elev + L.height > Z0 + 1e-6); };
 
+// ---- items in block layers go at the layer's height, not at the floor of whichever level holds the layer (a tall
+// level reaching up past the layer used to take them, down at its own floor, out of sight)
+let layerOccCache = new Map();
+function layerOcc(L, k) {                                     // level L's pieces on layer k (cached until the plan changes)
+  if (layerOccCache.plan !== S.plan || layerOccCache.ver !== planVer) { layerOccCache = new Map(); layerOccCache.plan = S.plan; layerOccCache.ver = planVer; }
+  const key = L.id + ':' + k;
+  if (!layerOccCache.has(key)) { const [Z0, Z1] = layerZ(k); layerOccCache.set(key, occupancy(L, Z0 - L.elev, Z1 - L.elev)); }
+  return layerOccCache.get(key);
+}
+function layerWallLevel(x, y, k) {                            // the level whose wall is in square (x, y) on layer k
+  if (!inB(x, y)) return null;
+  const pal = S.plan.palette;
+  return layerLevels(k).find(B => { const e = pal[layerOcc(B, k)[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block'); }) || null;
+}
+// Where an item placed on the current layer goes: a door or window on the level whose wall it sits in; anything else
+// on the level whose floor is at the layer's foot under it (else one whose floor is at that height, else the level
+// holding the layer). Its bottom sits at the layer's foot, or for a hanging one its top at the layer's top.
+function layerItemHome(mount, g, def) {
+  const P = S.plan, k = curLayer(), [Z0, Z1] = layerZ(k);
+  const at = L => mount === 'ceiling' ? Math.max(0, Z1 - L.elev - def.h) : Math.max(0, Z0 - L.elev);
+  if (g.home) { const L = P.levels.find(B => B.id === g.home); if (L) return { L, z: at(L) }; }
+  const cx = clamp(Math.floor(g.x + g.w / 2), 0, P.w - 1), cy = clamp(Math.floor(g.y + g.h / 2), 0, P.h - 1);
+  const flat = P.levels.filter(B => Math.abs(B.elev - Z0) < 1e-6 && !trimParent(B) && holdsZ(B, Z0, Z1));
+  const L = flat.find(B => floorUnder(P.palette, P.palette[B.grid[cy][cx]])) || (flat.includes(lv()) ? lv() : flat[0]) || lv();
+  return { L, z: at(L) };
+}
+
 // Materials match when they're the same block in the same colour, whatever their size or tag.
 const sameMat = (a, b) => a.color === b.color && matName(a.name) === matName(b.name);
 const runName = n => n.replace(/\s+[\d.]+ m$/, '').trim();
@@ -4274,7 +4311,7 @@ const GAME_REGIONS = ['Springlands', 'Revelwood', 'Nomad Highlands', 'Kindlewast
 })();
 
 // ---- where things go: wall slots for doors and windows, the wall behind a wall item
-const wallSq = (L, x, y) => { if (!inB(x, y)) return false; const e = S.plan.palette[L.grid[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block') && !(e.base > 0); };
+const wallSq = (L, x, y) => { if (!inB(x, y)) return false; const e = S.plan.palette[L.grid[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block') && (!(e.base > 0) || !!L.anyBase); };
 // A door or window `along` squares wide in the wall under (gx, gy): it covers the wall squares, one square
 // thick, turned to the wall's run. rot keeps its facing (R flips it). null when there's no wall there.
 function wallSlot(L, gx, gy, along, rot) {
@@ -5573,7 +5610,8 @@ function toolMove(p, e) {
       const it = findItem(G.id); if (!it) break;
       const R = itemRect(it), st = itemStep(P);
       if (IN_WALL.has(it.mount)) {                           // a door or window slides along walls, hopping to the one under the cursor
-        const slot = wallSlot(lv(), gx, gy, it.w, it.rot);
+        const IL = S.plan.levels.find(l => l.id === it.level) || lv();   // (along its own level's walls)
+        const slot = wallSlot(layerOn() ? { ...IL, anyBase: true } : IL, gx, gy, it.w, it.rot);
         if (slot) { it.x = slot.x; it.y = slot.y; it.rot = slot.rot; mark3d(); break; }
       }
       it.x = clamp(snapStep(gx - G.grab[0], st), 0, Math.max(0, P.w - R.w)); it.y = clamp(snapStep(gy - G.grab[1], st), 0, Math.max(0, P.h - R.h));

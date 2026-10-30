@@ -679,7 +679,8 @@ function toolMove(p, e) {
       const it = findItem(G.id); if (!it) break;
       const R = itemRect(it), st = itemStep(P);
       if (IN_WALL.has(it.mount)) {                           // a door or window slides along walls, hopping to the one under the cursor
-        const slot = wallSlot(lv(), gx, gy, it.w, it.rot);
+        const IL = S.plan.levels.find(l => l.id === it.level) || lv();   // (along its own level's walls)
+        const slot = wallSlot(layerOn() ? { ...IL, anyBase: true } : IL, gx, gy, it.w, it.rot);
         if (slot) { it.x = slot.x; it.y = slot.y; it.rot = slot.rot; mark3d(); break; }
       }
       it.x = clamp(snapStep(gx - G.grab[0], st), 0, Math.max(0, P.w - R.w)); it.y = clamp(snapStep(gy - G.grab[1], st), 0, Math.max(0, P.h - R.h));

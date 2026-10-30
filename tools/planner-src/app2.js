@@ -300,10 +300,19 @@ function ensureBrushes() {
 // Where the item being placed would go: doors and windows into the wall under the cursor, wall items back
 // against the nearest wall, the rest centred on the cursor. Snapped to the block grid.
 function ghostFor(gx, gy) {
-  const def = S.itemDef, P = S.plan, st = itemStep(P), L = lv(), mount = mountOf(def);
+  const def = S.itemDef, P = S.plan, st = itemStep(P), mount = mountOf(def);
+  // in block layers the walls are the ones at the layer's height: a door or window snaps into whichever level's wall
+  // is there (that's the wall it cuts, so it goes on that level), a wall item hangs on any wall at that height
+  let L = lv(), home = null;
+  if (layerOn()) {
+    const k = curLayer();
+    const B = IN_WALL.has(mount) ? layerWallLevel(Math.floor(gx), Math.floor(gy), k) : null;
+    L = B ? { ...B, grid: layerOcc(B, k), anyBase: true } : { ...lv(), grid: layerView(k), anyBase: true };
+    home = B && B.id;
+  }
   if (IN_WALL.has(mount)) {
     const slot = wallSlot(L, gx, gy, def.w, S.itemRot);
-    if (slot) return slot;
+    if (slot) { slot.home = home; return slot; }
   }
   let rot = S.itemRot, wallAt = null;
   if (mount === 'wall') { const f = wallBehind(L, gx, gy); if (f != null) { rot = f; wallAt = [Math.floor(gx), Math.floor(gy)]; } }
@@ -317,10 +326,11 @@ function placeItem() {
   const g = S.ghostItem, def = S.itemDef;
   if (!g || !def) return;
   begin();
-  const L = lv(), mount = mountOf(def), inWall = IN_WALL.has(mount);
+  const mount = mountOf(def), inWall = IN_WALL.has(mount);
+  let L = lv(), z = def.z != null ? def.z : defaultZ(mount, def.h, L);
+  if (layerOn()) ({ L, z } = layerItemHome(mount, g, def));     // (in block layers: at the layer's height)
   const it = { id: uid('i'), level: L.id, type: def.type, label: def.name, x: g.x, y: g.y, w: def.w, d: inWall ? 1 : def.d, h: def.h, rot: g.rot != null ? g.rot : S.itemRot, color: def.color };
   if (mount !== 'floor') it.mount = mount;
-  const z = def.z != null ? def.z : defaultZ(mount, def.h, L);
   if (z > 0) it.z = z;
   S.plan.items.push(it, ...mirrorItems(it));
   commit();

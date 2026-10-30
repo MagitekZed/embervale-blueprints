@@ -87,7 +87,7 @@ const GAME_REGIONS = ['Springlands', 'Revelwood', 'Nomad Highlands', 'Kindlewast
 })();
 
 // ---- where things go: wall slots for doors and windows, the wall behind a wall item
-const wallSq = (L, x, y) => { if (!inB(x, y)) return false; const e = S.plan.palette[L.grid[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block') && !(e.base > 0); };
+const wallSq = (L, x, y) => { if (!inB(x, y)) return false; const e = S.plan.palette[L.grid[y][x]]; return !!e && (e.kind === 'wall' || e.kind === 'block') && (!(e.base > 0) || !!L.anyBase); };
 // A door or window `along` squares wide in the wall under (gx, gy): it covers the wall squares, one square
 // thick, turned to the wall's run. rot keeps its facing (R flips it). null when there's no wall there.
 function wallSlot(L, gx, gy, along, rot) {
