@@ -142,7 +142,7 @@ function drawTerrainMap(g, cam, x0, x1, y0, y1) {
   }
   if (s >= 22) {
     g.fillStyle = hexA(T.ink, 0.75); g.font = `600 ${Math.round(s * 0.32)}px ${FONT_MONO}`; g.textAlign = 'center'; g.textBaseline = 'middle';
-    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) if (t[y][x] !== 0) g.fillText(fmt(t[y][x]), cam.ox + (x + 0.5) * s, cam.oy + (y + 0.5) * s);
+    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) if (t[y][x] !== 0) upright(g, cam, cam.ox + x * s, cam.oy + y * s, s, s, (bx, by) => g.fillText(fmt(t[y][x]), bx + s / 2, by + s / 2));
   }
 }
 function drawTerrainBrush(g, cam) {

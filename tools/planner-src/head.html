@@ -181,6 +181,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .statusbar .grow { flex: 1; }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 12px; }
 .lvl-switch, .zoombox { display: inline-flex; align-items: center; gap: 6px; }
+.turnbox { display: inline-flex; align-items: center; gap: 2px; margin-left: 4px; padding-left: 8px; border-left: 1px solid var(--line); }
+.turn-reset { min-width: 36px; font-variant-numeric: tabular-nums; }
+.turn-reset:disabled { opacity: 0.55; cursor: default; }
 #stLevel { display: inline-flex; align-items: center; gap: 4px; font: inherit; font-weight: 600; color: var(--ink); max-width: 22rem; height: 24px; padding: 0 6px 0 8px; border: 1px solid transparent; border-radius: 6px; background: none; cursor: pointer; }
 #stLevel:hover, #stLevel[aria-expanded="true"] { border-color: var(--line); background: var(--raised); }
 #stLevelText { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -696,6 +699,11 @@ kbd { display: inline-block; min-width: 18px; padding: 1px 6px; border: 1px soli
           <span id="stZoom" class="mono">100%</span>
           <button class="iconbtn sm" id="zoomIn" type="button" aria-label="Zoom in" title="Zoom in (+)"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
           <button class="btn btn-sm" id="fitBtn" type="button" title="Fit to plan (0)">Fit</button>
+          <span class="turnbox" role="group" aria-label="Turn the 2D view">
+            <button class="iconbtn sm" id="turnLeft" type="button" aria-label="Turn the view anticlockwise" title="Turn the 2D view a quarter anticlockwise (&lt;)"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4.5h4.5"/></svg></button>
+            <button class="btn btn-sm turn-reset" id="turnReset" type="button" disabled title="North is up">N</button>
+            <button class="iconbtn sm" id="turnRight" type="button" aria-label="Turn the view clockwise" title="Turn the 2D view a quarter clockwise (&gt;)"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4.5h-4.5"/></svg></button>
+          </span>
         </span>
       </footer>
       <div class="empty" id="empty">

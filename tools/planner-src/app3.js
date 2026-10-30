@@ -26,6 +26,39 @@ function resize2d() {
 }
 function req2d() { if (!raf2) raf2 = requestAnimationFrame(() => { raf2 = 0; draw2d(); }); }
 const toGridPt = p => [(p.x - S.cam.ox) / S.cam.s, (p.y - S.cam.oy) / S.cam.s];
+// The 2D view turns a quarter at a time (cam.r: clockwise quarter turns, 0–3) about the view's middle. Drawing and the
+// pointer work in the unturned view and the canvas is turned as a whole; these convert to and from the screen.
+const camRot = cam => (cam && cam.r) || 0;
+const viewMid = () => [Math.round(W2 / 2), Math.round(H2 / 2)];      // (whole pixels, so crisp lines stay crisp turned)
+function turnVec(dx, dy, r) { r = ((r % 4) + 4) % 4; for (let i = 0; i < r; i++) [dx, dy] = [-dy, dx]; return [dx, dy]; }
+function toScreen(cam, x, y) { const [cx, cy] = viewMid(), [dx, dy] = turnVec(x - cx, y - cy, camRot(cam)); return [cx + dx, cy + dy]; }
+function fromScreen(cam, x, y) { const [cx, cy] = viewMid(), [dx, dy] = turnVec(x - cx, y - cy, -camRot(cam)); return [cx + dx, cy + dy]; }
+function screenBox(cam, x, y, w, hh) {
+  const [ax, ay] = toScreen(cam, x, y), [bx, by] = toScreen(cam, x + w, y + hh);
+  return { x: Math.min(ax, bx), y: Math.min(ay, by), w: Math.abs(bx - ax), h: Math.abs(by - ay) };
+}
+// The screen as a rectangle of the unturned view.
+function viewRect(cam, W, H) {
+  if (!camRot(cam)) return { x: 0, y: 0, w: W, h: H };
+  const [ax, ay] = fromScreen(cam, 0, 0), [bx, by] = fromScreen(cam, W, H);
+  return { x: Math.min(ax, bx), y: Math.min(ay, by), w: Math.abs(bx - ax), h: Math.abs(by - ay) };
+}
+// Labels stay upright: fn(x, y, w, h) draws in the box as it shows on screen, with the canvas turned back to match.
+function upright(g, cam, x, y, w, hh, fn) {
+  const r = camRot(cam);
+  if (!r) return fn(x, y, w, hh);
+  const bw = r % 2 ? hh : w, bh = r % 2 ? w : hh;
+  g.save(); g.translate(x + w / 2, y + hh / 2); g.rotate(-r * Math.PI / 2);
+  const out = fn(-bw / 2, -bh / 2, bw, bh);
+  g.restore();
+  return out;
+}
+function setViewTurn(r) {
+  if (!S.plan) return;
+  S.cam.r = ((r % 4) + 4) % 4;
+  LS.set('turn:' + S.planId, S.cam.r);
+  updateZoom(); req2d();
+}
 
 function roundRectPath(g, x, y, w, hh, r) {
   r = Math.max(0, Math.min(r, w / 2, hh / 2));
@@ -44,11 +77,11 @@ function wallRunsHorizontally(L, x, y) {
 }
 
 function renderPlan(g, cam, W, H, o) {
-  const P = S.plan, s = cam.s, L = P.levels[o.levelIdx];
-  g.fillStyle = T.off; g.fillRect(0, 0, W, H);
+  const P = S.plan, s = cam.s, L = P.levels[o.levelIdx], V = viewRect(cam, W, H);
+  g.fillStyle = T.off; g.fillRect(V.x, V.y, V.w, V.h);
   g.fillStyle = T.sheet; g.fillRect(cam.ox, cam.oy, P.w * s, P.h * s);
-  const x0 = clamp(Math.floor(-cam.ox / s), 0, P.w), x1 = clamp(Math.ceil((W - cam.ox) / s), 0, P.w);
-  const y0 = clamp(Math.floor(-cam.oy / s), 0, P.h), y1 = clamp(Math.ceil((H - cam.oy) / s), 0, P.h);
+  const x0 = clamp(Math.floor((V.x - cam.ox) / s), 0, P.w), x1 = clamp(Math.ceil((V.x + V.w - cam.ox) / s), 0, P.w);
+  const y0 = clamp(Math.floor((V.y - cam.oy) / s), 0, P.h), y1 = clamp(Math.ceil((V.y + V.h - cam.oy) / s), 0, P.h);
   // in block-layer mode the view is the layer, whichever levels hold it, over the layer below it
   const lay = !!o.layer && layerOn(), k = lay ? curLayer() : 0;
   const VL = lay ? { ...L, id: null, ids: new Set(layerLevels(k).map(l => l.id)), elev: layerZ(k)[0], height: layerSize(), grid: layerView(k) } : L;
@@ -185,7 +218,7 @@ function drawCells(g, L, cam, x0, x1, y0, y1) {
   }
   for (const sy of symbols) {
     const [kind, px, py] = sy;
-    if (kind === '?') { g.fillStyle = '#ffffff'; g.font = `700 ${Math.round(s * 0.55)}px ${FONT_MONO}`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(sy[3], px + s / 2, py + s / 2 + 1); continue; }
+    if (kind === '?') { g.fillStyle = '#ffffff'; g.font = `700 ${Math.round(s * 0.55)}px ${FONT_MONO}`; g.textAlign = 'center'; g.textBaseline = 'middle'; upright(g, cam, px, py, s, s, (bx, by) => g.fillText(sy[3], bx + s / 2, by + s / 2 + 1)); continue; }
     const horiz = wallRunsHorizontally(L, sy[3], sy[4]);
     g.lineWidth = Math.max(1, s * 0.07);
     if (kind === 'door') {
@@ -253,15 +286,16 @@ function drawZoneBorders(g, L, cam) {
     g.strokeRect(px + 1, py + 1, w - 2, hh - 2); g.setLineDash([]);
     g.font = `700 11px ${FONT_UI}`;
     const label = z.name.toUpperCase();
-    const tw = Math.min(g.measureText(label).width, Math.max(0, w - 22));
-    if (w > 30 && hh > 18) {
-      const bx = px + 4, by = py + 4, bw = tw + 12, bh = 17;
+    upright(g, cam, px, py, w, hh, (zx, zy, zw, zh) => {          // the label in the zone's top-left corner on screen
+      if (zw <= 30 || zh <= 18) return;
+      const tw = Math.min(g.measureText(label).width, Math.max(0, zw - 22));
+      const bx = zx + 4, by = zy + 4, bw = tw + 12, bh = 17;
       roundRectPath(g, bx, by, bw, bh, 4); g.fillStyle = z.color; g.fill();
       g.save(); g.beginPath(); g.rect(bx, by, bw - 4, bh); g.clip();
       g.fillStyle = textOn(z.color); g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText(label, bx + 6, by + bh / 2 + 0.5);
       g.restore();
-      if (g === ctx) zoneLabelBoxes.set(z.id, { x: bx, y: by, w: bw, h: bh });
-    }
+      if (g === ctx) { const sb = screenBox(cam, px, py, w, hh); zoneLabelBoxes.set(z.id, { x: sb.x + 4, y: sb.y + 4, w: bw, h: bh }); }   // (on screen)
+    });
   }
 }
 function drawItems(g, L, cam) {
@@ -315,14 +349,14 @@ function drawItem(g, it, cam, alpha, selected) {
     g.moveTo(tx, ty); g.lineTo(tx - hl * Math.cos(a - 0.6), ty - hl * Math.sin(a - 0.6));
     g.moveTo(tx, ty); g.lineTo(tx - hl * Math.cos(a + 0.6), ty - hl * Math.sin(a + 0.6));
     g.stroke();
-  } else if (Math.min(w, hh) >= 14) {
-    const lines = fitLabel(g, it.label, w - 6, hh - 4, clamp(Math.round(s * 0.36), 9, 13));
+  } else if (Math.min(w, hh) >= 14) upright(g, cam, px, py, w, hh, (bx, by, bw, bh) => {
+    const lines = fitLabel(g, it.label, bw - 6, bh - 4, clamp(Math.round(s * 0.36), 9, 13));
     if (lines) {
       g.fillStyle = textOn(it.color); g.textAlign = 'center'; g.textBaseline = 'middle';
-      const lh = lines.fs + 2, y0 = py + hh / 2 - (lines.text.length - 1) * lh / 2 + 0.5;
-      lines.text.forEach((t, i) => g.fillText(t, px + w / 2, y0 + i * lh));
+      const lh = lines.fs + 2, y0 = by + bh / 2 - (lines.text.length - 1) * lh / 2 + 0.5;
+      lines.text.forEach((t, i) => g.fillText(t, bx + bw / 2, y0 + i * lh));
     }
-  }
+  });
   g.globalAlpha = 1;
 }
 // Fit a label into a box: shrink, then try two lines, then truncate with an ellipsis.
@@ -356,7 +390,7 @@ function drawAltars(g, cam) {
     g.setLineDash([9, 5]); g.lineWidth = 1.6; g.strokeStyle = T.shroud;
     g.strokeRect(px, py, A.w * s, A.h * s); g.setLineDash([]);
     g.font = `700 10.5px ${FONT_UI}`; g.fillStyle = T.shroud; g.textAlign = 'left'; g.textBaseline = 'bottom';
-    g.fillText(`ALTAR BUILD AREA · ${S.plan.altar} × ${S.plan.altar} M · ±${S.plan.altar / 2} M UP AND DOWN (UNCONFIRMED)`, px + 2, py - 3);
+    upright(g, cam, px, py, A.w * s, A.h * s, (bx, by) => g.fillText(`ALTAR BUILD AREA · ${S.plan.altar} × ${S.plan.altar} M · ±${S.plan.altar / 2} M UP AND DOWN (UNCONFIRMED)`, bx + 2, by - 3));
   }
 }
 function drawOverlays(g, cam) {
@@ -384,13 +418,13 @@ function drawOverlays(g, cam) {
     g.fillStyle = T['accent-soft']; g.fillRect(ox + R.x * s, oy + R.y * s, R.w * s, R.h * s);
     g.setLineDash([5, 4]); g.lineWidth = 1.5; g.strokeStyle = T.accent;
     g.strokeRect(ox + R.x * s + 0.5, oy + R.y * s + 0.5, R.w * s, R.h * s); g.setLineDash([]);
-    sizeTag(g, `${metres(R.w)} × ${metres(R.h)} m`, ox + (R.x + R.w) * s, oy + R.y * s);
+    sizeTag(g, `${metres(R.w)} × ${metres(R.h)} m`, ox + R.x * s, oy + R.y * s, R.w * s, R.h * s);
   }
   if (G && G.type === 'zone') {
     const Z = rectFrom(G.a, G.b), c = ZONE_COLORS[P.zones.length % ZONE_COLORS.length];
     g.fillStyle = hexA(c, 0.12); g.fillRect(ox + Z.x * s, oy + Z.y * s, Z.w * s, Z.h * s);
     g.setLineDash([6, 4]); g.lineWidth = 1.5; g.strokeStyle = c; g.strokeRect(ox + Z.x * s, oy + Z.y * s, Z.w * s, Z.h * s); g.setLineDash([]);
-    sizeTag(g, `${metres(Z.w)} × ${metres(Z.h)} m`, ox + (Z.x + Z.w) * s, oy + Z.y * s);
+    sizeTag(g, `${metres(Z.w)} × ${metres(Z.h)} m`, ox + Z.x * s, oy + Z.y * s, Z.w * s, Z.h * s);
   }
   if (S.tool === 'wall' && S.wallChain) {                    // the run being drawn, and the whole chain so far
     const c = S.wallChain, last = c.pts[c.pts.length - 1], run = Math.max(Math.abs(c.hover[0] - last[0]), Math.abs(c.hover[1] - last[1]));
@@ -398,12 +432,12 @@ function drawOverlays(g, cam) {
     let len = 0;
     const pts = [...c.pts, c.hover];
     for (let i = 0; i + 1 < pts.length; i++) len += Math.max(Math.abs(pts[i + 1][0] - pts[i][0]), Math.abs(pts[i + 1][1] - pts[i][1])) * (pts[i + 1][0] !== pts[i][0] && pts[i + 1][1] !== pts[i][1] ? Math.SQRT2 : 1);
-    sizeTag(g, `${fmt(run * (diag ? Math.SQRT2 : 1) * CM())} m${c.pts.length > 1 ? ` · ${fmt(len * CM())} m in all` : ''}`, ox + (c.hover[0] + 1) * s, oy + c.hover[1] * s);
+    sizeTag(g, `${fmt(run * (diag ? Math.SQRT2 : 1) * CM())} m${c.pts.length > 1 ? ` · ${fmt(len * CM())} m in all` : ''}`, ox + c.hover[0] * s, oy + c.hover[1] * s, s, s);
   }
   if (G && (G.type === 'line' || G.type === 'rect' || G.type === 'room')) {
     const Z = G.type === 'line' ? null : rectFrom(G.a, G.b);
-    if (Z) sizeTag(g, `${metres(Z.w)} × ${metres(Z.h)} m`, ox + (Z.x + Z.w) * s, oy + Z.y * s);
-    else sizeTag(g, `${metres(Math.max(Math.abs(G.b[0] - G.a[0]), Math.abs(G.b[1] - G.a[1])) + 1)} m`, ox + (G.b[0] + 1) * s, oy + G.b[1] * s);
+    if (Z) sizeTag(g, `${metres(Z.w)} × ${metres(Z.h)} m`, ox + Z.x * s, oy + Z.y * s, Z.w * s, Z.h * s);
+    else sizeTag(g, `${metres(Math.max(Math.abs(G.b[0] - G.a[0]), Math.abs(G.b[1] - G.a[1])) + 1)} m`, ox + G.b[0] * s, oy + G.b[1] * s, s, s);
   }
   drawMirror(g, cam);
   drawTerrainBrush(g, cam);
@@ -431,7 +465,7 @@ function drawOverlays(g, cam) {
     g.beginPath(); g.moveTo(pax, pay); g.lineTo(pbx, pby); g.stroke();
     g.fillStyle = T.accent;
     for (const [qx, qy] of [[pax, pay], [pbx, pby]]) { g.beginPath(); g.arc(qx, qy, 3.5, 0, Math.PI * 2); g.fill(); }
-    sizeTag(g, measureText(), Math.max(pax, pbx) + 6, Math.min(pay, pby) - 4, true);
+    sizeTag(g, measureText(), Math.min(pax, pbx), Math.min(pay, pby), Math.abs(pbx - pax), Math.abs(pby - pay), true);
   }
 }
 function measureText() {
@@ -439,41 +473,50 @@ function measureText() {
   const dx = Math.abs(bx - ax), dy = Math.abs(by - ay), d = Math.hypot(dx, dy);
   return `${metres(dx)} × ${metres(dy)} m · ${metres(d)} m straight`;
 }
-function sizeTag(g, text, x, y, left) {
+// A tag over the top-right corner of a box of the unturned view, as the box shows on screen (beside: just right of it).
+function sizeTag(g, text, x0, y0, bw, bh, beside) {
+  const b = screenBox(S.cam, x0, y0, bw, bh), x = beside ? b.x + b.w + 6 : b.x + b.w, y = beside ? b.y - 4 : b.y;
+  g.save(); g.setTransform(DPR, 0, 0, DPR, 0, 0);
   g.font = `600 11px ${FONT_MONO}`;
   const w = g.measureText(text).width + 12, hh = 19;
-  let bx = left ? x : x - w, by = y - hh - 4;
+  let bx = beside ? x : x - w, by = y - hh - 4;
   bx = clamp(bx, RUL.left + 2, W2 - w - 2); by = clamp(by, RUL.top + 2, H2 - hh - 2);
   roundRectPath(g, bx, by, w, hh, 5); g.fillStyle = T.ink; g.fill();
   g.fillStyle = T.panel; g.textAlign = 'left'; g.textBaseline = 'middle'; g.fillText(text, bx + 6, by + hh / 2 + 0.5);
+  g.restore();
 }
+// The rulers read whichever plan axis runs across or down the screen (x and y swap when the view is turned).
 function drawRulers(g, cam, W, H) {
-  const s = cam.s, P = S.plan, top = RUL.top, left = RUL.left;
+  const s = cam.s, P = S.plan, top = RUL.top, left = RUL.left, r = camRot(cam);
   g.fillStyle = T.panel; g.fillRect(0, 0, W, top); g.fillRect(0, 0, left, H);
   if (S.hover && S.hoverIn) {
+    const b = screenBox(cam, cam.ox + S.hover[0] * s, cam.oy + S.hover[1] * s, s, s);
     g.fillStyle = T['accent-soft'];
-    g.fillRect(cam.ox + S.hover[0] * s, 0, s, top); g.fillRect(0, cam.oy + S.hover[1] * s, left, s);
+    g.fillRect(b.x, 0, b.w, top); g.fillRect(0, b.y, left, b.h);
   }
   const cm = CM(), stepM = [1, 2, 5, 10, 20, 50, 100].find(v => (v / cm) * s >= 28) || 100, step = Math.round(stepM / cm);
+  const across = r % 2 ? 'y' : 'x', down = r % 2 ? 'x' : 'y';
+  const at = (axis, v) => toScreen(cam, cam.ox + (axis === 'x' ? v : 0) * s, cam.oy + (axis === 'y' ? v : 0) * s);
   g.font = `500 10px ${FONT_MONO}`; g.fillStyle = T.muted; g.textBaseline = 'middle';
   g.beginPath();
   g.textAlign = 'center';
-  for (let x = 0; x <= P.w; x += step) {
-    const px = Math.round(cam.ox + x * s) + 0.5;
+  for (let v = 0; v <= (across === 'x' ? P.w : P.h); v += step) {
+    const px = Math.round(at(across, v)[0]) + 0.5;
     if (px < left + 8 || px > W) continue;
-    g.moveTo(px, top - 5); g.lineTo(px, top); g.fillText(fmt(x * cm), px, 9);
+    g.moveTo(px, top - 5); g.lineTo(px, top); g.fillText(fmt(v * cm), px, 9);
   }
   g.textAlign = 'right';
-  for (let y = 0; y <= P.h; y += step) {
-    const py = Math.round(cam.oy + y * s) + 0.5;
+  for (let v = 0; v <= (down === 'x' ? P.w : P.h); v += step) {
+    const py = Math.round(at(down, v)[1]) + 0.5;
     if (py < top + 6 || py > H) continue;
-    g.moveTo(left - 5, py); g.lineTo(left, py); g.fillText(fmt(y * cm), left - 7, py);
+    g.moveTo(left - 5, py); g.lineTo(left, py); g.fillText(fmt(v * cm), left - 7, py);
   }
   g.strokeStyle = T.faint; g.lineWidth = 1; g.stroke();
   g.strokeStyle = T.line; g.beginPath(); g.moveTo(0, top + 0.5); g.lineTo(W, top + 0.5); g.moveTo(left + 0.5, 0); g.lineTo(left + 0.5, H); g.stroke();
   g.fillStyle = T.panel; g.fillRect(0, 0, left, top);
   g.fillStyle = T.faint; g.textAlign = 'center'; g.font = `600 9px ${FONT_MONO}`; g.fillText('M', left / 2, top / 2 + 1);
 }
+const COMPASS = { dx: 22, dy: 24, r: 13 };                       // (from the view's top-right corner)
 function drawScaleAndCompass(g, cam, W, H) {
   const s = cam.s;
   const cm = CM(), seg = s / cm, metresLen = [1, 2, 5, 10, 20, 50].find(v => v * seg >= 56) || 50, len = metresLen * seg;
@@ -485,19 +528,26 @@ function drawScaleAndCompass(g, cam, W, H) {
   g.fillStyle = T.ink; g.fillRect(x, y, len, 3);
   g.fillStyle = T.sheet; for (let i = 1; i < metresLen && metresLen <= 10; i += 2) g.fillRect(x + i * seg, y + 0.75, seg, 1.5);
   g.fillStyle = T.ink; g.textAlign = 'left'; g.textBaseline = 'bottom'; g.fillText(label, x, y - 3);
-  const cx = W - 22, cy = RUL.top + 24;
-  g.beginPath(); g.arc(cx, cy, 13, 0, Math.PI * 2); g.fillStyle = T.glass; g.fill();
-  g.strokeStyle = T.line; g.lineWidth = 1; g.stroke();
-  g.beginPath(); g.moveTo(cx, cy - 9); g.lineTo(cx + 4.5, cy + 3); g.lineTo(cx, cy + 0.5); g.lineTo(cx - 4.5, cy + 3); g.closePath();
+  const cx = W - COMPASS.dx, cy = RUL.top + COMPASS.dy, r = camRot(cam);
+  g.beginPath(); g.arc(cx, cy, COMPASS.r, 0, Math.PI * 2); g.fillStyle = T.glass; g.fill();
+  g.strokeStyle = r ? T.accent : T.line; g.lineWidth = r ? 1.5 : 1; g.stroke();   // (turned: click it for north up)
+  g.save(); g.translate(cx, cy); g.rotate(r * Math.PI / 2);
+  g.beginPath(); g.moveTo(0, -9); g.lineTo(4.5, 3); g.lineTo(0, 0.5); g.lineTo(-4.5, 3); g.closePath();
   g.fillStyle = T.accent; g.fill();
-  g.fillStyle = T.ink; g.font = `700 9px ${FONT_UI}`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('N', cx, cy + 8);
+  g.restore();
+  const [nx, ny] = turnVec(0, 8, r);
+  g.fillStyle = T.ink; g.font = `700 9px ${FONT_UI}`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('N', cx + nx, cy + ny);
 }
+const onCompass = p => Math.hypot(p.sx - (W2 - COMPASS.dx), p.sy - (RUL.top + COMPASS.dy)) <= COMPASS.r + 2;
 function draw2d() {
   const g = ctx;
   g.setTransform(DPR, 0, 0, DPR, 0, 0);
   if (!S.plan) { g.fillStyle = T.panel || '#eee'; g.fillRect(0, 0, W2, H2); return; }
+  const r = camRot(S.cam), [cx, cy] = viewMid();
+  if (r) { g.translate(cx, cy); g.rotate(r * Math.PI / 2); g.translate(-cx, -cy); }
   renderPlan(g, S.cam, W2, H2, { levelIdx: S.levelIdx, layer: true, ghost: S.opt.ghost, olBelow: S.opt.olBelow, olAbove: S.opt.olAbove, zones: S.opt.zones, altar: S.opt.altar });
   drawOverlays(g, S.cam);
+  g.setTransform(DPR, 0, 0, DPR, 0, 0);
   drawRulers(g, S.cam, W2, H2);
   drawScaleAndCompass(g, S.cam, W2, H2);
 }
@@ -508,11 +558,12 @@ function fitView(toContent) {
   let B = toContent ? boundsOf(P.levels) : null;
   if (B) { const pad = 3; B = { x: B.x - pad, y: B.y - pad, w: B.w + pad * 2, h: B.h + pad * 2 }; }
   else B = { x: 0, y: 0, w: P.w, h: P.h };
-  const aw = Math.max(50, W2 - RUL.left - 24), ah = Math.max(50, H2 - RUL.top - 24);
-  const s = clamp(Math.min(aw / B.w, ah / B.h), 3, 48);
+  const aw = Math.max(50, W2 - RUL.left - 24), ah = Math.max(50, H2 - RUL.top - 24), odd = camRot(S.cam) % 2;
+  const s = clamp(odd ? Math.min(aw / B.h, ah / B.w) : Math.min(aw / B.w, ah / B.h), 3, 48);
+  const [mx, my] = fromScreen(S.cam, RUL.left + 12 + aw / 2, RUL.top + 12 + ah / 2);   // (the middle of the free area)
   S.cam.s = s;
-  S.cam.ox = RUL.left + 12 + (aw - B.w * s) / 2 - B.x * s;
-  S.cam.oy = RUL.top + 12 + (ah - B.h * s) / 2 - B.y * s;
+  S.cam.ox = mx - (B.x + B.w / 2) * s;
+  S.cam.oy = my - (B.y + B.h / 2) * s;
   updateZoom(); req2d();
 }
 function zoomAt(px, py, f) {
@@ -520,7 +571,11 @@ function zoomAt(px, py, f) {
   S.cam.ox = px - (px - S.cam.ox) * k; S.cam.oy = py - (py - S.cam.oy) * k; S.cam.s = s1;
   updateZoom(); req2d();
 }
-function updateZoom() { $('#stZoom').textContent = Math.round(S.cam.s / 16 * 100) + '%'; }
+function updateZoom() {
+  $('#stZoom').textContent = Math.round(S.cam.s / 16 * 100) + '%';
+  const r = camRot(S.cam), b = $('#turnReset');
+  if (b) { b.disabled = !r; b.textContent = r ? `${r * 90}°` : 'N'; b.title = r ? `Turned ${r * 90}° clockwise: back to north up` : 'North is up'; }
+}
 
 // ---------------------------------------------------------------------------
 // 2D input
@@ -528,7 +583,10 @@ function updateZoom() { $('#stZoom').textContent = Math.round(S.cam.s / 16 * 100
 let G = null;            // active gesture
 let spaceDown = false;
 const P2 = new Map();
-function loc2(e) { const r = c2d.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; }
+function loc2(e) {
+  const r = c2d.getBoundingClientRect(), sx = e.clientX - r.left, sy = e.clientY - r.top, [x, y] = fromScreen(S.cam, sx, sy);
+  return { x, y, sx, sy };
+}
 function setCursor() {
   let c = 'crosshair';
   if (spaceDown || S.tool === 'pan') c = G && G.type === 'pan' ? 'grabbing' : 'grab';
@@ -538,7 +596,7 @@ function setCursor() {
 function updateHover(p) {
   if (!S.plan) return;
   const [gx, gy] = toGridPt(p), cx = Math.floor(gx), cy = Math.floor(gy);
-  S.hoverIn = p.x > RUL.left && p.y > RUL.top && p.x < W2 && p.y < H2;
+  S.hoverIn = p.sx > RUL.left && p.sy > RUL.top && p.sx < W2 && p.sy < H2;
   S.hover = [cx, cy];
   if (S.tool === 'item' && S.itemDef) S.ghostItem = ghostFor(gx, gy);
   updateGroundOut(cx, cy);
@@ -571,7 +629,7 @@ function hitZone(p, gx, gy) {
     const z = S.plan.zones[i];
     if (z.level !== L.id) continue;
     const b = zoneLabelBoxes.get(z.id);
-    if (b && p.x >= b.x && p.x <= b.x + b.w && p.y >= b.y && p.y <= b.y + b.h) return z;
+    if (b && p.sx >= b.x && p.sx <= b.x + b.w && p.sy >= b.y && p.sy <= b.y + b.h) return z;
     const band = Math.max(0.3, 5 / S.cam.s);
     const inside = gx >= z.x - band && gx <= z.x + z.w + band && gy >= z.y - band && gy <= z.y + z.h + band;
     const deep = gx > z.x + band && gx < z.x + z.w - band && gy > z.y + band && gy < z.y + z.h - band;
@@ -731,7 +789,8 @@ c2d.addEventListener('pointerdown', e => {
   try { c2d.setPointerCapture(e.pointerId); } catch { /* ignore */ }
   if (P2.size === 2) { abortGesture(); G = pinchStart(); return; }
   if (P2.size > 2 || G) return;
-  if (e.button === 1 || spaceDown || S.tool === 'pan' || p.x < RUL.left || p.y < RUL.top) {
+  if (e.button === 0 && camRot(S.cam) && onCompass(p)) { P2.delete(e.pointerId); setViewTurn(0); return; }   // (the compass: north up)
+  if (e.button === 1 || spaceDown || S.tool === 'pan' || p.sx < RUL.left || p.sy < RUL.top) {
     G = { type: 'pan', sx: p.x, sy: p.y, ox: S.cam.ox, oy: S.cam.oy }; setCursor(); e.preventDefault(); return;
   }
   if (e.button !== 0 && e.button !== 2) return;

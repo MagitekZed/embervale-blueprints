@@ -414,7 +414,7 @@ window.addEventListener('keydown', e => {
   if (k.startsWith('Arrow') && S.sel) {
     e.preventDefault();
     const n = e.shiftKey ? 5 : 1;
-    nudgeSelection(k === 'ArrowLeft' ? -n : k === 'ArrowRight' ? n : 0, k === 'ArrowUp' ? -n : k === 'ArrowDown' ? n : 0);
+    nudgeSelection(...turnVec(k === 'ArrowLeft' ? -n : k === 'ArrowRight' ? n : 0, k === 'ArrowUp' ? -n : k === 'ArrowDown' ? n : 0, -camRot(S.cam)));   // (as on screen)
     return;
   }
   if (lk === 'r') {
@@ -432,6 +432,7 @@ window.addEventListener('keydown', e => {
   if (k === '+' || k === '=') { zoomAt(W2 / 2, H2 / 2, 1.25); return; }
   if (k === '-' || k === '_') { zoomAt(W2 / 2, H2 / 2, 0.8); return; }
   if (k === '0') { fitView(true); return; }
+  if (k === '>' || k === '<') { setViewTurn(camRot(S.cam) + (k === '>' ? 1 : -1)); return; }   // (Shift + . and ,)
   if (lk === 'x' && !e.shiftKey) { cycleMirror(); return; }
   const tool = TOOLS.find(t => t !== 'sep' && t.key.toLowerCase() === lk);
   if (tool) setTool(tool.id);
@@ -465,6 +466,9 @@ function bindChrome() {
   $('#zoomIn').addEventListener('click', () => zoomAt(W2 / 2, H2 / 2, 1.25));
   $('#zoomOut').addEventListener('click', () => zoomAt(W2 / 2, H2 / 2, 0.8));
   $('#fitBtn').addEventListener('click', () => fitView(true));
+  $('#turnLeft').addEventListener('click', () => setViewTurn(camRot(S.cam) - 1));
+  $('#turnRight').addEventListener('click', () => setViewTurn(camRot(S.cam) + 1));
+  $('#turnReset').addEventListener('click', () => setViewTurn(0));
   $('#bannerLoad').addEventListener('click', () => { if (S.remote) adoptRemote(S.remote, 'Loaded the newer version. Undo puts yours back.'); });
   $('#bannerKeep').addEventListener('click', () => { S.remote = null; hideBanner(); markDirty(); });
   const cut = $('#cutBtn'), sh = $('#shadowBtn');

@@ -152,6 +152,7 @@ async function openPlan(id) {
   if (S.layer != null) S.layer = 0;
   ensureBrushes();
   LS.set('last', id);
+  S.cam.r = Number(LS.get('turn:' + id, 0)) & 3;                // (each plan keeps its 2D turn in this browser)
   hideEmpty();
   fitView(true);
   V3.fit = true;

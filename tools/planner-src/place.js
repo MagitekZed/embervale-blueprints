@@ -70,7 +70,7 @@ function drawPlaceGhost(g, cam) {
   for (let y = 0; y < mh; y++) for (let x = 0; x < mw; x++) if (m[y * mw + x]) g.fillRect(cam.ox + (ox + x) * s, cam.oy + (oy + y) * s, s + 0.5, s + 0.5);
   g.setLineDash([6, 4]); g.lineWidth = 1.5; g.strokeStyle = T.accent;
   g.strokeRect(cam.ox + (ox + box.x) * s, cam.oy + (oy + box.y) * s, box.w * s, box.h * s); g.setLineDash([]);
-  sizeTag(g, `${pl.name} · ${metres(box.w)} × ${metres(box.h)} m`, cam.ox + (ox + box.x + box.w) * s, cam.oy + (oy + box.y) * s);
+  sizeTag(g, `${pl.name} · ${metres(box.w)} × ${metres(box.h)} m`, cam.ox + (ox + box.x) * s, cam.oy + (oy + box.y) * s, box.w * s, box.h * s);
 }
 function placeHere(cx, cy) {
   const pl = S.placing;

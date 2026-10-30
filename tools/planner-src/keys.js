@@ -26,6 +26,7 @@ const SHORTCUTS = [
     ['`', 'Views: 2D, Split, 3D'],
     ['+  −', 'Zoom the plan'],
     ['0', 'Fit the plan'],
+    ['<  >', 'Turn the 2D view a quarter anticlockwise / clockwise (click the compass for north up)'],
   ]],
   ['Steps (Build tab)', [
     [',  .', 'Previous / next step'],
@@ -104,6 +105,9 @@ function paletteCommands() {
     { label: 'Undo', key: 'Ctrl+Z', run: undo }, { label: 'Redo', key: 'Ctrl+Shift+Z', run: redo },
     { label: 'History: every step you can undo', run: toggleHistPop },
     { label: 'Fit the plan', key: '0', run: () => fitView(true) },
+    { label: 'Turn the 2D view clockwise', key: '>', run: () => setViewTurn(camRot(S.cam) + 1) },
+    { label: 'Turn the 2D view anticlockwise', key: '<', run: () => setViewTurn(camRot(S.cam) - 1) },
+    { label: 'Turn the 2D view back to north up', run: () => setViewTurn(0), when: () => !!camRot(S.cam) },
     { label: 'Walk around the build', run: () => { need3d(); setTimeout(() => $('#walkBtn').click(), 80); } },
     { label: 'Crafting list', run: openCrafting },
     { label: 'Keyboard shortcuts', key: '?', run: openKeys },
