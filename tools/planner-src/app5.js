@@ -39,6 +39,13 @@ function paletteSelect(kinds, value, onchange, allowNone) {
 function optToggle(key, label, title) {
   return h('button', { class: 'toggle', type: 'button', 'aria-pressed': String(S.opt[key]), title, onclick: ev => { S.opt[key] = !S.opt[key]; ev.currentTarget.setAttribute('aria-pressed', String(S.opt[key])); LS.set('opt', S.opt); req2d(); mark3d(); }, text: label });
 }
+// a toggle whose mark is a little square outline in its colour (for the layer outlines)
+function olToggle(key, label, color, title) {
+  const b = optToggle(key, label, title);
+  b.classList.add('ol');
+  b.style.setProperty('--dot', color);
+  return b;
+}
 function renderOptbar() {
   const bar = $('#optbar');
   const kids = [];
@@ -84,7 +91,10 @@ function renderOptbar() {
     else if (t === 'measure') kids.push(h('span', { class: 'hint', id: 'measureOut', text: S.measure ? measureText() : 'Drag between two points' }));
     else if (t === 'pan') kids.push(h('span', { class: 'hint', text: 'Drag to move around · scroll to zoom' }));
     kids.push(h('span', { class: 'spacer' }));
-    kids.push(optToggle('ghost', isUnder(lv()) ? 'Level above' : 'Level below', isUnder(lv()) ? 'Show the level above as a faint outline, to dig under it' : 'Show the level below as a faint outline'));
+    if (layerOn()) {                                         // block layers: outlines of the layers either side
+      kids.push(olToggle('olBelow', 'Below', OUTLINE_BELOW, 'Outline the layer below in red, over this one'));
+      kids.push(olToggle('olAbove', 'Above', OUTLINE_ABOVE, 'Outline the layer above in dashed blue, over this one'));
+    } else kids.push(optToggle('ghost', isUnder(lv()) ? 'Level above' : 'Level below', isUnder(lv()) ? 'Show the level above as a faint outline, to dig under it' : 'Show the level below as a faint outline'));
     kids.push(optToggle('zones', 'Areas', 'Show named areas'));
     kids.push(optToggle('altar', 'Altar range', 'Show the Flame Altar build area'));
   }

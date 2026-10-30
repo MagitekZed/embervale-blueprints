@@ -54,16 +54,18 @@ function renderPlan(g, cam, W, H, o) {
   const VL = lay ? { ...L, id: null, ids: new Set(layerLevels(k).map(l => l.id)), elev: layerZ(k)[0], height: layerSize(), grid: layerView(k) } : L;
   drawGround(g, cam, VL, x0, x1, y0, y1);
   if (S.tool === 'terrain' && terrainOn(P) && cam === S.cam) drawTerrainMap(g, cam, x0, x1, y0, y1);
-  // guide layer: the level below; underground, the level above (the building you're digging under)
+  // guide level (Levels mode): the level below; underground, the level above (the building you're digging under)
   const gi = isUnder(L) ? o.levelIdx + 1 : o.levelIdx - 1;
-  if (o.ghost && lay) drawGhost(g, { grid: layerView(k - 1) }, cam, x0, x1, y0, y1);
-  else if (o.ghost && gi >= 0 && gi < P.levels.length) drawGhost(g, P.levels[gi], cam, x0, x1, y0, y1);
+  if (o.ghost && !lay && gi >= 0 && gi < P.levels.length) drawGhost(g, P.levels[gi], cam, x0, x1, y0, y1);
   drawCells(g, VL, cam, x0, x1, y0, y1);
   if (!lay) drawTrimDots(g, L, cam, x0, x1, y0, y1);
   if (cam === S.cam) { drawProgress2d(g, cam, x0, x1, y0, y1); drawHighlight2d(g, cam, x0, x1, y0, y1, VL.grid); }
   if (o.zones) drawZoneFills(g, VL, cam);
   drawGrid(g, cam, x0, x1, y0, y1);
   if (o.zones) drawZoneBorders(g, VL, cam);
+  // block layers: the layers just below (red) and above (blue, dashed) outlined over this one, filled squares too
+  if (lay && o.olBelow) drawLayerOutline(g, layerView(k - 1), cam, x0, x1, y0, y1, OUTLINE_BELOW, false);
+  if (lay && o.olAbove) drawLayerOutline(g, layerView(k + 1), cam, x0, x1, y0, y1, OUTLINE_ABOVE, true);
   if (lay) drawLayerItems(g, cam, k); else drawItems(g, L, cam);
   if (o.altar) { drawAltarOutside(g, L, cam, x0, x1, y0, y1); drawAltars(g, cam); }
 }
@@ -107,6 +109,27 @@ function drawGhost(g, B, cam, x0, x1, y0, y1) {
     const e = pal[B.grid[y][x]];
     if (e && !WALLISH.has(e.kind)) g.fillRect(cam.ox + x * s, cam.oy + y * s, s, s);
   }
+}
+// The edge of everything on another layer, drawn as a line round it (so it shows over this layer's filled squares).
+const OUTLINE_BELOW = '#e0533d', OUTLINE_ABOVE = '#3b82f6';
+function drawLayerOutline(g, grid, cam, x0, x1, y0, y1, color, dashed) {
+  const s = cam.s, pal = S.plan.palette, P = S.plan;
+  if (s < 1.5) return;
+  const on = (x, y) => { if (x < 0 || y < 0 || x >= P.w || y >= P.h) return false; const e = pal[grid[y][x]]; return !!e && e.kind !== 'dig'; };
+  g.save();
+  g.strokeStyle = color; g.lineWidth = Math.max(1.5, Math.min(3, s * 0.14)); g.lineCap = 'butt';
+  if (dashed) g.setLineDash([Math.max(3, s * 0.3), Math.max(2, s * 0.2)]);
+  g.beginPath();
+  for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
+    if (!on(x, y)) continue;
+    const px = cam.ox + x * s, py = cam.oy + y * s;
+    if (!on(x, y - 1)) { g.moveTo(px, py); g.lineTo(px + s, py); }
+    if (!on(x, y + 1)) { g.moveTo(px, py + s); g.lineTo(px + s, py + s); }
+    if (!on(x - 1, y)) { g.moveTo(px, py); g.lineTo(px, py + s); }
+    if (!on(x + 1, y)) { g.moveTo(px + s, py); g.lineTo(px + s, py + s); }
+  }
+  g.stroke();
+  g.restore();
 }
 function drawCells(g, L, cam, x0, x1, y0, y1) {
   const s = cam.s, pal = S.plan.palette, grid = L.grid, ox = cam.ox, oy = cam.oy;
@@ -473,7 +496,7 @@ function draw2d() {
   const g = ctx;
   g.setTransform(DPR, 0, 0, DPR, 0, 0);
   if (!S.plan) { g.fillStyle = T.panel || '#eee'; g.fillRect(0, 0, W2, H2); return; }
-  renderPlan(g, S.cam, W2, H2, { levelIdx: S.levelIdx, layer: true, ghost: S.opt.ghost, zones: S.opt.zones, altar: S.opt.altar });
+  renderPlan(g, S.cam, W2, H2, { levelIdx: S.levelIdx, layer: true, ghost: S.opt.ghost, olBelow: S.opt.olBelow, olAbove: S.opt.olAbove, zones: S.opt.zones, altar: S.opt.altar });
   drawOverlays(g, S.cam);
   drawRulers(g, S.cam, W2, H2);
   drawScaleAndCompass(g, S.cam, W2, H2);

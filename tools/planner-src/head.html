@@ -128,6 +128,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .toggle::before { content: ""; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid currentColor; }
 .toggle[aria-pressed="true"] { color: var(--ink); border-color: var(--muted); }
 .toggle[aria-pressed="true"]::before { background: var(--accent); border-color: var(--accent); }
+.toggle.ol::before { border-radius: 2px; border-width: 2px; background: transparent; }
+.toggle.ol[aria-pressed="true"]::before { background: transparent; border-color: var(--dot); }
 
 .stagebody { display: flex; min-height: 0; min-width: 0; }
 .views { display: grid; min-height: 0; position: relative; flex: 1; min-width: 0; }

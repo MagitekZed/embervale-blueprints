@@ -253,7 +253,7 @@ const S = {
   piece: 'stairs', pieceMat: null, pieceRoof: 'Castle Roof Block', piecePitch: 1, pieceOverhang: 0.5, pieceRise: 0.5, pieceSpiral: 4, pieceArch: 'round',
   view: 'split', tab: 'materials', needFit: false,
   cam: { ox: 40, oy: 40, s: 16 },
-  opt: { ghost: true, zones: true, altar: true, cut: true, shadows: true },
+  opt: { ghost: true, olBelow: true, olAbove: true, zones: true, altar: true, cut: true, shadows: true },
   hist: [], fut: [], editMat: null, remote: null, libFilter: '', libSizes: {}, catFilter: '', catOpen: new Set(),
 };
 

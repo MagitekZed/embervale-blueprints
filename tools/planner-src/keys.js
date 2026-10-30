@@ -95,6 +95,8 @@ function paletteCommands() {
     toggle('Cutaway', S.opt.cut, () => $('#cutBtn').click()),
     toggle('Shadows', S.opt.shadows, () => $('#shadowBtn').click()),
     toggle('Block layers', layerOn(), () => toggleLayers(), 'K'),
+    toggle('Layers: outline the layer below', S.opt.olBelow, () => { S.opt.olBelow = !S.opt.olBelow; LS.set('opt', S.opt); renderOptbar(); req2d(); }),
+    toggle('Layers: outline the layer above', S.opt.olAbove, () => { S.opt.olAbove = !S.opt.olAbove; LS.set('opt', S.opt); renderOptbar(); req2d(); }),
     toggle('Show progress', S.opt.progress, () => { S.opt.progress = !S.opt.progress; LS.set('opt', S.opt); progDrawCache.key = ''; req2d(); mark3d(); if (S.tab === 'build') renderBuildPane(); }),
     toggle('What I can afford', S.opt.afford, () => { S.opt.afford = !S.opt.afford; LS.set('opt', S.opt); progDrawCache.key = ''; req2d(); mark3d(); if (S.tab === 'build') renderBuildPane(); }),
     ...MIRROR_MODES.map(m => ({ label: `Mirror: ${m[3]}`, key: 'X', run: () => setMirror(m[0]) })),
