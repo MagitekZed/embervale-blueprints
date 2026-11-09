@@ -31,6 +31,9 @@ function renderPlanPane() {
   const altar = h('select', { 'aria-label': 'Altar build area' }, ...GAME.altarSizes.map((v, i) => h('option', { value: String(v), text: `Altar level ${i + 1} · ${v} × ${v} m` })));
   altar.value = String(P.altar);
   altar.addEventListener('change', () => { begin(); P.altar = Number(altar.value); commit(); });
+  const look = h('select', { 'aria-label': 'How the ground looks' }, ...Object.entries(GROUND_LOOKS).map(([v, G]) => h('option', { value: v, text: G.label })));
+  look.value = P.groundLook || 'earth';
+  look.addEventListener('change', () => { begin('Change how the ground looks'); P.groundLook = look.value === 'earth' ? '' : look.value; commit(); mark3d(); req2d(); });
   const importBox = h('textarea', { class: 'code', 'aria-label': 'Plan JSON to import', placeholder: '{ "name": "…", "levels": [ … ] }' });
   const importErr = h('p', { class: 'err', hidden: true });
   pane.replaceChildren(
@@ -49,7 +52,8 @@ function renderPlanPane() {
       h('div', { class: 'grid3' }, h('label', { class: 'field' }, h('span', { text: 'Width (m)' }), w), h('label', { class: 'field' }, h('span', { text: 'Depth (m)' }), hh),
         h('div', { class: 'field' }, h('span', { text: ' ' }), h('button', { class: 'btn', type: 'button', text: 'Resize', onclick: () => resizePlan(Math.round(Number(w.value) / cm), Math.round(Number(hh.value) / cm)) }))),
       h('label', { class: 'field' }, h('span', { text: 'Altar build area' }), altar),
-      h('p', { class: 'note', text: 'Build areas grow with altar upgrades: 40, 80, 120 and 160 m. The dashed square is centred on each Flame Altar you place. Centring is approximate.' })),
+      h('p', { class: 'note', text: 'Build areas grow with altar upgrades: 40, 80, 120 and 160 m. The dashed square is centred on each Flame Altar you place. Centring is approximate.' }),
+      h('label', { class: 'field', title: 'How the ground (Shape the ground, T) looks in 3D and 2D', 'data-tip-desc': 'Bare rock or rock under snow suit a mountain' }, h('span', { text: 'Ground' }), look)),
     ...[placeSection()].filter(Boolean),                // (none when there's no other plan)
     h('div', { class: 'callout' }, S.mode === 'db'
       ? [h('b', { text: 'Shared with Claude. ' }), 'Plans are stored with this page. In chat, ask Claude to look at or draft a plan by name. Its edits show up here live, and Undo can roll them back.']

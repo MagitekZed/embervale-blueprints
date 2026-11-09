@@ -236,6 +236,13 @@ const FONT_UI = '"Instrument Sans", "Segoe UI", system-ui, sans-serif';
 const FONT_MONO = '"JetBrains Mono", ui-monospace, Consolas, monospace';
 const FACING = { 0: 'south', 90: 'west', 180: 'north', 270: 'east' };
 const SOIL = '#7a6249';                 // earth around anything built below 0 m
+// How the ground looks (planner v75, a plan's `groundLook`): earth under grass, bare rock, or rock under snow.
+const GROUND_LOOKS = {
+  earth: { label: 'Earth and grass', body: SOIL, top: '#6e8a46' },
+  rock: { label: 'Bare rock', body: '#6f6b66', top: '#7c7871' },
+  snow: { label: 'Rock under snow', body: '#6f6b66', top: '#e3e7e9', steep: '#7c7871' },   // (snow lies on ledges, not cliffs)
+};
+const groundLook = (P = S.plan) => GROUND_LOOKS[P && P.groundLook] || GROUND_LOOKS.earth;
 const isUnder = L => !!L && L.elev < -0.01;
 
 // ---------------------------------------------------------------------------
@@ -428,7 +435,7 @@ function normalizePlan(d) {
     let id = str(L.id, 24).replace(/[^\w-]/g, '') || ('L' + (i + 1));
     while (seen.has(id)) id += 'x';
     seen.add(id);
-    p.levels.push({ id, name: str(L.name, 80) || ('Level ' + (i + 1)), elev: blocksNum(L.elev, i * GAME.levelH, -60, 400), height: blocksNum(L.height, GAME.levelH, 0.5, 40), hidden: !!L.hidden, ...(str(L.group, 40).trim() ? { group: str(L.group, 40).trim() } : {}), grid: (fmt2 ? codeRowsToGrid : rowsToGrid)(L.rows, p.w, p.h, clampInt(L.ox, 0, p.w, 0), clampInt(L.oy, 0, p.h, 0), bad) });
+    p.levels.push({ id, name: str(L.name, 80) || ('Level ' + (i + 1)), elev: blocksNum(L.elev, i * GAME.levelH, -200, 400), height: blocksNum(L.height, GAME.levelH, 0.5, 40), hidden: !!L.hidden, ...(str(L.group, 40).trim() ? { group: str(L.group, 40).trim() } : {}), grid: (fmt2 ? codeRowsToGrid : rowsToGrid)(L.rows, p.w, p.h, clampInt(L.ox, 0, p.w, 0), clampInt(L.oy, 0, p.h, 0), bad) });
   });
   if (bad.n) p.readProblems = bad.n;                        // (not saved: openPlan warns about it)
   if (Array.isArray(d.levels) && d.levels.length > MAX_LEVELS) p.droppedLevels = d.levels.length - MAX_LEVELS;
@@ -470,12 +477,14 @@ function normalizePlan(d) {
     });
   }
   p.terrain = terrainFromDoc(d.terrain, p);
+  p.groundLook = d.groundLook !== 'earth' && GROUND_LOOKS[d.groundLook] ? d.groundLook : '';
   return p;
 }
 function serialize(p, forHistory) {
   const o = { v: 1, fmt: 2 };
   if (!forHistory) { o.name = p.name; o.notes = p.notes; if (p.project) o.project = p.project; }
   o.w = p.w; o.h = p.h; o.cell = p.cell; o.altar = p.altar;
+  if (p.groundLook) o.groundLook = p.groundLook;
   o.palette = {};
   for (const [k, e] of Object.entries(p.palette)) {
     const c = clone(e);

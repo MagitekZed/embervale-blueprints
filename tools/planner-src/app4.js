@@ -294,8 +294,11 @@ function earth3d(P, cm, push, solids, slice = Infinity) {
   const reach = P.levels.filter(l => l.elev - FLOOR_T < hi - 1e-6);
   const cover = new Map(reach.map(L => [L.id, new Set()]));     // squares items sit on, per level
   for (const it of P.items) if (cover.has(it.level) && mountOf(it) === 'floor') { const Q = itemRect(it); for (let y = Math.floor(Q.y); y < Math.ceil(Q.y + Q.h - 1e-6); y++) for (let x = Math.floor(Q.x); x < Math.ceil(Q.x + Q.w - 1e-6); x++) cover.get(it.level).add(y * P.w + x); }
+  const look = groundLook(P), SOIL = look.body, GRASS = look.top;
+  // a look with a `steep` colour caps cliff faces with it: squares more than 1 m above a neighbour
+  const steep = (x, y) => { if (!look.steep) return false; const t = P.terrain, g = t[y][x];
+    return (x > 0 && g - t[y][x - 1] > 1) || (x < P.w - 1 && g - t[y][x + 1] > 1) || (y > 0 && g - t[y - 1][x] > 1) || (y < P.h - 1 && g - t[y + 1][x] > 1); };
   const shade = d => tint(SOIL, -0.12 - 0.25 * Math.min(1, -d / 20));   // darker the deeper below the surface
-  const GRASS = '#6e8a46';
   for (let y = R.y; y < R.y + R.h; y++) for (let x = R.x; x < R.x + R.w; x++) {
     const ground = hasT ? P.terrain[y][x] : 0, top = Math.min(ground, slice), cutHere = top < ground - 1e-6, air = [];
     for (const L of reach) {
@@ -308,7 +311,7 @@ function earth3d(P, cm, push, solids, slice = Infinity) {
     if (z < top - 1e-6) {
       const cap = Math.min(cm, top - z);
       if (top - cap > z + 1e-6) push(solids, x, z, y, 1, top - cap - z, 1, shade((z + top - cap) / 2 - top));
-      push(solids, x, top - cap, y, 1, cap, 1, cutHere ? tint(SOIL, -0.3) : hasT ? GRASS : tint(SOIL, 0.06));
+      push(solids, x, top - cap, y, 1, cap, 1, cutHere ? tint(SOIL, -0.3) : hasT ? (steep(x, y) ? look.steep : GRASS) : tint(SOIL, 0.06));
     }
   }
   return R;

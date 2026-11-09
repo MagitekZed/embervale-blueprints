@@ -1,33 +1,36 @@
 
 // ---------------------------------------------------------------------------
 // Terrain: ground height per square, in whole blocks (one square's size: 0.5 m or 1 m).
-// Stored as rows of characters, height = (code − 79) × cell metres; a space is 0 m. Below the
-// ground every empty square is earth; anything built or placed there is dug out.
+// Stored cropped, as runs of numbers like level rows: blocks + 500, so −499 to +499 blocks, '000' being 0 m
+// (enc 3, planner v75, for mountains). Plans saved before stored characters, height = (code − 79) blocks,
+// as runs (enc 2) or one a square, which only reach −46 / +47 blocks. Below the ground every empty square
+// is earth; anything built or placed there is dug out.
 // ---------------------------------------------------------------------------
-const TERRAIN_ZERO = 79;                                       // 'O'
-const terrainLimits = cell => [(33 - TERRAIN_ZERO) * cell, (126 - TERRAIN_ZERO) * cell];
+const TERRAIN_ZERO = 79;                                       // 'O' (enc 2 and older)
+const TERRAIN_MID = 500, TERRAIN_MAX = 499;                    // enc 3
+const terrainLimits = cell => [-TERRAIN_MAX * cell, TERRAIN_MAX * cell];
 function terrainFromDoc(t, p) {
   const g = Array.from({ length: p.h }, () => new Array(p.w).fill(0));
   if (!t || !Array.isArray(t.rows)) return g;
   // rows of runs like the level rows (enc 2, since planner v36: a lake bed is one run per row), or one
   // character per square (plans saved before)
   const ox = clampInt(t.ox, 0, p.w, 0), oy = clampInt(t.oy, 0, p.h, 0), bad = { n: 0 };
-  const chars = t.enc === 2 ? codeRowsToGrid(t.rows, p.w, p.h, ox, oy, bad) : rowsToGrid(t.rows, p.w, p.h, ox, oy);
+  const chars = t.enc === 2 || t.enc === 3 ? codeRowsToGrid(t.rows, p.w, p.h, ox, oy, bad) : rowsToGrid(t.rows, p.w, p.h, ox, oy);
   if (bad.n) p.readProblems = (p.readProblems || 0) + bad.n;
   for (let y = 0; y < p.h; y++) for (let x = 0; x < p.w; x++) {
     const c = chars[y][x];
-    if (c !== ' ') g[y][x] = (c.charCodeAt(0) - TERRAIN_ZERO) * p.cell;
+    if (c !== ' ') g[y][x] = (t.enc === 3 ? symCode(c) - TERRAIN_MID : c.charCodeAt(0) - TERRAIN_ZERO) * p.cell;
   }
   return g;
 }
 function terrainToDoc(p) {
   if (!terrainOn(p)) return null;
   const chars = p.terrain.map(row => row.map(v => {
-    const k = clamp(Math.round(v / p.cell), 33 - TERRAIN_ZERO, 126 - TERRAIN_ZERO);
-    return k === 0 ? ' ' : String.fromCharCode(TERRAIN_ZERO + k);
+    const k = clamp(Math.round(v / p.cell), -TERRAIN_MAX, TERRAIN_MAX);
+    return k === 0 ? ' ' : symChar(k + TERRAIN_MID);
   }));
   const c = cropCells(chars);
-  return { enc: 2, ox: c.ox, oy: c.oy, rows: c.rows.map(encodeRow) };
+  return { enc: 3, ox: c.ox, oy: c.oy, rows: c.rows.map(encodeRow) };
 }
 const terrainOn = p => !!p && !!p.terrain && p.terrain.some(row => row.some(v => v !== 0));
 const groundAt = (x, y) => (S.plan && S.plan.terrain && inB(x, y) ? S.plan.terrain[y][x] : 0);
@@ -110,7 +113,7 @@ function drawGround(g, cam, L, x0, x1, y0, y1) {
   const P = S.plan, s = cam.s;
   if (!terrainOn(P)) { if (isUnder(L)) drawSoil(g, cam, x0, x1, y0, y1); return; }
   const [, hi] = terrainRange(P), touches = L.elev <= hi + 0.01;
-  g.fillStyle = hexA(SOIL, 0.34);
+  g.fillStyle = hexA(groundLook(P).body, 0.34);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) if (P.terrain[y][x] > L.elev + 0.01) g.fillRect(cam.ox + x * s, cam.oy + y * s, s + 0.5, s + 0.5);
   if (touches && s >= 5) {
     g.strokeStyle = hexA(T.muted, 0.28); g.lineWidth = 1; g.beginPath();

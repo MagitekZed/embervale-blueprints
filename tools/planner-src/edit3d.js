@@ -9,7 +9,8 @@
 // ---------------------------------------------------------------------------
 function bmStart(P) {
   const cm = P.cell;
-  const lo = Math.min(0, ...P.levels.map(l => l.elev)) - 8, hi = Math.max(GAME.levelH, ...P.levels.map(l => l.elev + l.height)) + 8;
+  const [tlo, thi] = terrainOn(P) ? terrainRange(P) : [0, 0];         // (a mountain can stand far above every level)
+  const lo = Math.min(0, tlo, ...P.levels.map(l => l.elev)) - 8, hi = Math.max(GAME.levelH, thi, ...P.levels.map(l => l.elev + l.height)) + 8;
   const k0 = Math.floor(lo / cm), K = Math.ceil(hi / cm) - k0;
   V3.bm = { W: P.w, H: P.h, k0, K, cm, a: new Uint8Array(P.w * P.h * K) };
 }

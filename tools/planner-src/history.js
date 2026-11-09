@@ -89,6 +89,7 @@ function describeChange(beforeJson, afterJson) {
   if (pAdd.length && !painted) out.push(pAdd.length === 1 ? `Add material ${pb[pAdd[0]].name}` : `Add ${pAdd.length} materials`);
   if (pDel.length) out.push(pDel.length === 1 ? `Remove material ${pa[pDel[0]].name}` : `Tidy away ${pDel.length} materials`);
   if (JSON.stringify(A.terrain || null) !== JSON.stringify(B.terrain || null)) out.push('Shape the ground');
+  if ((A.groundLook || '') !== (B.groundLook || '')) out.push('Change how the ground looks');
   if (A.altar !== B.altar || A.cell !== B.cell || A.w !== B.w || A.h !== B.h) out.push('Change the plan’s settings');
   if (!out.length) return 'Edit';
   return out[0] + (out.length > 1 ? ` + ${out.length - 1} more` : '');

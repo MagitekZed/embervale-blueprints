@@ -599,11 +599,11 @@ function renderLevels() {
   const name = h('input', { type: 'text', value: L.name, maxlength: '80', 'aria-label': 'Level name' });
   name.addEventListener('input', () => { liveBegin(); L.name = name.value.slice(0, 80) || 'Level'; markDirty(); updateStatus(); });
   name.addEventListener('change', () => { liveCommit(); renderLevels(); });
-  const elev = h('input', { type: 'number', value: String(L.elev), step: '0.5', min: '-60', max: '400', 'aria-label': 'Base height in metres' });
+  const elev = h('input', { type: 'number', value: String(L.elev), step: '0.5', min: '-200', max: '400', 'aria-label': 'Base height in metres' });
   const height = h('input', { type: 'number', value: String(L.height), step: '0.5', min: '0.5', max: '40', 'aria-label': 'Level height in metres' });
   const apply = () => {
     begin();
-    L.elev = blocksNum(elev.value, L.elev, -60, 400); L.height = blocksNum(height.value, L.height, 0.5, 40);   // whole blocks
+    L.elev = blocksNum(elev.value, L.elev, -200, 400); L.height = blocksNum(height.value, L.height, 0.5, 40);   // whole blocks
     P.levels.sort((a, b) => a.elev - b.elev); S.levelIdx = P.levels.indexOf(L);
     commit(); renderLevels(); updateStatus();
   };

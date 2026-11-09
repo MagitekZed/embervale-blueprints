@@ -986,6 +986,13 @@ const FONT_UI = '"Instrument Sans", "Segoe UI", system-ui, sans-serif';
 const FONT_MONO = '"JetBrains Mono", ui-monospace, Consolas, monospace';
 const FACING = { 0: 'south', 90: 'west', 180: 'north', 270: 'east' };
 const SOIL = '#7a6249';                 // earth around anything built below 0 m
+// How the ground looks (planner v75, a plan's `groundLook`): earth under grass, bare rock, or rock under snow.
+const GROUND_LOOKS = {
+  earth: { label: 'Earth and grass', body: SOIL, top: '#6e8a46' },
+  rock: { label: 'Bare rock', body: '#6f6b66', top: '#7c7871' },
+  snow: { label: 'Rock under snow', body: '#6f6b66', top: '#e3e7e9', steep: '#7c7871' },   // (snow lies on ledges, not cliffs)
+};
+const groundLook = (P = S.plan) => GROUND_LOOKS[P && P.groundLook] || GROUND_LOOKS.earth;
 const isUnder = L => !!L && L.elev < -0.01;
 
 // ---------------------------------------------------------------------------
@@ -1178,7 +1185,7 @@ function normalizePlan(d) {
     let id = str(L.id, 24).replace(/[^\w-]/g, '') || ('L' + (i + 1));
     while (seen.has(id)) id += 'x';
     seen.add(id);
-    p.levels.push({ id, name: str(L.name, 80) || ('Level ' + (i + 1)), elev: blocksNum(L.elev, i * GAME.levelH, -60, 400), height: blocksNum(L.height, GAME.levelH, 0.5, 40), hidden: !!L.hidden, ...(str(L.group, 40).trim() ? { group: str(L.group, 40).trim() } : {}), grid: (fmt2 ? codeRowsToGrid : rowsToGrid)(L.rows, p.w, p.h, clampInt(L.ox, 0, p.w, 0), clampInt(L.oy, 0, p.h, 0), bad) });
+    p.levels.push({ id, name: str(L.name, 80) || ('Level ' + (i + 1)), elev: blocksNum(L.elev, i * GAME.levelH, -200, 400), height: blocksNum(L.height, GAME.levelH, 0.5, 40), hidden: !!L.hidden, ...(str(L.group, 40).trim() ? { group: str(L.group, 40).trim() } : {}), grid: (fmt2 ? codeRowsToGrid : rowsToGrid)(L.rows, p.w, p.h, clampInt(L.ox, 0, p.w, 0), clampInt(L.oy, 0, p.h, 0), bad) });
   });
   if (bad.n) p.readProblems = bad.n;                        // (not saved: openPlan warns about it)
   if (Array.isArray(d.levels) && d.levels.length > MAX_LEVELS) p.droppedLevels = d.levels.length - MAX_LEVELS;
@@ -1220,12 +1227,14 @@ function normalizePlan(d) {
     });
   }
   p.terrain = terrainFromDoc(d.terrain, p);
+  p.groundLook = d.groundLook !== 'earth' && GROUND_LOOKS[d.groundLook] ? d.groundLook : '';
   return p;
 }
 function serialize(p, forHistory) {
   const o = { v: 1, fmt: 2 };
   if (!forHistory) { o.name = p.name; o.notes = p.notes; if (p.project) o.project = p.project; }
   o.w = p.w; o.h = p.h; o.cell = p.cell; o.altar = p.altar;
+  if (p.groundLook) o.groundLook = p.groundLook;
   o.palette = {};
   for (const [k, e] of Object.entries(p.palette)) {
     const c = clone(e);
@@ -2490,33 +2499,36 @@ function drawMirror(g, cam) {
 
 // ---------------------------------------------------------------------------
 // Terrain: ground height per square, in whole blocks (one square's size: 0.5 m or 1 m).
-// Stored as rows of characters, height = (code − 79) × cell metres; a space is 0 m. Below the
-// ground every empty square is earth; anything built or placed there is dug out.
+// Stored cropped, as runs of numbers like level rows: blocks + 500, so −499 to +499 blocks, '000' being 0 m
+// (enc 3, planner v75, for mountains). Plans saved before stored characters, height = (code − 79) blocks,
+// as runs (enc 2) or one a square, which only reach −46 / +47 blocks. Below the ground every empty square
+// is earth; anything built or placed there is dug out.
 // ---------------------------------------------------------------------------
-const TERRAIN_ZERO = 79;                                       // 'O'
-const terrainLimits = cell => [(33 - TERRAIN_ZERO) * cell, (126 - TERRAIN_ZERO) * cell];
+const TERRAIN_ZERO = 79;                                       // 'O' (enc 2 and older)
+const TERRAIN_MID = 500, TERRAIN_MAX = 499;                    // enc 3
+const terrainLimits = cell => [-TERRAIN_MAX * cell, TERRAIN_MAX * cell];
 function terrainFromDoc(t, p) {
   const g = Array.from({ length: p.h }, () => new Array(p.w).fill(0));
   if (!t || !Array.isArray(t.rows)) return g;
   // rows of runs like the level rows (enc 2, since planner v36: a lake bed is one run per row), or one
   // character per square (plans saved before)
   const ox = clampInt(t.ox, 0, p.w, 0), oy = clampInt(t.oy, 0, p.h, 0), bad = { n: 0 };
-  const chars = t.enc === 2 ? codeRowsToGrid(t.rows, p.w, p.h, ox, oy, bad) : rowsToGrid(t.rows, p.w, p.h, ox, oy);
+  const chars = t.enc === 2 || t.enc === 3 ? codeRowsToGrid(t.rows, p.w, p.h, ox, oy, bad) : rowsToGrid(t.rows, p.w, p.h, ox, oy);
   if (bad.n) p.readProblems = (p.readProblems || 0) + bad.n;
   for (let y = 0; y < p.h; y++) for (let x = 0; x < p.w; x++) {
     const c = chars[y][x];
-    if (c !== ' ') g[y][x] = (c.charCodeAt(0) - TERRAIN_ZERO) * p.cell;
+    if (c !== ' ') g[y][x] = (t.enc === 3 ? symCode(c) - TERRAIN_MID : c.charCodeAt(0) - TERRAIN_ZERO) * p.cell;
   }
   return g;
 }
 function terrainToDoc(p) {
   if (!terrainOn(p)) return null;
   const chars = p.terrain.map(row => row.map(v => {
-    const k = clamp(Math.round(v / p.cell), 33 - TERRAIN_ZERO, 126 - TERRAIN_ZERO);
-    return k === 0 ? ' ' : String.fromCharCode(TERRAIN_ZERO + k);
+    const k = clamp(Math.round(v / p.cell), -TERRAIN_MAX, TERRAIN_MAX);
+    return k === 0 ? ' ' : symChar(k + TERRAIN_MID);
   }));
   const c = cropCells(chars);
-  return { enc: 2, ox: c.ox, oy: c.oy, rows: c.rows.map(encodeRow) };
+  return { enc: 3, ox: c.ox, oy: c.oy, rows: c.rows.map(encodeRow) };
 }
 const terrainOn = p => !!p && !!p.terrain && p.terrain.some(row => row.some(v => v !== 0));
 const groundAt = (x, y) => (S.plan && S.plan.terrain && inB(x, y) ? S.plan.terrain[y][x] : 0);
@@ -2599,7 +2611,7 @@ function drawGround(g, cam, L, x0, x1, y0, y1) {
   const P = S.plan, s = cam.s;
   if (!terrainOn(P)) { if (isUnder(L)) drawSoil(g, cam, x0, x1, y0, y1); return; }
   const [, hi] = terrainRange(P), touches = L.elev <= hi + 0.01;
-  g.fillStyle = hexA(SOIL, 0.34);
+  g.fillStyle = hexA(groundLook(P).body, 0.34);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) if (P.terrain[y][x] > L.elev + 0.01) g.fillRect(cam.ox + x * s, cam.oy + y * s, s + 0.5, s + 0.5);
   if (touches && s >= 5) {
     g.strokeStyle = hexA(T.muted, 0.28); g.lineWidth = 1; g.beginPath();
@@ -3783,6 +3795,7 @@ function describeChange(beforeJson, afterJson) {
   if (pAdd.length && !painted) out.push(pAdd.length === 1 ? `Add material ${pb[pAdd[0]].name}` : `Add ${pAdd.length} materials`);
   if (pDel.length) out.push(pDel.length === 1 ? `Remove material ${pa[pDel[0]].name}` : `Tidy away ${pDel.length} materials`);
   if (JSON.stringify(A.terrain || null) !== JSON.stringify(B.terrain || null)) out.push('Shape the ground');
+  if ((A.groundLook || '') !== (B.groundLook || '')) out.push('Change how the ground looks');
   if (A.altar !== B.altar || A.cell !== B.cell || A.w !== B.w || A.h !== B.h) out.push('Change the plan’s settings');
   if (!out.length) return 'Edit';
   return out[0] + (out.length > 1 ? ` + ${out.length - 1} more` : '');
@@ -5061,9 +5074,10 @@ function drawTrimDots(g, L, cam, x0, x1, y0, y1) {
 // Below ground, every empty square is earth: a soil wash with a scatter of grit.
 function drawSoil(g, cam, x0, x1, y0, y1) {
   const s = cam.s;
-  g.fillStyle = hexA(SOIL, 0.34); g.fillRect(cam.ox + x0 * s, cam.oy + y0 * s, (x1 - x0) * s, (y1 - y0) * s);
+  const soil = groundLook().body;
+  g.fillStyle = hexA(soil, 0.34); g.fillRect(cam.ox + x0 * s, cam.oy + y0 * s, (x1 - x0) * s, (y1 - y0) * s);
   if (s < 6) return;
-  g.fillStyle = hexA(SOIL, 0.55);
+  g.fillStyle = hexA(soil, 0.55);
   const r = Math.max(1, s * 0.07);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
     const hsh = (x * 73856093) ^ (y * 19349663);
@@ -6064,8 +6078,11 @@ function earth3d(P, cm, push, solids, slice = Infinity) {
   const reach = P.levels.filter(l => l.elev - FLOOR_T < hi - 1e-6);
   const cover = new Map(reach.map(L => [L.id, new Set()]));     // squares items sit on, per level
   for (const it of P.items) if (cover.has(it.level) && mountOf(it) === 'floor') { const Q = itemRect(it); for (let y = Math.floor(Q.y); y < Math.ceil(Q.y + Q.h - 1e-6); y++) for (let x = Math.floor(Q.x); x < Math.ceil(Q.x + Q.w - 1e-6); x++) cover.get(it.level).add(y * P.w + x); }
+  const look = groundLook(P), SOIL = look.body, GRASS = look.top;
+  // a look with a `steep` colour caps cliff faces with it: squares more than 1 m above a neighbour
+  const steep = (x, y) => { if (!look.steep) return false; const t = P.terrain, g = t[y][x];
+    return (x > 0 && g - t[y][x - 1] > 1) || (x < P.w - 1 && g - t[y][x + 1] > 1) || (y > 0 && g - t[y - 1][x] > 1) || (y < P.h - 1 && g - t[y + 1][x] > 1); };
   const shade = d => tint(SOIL, -0.12 - 0.25 * Math.min(1, -d / 20));   // darker the deeper below the surface
-  const GRASS = '#6e8a46';
   for (let y = R.y; y < R.y + R.h; y++) for (let x = R.x; x < R.x + R.w; x++) {
     const ground = hasT ? P.terrain[y][x] : 0, top = Math.min(ground, slice), cutHere = top < ground - 1e-6, air = [];
     for (const L of reach) {
@@ -6078,7 +6095,7 @@ function earth3d(P, cm, push, solids, slice = Infinity) {
     if (z < top - 1e-6) {
       const cap = Math.min(cm, top - z);
       if (top - cap > z + 1e-6) push(solids, x, z, y, 1, top - cap - z, 1, shade((z + top - cap) / 2 - top));
-      push(solids, x, top - cap, y, 1, cap, 1, cutHere ? tint(SOIL, -0.3) : hasT ? GRASS : tint(SOIL, 0.06));
+      push(solids, x, top - cap, y, 1, cap, 1, cutHere ? tint(SOIL, -0.3) : hasT ? (steep(x, y) ? look.steep : GRASS) : tint(SOIL, 0.06));
     }
   }
   return R;
@@ -6284,7 +6301,8 @@ c3d.addEventListener('wheel', e => {
 // ---------------------------------------------------------------------------
 function bmStart(P) {
   const cm = P.cell;
-  const lo = Math.min(0, ...P.levels.map(l => l.elev)) - 8, hi = Math.max(GAME.levelH, ...P.levels.map(l => l.elev + l.height)) + 8;
+  const [tlo, thi] = terrainOn(P) ? terrainRange(P) : [0, 0];         // (a mountain can stand far above every level)
+  const lo = Math.min(0, tlo, ...P.levels.map(l => l.elev)) - 8, hi = Math.max(GAME.levelH, thi, ...P.levels.map(l => l.elev + l.height)) + 8;
   const k0 = Math.floor(lo / cm), K = Math.ceil(hi / cm) - k0;
   V3.bm = { W: P.w, H: P.h, k0, K, cm, a: new Uint8Array(P.w * P.h * K) };
 }
@@ -8396,11 +8414,11 @@ function renderLevels() {
   const name = h('input', { type: 'text', value: L.name, maxlength: '80', 'aria-label': 'Level name' });
   name.addEventListener('input', () => { liveBegin(); L.name = name.value.slice(0, 80) || 'Level'; markDirty(); updateStatus(); });
   name.addEventListener('change', () => { liveCommit(); renderLevels(); });
-  const elev = h('input', { type: 'number', value: String(L.elev), step: '0.5', min: '-60', max: '400', 'aria-label': 'Base height in metres' });
+  const elev = h('input', { type: 'number', value: String(L.elev), step: '0.5', min: '-200', max: '400', 'aria-label': 'Base height in metres' });
   const height = h('input', { type: 'number', value: String(L.height), step: '0.5', min: '0.5', max: '40', 'aria-label': 'Level height in metres' });
   const apply = () => {
     begin();
-    L.elev = blocksNum(elev.value, L.elev, -60, 400); L.height = blocksNum(height.value, L.height, 0.5, 40);   // whole blocks
+    L.elev = blocksNum(elev.value, L.elev, -200, 400); L.height = blocksNum(height.value, L.height, 0.5, 40);   // whole blocks
     P.levels.sort((a, b) => a.elev - b.elev); S.levelIdx = P.levels.indexOf(L);
     commit(); renderLevels(); updateStatus();
   };
@@ -9561,6 +9579,9 @@ function renderPlanPane() {
   const altar = h('select', { 'aria-label': 'Altar build area' }, ...GAME.altarSizes.map((v, i) => h('option', { value: String(v), text: `Altar level ${i + 1} · ${v} × ${v} m` })));
   altar.value = String(P.altar);
   altar.addEventListener('change', () => { begin(); P.altar = Number(altar.value); commit(); });
+  const look = h('select', { 'aria-label': 'How the ground looks' }, ...Object.entries(GROUND_LOOKS).map(([v, G]) => h('option', { value: v, text: G.label })));
+  look.value = P.groundLook || 'earth';
+  look.addEventListener('change', () => { begin('Change how the ground looks'); P.groundLook = look.value === 'earth' ? '' : look.value; commit(); mark3d(); req2d(); });
   const importBox = h('textarea', { class: 'code', 'aria-label': 'Plan JSON to import', placeholder: '{ "name": "…", "levels": [ … ] }' });
   const importErr = h('p', { class: 'err', hidden: true });
   pane.replaceChildren(
@@ -9579,7 +9600,8 @@ function renderPlanPane() {
       h('div', { class: 'grid3' }, h('label', { class: 'field' }, h('span', { text: 'Width (m)' }), w), h('label', { class: 'field' }, h('span', { text: 'Depth (m)' }), hh),
         h('div', { class: 'field' }, h('span', { text: ' ' }), h('button', { class: 'btn', type: 'button', text: 'Resize', onclick: () => resizePlan(Math.round(Number(w.value) / cm), Math.round(Number(hh.value) / cm)) }))),
       h('label', { class: 'field' }, h('span', { text: 'Altar build area' }), altar),
-      h('p', { class: 'note', text: 'Build areas grow with altar upgrades: 40, 80, 120 and 160 m. The dashed square is centred on each Flame Altar you place. Centring is approximate.' })),
+      h('p', { class: 'note', text: 'Build areas grow with altar upgrades: 40, 80, 120 and 160 m. The dashed square is centred on each Flame Altar you place. Centring is approximate.' }),
+      h('label', { class: 'field', title: 'How the ground (Shape the ground, T) looks in 3D and 2D', 'data-tip-desc': 'Bare rock or rock under snow suit a mountain' }, h('span', { text: 'Ground' }), look)),
     ...[placeSection()].filter(Boolean),                // (none when there's no other plan)
     h('div', { class: 'callout' }, S.mode === 'db'
       ? [h('b', { text: 'Shared with Claude. ' }), 'Plans are stored with this page. In chat, ask Claude to look at or draft a plan by name. Its edits show up here live, and Undo can roll them back.']

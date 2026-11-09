@@ -121,9 +121,10 @@ function drawTrimDots(g, L, cam, x0, x1, y0, y1) {
 // Below ground, every empty square is earth: a soil wash with a scatter of grit.
 function drawSoil(g, cam, x0, x1, y0, y1) {
   const s = cam.s;
-  g.fillStyle = hexA(SOIL, 0.34); g.fillRect(cam.ox + x0 * s, cam.oy + y0 * s, (x1 - x0) * s, (y1 - y0) * s);
+  const soil = groundLook().body;
+  g.fillStyle = hexA(soil, 0.34); g.fillRect(cam.ox + x0 * s, cam.oy + y0 * s, (x1 - x0) * s, (y1 - y0) * s);
   if (s < 6) return;
-  g.fillStyle = hexA(SOIL, 0.55);
+  g.fillStyle = hexA(soil, 0.55);
   const r = Math.max(1, s * 0.07);
   for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
     const hsh = (x * 73856093) ^ (y * 19349663);
